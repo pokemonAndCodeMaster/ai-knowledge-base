@@ -30,4 +30,8 @@
   - `schema.md` — 重写，加入 Frontmatter / 命名 / 链接类型 / log 格式规范
 - **当前 wiki 状态**：1 synthesis + 9 concepts + 1 entity + 2 sources = 共 **13 张**知识卡片
 
-
+## [2026-04-06] ingest | 全景架构图 V3 (05_unified_infographic_v3_zh.png)
+- **动作**：将架构图复制到 `raw/assets/` 并直接嵌入大纲文件。
+- **新增文件**：`raw/assets/05_unified_infographic_v3_zh.png`
+- **更新文件**：`wiki/synthesis/统一学习与知识管理框架.md`
+- **触发者**：用户请求摄入指定图形到知识库
