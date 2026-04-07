@@ -1,0 +1,43 @@
+{
+  "skill_name": "ai-librarian",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我刚在 raw/articles/ 下放了一份关于 Karpathy LLM Wiki 架构理念的文章 (karpathy-llm-wiki.md)。请帮我把它摄入 (ingest) 到知识库里。",
+      "expected_output": "Agent 应在 wiki/sources/ 创建摘要页，在 wiki/concepts/ 或 wiki/entities/ 创建对应的原子卡片（如 '复利知识库' 概念卡、'Karpathy' 实体卡），使用 YAML Frontmatter，用 [[双向链接]] 关联已有卡片，更新 index.md 和 log.md。所有产出为中文。",
+      "assertions": [
+        {"type": "file_exists", "text": "wiki/sources/ 下有新的摘要文件"},
+        {"type": "file_exists", "text": "wiki/concepts/ 或 wiki/entities/ 下有新的卡片"},
+        {"type": "file_contains", "text": "index.md 包含新注册的条目和一行摘要"},
+        {"type": "file_contains", "text": "log.md 包含 [日期] ingest 的日志条目"},
+        {"type": "file_contains", "text": "新卡片顶部包含 YAML frontmatter（至少有 title, tags, created）"},
+        {"type": "content_language", "text": "所有新文件内容为中文"}
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "结合 wiki 里已有的关于'费曼学习法'和'Karpathy AI 图书管理员模型'的卡片，帮我分析一下这两种方法在实际操作中该怎么结合。按照双重输出原则，把你的分析存下来。",
+      "expected_output": "Agent 应先读 index.md 定位相关卡片，然后在对话中给出综合分析回答。同时必须在 wiki/synthesis/ 创建一篇新的综合分析 Markdown 文件，用 [[双向链接]] 关联费曼和 Karpathy 的卡片，并更新 index.md 和 log.md。",
+      "assertions": [
+        {"type": "file_exists", "text": "wiki/synthesis/ 下有新的综合分析文件"},
+        {"type": "file_contains", "text": "新文件包含 [[费曼]] 和 [[Karpathy]] 相关的双向链接"},
+        {"type": "file_contains", "text": "index.md 的综合分析分类下新增了该文件的条目"},
+        {"type": "file_contains", "text": "log.md 包含 query 类型的日志条目"}
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "请对目前的知识库做一轮完整的体检 (Lint)。重点看看有没有孤岛页面、被引用但不存在的概念、以及不同卡片之间的矛盾说法。",
+      "expected_output": "Agent 应遍历 wiki/ 所有子目录，生成一份分类清晰的中文健康检查报告（包含矛盾🔴、过时🟡、孤岛⚪、缺页🔵 四类问题标注），并主动推荐下一步研究方向🟢。不应擅自修改文件，等待用户审批。",
+      "assertions": [
+        {"type": "output_format", "text": "报告使用颜色分类标注（矛盾/过时/孤岛/缺页/建议）"},
+        {"type": "no_destructive_action", "text": "未擅自删除或修改 wiki/ 中的任何已有文件"},
+        {"type": "content_language", "text": "报告内容为中文"},
+        {"type": "output_contains", "text": "报告包含'建议'或'推荐'类条目（主动建议研究方向）"}
+      ],
+      "files": []
+    }
+  ]
+}
