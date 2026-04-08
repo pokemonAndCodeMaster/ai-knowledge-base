@@ -1,0 +1,163 @@
+{
+  "name": "2026年AI Agent技能与框架全景",
+  "children": [
+    {
+      "name": "核心架构：三层结构",
+      "children": [
+        {
+          "name": "方法论框架",
+          "children": [
+            {
+              "name": "Superpowers (强制流程)"
+            },
+            {
+              "name": "BMAD (敏捷生命周期)"
+            },
+            {
+              "name": "GitHub Spec Kit (规格驱动)"
+            }
+          ]
+        },
+        {
+          "name": "官方技能目录",
+          "children": [
+            {
+              "name": "Anthropic Skills (SKILL.md标准)"
+            },
+            {
+              "name": "OpenAI Skills (Codex集成)"
+            },
+            {
+              "name": "Google Gemini Skills"
+            }
+          ]
+        },
+        {
+          "name": "编排与治理平台",
+          "children": [
+            {
+              "name": "Claude-Flow (集群编排)"
+            },
+            {
+              "name": "wshobson/agents (插件组合)"
+            },
+            {
+              "name": "Kelos (Kubernetes原生)"
+            },
+            {
+              "name": "Hive (生产级治理)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "技术标准与协议",
+      "children": [
+        {
+          "name": "SKILL.md (任务级能力)"
+        },
+        {
+          "name": "AGENTS.md (项目级上下文)"
+        },
+        {
+          "name": "ACP (Agent通信协议)"
+        },
+        {
+          "name": "MCP (模型上下文协议)"
+        }
+      ]
+    },
+    {
+      "name": "关键开发模式",
+      "children": [
+        {
+          "name": "RPI工作流",
+          "children": [
+            {
+              "name": "Research (研究)"
+            },
+            {
+              "name": "Plan (计划)"
+            },
+            {
+              "name": "Implement (实现)"
+            }
+          ]
+        },
+        {
+          "name": "意图对齐 (Intent Gate)"
+        },
+        {
+          "name": "Ralph Loop (持续迭代循环)"
+        },
+        {
+          "name": "子Agent隔离 (Context Control)"
+        },
+        {
+          "name": "自愈与进化 (Self-healing)"
+        }
+      ]
+    },
+    {
+      "name": "明星项目与工具",
+      "children": [
+        {
+          "name": "Claude Code (Anthropic官方命令行)"
+        },
+        {
+          "name": "OpenCode (多模型开源挑战者)"
+        },
+        {
+          "name": "OpenClaw (自动化网关)"
+        },
+        {
+          "name": "gstack (Garry Tan创业版套装)"
+        },
+        {
+          "name": "Oh-My-OpenCode (Sisyphus纪律Agent)"
+        },
+        {
+          "name": "Symphony (自主实现运行)"
+        },
+        {
+          "name": "Desloppify (代码质量治理)"
+        }
+      ]
+    },
+    {
+      "name": "安全与合规",
+      "children": [
+        {
+          "name": "提示词注入 (36%技能受影响)"
+        },
+        {
+          "name": "供应链风险 (恶意Skill负载)"
+        },
+        {
+          "name": "沙盒隔离 (Docker/K8s环境)"
+        },
+        {
+          "name": "权限准入 (Identity/RBAC)"
+        }
+      ]
+    },
+    {
+      "name": "未来趋势",
+      "children": [
+        {
+          "name": "Harness Engineering (系统环境优于模型)"
+        },
+        {
+          "name": "从Vibe Coding转向Design AI Coding"
+        },
+        {
+          "name": "自主化与免监督运行"
+        },
+        {
+          "name": "多Agent协作社会化"
+        }
+      ]
+    }
+  ]
+}
