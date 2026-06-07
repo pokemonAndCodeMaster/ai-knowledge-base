@@ -158,7 +158,41 @@ source_type: article | twitter | youtube | github | gist | reddit
 
 ---
 
-### 🎬 工作流 C：知识体检侦察流 `[health]` / `[lint]`
+### 🎬 工作流 C：Repo-as-Graph 代码摄入流 `[ingest_code]`
+
+**触发**：当用户要求将整个代码目录或整个项目的代码摄入知识库时。
+**核心原则**：代码的实现细节留在文件系统，知识库只存“架构骨架(Skeleton)”与“导航索引”。
+
+**执行步骤：**
+
+1. **骨架提取 (Pre-process)**
+   - 绝不允许直接读取大量源代码文件。
+   - 立即运行 `python scripts/extract_code_skeleton.py <目标代码目录>`。
+   - 读取生成的 `.chunks/code_skeleton.md` 文件（这剔除了实现细节，只保留了依赖和函数签名）。
+
+2. **架构扫描 (Map)**
+   - 阅读骨架文件，不要立即建卡。在回复框中输出《代码架构清单》。
+   - 将散落的文件从逻辑上划分为核心模块（如：工具库、检索层、API层等）。
+
+3. **索引建卡 (Reduce)**
+   - 针对大纲中的核心模块，创建 `type: code_module` 的知识卡片。
+   - 🚨 **强约束（索引隔离原则）**：卡片内**严禁**复制具体实现代码！卡片仅需包含三项：
+     - **Why**：该模块的设计意图和职责边界。
+     - **Who**：依赖关系（使用 `[[双链]]` 连接其他代码卡片）。
+     - **Where**：必须填写 `related_code` 字段（指向实际源文件路径）。
+   
+4. **绑定 Hash (Validate)**
+   - 建完卡片后，**必须**运行 `python scripts/check_staleness.py --code-only`。
+   - 脚本会告诉你相关代码的最新 SHA256，将此 Hash 值回填到卡片的 `code_hash` 字段中。
+
+5. **收尾与重编译**
+   - 在 `index.md` 注册这些模块。
+   - 追加 `log.md` 记账。
+   - 运行 `python scripts/compile_graph.py`，将代码架构正式并入全域图谱。
+
+---
+
+### 🎬 工作流 D：知识体检侦察流 `[health]` / `[lint]`
 
 **触发**：人类要求「体检」/「lint」/「检查知识库」时。
 **执行逻辑（脚本驱动 + LLM 分析，仅扫描出报告，不执行删改）：**
@@ -173,13 +207,15 @@ source_type: article | twitter | youtube | github | gist | reddit
 
 ---
 
-### 🎬 工作流 D：强制双重输出 `[query → synthesis]`
+### 🎬 工作流 E：黄页游离卡片收容流 `[index]`
 
-当查询过程产生了有价值的新综合——写入 `wiki/synthesis/`，更新 `index.md` + `log.md`，然后运行 `python scripts/compile_graph.py` 重编译。
+**触发**：通常在 `[health]` 后，用户下令“一键修复黄页”。
+**执行逻辑**：
+将尚未在 `index.md` 中注册的文件进行登记。将需要引用的 `raw/` 中有价值的文件制成摘要卡并索引。操作结束后追加 `log.md`，然后运行 `python scripts/compile_graph.py`。
 
 ---
 
-### 🎬 工作流 E：编译与过期检测 `[compile]`
+### 🎬 工作流 F：强制触发编译流 `[compile]`
 
 **触发**：用户要求「编译知识库」/「检查过期」/「刷新图索引」时。
 

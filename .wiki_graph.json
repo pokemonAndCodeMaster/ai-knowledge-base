@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "compiled_at": "2026-06-07T20:54:39.081732+08:00",
+  "compiled_at": "2026-06-07T21:05:40.863136+08:00",
   "stats": {
-    "total_cards": 63,
-    "total_links": 242,
+    "total_cards": 65,
+    "total_links": 245,
     "orphan_count": 16,
     "orphan_cards": [
       "wiki/concepts/Agent_Harness_Engineering.md",
@@ -35,10 +35,6 @@
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
-        "target": "brainstorming"
-      },
-      {
-        "from": "wiki/concepts/Agent_Engineering.md",
         "target": "Agent-Skills"
       },
       {
@@ -46,12 +42,16 @@
         "target": "test-driven-development"
       },
       {
-        "from": "wiki/concepts/Agent_Harness_Engineering.md",
-        "target": "Harness Stack 分层架构"
+        "from": "wiki/concepts/Agent_Engineering.md",
+        "target": "brainstorming"
       },
       {
         "from": "wiki/concepts/Agent_Harness_Engineering.md",
         "target": "Agent 工作流五大模式"
+      },
+      {
+        "from": "wiki/concepts/Agent_Harness_Engineering.md",
+        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/concepts/Agent_工作流五大模式.md",
@@ -87,11 +87,11 @@
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "引用"
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "链接"
+        "target": "引用"
       },
       {
         "from": "wiki/concepts/ashby_law.md",
@@ -99,11 +99,11 @@
       },
       {
         "from": "wiki/concepts/gitagent_pattern.md",
-        "target": "gitagent"
+        "target": "harness_engineering_principles#2-repository-as-the-system-of-record"
       },
       {
         "from": "wiki/concepts/gitagent_pattern.md",
-        "target": "harness_engineering_principles#2-repository-as-the-system-of-record"
+        "target": "gitagent"
       },
       {
         "from": "wiki/concepts/harness_engineering_principles.md",
@@ -111,11 +111,11 @@
       },
       {
         "from": "wiki/concepts/前馈与反馈控制.md",
-        "target": "Agent Harness Engineering"
+        "target": "可维护性Harness"
       },
       {
         "from": "wiki/concepts/前馈与反馈控制.md",
-        "target": "可维护性Harness"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/concepts/原子化笔记.md",
@@ -131,11 +131,11 @@
       },
       {
         "from": "wiki/concepts/复利知识库.md",
-        "target": "sources/karpathy_llm_wiki"
+        "target": "sources/mit_notebooklm_48h"
       },
       {
         "from": "wiki/concepts/复利知识库.md",
-        "target": "sources/mit_notebooklm_48h"
+        "target": "sources/karpathy_llm_wiki"
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
@@ -151,15 +151,15 @@
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Context Reset vs Compaction"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
         "target": "AGENTS.md 标准"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
         "target": "Harness Stack 分层架构"
-      },
-      {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Context Reset vs Compaction"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
@@ -203,27 +203,11 @@
       },
       {
         "from": "wiki/norms/知识图谱编译与检索操作规范.md",
-        "target": "引用"
-      },
-      {
-        "from": "wiki/norms/知识图谱编译与检索操作规范.md",
         "target": "双链"
       },
       {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Gstack"
-      },
-      {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenClaw"
-      },
-      {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Oh-My-OpenAgent"
-      },
-      {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenCode"
+        "from": "wiki/norms/知识图谱编译与检索操作规范.md",
+        "target": "引用"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -231,7 +215,23 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "Oh-My-OpenAgent"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "Gstack"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
         "target": "Agent-Skills"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "OpenClaw"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "OpenCode"
       },
       {
         "from": "wiki/sources/almirant.md",
@@ -243,7 +243,7 @@
       },
       {
         "from": "wiki/sources/anthropic_building_effective_agents.md",
-        "target": "Orchestrator-Workers模式"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/anthropic_building_effective_agents.md",
@@ -251,6 +251,10 @@
       },
       {
         "from": "wiki/sources/anthropic_building_effective_agents.md",
+        "target": "Orchestrator-Workers模式"
+      },
+      {
+        "from": "wiki/sources/anthropic_harness_design_long_running.md",
         "target": "Agent Harness Engineering"
       },
       {
@@ -262,28 +266,20 @@
         "target": "Sprint合同模式"
       },
       {
-        "from": "wiki/sources/anthropic_harness_design_long_running.md",
-        "target": "Agent Harness Engineering"
+        "from": "wiki/sources/awesome_agent_harness.md",
+        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/sources/awesome_agent_harness.md",
-        "target": "Harness Stack 分层架构"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/awesome_agent_harness.md",
         "target": "AGENTS.md 标准"
       },
       {
-        "from": "wiki/sources/awesome_agent_harness.md",
-        "target": "Agent Harness Engineering"
-      },
-      {
         "from": "wiki/sources/martin_fowler_harness.md",
         "target": "birgitta_bockeler"
-      },
-      {
-        "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
@@ -294,16 +290,20 @@
         "target": "可维护性Harness"
       },
       {
+        "from": "wiki/sources/martin_fowler_harness_engineering.md",
+        "target": "Agent Harness Engineering"
+      },
+      {
         "from": "wiki/sources/paperclip.md",
         "target": "autonomous_agents"
       },
       {
         "from": "wiki/sources/paperclip.md",
-        "target": "agent_orchestration"
+        "target": "cost_control"
       },
       {
         "from": "wiki/sources/paperclip.md",
-        "target": "cost_control"
+        "target": "agent_orchestration"
       },
       {
         "from": "wiki/synthesis/Agent_Harness_Engineering_全景架构.md",
@@ -315,6 +315,10 @@
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
+        "target": "gbrain_yuxi_深度技术分析"
+      },
+      {
+        "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
         "target": "Seed-Expand-Classify 检索范式"
       },
       {
@@ -322,16 +326,12 @@
         "target": "双链"
       },
       {
-        "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "gbrain_yuxi_深度技术分析"
-      },
-      {
         "from": "wiki/synthesis/知识库高保真摄入管线.md",
         "target": "schema.md"
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": " "
+        "target": "心智模型"
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
@@ -339,7 +339,7 @@
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": "心智模型"
+        "target": " "
       }
     ]
   },
@@ -373,8 +373,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "compile_graph脚本",
-        "知识图谱编译与检索操作规范"
+        "知识图谱编译与检索操作规范",
+        "compile_graph脚本"
       ],
       "inlinks": [
         "compile_graph脚本",
@@ -450,10 +450,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "check_staleness脚本",
-        "query_graph脚本",
+        "双链",
         "知识图谱编译与检索操作规范",
-        "双链"
+        "query_graph脚本",
+        "check_staleness脚本"
       ],
       "inlinks": [
         "check_staleness脚本",
@@ -462,6 +462,44 @@
       ],
       "code_hashes": {
         "scripts/compile_graph.py": "sha256:d1b6b1ccd3c797b2"
+      }
+    },
+    "wiki/code/extract_code_skeleton脚本.md": {
+      "title": "extract_code_skeleton脚本",
+      "slug": "extract_code_skeleton脚本",
+      "domain": [
+        "knowledge_mgmt",
+        "meta"
+      ],
+      "type": "code_module",
+      "tags": [
+        "AST分块",
+        "骨架提取",
+        "预处理",
+        "代码摄入",
+        "Repo-as-Graph"
+      ],
+      "trigger_keywords": [
+        "extract_code_skeleton",
+        "代码骨架提取",
+        "源码掏空",
+        "剔除实现细节",
+        "提取依赖"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "scripts/extract_code_skeleton.py"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Repo-as-Graph代码摄入范式"
+      ],
+      "inlinks": [
+        "Repo-as-Graph代码摄入范式"
+      ],
+      "code_hashes": {
+        "scripts/extract_code_skeleton.py": "sha256:14a7b25439759ff1"
       }
     },
     "wiki/code/query_graph脚本.md": {
@@ -493,8 +531,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识图谱编译与检索操作规范",
         "Seed-Expand-Classify检索范式",
+        "知识图谱编译与检索操作规范",
         "compile_graph脚本"
       ],
       "inlinks": [
@@ -525,10 +563,10 @@
       "status": "active",
       "summary": "Agent Engineering 是构建自主 AI 系统的工程学科。与早期的 Prompt Engineering 不同，它更强调整体的架构设计、工作流约束和状态管理。",
       "outlinks": [
-        "Harness_Engineering",
-        "brainstorming",
         "Agent-Skills",
-        "test-driven-development"
+        "test-driven-development",
+        "Harness_Engineering",
+        "brainstorming"
       ],
       "inlinks": [
         "Harness_Engineering",
@@ -556,12 +594,12 @@
       "status": "active",
       "summary": "**关联节点**：[[Harness Stack 分层架构]] | [[前馈与反馈控制]] | [[渐进式上下文披露]] | [[Agent 工作流五大模式]] | [[awesome_agent_harness]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
-        "awesome_agent_harness",
         "渐进式上下文披露",
-        "martin_fowler_harness_engineering",
-        "Harness Stack 分层架构",
         "Agent 工作流五大模式",
-        "前馈与反馈控制"
+        "martin_fowler_harness_engineering",
+        "前馈与反馈控制",
+        "Harness Stack 分层架构",
+        "awesome_agent_harness"
       ],
       "inlinks": []
     },
@@ -586,8 +624,8 @@
       "outlinks": [
         "多Agent生成-评估循环",
         "Orchestrator-Workers模式",
-        "anthropic_building_effective_agents",
-        "Agent Harness Engineering"
+        "Agent Harness Engineering",
+        "anthropic_building_effective_agents"
       ],
       "inlinks": []
     },
@@ -638,8 +676,8 @@
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[anthropic_harness_design_long_running]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
-        "anthropic_harness_design_long_running",
-        "Agent Harness Engineering"
+        "Agent Harness Engineering",
+        "anthropic_harness_design_long_running"
       ],
       "inlinks": []
     },
@@ -689,10 +727,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Agent 工作流五大模式]] | [[渐进式上下文披露]] | [[awesome_agent_harness]] ---",
       "outlinks": [
-        "Agent 工作流五大模式",
-        "awesome_agent_harness",
         "渐进式上下文披露",
-        "Agent Harness Engineering"
+        "Agent 工作流五大模式",
+        "Agent Harness Engineering",
+        "awesome_agent_harness"
       ],
       "inlinks": []
     },
@@ -718,11 +756,11 @@
       "status": "active",
       "summary": "**关联节点**：[[费曼学习法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[notebooklm_mcp用法]] | [[sources/mit_notebooklm_48h]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "notebooklm_mcp用法",
         "费曼学习法",
         "主动召回",
-        "sources/mit_notebooklm_48h"
+        "notebooklm_mcp用法",
+        "sources/mit_notebooklm_48h",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "主动召回",
@@ -754,8 +792,8 @@
       "summary": "**关联节点**：[[复利知识库]] | [[Andrej_Karpathy]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
         "Andrej_Karpathy",
-        "复利知识库",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "复利知识库"
       ],
       "inlinks": [
         "复利知识库",
@@ -793,8 +831,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识库工业化升级_图索引检索系统",
-        "query_graph脚本"
+        "query_graph脚本",
+        "知识库工业化升级_图索引检索系统"
       ],
       "inlinks": []
     },
@@ -816,8 +854,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "feedforward_and_feedback",
         "steering_loop",
+        "feedforward_and_feedback",
         "harness_engineering",
         "computational_vs_inferential"
       ],
@@ -855,10 +893,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "agent_harness",
-        "mob_rituals",
         "aws_ai_dlc",
-        "persistent_context_in_repo"
+        "agent_harness",
+        "persistent_context_in_repo",
+        "mob_rituals"
       ],
       "inlinks": [
         "bolts_and_work_units",
@@ -887,12 +925,12 @@
       "status": "active",
       "summary": "**关联节点**：[[notebooklm_mcp用法]] | [[统一学习与知识管理框架]] | [[复利知识库]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "复利知识库",
         "双向链接",
-        "引用",
+        "链接",
         "notebooklm_mcp用法",
-        "链接"
+        "统一学习与知识管理框架",
+        "引用",
+        "复利知识库"
       ],
       "inlinks": [
         "notebooklm_mcp用法",
@@ -917,8 +955,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "harness_templates",
-        "agent_harness"
+        "agent_harness",
+        "harness_templates"
       ],
       "inlinks": [
         "martin_fowler_harness"
@@ -970,8 +1008,8 @@
       "status": "active",
       "summary": "在设计 Harness 的传感器和引导器时，需要根据执行效率和确定性将其分类：",
       "outlinks": [
-        "feedforward_and_feedback",
-        "agent_harness"
+        "agent_harness",
+        "feedforward_and_feedback"
       ],
       "inlinks": [
         "agent_harness",
@@ -996,9 +1034,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
         "agent_harness",
-        "conductors_vs_orchestrators"
+        "conductors_vs_orchestrators",
+        "steering_loop"
       ],
       "inlinks": [
         "conductors_vs_orchestrators",
@@ -1052,8 +1090,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "gitagent",
-        "harness_engineering_principles#2-repository-as-the-system-of-record"
+        "harness_engineering_principles#2-repository-as-the-system-of-record",
+        "gitagent"
       ],
       "inlinks": [
         "harness_engineering_roadmap"
@@ -1080,8 +1118,8 @@
       "status": "active",
       "summary": "Derived from the methodology developed by OpenAI and the Claude Code team (Anthropic) for large-scale agentic software development.",
       "outlinks": [
-        "steering_loop",
         "agent_harness",
+        "steering_loop",
         "awesome_harness_readme"
       ],
       "inlinks": []
@@ -1105,9 +1143,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
-        "bolts_and_work_units",
         "aws_ai_dlc",
+        "bolts_and_work_units",
+        "steering_loop",
         "ai_dlc"
       ],
       "inlinks": [
@@ -1137,9 +1175,9 @@
       "status": "active",
       "summary": "**关联节点**：[[统一学习与知识管理框架]] | [[ai知识库操作指南]] | [[复利知识库]] ---",
       "outlinks": [
-        "复利知识库",
         "ai知识库操作指南",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "复利知识库"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -1167,8 +1205,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "agent_harness",
-        "aws_ai_dlc"
+        "aws_ai_dlc",
+        "agent_harness"
       ],
       "inlinks": [
         "ai_dlc"
@@ -1192,8 +1230,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "feedforward_and_feedback",
-        "agent_harness"
+        "agent_harness",
+        "feedforward_and_feedback"
       ],
       "inlinks": [
         "agent_harness",
@@ -1227,10 +1265,10 @@
       "status": "active",
       "summary": "**关联节点**：[[费曼学习法]] | [[间隔重复]] | [[MIT_48小时速成法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "MIT_48小时速成法",
+        "费曼学习法",
         "统一学习与知识管理框架",
-        "间隔重复",
-        "费曼学习法"
+        "MIT_48小时速成法",
+        "间隔重复"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -1261,9 +1299,9 @@
       "outlinks": [
         "多Agent生成-评估循环",
         "martin_fowler_harness_engineering",
-        "Agent Harness Engineering",
+        "可维护性Harness",
         "赛博控制论与Harness",
-        "可维护性Harness"
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -1293,10 +1331,10 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[双向链接]] | [[Zettelkasten]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "Zettelkasten",
-        "复利知识库",
         "双向链接",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "Zettelkasten",
+        "复利知识库"
       ],
       "inlinks": [
         "双向链接",
@@ -1327,9 +1365,9 @@
       "summary": "**关联节点**：[[原子化笔记]] | [[复利知识库]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
         "页面名",
+        "链接",
         "统一学习与知识管理框架",
         "复利知识库",
-        "链接",
         "原子化笔记"
       ],
       "inlinks": [
@@ -1337,6 +1375,7 @@
         "原子化笔记",
         "复利知识库",
         "karpathy_llm_wiki",
+        "Repo-as-Graph代码摄入范式",
         "统一学习与知识管理框架"
       ]
     },
@@ -1362,12 +1401,12 @@
       "status": "active",
       "summary": "**关联节点**：[[Andrej_Karpathy]] | [[原子化笔记]] | [[双向链接]] | [[RAG_vs_LLM_Wiki]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "双向链接",
-        "sources/karpathy_llm_wiki",
-        "sources/mit_notebooklm_48h",
         "Andrej_Karpathy",
+        "双向链接",
+        "sources/mit_notebooklm_48h",
+        "统一学习与知识管理框架",
         "RAG_vs_LLM_Wiki",
+        "sources/karpathy_llm_wiki",
         "原子化笔记"
       ],
       "inlinks": [
@@ -1407,8 +1446,8 @@
         "Context Reset vs Compaction",
         "Agent 工作流五大模式",
         "anthropic_harness_design_long_running",
-        "前馈与反馈控制",
-        "Sprint合同模式"
+        "Sprint合同模式",
+        "前馈与反馈控制"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -1438,10 +1477,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[AGENTS.md 标准]] | [[Context Reset vs Compaction]] | [[Harness Stack 分层架构]] ---",
       "outlinks": [
-        "AGENTS.md 标准",
-        "Harness Stack 分层架构",
-        "复利知识库",
         "Context Reset vs Compaction",
+        "AGENTS.md 标准",
+        "复利知识库",
+        "Harness Stack 分层架构",
         "Agent Harness Engineering"
       ],
       "inlinks": [
@@ -1472,11 +1511,11 @@
       "status": "active",
       "summary": "**关联节点**：[[MIT_48小时速成法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[心智模型]] ---",
       "outlinks": [
-        "MIT_48小时速成法",
-        "统一学习与知识管理框架",
         "心智模型",
         "主动召回",
-        "sources/mit_notebooklm_48h"
+        "sources/mit_notebooklm_48h",
+        "统一学习与知识管理框架",
+        "MIT_48小时速成法"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -1506,9 +1545,9 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
-        "martin_fowler_harness_engineering",
         "前馈与反馈控制",
-        "Agent Harness Engineering"
+        "Agent Harness Engineering",
+        "martin_fowler_harness_engineering"
       ],
       "inlinks": [
         "前馈与反馈控制",
@@ -1536,9 +1575,9 @@
       "status": "active",
       "summary": "**关联节点**：[[主动召回]] | [[费曼学习法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
+        "费曼学习法",
         "主动召回",
-        "统一学习与知识管理框架",
-        "费曼学习法"
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "主动召回",
@@ -1587,9 +1626,9 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[RAG_vs_LLM_Wiki]] | [[sources/karpathy_llm_wiki]] ---",
       "outlinks": [
-        "复利知识库",
         "sources/karpathy_llm_wiki",
-        "RAG_vs_LLM_Wiki"
+        "RAG_vs_LLM_Wiki",
+        "复利知识库"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -1641,8 +1680,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "martin_fowler_harness",
         "architecture_fitness_functions",
+        "martin_fowler_harness",
         "continuous_integration"
       ],
       "inlinks": [
@@ -1706,8 +1745,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "引用",
-        "双链"
+        "双链",
+        "引用"
       ],
       "inlinks": [
         "check_staleness脚本",
@@ -1736,17 +1775,17 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Harness_Engineering",
-        "Cognitive_Gearing",
-        "Agent_Engineering",
-        "Gstack",
-        "OpenClaw",
+        "Claude_Code",
         "Oh-My-OpenAgent",
         "Garry_Tan",
-        "OpenCode",
-        "Claude_Code",
+        "Gstack",
+        "Agent-Skills",
         "Addy_Osmani",
-        "Agent-Skills"
+        "OpenClaw",
+        "OpenCode",
+        "Harness_Engineering",
+        "Cognitive_Gearing",
+        "Agent_Engineering"
       ],
       "inlinks": []
     },
@@ -1770,8 +1809,8 @@
       "summary": "",
       "outlinks": [
         "steering_loop",
-        "agent_harness",
-        "human_in_the_loop"
+        "human_in_the_loop",
+        "agent_harness"
       ],
       "inlinks": []
     },
@@ -1795,9 +1834,9 @@
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[ACI（Agent-Computer Interface）]] | [[Agent Harness Engineering]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
         "Agent 工作流五大模式",
-        "Orchestrator-Workers模式",
+        "Agent Harness Engineering",
         "ACI（Agent-Computer Interface）",
-        "Agent Harness Engineering"
+        "Orchestrator-Workers模式"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -1826,9 +1865,9 @@
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[Context Reset vs Compaction]] | [[Sprint合同模式]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
+        "Agent Harness Engineering",
         "Context Reset vs Compaction",
-        "Sprint合同模式",
-        "Agent Harness Engineering"
+        "Sprint合同模式"
       ],
       "inlinks": [
         "Context_Reset_vs_Compaction",
@@ -1858,10 +1897,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Harness Stack 分层架构]] | [[渐进式上下文披露]] | [[AGENTS.md 标准]] ---",
       "outlinks": [
-        "Harness Stack 分层架构",
         "渐进式上下文披露",
-        "AGENTS.md 标准",
-        "Agent Harness Engineering"
+        "Harness Stack 分层架构",
+        "Agent Harness Engineering",
+        "AGENTS.md 标准"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -1891,8 +1930,8 @@
       "outlinks": [
         "bolts_and_work_units",
         "agent_harness",
-        "mob_rituals",
-        "ai_dlc"
+        "ai_dlc",
+        "mob_rituals"
       ],
       "inlinks": [
         "ai_dlc",
@@ -1923,9 +1962,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
+        "agent_harness",
         "conductor_vs_orchestrator",
-        "agent_harness"
+        "steering_loop"
       ],
       "inlinks": [
         "conductor_vs_orchestrator",
@@ -1952,10 +1991,10 @@
       "status": "active",
       "summary": "**作者**：[[Andrej_Karpathy]] **发布时间**：2026 年 4 月 **Stars**：5000+（发布数小时内） ---",
       "outlinks": [
-        "复利知识库",
-        "双向链接",
         "Andrej_Karpathy",
+        "双向链接",
         "RAG_vs_LLM_Wiki",
+        "复利知识库",
         "原子化笔记"
       ],
       "inlinks": []
@@ -1980,13 +2019,13 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "ashby_law",
-        "computational_vs_inferential",
-        "thoughtworks",
-        "martin_fowler",
-        "feedforward_and_feedback",
-        "steering_loop",
         "birgitta_bockeler",
+        "steering_loop",
+        "thoughtworks",
+        "computational_vs_inferential",
+        "feedforward_and_feedback",
+        "martin_fowler",
+        "ashby_law",
         "agent_harness"
       ],
       "inlinks": [
@@ -2013,11 +2052,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[可维护性Harness]] | [[赛博控制论与Harness]] | [[Birgitta Böckeler]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
         "Birgitta Böckeler",
-        "赛博控制论与Harness",
         "可维护性Harness",
-        "前馈与反馈控制"
+        "前馈与反馈控制",
+        "赛博控制论与Harness",
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -2047,10 +2086,10 @@
       "status": "active",
       "summary": "**发布者**：@ihtesham2005（MIT 学生） **发布平台**：X（前 Twitter） **引发广泛讨论**：帖子引发大量媒体分析与学习方法讨论 ---",
       "outlinks": [
+        "费曼学习法",
         "主动召回",
         "MIT_48小时速成法",
-        "notebooklm_mcp用法",
-        "费曼学习法"
+        "notebooklm_mcp用法"
       ],
       "inlinks": []
     },
@@ -2075,8 +2114,8 @@
       "summary": "",
       "outlinks": [
         "autonomous_agents",
-        "agent_orchestration",
-        "cost_control"
+        "cost_control",
+        "agent_orchestration"
       ],
       "inlinks": []
     },
@@ -2126,16 +2165,16 @@
       "status": "active",
       "summary": "本文综合 awesome-agent-harness 仓库及其引用的 7 篇核心文献，建立对 Agent Harness Engineering 这一新兴领域的结构化认知。 ---",
       "outlinks": [
-        "多Agent生成-评估循环",
+        "费曼学习法",
         "渐进式上下文披露",
-        "awesome_agent_harness",
+        "anthropic_building_effective_agents",
+        "多Agent生成-评估循环",
         "martin_fowler_harness_engineering",
-        "Harness Stack 分层架构",
         "复利知识库",
         "anthropic_harness_design_long_running",
         "前馈与反馈控制",
-        "anthropic_building_effective_agents",
-        "费曼学习法"
+        "Harness Stack 分层架构",
+        "awesome_agent_harness"
       ],
       "inlinks": []
     },
@@ -2159,11 +2198,48 @@
       "status": "active",
       "summary": "本文综合分析了 2026 年智能体设计模式从经典到前沿的演变，以及支撑这些模式的工程架构。",
       "outlinks": [
-        "Agent_Engineering",
         "Harness_Engineering",
-        "Cognitive_Gearing"
+        "Cognitive_Gearing",
+        "Agent_Engineering"
       ],
       "inlinks": []
+    },
+    "wiki/synthesis/Repo-as-Graph代码摄入范式.md": {
+      "title": "Repo-as-Graph代码摄入范式",
+      "slug": "Repo-as-Graph代码摄入范式",
+      "domain": [
+        "knowledge_mgmt",
+        "meta",
+        "agent_engineering"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "知识摄入",
+        "Ingest",
+        "Repo-as-Graph",
+        "索引隔离",
+        "代码检索"
+      ],
+      "trigger_keywords": [
+        "代码摄入",
+        "Repo-as-Graph",
+        "索引隔离法则",
+        "动态读取",
+        "Ingest代码"
+      ],
+      "affects_path": [
+        "skills/ai-librarian/SKILL.md"
+      ],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "双向链接",
+        "extract_code_skeleton脚本"
+      ],
+      "inlinks": [
+        "extract_code_skeleton脚本"
+      ]
     },
     "wiki/synthesis/harness_engineering_roadmap.md": {
       "title": "State of Codebase Harness Engineering (2026)",
@@ -2186,12 +2262,12 @@
       "status": "active",
       "summary": "This card synthesizes the current (2026) industry consensus on building reliable AI agent environments for software engineering.",
       "outlinks": [
-        "awesome_harness_readme",
-        "gitagent_pattern",
         "conductor_vs_orchestrator",
-        "martin_fowler",
         "conductors_vs_orchestrators",
-        "aws_ai_dlc"
+        "awesome_harness_readme",
+        "martin_fowler",
+        "aws_ai_dlc",
+        "gitagent_pattern"
       ],
       "inlinks": []
     },
@@ -2228,13 +2304,13 @@
       "status": "active",
       "summary": "> 本卡片是完整的技术总纲，可独立复现整个系统。面向新加入的人类或 AI 阅读。",
       "outlinks": [
-        "compile_graph脚本",
+        "gbrain_yuxi_深度技术分析",
         "Seed-Expand-Classify 检索范式",
-        "知识图谱编译与检索操作规范",
-        "query_graph脚本",
-        "双链",
         "check_staleness脚本",
-        "gbrain_yuxi_深度技术分析"
+        "知识图谱编译与检索操作规范",
+        "双链",
+        "query_graph脚本",
+        "compile_graph脚本"
       ],
       "inlinks": [
         "Seed_Expand_Classify检索范式"
@@ -2270,8 +2346,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "schema.md",
-        "chunk_raw脚本"
+        "chunk_raw脚本",
+        "schema.md"
       ],
       "inlinks": []
     },
@@ -2297,19 +2373,19 @@
       "status": "active",
       "summary": "本体系是\"如何有效吸收知识\"与\"如何自动化管理知识\"的终极统合。学习是消化提取的\"破壁机\"，而管理脚手架则是承载知识复利生长的\"培养皿\"。 ![AI驱动的知识引擎与自动化图书管理员全景架构图](../../raw/assets/05_unified_infographic_v3_zh.png) ---",
       "outlinks": [
-        "MIT_48小时速成法",
-        " ",
-        "ai知识库操作指南",
-        "间隔重复",
-        "主动拷问",
         "心智模型",
-        "复利知识库",
+        "费曼学习法",
+        "Andrej_Karpathy",
+        "主动召回",
+        "主动拷问",
         "双向链接",
         "notebooklm_mcp用法",
-        "主动召回",
-        "Andrej_Karpathy",
+        "间隔重复",
+        "ai知识库操作指南",
+        "复利知识库",
         "原子化笔记",
-        "费曼学习法"
+        " ",
+        "MIT_48小时速成法"
       ],
       "inlinks": [
         "MIT_48小时速成法",

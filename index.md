@@ -14,6 +14,7 @@
 | [Harness Engineering Roadmap (2026)](wiki/synthesis/harness_engineering_roadmap.md) | 2026 年 Harness Engineering 行业现状总结：AI-DLC、多 Agent 编排与 Repo-as-Agent 模式 |
 | [知识库工业化升级_图索引检索系统](wiki/synthesis/知识库工业化升级_图索引检索系统.md) | 🆕 完整技术总纲：图索引检索系统设计决策、三阶段范式、更新机制、复现步骤（可独立复现） |
 | [知识库高保真摄入管线](wiki/synthesis/知识库高保真摄入管线.md) | 🆕 摄入机制重构：Map-Reduce 大纲编纂流 + AST 语义分块 + Direct Quote 原文快照护栏 |
+| [Repo-as-Graph代码摄入范式](wiki/synthesis/Repo-as-Graph代码摄入范式.md) | 🆕 代码摄入重构：骨架提取 + 索引建卡 + 动态读取，解决细节丢失与快速过期问题 |
 
 
 ---
@@ -137,4 +138,5 @@
 | [query_graph脚本](wiki/code/query_graph脚本.md) | 🆕 图检索查询器：Seed多维打分 + BFS扩展 + 分级优先级排序，返回结构化JSON |
 | [check_staleness脚本](wiki/code/check_staleness脚本.md) | 🆕 过期检测器：code_hash比对 + stale卡片检测 + 孤岛/断链报告 |
 | [chunk_raw脚本](wiki/code/chunk_raw脚本.md) | 🆕 语义分块器：按 Markdown AST 标题层级切分长文，防止长文摄入细节丢失 |
+| [extract_code_skeleton脚本](wiki/code/extract_code_skeleton脚本.md) | 🆕 代码骨架提取器：掏空代码实现，仅保留架构、依赖和函数签名，为代码摄入预处理 |
 
