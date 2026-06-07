@@ -1,12 +1,17 @@
 ---
-title: Anthropic：长时运行应用的 Harness 设计
+title: "Anthropic：长时运行应用的 Harness 设计"
+domain: [harness_engineering, tooling]
+type: source
 tags: [来源摘要, harness-design, multi-agent, 上下文管理, Anthropic]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 1
-source_url: https://www.anthropic.com/engineering/harness-design-long-running-apps
-source_type: article
 status: active
+source_url: "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Anthropic：长时运行应用的 Harness 设计

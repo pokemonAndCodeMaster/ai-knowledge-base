@@ -1,10 +1,15 @@
 ---
-title: 智能体脚手架 (Agent Harness)
+title: "智能体脚手架 (Agent Harness)"
+domain: [harness_engineering]
+type: concept
 tags: [概念, 智能体, 系统架构]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [martin_fowler_harness]
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 智能体脚手架 (Agent Harness)

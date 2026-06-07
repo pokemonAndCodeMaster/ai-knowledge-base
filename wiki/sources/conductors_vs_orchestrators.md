@@ -1,9 +1,15 @@
 ---
-title: Conductors to Orchestrators: The Future of Agentic Coding
+title: "Conductors to Orchestrators: The Future of Agentic Coding"
+domain: [harness_engineering, learning_methods, tooling]
 type: source
-author: Addy Osmani
-url: https://www.oreilly.com/radar/conductors-to-orchestrators-the-future-of-agentic-coding/
 tags: [methodology, conductor, orchestrator, future-of-work]
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
+author: "Addy Osmani"
+url: "https://www.oreilly.com/radar/conductors-to-orchestrators-the-future-of-agentic-coding/"
 ---
 
 # Conductors to Orchestrators

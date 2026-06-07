@@ -1,7 +1,11 @@
 ---
-title: Harness Engineering Principles
+title: "Harness Engineering Principles"
+domain: [harness_engineering, learning_methods, tooling]
 type: concept
 tags: [methodology, principles, openai, anthropic]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Harness Engineering Principles

@@ -1,10 +1,15 @@
 ---
-title: 转向循环 (The Steering Loop)
+title: "转向循环 (The Steering Loop)"
+domain: [harness_engineering]
+type: concept
 tags: [概念, 智能体, 开发者经验]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [martin_fowler_harness]
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 转向循环 (The Steering Loop)

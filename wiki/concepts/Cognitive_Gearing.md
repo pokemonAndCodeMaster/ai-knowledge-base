@@ -1,10 +1,15 @@
 ---
-title: Cognitive Gearing
+title: "Cognitive Gearing"
+domain: [agent_engineering]
+type: concept
 tags: [概念, AI, Agent]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # Cognitive Gearing (认知齿轮)
 

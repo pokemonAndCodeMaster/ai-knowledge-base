@@ -1,7 +1,11 @@
 ---
-title: Mob Rituals (AI-DLC)
+title: "Mob Rituals (AI-DLC)"
+domain: [harness_engineering, ai_dlc]
 type: concept
 tags: [methodology, coordination, collaboration]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Mob Rituals

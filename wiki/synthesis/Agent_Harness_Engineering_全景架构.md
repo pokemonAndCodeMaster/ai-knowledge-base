@@ -1,10 +1,15 @@
 ---
-title: Agent Harness Engineering 全景架构：从工具到哲学
+title: "Agent Harness Engineering 全景架构：从工具到哲学"
+domain: [harness_engineering, knowledge_mgmt, learning_methods]
+type: synthesis
 tags: [综合分析, agent-engineering, harness, 框架总纲, 2026]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 7
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Agent Harness Engineering 全景架构：从工具到哲学

@@ -1,10 +1,17 @@
 ---
-title: Paperclip: “零人类”公司的编排引擎
+title: "Paperclip: “零人类”公司的编排引擎"
+domain: [harness_engineering, tooling]
+type: source
 tags: [工具, 开源, 自动化, 智能体]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [raw/projects/paperclip_readme.md]
 status: active
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Paperclip

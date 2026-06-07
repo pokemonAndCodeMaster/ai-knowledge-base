@@ -1,10 +1,15 @@
 ---
-title: Ashby 必备多样性定律 (Ashby's Law of Requisite Variety)
+title: "Ashby 必备多样性定律 (Ashby's Law of Requisite Variety)"
+domain: [harness_engineering]
+type: concept
 tags: [概念, 控制论, 智能体]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [martin_fowler_harness]
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Ashby 必备多样性定律 (Ashby's Law of Requisite Variety)

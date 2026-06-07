@@ -1,10 +1,15 @@
 ---
-title: Martin Fowler
+title: "Martin Fowler"
+domain: [entity]
+type: entity
 tags: [实体, 人物, 软件架构]
 created: 2026-04-08
 updated: 2026-04-08
 sources: []
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Martin Fowler

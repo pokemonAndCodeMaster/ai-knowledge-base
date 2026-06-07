@@ -1,10 +1,15 @@
 ---
 title: Thoughtworks
+domain: [entity]
+type: entity
 tags: [实体, 组织, 咨询]
 created: 2026-04-08
 updated: 2026-04-08
 sources: []
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Thoughtworks

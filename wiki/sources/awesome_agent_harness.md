@@ -1,12 +1,17 @@
 ---
-title: Awesome Agent Harness（GitHub 精选列表）
+title: "Awesome Agent Harness（GitHub 精选列表）"
+domain: [harness_engineering, ai_dlc, learning_methods, tooling]
+type: source
 tags: [来源摘要, agent-harness, 工具生态, 综合索引]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 1
-source_url: https://github.com/AutoJunjie/awesome-agent-harness
-source_type: github
 status: active
+source_url: "https://github.com/AutoJunjie/awesome-agent-harness"
+source_type: github
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Awesome Agent Harness（GitHub 精选列表）

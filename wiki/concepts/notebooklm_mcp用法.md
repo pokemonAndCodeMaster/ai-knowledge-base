@@ -1,10 +1,15 @@
 ---
-title: NotebookLM MCP Server 实践用法手册
+title: "NotebookLM MCP Server 实践用法手册"
+domain: [knowledge_mgmt, learning_methods, tooling]
+type: concept
 tags: [工具, NotebookLM, MCP, CLI, nlm]
 created: 2026-04-06
 updated: 2026-04-06
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # NotebookLM MCP Server 实践用法手册

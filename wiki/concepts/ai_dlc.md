@@ -1,7 +1,11 @@
 ---
-title: AI-Driven Development Life Cycle (AI-DLC)
+title: "AI-Driven Development Life Cycle (AI-DLC)"
+domain: [harness_engineering, ai_dlc]
 type: concept
 tags: [methodology, aws, ai-centric]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # AI-Driven Development Life Cycle (AI-DLC)

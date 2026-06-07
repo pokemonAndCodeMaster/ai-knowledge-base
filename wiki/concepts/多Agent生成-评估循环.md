@@ -1,10 +1,15 @@
 ---
-title: 多 Agent 生成-评估循环（GAN 启发的多 Agent 架构）
+title: "多 Agent 生成-评估循环（GAN 启发的多 Agent 架构）"
+domain: [harness_engineering, tooling]
+type: concept
 tags: [核心概念, harness-engineering, multi-agent, 评估器, 生成器]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 多 Agent 生成-评估循环

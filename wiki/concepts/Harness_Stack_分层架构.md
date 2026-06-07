@@ -1,10 +1,15 @@
 ---
-title: Harness Stack 分层架构（Agent Harness 的五层结构）
+title: "Harness Stack 分层架构（Agent Harness 的五层结构）"
+domain: [harness_engineering, tooling]
+type: concept
 tags: [核心概念, harness-engineering, 系统架构, 工具栈]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 3
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Harness Stack 分层架构

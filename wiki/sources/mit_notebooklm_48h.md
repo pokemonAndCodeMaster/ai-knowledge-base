@@ -1,11 +1,16 @@
 ---
 title: MIT学生48小时速成一门课（NotebookLM实践案例）
+domain: [learning_methods, tooling]
+type: source
 tags: [来源摘要, NotebookLM, MIT, 高效学习, 案例]
 created: 2026-04-06
 updated: 2026-04-06
-source_url: https://x.com/ihtesham2005/status/2030214970353602806
-source_type: twitter/x
 status: active
+source_url: "https://x.com/ihtesham2005/status/2030214970353602806"
+source_type: twitter/x
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 来源摘要：MIT学生48小时速成一门课

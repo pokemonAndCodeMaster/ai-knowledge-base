@@ -1,10 +1,15 @@
 ---
-title: MIT 48小时速成法
+title: "MIT 48小时速成法"
+domain: [knowledge_mgmt, learning_methods, tooling]
+type: concept
 tags: [核心概念, 学习方法, NotebookLM, MIT, 高强度学习]
 created: 2026-04-06
 updated: 2026-04-06
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # MIT 48小时速成法

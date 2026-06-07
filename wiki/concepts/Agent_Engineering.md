@@ -1,10 +1,15 @@
 ---
-title: Agent Engineering
+title: "Agent Engineering"
+domain: [harness_engineering, tooling]
+type: concept
 tags: [概念, AI, Agent]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # Agent Engineering (智能体工程)
 

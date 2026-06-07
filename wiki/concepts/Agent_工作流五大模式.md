@@ -1,10 +1,15 @@
 ---
-title: Agent 工作流五大模式（Anthropic）
+title: "Agent 工作流五大模式（Anthropic）"
+domain: [harness_engineering]
+type: concept
 tags: [核心概念, agent-design, 工作流, 可组合模式]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Agent 工作流五大模式

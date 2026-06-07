@@ -1,7 +1,11 @@
 ---
-title: Conductor vs Orchestrator
+title: "Conductor vs Orchestrator"
+domain: [harness_engineering]
 type: concept
 tags: [interaction-modes, methodology, management]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Conductor vs Orchestrator

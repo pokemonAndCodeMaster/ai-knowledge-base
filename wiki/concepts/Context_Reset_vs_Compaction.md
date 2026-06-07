@@ -1,10 +1,15 @@
 ---
-title: Context Reset vs Compaction（上下文重置 vs 压缩）
+title: "Context Reset vs Compaction（上下文重置 vs 压缩）"
+domain: [harness_engineering]
+type: concept
 tags: [核心概念, harness-engineering, 上下文管理, 长时运行]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Context Reset vs Compaction

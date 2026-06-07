@@ -1,10 +1,17 @@
 ---
-title: 2026最新：Agent Engineering与Harness Engineering深度调研报告
+title: "2026最新：Agent Engineering与Harness Engineering深度调研报告"
+domain: [harness_engineering, knowledge_mgmt]
+type: source
 tags: [Agent, Harness, AI, 知识管理]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # 2026最新：Agent Engineering与Harness Engineering深度调研报告
 

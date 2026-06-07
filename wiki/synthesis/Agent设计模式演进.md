@@ -1,10 +1,15 @@
 ---
-title: Agent 设计模式演进
+title: "Agent 设计模式演进"
+domain: [harness_engineering, tooling]
+type: synthesis
 tags: [综合分析, AI, Agent, 架构]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # Agent 设计模式演进
 

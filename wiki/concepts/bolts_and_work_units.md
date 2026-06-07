@@ -1,7 +1,11 @@
 ---
-title: Bolts and Units of Work
+title: "Bolts and Units of Work"
+domain: [ai_dlc, learning_methods]
 type: concept
 tags: [methodology, agile, ai-pace]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Bolts and Units of Work

@@ -1,12 +1,17 @@
 ---
-title: Anthropic：Building Effective Agents
+title: "Anthropic：Building Effective Agents"
+domain: [harness_engineering]
+type: source
 tags: [来源摘要, agent-design, 工作流模式, Anthropic]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 1
-source_url: https://www.anthropic.com/research/building-effective-agents
-source_type: article
 status: active
+source_url: "https://www.anthropic.com/research/building-effective-agents"
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Anthropic：Building Effective Agents

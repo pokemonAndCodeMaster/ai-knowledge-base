@@ -1,10 +1,15 @@
 ---
-title: Addy Osmani
+title: "Addy Osmani"
+domain: [entity]
+type: entity
 tags: [实体, 人物]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # Addy Osmani
 

@@ -1,10 +1,17 @@
 ---
-title: Almirant: 面向人类-智能体团队的操作系统
+title: "Almirant: 面向人类-智能体团队的操作系统"
+domain: [harness_engineering]
+type: source
 tags: [工具, 平台, 协作, 智能体]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [raw/projects/almirant_index.md]
 status: active
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Almirant

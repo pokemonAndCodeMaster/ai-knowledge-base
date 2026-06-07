@@ -1,7 +1,11 @@
 ---
-title: State of Codebase Harness Engineering (2026)
+title: "State of Codebase Harness Engineering (2026)"
+domain: [harness_engineering, ai_dlc, learning_methods, tooling]
 type: synthesis
 tags: [roadmap, state-of-the-art, engineering-standards]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # State of Codebase Harness Engineering (2026)

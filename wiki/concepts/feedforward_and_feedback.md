@@ -1,10 +1,15 @@
 ---
-title: 前馈引导与反馈传感器 (Feedforward and Feedback)
+title: "前馈引导与反馈传感器 (Feedforward and Feedback)"
+domain: [harness_engineering, knowledge_mgmt]
+type: concept
 tags: [概念, 控制论, 智能体]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [martin_fowler_harness]
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 前馈引导与反馈传感器 (Feedforward and Feedback)

@@ -1,10 +1,15 @@
 ---
-title: Andrej Karpathy
+title: "Andrej Karpathy"
+domain: [entity]
+type: entity
 tags: [实体, 人物, AI研究者, LLM]
 created: 2026-04-06
 updated: 2026-04-06
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Andrej Karpathy

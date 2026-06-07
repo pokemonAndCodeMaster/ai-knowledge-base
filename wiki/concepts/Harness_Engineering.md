@@ -1,10 +1,15 @@
 ---
-title: Harness Engineering
+title: "Harness Engineering"
+domain: [harness_engineering]
+type: concept
 tags: [概念, AI, 架构]
 created: 2026-04-07
 updated: 2026-04-07
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 # Harness Engineering (脚手架工程)
 

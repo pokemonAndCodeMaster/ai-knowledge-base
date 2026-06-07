@@ -1,10 +1,15 @@
 ---
-title: 计算型控制与推理型控制 (Computational vs Inferential Controls)
+title: "计算型控制与推理型控制 (Computational vs Inferential Controls)"
+domain: [harness_engineering, learning_methods]
+type: concept
 tags: [概念, 智能体, 工程效率]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [martin_fowler_harness]
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 计算型控制与推理型控制 (Computational vs Inferential Controls)

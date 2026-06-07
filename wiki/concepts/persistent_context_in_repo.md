@@ -1,7 +1,11 @@
 ---
-title: Persistent Context (in Repo)
+title: "Persistent Context (in Repo)"
+domain: [harness_engineering, ai_dlc]
 type: concept
 tags: [methodology, grounding, context]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Persistent Context in Repo

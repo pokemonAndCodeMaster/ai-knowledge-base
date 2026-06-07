@@ -1,10 +1,17 @@
 ---
-title: 面向代码智能体用户的 Harness 工程 (Harness Engineering for Coding Agent Users)
+title: "面向代码智能体用户的 Harness 工程 (Harness Engineering for Coding Agent Users)"
+domain: [harness_engineering, knowledge_mgmt]
+type: source
 tags: [智能体, 工程方法论, Martin_Fowler, 质量保证]
 created: 2026-04-08
 updated: 2026-04-08
 sources: [raw/articles/martin_fowler_harness.md]
 status: active
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 面向代码智能体用户的 Harness 工程

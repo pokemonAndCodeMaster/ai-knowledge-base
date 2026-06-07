@@ -1,7 +1,11 @@
 ---
-title: GitAgent Pattern (Repo-as-Agent)
+title: "GitAgent Pattern (Repo-as-Agent)"
+domain: [harness_engineering]
 type: concept
 tags: [design-pattern, git, orchestration]
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # GitAgent Pattern (Repo-as-Agent)

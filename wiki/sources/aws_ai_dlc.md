@@ -1,9 +1,15 @@
 ---
-title: AWS AI-Driven Development Life Cycle (AI-DLC)
+title: "AWS AI-Driven Development Life Cycle (AI-DLC)"
+domain: [harness_engineering, ai_dlc]
 type: source
-author: AWS (Dan McInerney, et al.)
-url: https://aws.amazon.com/blogs/compute/ai-driven-development-life-cycle-ai-dlc/
 tags: [aws, ai-dlc, methodology, rituals]
+source_url: 
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
+author: "AWS (Dan McInerney, et al.)"
+url: "https://aws.amazon.com/blogs/compute/ai-driven-development-life-cycle-ai-dlc/"
 ---
 
 # AWS AI-Driven Development Life Cycle (AI-DLC)

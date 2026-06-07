@@ -1,10 +1,15 @@
 ---
-title: 赛博控制论与 Harness Engineering
+title: "赛博控制论与 Harness Engineering"
+domain: [harness_engineering]
+type: concept
 tags: [核心概念, harness-engineering, 控制论, 历史溯源]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 赛博控制论与 Harness Engineering

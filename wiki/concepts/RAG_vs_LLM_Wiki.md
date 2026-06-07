@@ -1,10 +1,15 @@
 ---
-title: RAG vs LLM Wiki（两种知识系统的根本差异）
+title: "RAG vs LLM Wiki（两种知识系统的根本差异）"
+domain: [knowledge_mgmt, learning_methods, tooling]
+type: concept
 tags: [核心概念, RAG, LLM, 知识管理, 架构对比]
 created: 2026-04-06
 updated: 2026-04-06
 sources: 2
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # RAG vs LLM Wiki（两种知识系统的根本差异）

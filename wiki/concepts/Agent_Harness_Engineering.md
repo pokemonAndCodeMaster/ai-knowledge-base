@@ -1,10 +1,15 @@
 ---
-title: Agent Harness Engineering（智能体约束工程）
+title: "Agent Harness Engineering（智能体约束工程）"
+domain: [harness_engineering]
+type: concept
 tags: [核心概念, agent-engineering, harness, 工程学科, 2026新兴领域]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 6
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Agent Harness Engineering（智能体约束工程）

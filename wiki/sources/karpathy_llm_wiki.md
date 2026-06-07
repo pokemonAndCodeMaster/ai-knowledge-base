@@ -1,11 +1,16 @@
 ---
-title: Karpathy LLM Wiki（llm-wiki.md）
+title: "Karpathy LLM Wiki（llm-wiki.md）"
+domain: [knowledge_mgmt, tooling]
+type: source
 tags: [来源摘要, Karpathy, 知识管理, LLM]
 created: 2026-04-06
 updated: 2026-04-06
-source_url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-source_type: gist
 status: active
+source_url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+source_type: gist
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # 来源摘要：Karpathy LLM Wiki（llm-wiki.md）

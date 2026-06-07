@@ -1,12 +1,17 @@
 ---
-title: Martin Fowler：Harness Engineering for Coding Agent Users
+title: "Martin Fowler：Harness Engineering for Coding Agent Users"
+domain: [harness_engineering]
+type: source
 tags: [来源摘要, harness-engineering, 赛博控制论, 反馈系统, Martin-Fowler]
 created: 2026-04-08
 updated: 2026-04-08
 sources: 1
-source_url: https://martinfowler.com/articles/harness-engineering.html
-source_type: article
 status: active
+source_url: "https://martinfowler.com/articles/harness-engineering.html"
+source_type: article
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # Martin Fowler：Harness Engineering for Coding Agent Users

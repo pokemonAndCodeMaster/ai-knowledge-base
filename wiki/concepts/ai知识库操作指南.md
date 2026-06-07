@@ -1,10 +1,15 @@
 ---
-title: AI 知识库操作指南（ai-librarian Prompt 触发手册）
+title: "AI 知识库操作指南（ai-librarian Prompt 触发手册）"
+domain: [knowledge_mgmt, learning_methods, tooling]
+type: concept
 tags: [工具, 操作SOP, ai-librarian, 知识管理]
 created: 2026-04-06
 updated: 2026-04-06
 sources: 1
 status: active
+related_code: []
+affects_path: []
+trigger_keywords: []
 ---
 
 # AI 知识库操作指南：如何触发 ai-librarian Skill
