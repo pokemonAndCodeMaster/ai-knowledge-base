@@ -12,6 +12,7 @@
 | [Agent设计模式演进](wiki/synthesis/Agent设计模式演进.md) | 综合分析智能体设计模式从经典到前沿的演变，以及支撑这些模式的工程架构 |
 | [Agent Harness Engineering 全景架构](wiki/synthesis/Agent_Harness_Engineering_全景架构.md) | 整合 7 篇权威文献，建立对 Agent Harness Engineering 的结构化认知：五层技术栈、8大原则、控制论框架、多 Agent 实践 |
 | [Harness Engineering Roadmap (2026)](wiki/synthesis/harness_engineering_roadmap.md) | 2026 年 Harness Engineering 行业现状总结：AI-DLC、多 Agent 编排与 Repo-as-Agent 模式 |
+| [知识库工业化升级_图索引检索系统](wiki/synthesis/知识库工业化升级_图索引检索系统.md) | 🆕 完整技术总纲：图索引检索系统设计决策、三阶段范式、更新机制、复现步骤（可独立复现） |
 
 
 ---
@@ -35,6 +36,7 @@
 | [原子化笔记](wiki/concepts/原子化笔记.md) | 一卡一智：每张笔记只承载单一核心概念，是 Zettelkasten 的基石 |
 | [双向链接](wiki/concepts/双向链接.md) | `[[页面名]]` 语法构建知识网络；类型化链接可标注支持/反驳/演化关系 |
 | [RAG vs LLM Wiki](wiki/concepts/RAG_vs_LLM_Wiki.md) | 两种知识系统的根本差异：无状态检索 vs 有状态持续编译 |
+| [Seed-Expand-Classify检索范式](wiki/concepts/Seed_Expand_Classify检索范式.md) | 🆕 任务导向三阶段检索：多维加权Seed发现 → BFS双向2跳扩展 → 分级读取，token消耗降低75% |
 
 ### 🛠️ 工具实践类
 
@@ -113,4 +115,24 @@
 | [Almirant (项目级 Agent 协调面板)](wiki/sources/almirant.md) | 自动归档摄入 |
 | [Paperclip (零人类公司编排系统)](wiki/sources/paperclip.md) | 自动归档摄入 |
 | [Martin Fowler：Harness](wiki/sources/martin_fowler_harness.md) | 自动归档摄入 |
+
+
+---
+
+## 📐 操作规范（Norms）
+
+| 文件 | 摘要 |
+|---|---|
+| [知识图谱编译与检索操作规范](wiki/norms/知识图谱编译与检索操作规范.md) | 🆕 何时编译、code_hash填写、trigger_keywords原则、断链阈值等强制规范 |
+
+
+---
+
+## 🔧 代码知识（Code Modules）
+
+| 文件 | 摘要 |
+|---|---|
+| [compile_graph脚本](wiki/code/compile_graph脚本.md) | 🆕 图索引编译器：解析 frontmatter + `[[双链]]` → `.wiki_graph.json` 邻接表 |
+| [query_graph脚本](wiki/code/query_graph脚本.md) | 🆕 图检索查询器：Seed多维打分 + BFS扩展 + 分级优先级排序，返回结构化JSON |
+| [check_staleness脚本](wiki/code/check_staleness脚本.md) | 🆕 过期检测器：code_hash比对 + stale卡片检测 + 孤岛/断链报告 |
 

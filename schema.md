@@ -55,6 +55,18 @@ source_url: https://...
 source_type: article | twitter | youtube | github | gist | reddit
 ```
 
+**代码模块卡（code/）额外字段：**
+```yaml
+related_code: ["scripts/compile_graph.py"]  # 必须填写！关联的代码文件路径
+code_hash: "sha256:a1b2c3d4..."              # 关联代码文件的 SHA256 哈希（编译器自动生成）
+code_summary_range: "L1-L120"                # 可选：代码中关键逻辑的行范围
+```
+
+**代码模块卡写法原则：**
+- **不是复制代码**，而是写"代码的知识"：职责（一句话）、关键函数签名、依赖关系（用 `[[双链]]`）、关键设计决策
+- `related_code` 必须填写，`code_hash` 由 `compile_graph.py` 自动检测是否过期
+- 代码卡片放在 `wiki/code/` 目录下，按源代码目录结构组织
+
 **旧版 Frontmatter 兼容说明**：存量卡片使用旧版字段（仅含 title/tags/created/updated/sources/status）时，ai-librarian 在更新这些卡片时应顺带补齐缺失字段，但**不要求一次性批量迁移**。
 
 ---

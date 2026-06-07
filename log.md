@@ -112,3 +112,33 @@
 - 动作：体检知识库 (Lint)，并将游离文件登记到 `index.md`。
 - 详情：成功摄入并注册了 `2026_AI智能体工程全景图.md` 等 10 份新文件。
 - 触发者：用户要求执行 lint、ingest 及 Git 提交。
+
+## [2026-06-07] upgrade | 知识库工业化升级：图索引检索系统
+
+- **触发者**：用户要求将知识检索从手动遍历升级为工业级脚本驱动检索，参考 gbrain/Yuxi 开源项目
+- **核心目标**：给定任务描述，一网打尽所有相关知识，token 消耗降低 75%
+
+### 新增脚本工具链
+- `scripts/compile_graph.py` — 图索引编译器（零外部依赖，纯正则解析 frontmatter）
+- `scripts/query_graph.py` — 图检索查询器（Seed→Expand→Classify 三阶段算法）
+- `scripts/check_staleness.py` — 过期检测器（code_hash 比对 + 孤岛/断链）
+- `scripts/requirements.txt` — 零依赖声明
+
+### 新增知识卡片（本次摄入）
+- `wiki/synthesis/知识库工业化升级_图索引检索系统.md` — 完整技术总纲，含复现步骤
+- `wiki/concepts/Seed_Expand_Classify检索范式.md` — 三阶段检索算法详解
+- `wiki/norms/知识图谱编译与检索操作规范.md` — 编译时机/code_hash/trigger_keywords 规范
+- `wiki/code/compile_graph脚本.md` — 编译器代码知识卡
+- `wiki/code/query_graph脚本.md` — 查询器代码知识卡
+- `wiki/code/check_staleness脚本.md` — 过期检测器代码知识卡
+
+### 修改文件
+- `TAXONOMY.yaml` — 新增 `code_module` 类型
+- `schema.md` — 新增代码模块卡模板和写法原则
+- `skills/ai-librarian/SKILL.md` — 工作流 A 改为三阶段脚本驱动，B 增加编译步骤，C 改为脚本驱动，新增工作流 E
+- `index.md` — 注册所有新卡片，新增「操作规范」和「代码知识」两个分类区
+
+### 验证结果（实测数据）
+- 编译：55 卡片、220 链接、14 孤岛、71 断链（均自动检测）
+- 查询 "设计多Agent系统"：21 张命中，full_read=3，token 估算从 ~50K 降至 ~13K（-75%）
+- 查询 "高效学习新技术"：22 张命中，准确命中学习方法论全套卡片
