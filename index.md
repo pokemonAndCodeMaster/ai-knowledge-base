@@ -13,6 +13,7 @@
 | [Agent Harness Engineering 全景架构](wiki/synthesis/Agent_Harness_Engineering_全景架构.md) | 整合 7 篇权威文献，建立对 Agent Harness Engineering 的结构化认知：五层技术栈、8大原则、控制论框架、多 Agent 实践 |
 | [Harness Engineering Roadmap (2026)](wiki/synthesis/harness_engineering_roadmap.md) | 2026 年 Harness Engineering 行业现状总结：AI-DLC、多 Agent 编排与 Repo-as-Agent 模式 |
 | [知识库工业化升级_图索引检索系统](wiki/synthesis/知识库工业化升级_图索引检索系统.md) | 🆕 完整技术总纲：图索引检索系统设计决策、三阶段范式、更新机制、复现步骤（可独立复现） |
+| [知识库高保真摄入管线](wiki/synthesis/知识库高保真摄入管线.md) | 🆕 摄入机制重构：Map-Reduce 大纲编纂流 + AST 语义分块 + Direct Quote 原文快照护栏 |
 
 
 ---
@@ -135,4 +136,5 @@
 | [compile_graph脚本](wiki/code/compile_graph脚本.md) | 🆕 图索引编译器：解析 frontmatter + `[[双链]]` → `.wiki_graph.json` 邻接表 |
 | [query_graph脚本](wiki/code/query_graph脚本.md) | 🆕 图检索查询器：Seed多维打分 + BFS扩展 + 分级优先级排序，返回结构化JSON |
 | [check_staleness脚本](wiki/code/check_staleness脚本.md) | 🆕 过期检测器：code_hash比对 + stale卡片检测 + 孤岛/断链报告 |
+| [chunk_raw脚本](wiki/code/chunk_raw脚本.md) | 🆕 语义分块器：按 Markdown AST 标题层级切分长文，防止长文摄入细节丢失 |
 

@@ -67,6 +67,17 @@ code_summary_range: "L1-L120"                # 可选：代码中关键逻辑的
 - `related_code` 必须填写，`code_hash` 由 `compile_graph.py` 自动检测是否过期
 - 代码卡片放在 `wiki/code/` 目录下，按源代码目录结构组织
 
+---
+
+## 🛡️ 高保真摄入护栏 (Direct Quote Rule)
+
+为了防止 LLM 在摄入资料时“过度抽象化”导致技术细节丢失，制定以下强制约束：
+1. 对于 `pitfall`、`norm` 以及 `code_module` 这三种强约束卡片，**禁止完全使用自然语言归纳**。
+2. 只要涉及到**具体的 API 配置、报错日志、特殊参数或代码片段**，必须在卡片中使用 `> 引用自原文：...` 语法进行**原文快照截取**。
+3. Agent 在编纂卡片时，必须原封不动地将相关代码片段从 Raw 数据中复制到卡片里，绝不允许“一句话概括”。
+
+---
+
 **旧版 Frontmatter 兼容说明**：存量卡片使用旧版字段（仅含 title/tags/created/updated/sources/status）时，ai-librarian 在更新这些卡片时应顺带补齐缺失字段，但**不要求一次性批量迁移**。
 
 ---
