@@ -161,3 +161,19 @@
   - 新增脚本：`scripts/extract_code_skeleton.py`（AST 骨架提取器，掏空实现细节，保留依赖拓扑与签名）
   - 升级工作流：在 `SKILL.md` 新增专属 `[ingest_code]` 工作流，确立“骨架提取 -> 架构扫描 -> 索引建卡 -> Hash 绑定”的标准管线。
   - 新增卡片：`Repo-as-Graph代码摄入范式.md`，确立了“知识库做索引导游，文件系统存源码实景”的设计哲学。
+
+## [2026-06-10] deep-ingest | 5个开源项目深度摄入（codegraph + graphify + gbrain + Yuxi + agentscope）
+
+- **触发者**：用户请求系统性摄入 5 个项目，目标是深度学习 AI 驱动的知识库管理、代码库智能管理、Agent 系统搭建
+- **核心目标**：从上层架构、系统原理深入到底层实现，产出可复用的知识卡片体系
+- **摄入方式**：
+  - 代码类：`extract_code_skeleton.py` 骨架提取 → 架构扫描 → 模块建卡
+  - 文档类：README + ARCHITECTURE + 设计文档 → entity + concept 建卡
+  - 深度分析类：基于 `gbrain_yuxi_deep_analysis.md` (670行源码级分析) 直接建卡
+- **产出统计**：31 张新增知识卡片
+  - Entity × 5：CodeGraph / Graphify / gbrain / Yuxi / AgentScope
+  - Concept × 11：Tree-sitter AST / 动态调度桥接 / Explore骨架化 / 搜索质量闭环 / 社区检测与Leiden / 混合模态提取 / RRF融合 / Dream Cycle / NamedThingBench / Atoms原子事实 / Agent权限系统 / Event驱动架构
+  - Code Module × 10：CodeGraph 6层 / Graphify 管线 / gbrain检索层 / Yuxi检索层 / AgentScope工具层
+  - Source × 5：4个项目文档来源 + 1个深度分析来源
+- **更新文件**：`index.md` (全面扩充 4 个分类)
+- **编译**：`compile_graph.py` 编译知识图谱，更新 `.wiki_graph.json`

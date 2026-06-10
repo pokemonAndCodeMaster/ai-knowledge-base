@@ -1,19 +1,27 @@
 {
   "version": 1,
-  "compiled_at": "2026-06-07T21:05:40.863136+08:00",
+  "compiled_at": "2026-06-10T21:40:49.610090+08:00",
   "stats": {
-    "total_cards": 65,
-    "total_links": 245,
-    "orphan_count": 16,
+    "total_cards": 97,
+    "total_links": 306,
+    "orphan_count": 24,
     "orphan_cards": [
+      "wiki/code/CodeGraph同步与安装层.md",
       "wiki/concepts/Agent_Harness_Engineering.md",
       "wiki/concepts/Agent_工作流五大模式.md",
       "wiki/concepts/Context_Reset_vs_Compaction.md",
+      "wiki/concepts/Dream_Cycle自维护循环.md",
       "wiki/concepts/Harness_Stack_分层架构.md",
       "wiki/concepts/Seed_Expand_Classify检索范式.md",
+      "wiki/concepts/Tree-sitter_AST解析引擎.md",
       "wiki/concepts/harness_engineering_principles.md",
       "wiki/sources/agent_and_harness_engineering_2026.md",
+      "wiki/sources/agentscope_source_docs.md",
       "wiki/sources/almirant.md",
+      "wiki/sources/codegraph_source_design_docs.md",
+      "wiki/sources/codegraph_source_readme.md",
+      "wiki/sources/gbrain_yuxi_source_analysis.md",
+      "wiki/sources/graphify_source_docs.md",
       "wiki/sources/karpathy_llm_wiki.md",
       "wiki/sources/mit_notebooklm_48h.md",
       "wiki/sources/paperclip.md",
@@ -23,7 +31,7 @@
       "wiki/synthesis/harness_engineering_roadmap.md",
       "wiki/synthesis/知识库高保真摄入管线.md"
     ],
-    "broken_link_count": 79,
+    "broken_link_count": 86,
     "broken_links": [
       {
         "from": "wiki/code/compile_graph脚本.md",
@@ -35,15 +43,15 @@
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
-        "target": "Agent-Skills"
-      },
-      {
-        "from": "wiki/concepts/Agent_Engineering.md",
         "target": "test-driven-development"
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
         "target": "brainstorming"
+      },
+      {
+        "from": "wiki/concepts/Agent_Engineering.md",
+        "target": "Agent-Skills"
       },
       {
         "from": "wiki/concepts/Agent_Harness_Engineering.md",
@@ -82,16 +90,20 @@
         "target": "sources/mit_notebooklm_48h"
       },
       {
+        "from": "wiki/concepts/Tree-sitter_AST解析引擎.md",
+        "target": "graphify项目"
+      },
+      {
         "from": "wiki/concepts/agent_harness.md",
         "target": "harness_engineering"
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "链接"
+        "target": "引用"
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "引用"
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/ashby_law.md",
@@ -99,11 +111,11 @@
       },
       {
         "from": "wiki/concepts/gitagent_pattern.md",
-        "target": "harness_engineering_principles#2-repository-as-the-system-of-record"
+        "target": "gitagent"
       },
       {
         "from": "wiki/concepts/gitagent_pattern.md",
-        "target": "gitagent"
+        "target": "harness_engineering_principles#2-repository-as-the-system-of-record"
       },
       {
         "from": "wiki/concepts/harness_engineering_principles.md",
@@ -111,11 +123,19 @@
       },
       {
         "from": "wiki/concepts/前馈与反馈控制.md",
-        "target": "可维护性Harness"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/concepts/前馈与反馈控制.md",
-        "target": "Agent Harness Engineering"
+        "target": "可维护性Harness"
+      },
+      {
+        "from": "wiki/concepts/动态调度桥接.md",
+        "target": "双链"
+      },
+      {
+        "from": "wiki/concepts/动态调度桥接.md",
+        "target": "Tree-sitter AST解析引擎"
       },
       {
         "from": "wiki/concepts/原子化笔记.md",
@@ -139,15 +159,23 @@
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
-        "target": "Context Reset vs Compaction"
-      },
-      {
-        "from": "wiki/concepts/多Agent生成-评估循环.md",
         "target": "Agent 工作流五大模式"
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
+        "target": "Context Reset vs Compaction"
+      },
+      {
+        "from": "wiki/concepts/多Agent生成-评估循环.md",
         "target": "Sprint合同模式"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Agent Harness Engineering"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
@@ -158,12 +186,8 @@
         "target": "AGENTS.md 标准"
       },
       {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Harness Stack 分层架构"
-      },
-      {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Agent Harness Engineering"
+        "from": "wiki/concepts/社区检测与Leiden算法.md",
+        "target": "双链"
       },
       {
         "from": "wiki/concepts/费曼学习法.md",
@@ -186,6 +210,10 @@
         "target": "sources/karpathy_llm_wiki"
       },
       {
+        "from": "wiki/entities/CodeGraph项目.md",
+        "target": "graphify项目"
+      },
+      {
         "from": "wiki/entities/Garry_Tan.md",
         "target": "Gstack"
       },
@@ -203,11 +231,11 @@
       },
       {
         "from": "wiki/norms/知识图谱编译与检索操作规范.md",
-        "target": "双链"
+        "target": "引用"
       },
       {
         "from": "wiki/norms/知识图谱编译与检索操作规范.md",
-        "target": "引用"
+        "target": "双链"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -227,11 +255,11 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenClaw"
+        "target": "OpenCode"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenCode"
+        "target": "OpenClaw"
       },
       {
         "from": "wiki/sources/almirant.md",
@@ -243,10 +271,6 @@
       },
       {
         "from": "wiki/sources/anthropic_building_effective_agents.md",
-        "target": "Agent Harness Engineering"
-      },
-      {
-        "from": "wiki/sources/anthropic_building_effective_agents.md",
         "target": "ACI（Agent-Computer Interface）"
       },
       {
@@ -254,7 +278,7 @@
         "target": "Orchestrator-Workers模式"
       },
       {
-        "from": "wiki/sources/anthropic_harness_design_long_running.md",
+        "from": "wiki/sources/anthropic_building_effective_agents.md",
         "target": "Agent Harness Engineering"
       },
       {
@@ -266,6 +290,14 @@
         "target": "Sprint合同模式"
       },
       {
+        "from": "wiki/sources/anthropic_harness_design_long_running.md",
+        "target": "Agent Harness Engineering"
+      },
+      {
+        "from": "wiki/sources/awesome_agent_harness.md",
+        "target": "AGENTS.md 标准"
+      },
+      {
         "from": "wiki/sources/awesome_agent_harness.md",
         "target": "Harness Stack 分层架构"
       },
@@ -274,8 +306,12 @@
         "target": "Agent Harness Engineering"
       },
       {
-        "from": "wiki/sources/awesome_agent_harness.md",
-        "target": "AGENTS.md 标准"
+        "from": "wiki/sources/codegraph_source_readme.md",
+        "target": "Tree-sitter AST解析引擎"
+      },
+      {
+        "from": "wiki/sources/gbrain_yuxi_source_analysis.md",
+        "target": "Dream Cycle自维护循环"
       },
       {
         "from": "wiki/sources/martin_fowler_harness.md",
@@ -283,7 +319,7 @@
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "Birgitta Böckeler"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
@@ -291,15 +327,15 @@
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "Agent Harness Engineering"
-      },
-      {
-        "from": "wiki/sources/paperclip.md",
-        "target": "autonomous_agents"
+        "target": "Birgitta Böckeler"
       },
       {
         "from": "wiki/sources/paperclip.md",
         "target": "cost_control"
+      },
+      {
+        "from": "wiki/sources/paperclip.md",
+        "target": "autonomous_agents"
       },
       {
         "from": "wiki/sources/paperclip.md",
@@ -315,11 +351,11 @@
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "gbrain_yuxi_深度技术分析"
+        "target": "Seed-Expand-Classify 检索范式"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "Seed-Expand-Classify 检索范式"
+        "target": "gbrain_yuxi_深度技术分析"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
@@ -331,19 +367,418 @@
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
+        "target": " "
+      },
+      {
+        "from": "wiki/synthesis/统一学习与知识管理框架.md",
         "target": "心智模型"
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
         "target": "主动拷问"
-      },
-      {
-        "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": " "
       }
     ]
   },
   "nodes": {
+    "wiki/code/AgentScope工具与服务层.md": {
+      "title": "AgentScope工具与服务层",
+      "slug": "AgentScope工具与服务层",
+      "domain": [
+        "agent_engineering"
+      ],
+      "type": "code_module",
+      "tags": [
+        "AgentScope",
+        "Tool",
+        "Toolkit",
+        "ToolBase",
+        "FastAPI",
+        "Agent Service"
+      ],
+      "trigger_keywords": [
+        "Toolkit",
+        "ToolBase",
+        "ToolChoice",
+        "Agent Service",
+        "create_app",
+        "ChatService"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "agentscope/src/agentscope/tool/",
+        "agentscope/src/agentscope/app/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "agentscope_source_docs"
+      ],
+      "code_hashes": {}
+    },
+    "wiki/code/CodeGraph上下文层.md": {
+      "title": "CodeGraph上下文层",
+      "slug": "CodeGraph上下文层",
+      "domain": [
+        "code_intelligence",
+        "agent_engineering"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "ContextBuilder",
+        "MCP",
+        "explore",
+        "代码上下文"
+      ],
+      "trigger_keywords": [
+        "ContextBuilder",
+        "codegraph_explore",
+        "MCP server",
+        "server instructions",
+        "buildFlowFromNamedSymbols"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/context/index.ts",
+        "codegraph/src/mcp/tools.ts",
+        "codegraph/src/mcp/server-instructions.ts",
+        "codegraph/src/mcp/transport.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Explore自适应骨架化",
+        "CodeGraph存储层",
+        "CodeGraph图遍历层"
+      ],
+      "inlinks": [
+        "CodeGraph同步与安装层",
+        "CodeGraph图遍历层",
+        "codegraph_source_readme"
+      ],
+      "code_hashes": {
+        "codegraph/src/context/index.ts": "sha256:cfbf22f752eec680",
+        "codegraph/src/mcp/tools.ts": "sha256:4d3625ed3b06af3f",
+        "codegraph/src/mcp/server-instructions.ts": "sha256:18f105dc9d903eec",
+        "codegraph/src/mcp/transport.ts": "sha256:cc9b0771fe72fa2e"
+      }
+    },
+    "wiki/code/CodeGraph同步与安装层.md": {
+      "title": "CodeGraph同步与安装层",
+      "slug": "CodeGraph同步与安装层",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "FileWatcher",
+        "增量同步",
+        "安装器",
+        "multi-agent"
+      ],
+      "trigger_keywords": [
+        "FileWatcher",
+        "增量同步",
+        "installer",
+        "multi-agent",
+        "codegraph install"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/sync/index.ts",
+        "codegraph/src/installer/",
+        "codegraph/src/bin/codegraph.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph上下文层",
+        "CodeGraph提取层"
+      ],
+      "inlinks": [],
+      "code_hashes": {
+        "codegraph/src/sync/index.ts": "sha256:afeb472b1b20e1ec",
+        "codegraph/src/bin/codegraph.ts": "sha256:120cdd65ed1ec8be"
+      }
+    },
+    "wiki/code/CodeGraph图遍历层.md": {
+      "title": "CodeGraph图遍历层",
+      "slug": "CodeGraph图遍历层",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "图遍历",
+        "BFS",
+        "DFS",
+        "影响半径",
+        "调用链"
+      ],
+      "trigger_keywords": [
+        "GraphTraverser",
+        "GraphQueryManager",
+        "BFS",
+        "DFS",
+        "impact radius",
+        "callers",
+        "callees"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/graph/index.ts",
+        "codegraph/src/graph/traverser.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph上下文层",
+        "CodeGraph存储层"
+      ],
+      "inlinks": [
+        "CodeGraph上下文层",
+        "CodeGraph存储层",
+        "CodeGraph解析层"
+      ],
+      "code_hashes": {
+        "codegraph/src/graph/index.ts": "sha256:f5fe2ddd44e557f3"
+      }
+    },
+    "wiki/code/CodeGraph存储层.md": {
+      "title": "CodeGraph存储层",
+      "slug": "CodeGraph存储层",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "SQLite",
+        "FTS5",
+        "数据库",
+        "BM25",
+        "全文搜索"
+      ],
+      "trigger_keywords": [
+        "SQLite",
+        "FTS5",
+        "BM25",
+        "DatabaseConnection",
+        "QueryBuilder"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/db/index.ts",
+        "codegraph/src/db/queries.ts",
+        "codegraph/src/db/sqlite-adapter.ts",
+        "codegraph/src/db/migrations.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph提取层",
+        "CodeGraph图遍历层"
+      ],
+      "inlinks": [
+        "CodeGraph上下文层",
+        "CodeGraph图遍历层",
+        "CodeGraph提取层",
+        "CodeGraph解析层"
+      ],
+      "code_hashes": {
+        "codegraph/src/db/index.ts": "sha256:b5bee377ecd1ce23",
+        "codegraph/src/db/queries.ts": "sha256:f371d52e1aaf4ccf",
+        "codegraph/src/db/sqlite-adapter.ts": "sha256:38046404a5502bf9",
+        "codegraph/src/db/migrations.ts": "sha256:2a2a40e1d4924c4f"
+      }
+    },
+    "wiki/code/CodeGraph提取层.md": {
+      "title": "CodeGraph提取层",
+      "slug": "CodeGraph提取层",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "extraction",
+        "Tree-sitter",
+        "AST",
+        "语言提取器"
+      ],
+      "trigger_keywords": [
+        "extraction",
+        "代码提取",
+        "ExtractionOrchestrator",
+        "LanguageExtractor"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/extraction/index.ts",
+        "codegraph/src/extraction/tree-sitter.ts",
+        "codegraph/src/extraction/tree-sitter-types.ts",
+        "codegraph/src/extraction/languages/",
+        "codegraph/src/extraction/parse-worker.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph存储层",
+        "CodeGraph项目",
+        "CodeGraph解析层"
+      ],
+      "inlinks": [
+        "CodeGraph同步与安装层",
+        "CodeGraph存储层",
+        "CodeGraph解析层",
+        "codegraph_source_readme"
+      ],
+      "code_hashes": {
+        "codegraph/src/extraction/index.ts": "sha256:ced1353b0d9b4311",
+        "codegraph/src/extraction/tree-sitter.ts": "sha256:4f51886234c88a80",
+        "codegraph/src/extraction/tree-sitter-types.ts": "sha256:6b70b05102e40246",
+        "codegraph/src/extraction/parse-worker.ts": "sha256:bb7333092166edb4"
+      }
+    },
+    "wiki/code/CodeGraph解析层.md": {
+      "title": "CodeGraph解析层",
+      "slug": "CodeGraph解析层",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "CodeGraph",
+        "resolution",
+        "import解析",
+        "框架识别",
+        "路径别名"
+      ],
+      "trigger_keywords": [
+        "ReferenceResolver",
+        "import resolver",
+        "framework resolver",
+        "callback synthesizer",
+        "框架识别"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/resolution/index.ts",
+        "codegraph/src/resolution/import-resolver.ts",
+        "codegraph/src/resolution/name-matcher.ts",
+        "codegraph/src/resolution/callback-synthesizer.ts",
+        "codegraph/src/resolution/frameworks/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph存储层",
+        "CodeGraph提取层",
+        "动态调度桥接",
+        "CodeGraph图遍历层"
+      ],
+      "inlinks": [
+        "CodeGraph提取层"
+      ],
+      "code_hashes": {
+        "codegraph/src/resolution/index.ts": "sha256:1a71f774829fc414",
+        "codegraph/src/resolution/import-resolver.ts": "sha256:d6c606070e919efb",
+        "codegraph/src/resolution/name-matcher.ts": "sha256:839d2ef379e16da6",
+        "codegraph/src/resolution/callback-synthesizer.ts": "sha256:185d9db5d37b1717"
+      }
+    },
+    "wiki/code/Graphify提取管线.md": {
+      "title": "Graphify提取管线",
+      "slug": "Graphify提取管线",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "code_module",
+      "tags": [
+        "Graphify",
+        "extract",
+        "detect",
+        "build",
+        "cluster",
+        "analyze"
+      ],
+      "trigger_keywords": [
+        "graphify extract",
+        "graphify detect",
+        "graphify build",
+        "graphify cluster",
+        "graphify analyze"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "graphify/graphify/extract.py",
+        "graphify/graphify/detect.py",
+        "graphify/graphify/build.py",
+        "graphify/graphify/cluster.py",
+        "graphify/graphify/analyze.py",
+        "graphify/graphify/report.py",
+        "graphify/graphify/export.py"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "graphify_source_docs"
+      ],
+      "code_hashes": {
+        "graphify/graphify/extract.py": "sha256:0d88ea4a19278c0a",
+        "graphify/graphify/detect.py": "sha256:53d72c0b7d1f95df",
+        "graphify/graphify/build.py": "sha256:11ed08ad991799ba",
+        "graphify/graphify/cluster.py": "sha256:9f594c3896bbfd91",
+        "graphify/graphify/analyze.py": "sha256:6965e68a55a14986",
+        "graphify/graphify/report.py": "sha256:c5832995ea771d6f",
+        "graphify/graphify/export.py": "sha256:ad78120a7deebc13"
+      }
+    },
+    "wiki/code/Yuxi检索与知识图谱层.md": {
+      "title": "Yuxi检索与知识图谱层",
+      "slug": "Yuxi检索与知识图谱层",
+      "domain": [
+        "knowledge_management"
+      ],
+      "type": "code_module",
+      "tags": [
+        "Yuxi",
+        "Milvus",
+        "PPR",
+        "混合检索",
+        "知识图谱",
+        "Neo4j"
+      ],
+      "trigger_keywords": [
+        "Milvus",
+        "PPR",
+        "Personalized PageRank",
+        "milvus.py",
+        "semantic chunking",
+        "KnowledgeBaseMiddleware"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "Yuxi/backend/package/yuxi/knowledge/implementations/milvus.py",
+        "Yuxi/backend/package/yuxi/knowledge/chunking/ragflow_like/parsers/semantic.py",
+        "Yuxi/backend/package/yuxi/agents/toolkits/kbs/tools.py"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "gbrain_yuxi_source_analysis"
+      ],
+      "code_hashes": {
+        "Yuxi/backend/package/yuxi/knowledge/implementations/milvus.py": "sha256:504714bc36593493",
+        "Yuxi/backend/package/yuxi/knowledge/chunking/ragflow_like/parsers/semantic.py": "sha256:f2fa30cffa38a435",
+        "Yuxi/backend/package/yuxi/agents/toolkits/kbs/tools.py": "sha256:5228c92e750a1d02"
+      }
+    },
     "wiki/code/check_staleness脚本.md": {
       "title": "check_staleness脚本",
       "slug": "check_staleness脚本",
@@ -373,8 +808,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识图谱编译与检索操作规范",
-        "compile_graph脚本"
+        "compile_graph脚本",
+        "知识图谱编译与检索操作规范"
       ],
       "inlinks": [
         "compile_graph脚本",
@@ -450,10 +885,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "双链",
-        "知识图谱编译与检索操作规范",
         "query_graph脚本",
-        "check_staleness脚本"
+        "知识图谱编译与检索操作规范",
+        "check_staleness脚本",
+        "双链"
       ],
       "inlinks": [
         "check_staleness脚本",
@@ -461,7 +896,7 @@
         "知识库工业化升级_图索引检索系统"
       ],
       "code_hashes": {
-        "scripts/compile_graph.py": "sha256:d1b6b1ccd3c797b2"
+        "scripts/compile_graph.py": "sha256:1fb9b89a5c217e79"
       }
     },
     "wiki/code/extract_code_skeleton脚本.md": {
@@ -502,6 +937,43 @@
         "scripts/extract_code_skeleton.py": "sha256:14a7b25439759ff1"
       }
     },
+    "wiki/code/gbrain检索与合成层.md": {
+      "title": "gbrain检索与合成层",
+      "slug": "gbrain检索与合成层",
+      "domain": [
+        "knowledge_management"
+      ],
+      "type": "code_module",
+      "tags": [
+        "gbrain",
+        "hybrid search",
+        "RRF",
+        "BrainEngine",
+        "think",
+        "query"
+      ],
+      "trigger_keywords": [
+        "hybridSearch",
+        "BrainEngine",
+        "postFusionStages",
+        "weightsForIntent",
+        "aliasHop"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/core/search/hybrid.ts",
+        "gbrain/src/core/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "gbrain_yuxi_source_analysis"
+      ],
+      "code_hashes": {
+        "gbrain/src/core/search/hybrid.ts": "sha256:5525dd3556a890e5"
+      }
+    },
     "wiki/code/query_graph脚本.md": {
       "title": "query_graph脚本",
       "slug": "query_graph脚本",
@@ -531,9 +1003,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "compile_graph脚本",
         "Seed-Expand-Classify检索范式",
-        "知识图谱编译与检索操作规范",
-        "compile_graph脚本"
+        "知识图谱编译与检索操作规范"
       ],
       "inlinks": [
         "compile_graph脚本",
@@ -563,10 +1035,10 @@
       "status": "active",
       "summary": "Agent Engineering 是构建自主 AI 系统的工程学科。与早期的 Prompt Engineering 不同，它更强调整体的架构设计、工作流约束和状态管理。",
       "outlinks": [
-        "Agent-Skills",
         "test-driven-development",
-        "Harness_Engineering",
-        "brainstorming"
+        "brainstorming",
+        "Agent-Skills",
+        "Harness_Engineering"
       ],
       "inlinks": [
         "Harness_Engineering",
@@ -597,9 +1069,9 @@
         "渐进式上下文披露",
         "Agent 工作流五大模式",
         "martin_fowler_harness_engineering",
-        "前馈与反馈控制",
         "Harness Stack 分层架构",
-        "awesome_agent_harness"
+        "awesome_agent_harness",
+        "前馈与反馈控制"
       ],
       "inlinks": []
     },
@@ -623,11 +1095,79 @@
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[anthropic_building_effective_agents]] | [[多Agent生成-评估循环]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
+        "anthropic_building_effective_agents",
         "Orchestrator-Workers模式",
-        "Agent Harness Engineering",
-        "anthropic_building_effective_agents"
+        "Agent Harness Engineering"
       ],
       "inlinks": []
+    },
+    "wiki/concepts/Agent权限系统.md": {
+      "title": "Agent权限系统",
+      "slug": "Agent权限系统",
+      "domain": [
+        "agent_engineering"
+      ],
+      "type": "concept",
+      "tags": [
+        "权限系统",
+        "PermissionEngine",
+        "Bypass",
+        "Confirm",
+        "Agent安全"
+      ],
+      "trigger_keywords": [
+        "Permission",
+        "PermissionEngine",
+        "PermissionMode",
+        "Bypass",
+        "Confirm",
+        "Agent权限"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "agentscope/src/agentscope/permission/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "agentscope_source_docs"
+      ]
+    },
+    "wiki/concepts/Atoms原子事实提取.md": {
+      "title": "Atoms原子事实提取",
+      "slug": "Atoms原子事实提取",
+      "domain": [
+        "knowledge_management"
+      ],
+      "type": "concept",
+      "tags": [
+        "Atoms",
+        "原子事实",
+        "信息保真",
+        "知识摄入",
+        "compiled_truth"
+      ],
+      "trigger_keywords": [
+        "atoms",
+        "原子事实",
+        "extract_atoms",
+        "compiled_truth",
+        "信息保真",
+        "知识摄入保真"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "gbrain项目"
+      ],
+      "inlinks": [
+        "gbrain_yuxi_source_analysis"
+      ]
     },
     "wiki/concepts/Cognitive_Gearing.md": {
       "title": "Cognitive Gearing",
@@ -676,10 +1216,115 @@
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[anthropic_harness_design_long_running]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
-        "Agent Harness Engineering",
-        "anthropic_harness_design_long_running"
+        "anthropic_harness_design_long_running",
+        "Agent Harness Engineering"
       ],
       "inlinks": []
+    },
+    "wiki/concepts/Dream_Cycle自维护循环.md": {
+      "title": "Dream Cycle自维护循环",
+      "slug": "Dream_Cycle自维护循环",
+      "domain": [
+        "agent_engineering",
+        "knowledge_management"
+      ],
+      "type": "concept",
+      "tags": [
+        "Dream Cycle",
+        "Autopilot",
+        "自维护",
+        "gbrain",
+        "守护进程"
+      ],
+      "trigger_keywords": [
+        "Dream Cycle",
+        "Autopilot",
+        "自维护循环",
+        "夜间维护",
+        "brain_score"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/commands/autopilot.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "gbrain项目"
+      ],
+      "inlinks": []
+    },
+    "wiki/concepts/Event驱动Agent架构.md": {
+      "title": "Event驱动Agent架构",
+      "slug": "Event驱动Agent架构",
+      "domain": [
+        "agent_engineering"
+      ],
+      "type": "concept",
+      "tags": [
+        "Event驱动",
+        "事件总线",
+        "Agent架构",
+        "流式",
+        "SSE"
+      ],
+      "trigger_keywords": [
+        "Event System",
+        "EventType",
+        "reply_stream",
+        "事件驱动",
+        "Agent事件"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "agentscope/src/agentscope/event/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "AgentScope项目"
+      ],
+      "inlinks": [
+        "agentscope_source_docs"
+      ]
+    },
+    "wiki/concepts/Explore自适应骨架化.md": {
+      "title": "Explore自适应骨架化",
+      "slug": "Explore自适应骨架化",
+      "domain": [
+        "code_intelligence",
+        "agent_engineering"
+      ],
+      "type": "concept",
+      "tags": [
+        "CodeGraph",
+        "explore",
+        "骨架化",
+        "多态兄弟",
+        "自适应输出",
+        "检索优化"
+      ],
+      "trigger_keywords": [
+        "adaptive explore",
+        "骨架化",
+        "sibling skeletonization",
+        "explore sizing",
+        "多态兄弟检测"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/mcp/tools.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph项目",
+        "知识库工业化升级_图索引检索系统"
+      ],
+      "inlinks": [
+        "CodeGraph上下文层",
+        "codegraph_source_design_docs"
+      ]
     },
     "wiki/concepts/Harness_Engineering.md": {
       "title": "Harness Engineering",
@@ -727,8 +1372,8 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Agent 工作流五大模式]] | [[渐进式上下文披露]] | [[awesome_agent_harness]] ---",
       "outlinks": [
-        "渐进式上下文披露",
         "Agent 工作流五大模式",
+        "渐进式上下文披露",
         "Agent Harness Engineering",
         "awesome_agent_harness"
       ],
@@ -757,16 +1402,54 @@
       "summary": "**关联节点**：[[费曼学习法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[notebooklm_mcp用法]] | [[sources/mit_notebooklm_48h]] ---",
       "outlinks": [
         "费曼学习法",
-        "主动召回",
-        "notebooklm_mcp用法",
         "sources/mit_notebooklm_48h",
-        "统一学习与知识管理框架"
+        "主动召回",
+        "统一学习与知识管理框架",
+        "notebooklm_mcp用法"
       ],
       "inlinks": [
         "主动召回",
         "费曼学习法",
         "mit_notebooklm_48h",
         "统一学习与知识管理框架"
+      ]
+    },
+    "wiki/concepts/NamedThingBench检索评测.md": {
+      "title": "NamedThingBench检索评测",
+      "slug": "NamedThingBench检索评测",
+      "domain": [
+        "knowledge_management",
+        "evaluation"
+      ],
+      "type": "concept",
+      "tags": [
+        "NamedThingBench",
+        "评测",
+        "Hit@1",
+        "MRR",
+        "CI门控",
+        "检索质量"
+      ],
+      "trigger_keywords": [
+        "NamedThingBench",
+        "检索评测",
+        "Hit@1",
+        "MRR",
+        "CI门控",
+        "eval",
+        "hard-negative"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/eval/retrieval-quality/harness.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "gbrain项目"
+      ],
+      "inlinks": [
+        "gbrain_yuxi_source_analysis"
       ]
     },
     "wiki/concepts/RAG_vs_LLM_Wiki.md": {
@@ -799,6 +1482,42 @@
         "复利知识库",
         "Andrej_Karpathy",
         "karpathy_llm_wiki"
+      ]
+    },
+    "wiki/concepts/RRF融合与多阶段Boost.md": {
+      "title": "RRF融合与多阶段Boost",
+      "slug": "RRF融合与多阶段Boost",
+      "domain": [
+        "knowledge_management",
+        "information_retrieval"
+      ],
+      "type": "concept",
+      "tags": [
+        "RRF",
+        "混合检索",
+        "Reciprocal Rank Fusion",
+        "Boost",
+        "检索排序"
+      ],
+      "trigger_keywords": [
+        "RRF",
+        "Reciprocal Rank Fusion",
+        "hybrid search",
+        "混合检索",
+        "post-fusion",
+        "boost"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/core/search/hybrid.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "知识库工业化升级_图索引检索系统"
+      ],
+      "inlinks": [
+        "gbrain_yuxi_source_analysis"
       ]
     },
     "wiki/concepts/Seed_Expand_Classify检索范式.md": {
@@ -836,6 +1555,41 @@
       ],
       "inlinks": []
     },
+    "wiki/concepts/Tree-sitter_AST解析引擎.md": {
+      "title": "Tree-sitter AST解析引擎",
+      "slug": "Tree-sitter_AST解析引擎",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "concept",
+      "tags": [
+        "Tree-sitter",
+        "AST",
+        "代码解析",
+        "WASM",
+        "符号提取",
+        "增量解析"
+      ],
+      "trigger_keywords": [
+        "Tree-sitter",
+        "AST解析",
+        "代码提取",
+        "语法树",
+        "WASM grammar"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/extraction/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "graphify项目",
+        "CodeGraph项目",
+        "动态调度桥接"
+      ],
+      "inlinks": []
+    },
     "wiki/concepts/agent_harness.md": {
       "title": "智能体脚手架 (Agent Harness)",
       "slug": "agent_harness",
@@ -854,10 +1608,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
-        "feedforward_and_feedback",
+        "computational_vs_inferential",
         "harness_engineering",
-        "computational_vs_inferential"
+        "steering_loop",
+        "feedforward_and_feedback"
       ],
       "inlinks": [
         "ai_dlc",
@@ -893,10 +1647,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "mob_rituals",
         "aws_ai_dlc",
         "agent_harness",
-        "persistent_context_in_repo",
-        "mob_rituals"
+        "persistent_context_in_repo"
       ],
       "inlinks": [
         "bolts_and_work_units",
@@ -926,11 +1680,11 @@
       "summary": "**关联节点**：[[notebooklm_mcp用法]] | [[统一学习与知识管理框架]] | [[复利知识库]] ---",
       "outlinks": [
         "双向链接",
-        "链接",
-        "notebooklm_mcp用法",
-        "统一学习与知识管理框架",
+        "复利知识库",
         "引用",
-        "复利知识库"
+        "统一学习与知识管理框架",
+        "notebooklm_mcp用法",
+        "链接"
       ],
       "inlinks": [
         "notebooklm_mcp用法",
@@ -955,8 +1709,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "agent_harness",
-        "harness_templates"
+        "harness_templates",
+        "agent_harness"
       ],
       "inlinks": [
         "martin_fowler_harness"
@@ -1034,8 +1788,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "agent_harness",
         "conductors_vs_orchestrators",
+        "agent_harness",
         "steering_loop"
       ],
       "inlinks": [
@@ -1090,8 +1844,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "harness_engineering_principles#2-repository-as-the-system-of-record",
-        "gitagent"
+        "gitagent",
+        "harness_engineering_principles#2-repository-as-the-system-of-record"
       ],
       "inlinks": [
         "harness_engineering_roadmap"
@@ -1119,8 +1873,8 @@
       "summary": "Derived from the methodology developed by OpenAI and the Claude Code team (Anthropic) for large-scale agentic software development.",
       "outlinks": [
         "agent_harness",
-        "steering_loop",
-        "awesome_harness_readme"
+        "awesome_harness_readme",
+        "steering_loop"
       ],
       "inlinks": []
     },
@@ -1143,8 +1897,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "aws_ai_dlc",
         "bolts_and_work_units",
+        "aws_ai_dlc",
         "steering_loop",
         "ai_dlc"
       ],
@@ -1175,9 +1929,9 @@
       "status": "active",
       "summary": "**关联节点**：[[统一学习与知识管理框架]] | [[ai知识库操作指南]] | [[复利知识库]] ---",
       "outlinks": [
-        "ai知识库操作指南",
         "统一学习与知识管理框架",
-        "复利知识库"
+        "复利知识库",
+        "ai知识库操作指南"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -1266,8 +2020,8 @@
       "summary": "**关联节点**：[[费曼学习法]] | [[间隔重复]] | [[MIT_48小时速成法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
         "费曼学习法",
-        "统一学习与知识管理框架",
         "MIT_48小时速成法",
+        "统一学习与知识管理框架",
         "间隔重复"
       ],
       "inlinks": [
@@ -1297,11 +2051,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[赛博控制论与Harness]] | [[martin_fowler_harness_engineering]] | [[可维护性Harness]] ---",
       "outlinks": [
-        "多Agent生成-评估循环",
-        "martin_fowler_harness_engineering",
-        "可维护性Harness",
+        "Agent Harness Engineering",
         "赛博控制论与Harness",
-        "Agent Harness Engineering"
+        "martin_fowler_harness_engineering",
+        "多Agent生成-评估循环",
+        "可维护性Harness"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -1309,6 +2063,47 @@
         "赛博控制论与Harness",
         "martin_fowler_harness_engineering",
         "Agent_Harness_Engineering_全景架构"
+      ]
+    },
+    "wiki/concepts/动态调度桥接.md": {
+      "title": "动态调度桥接",
+      "slug": "动态调度桥接",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "concept",
+      "tags": [
+        "动态调度",
+        "回调合成",
+        "EventEmitter",
+        "React渲染",
+        "启发式边",
+        "静态分析"
+      ],
+      "trigger_keywords": [
+        "动态调度",
+        "callback synthesis",
+        "EventEmitter桥接",
+        "heuristic edge",
+        "合成边",
+        "react-render"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/resolution/callback-synthesizer.ts",
+        "codegraph/src/resolution/frameworks/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "双链",
+        "Tree-sitter AST解析引擎",
+        "知识库工业化升级_图索引检索系统"
+      ],
+      "inlinks": [
+        "CodeGraph解析层",
+        "Tree-sitter_AST解析引擎",
+        "codegraph_source_design_docs"
       ]
     },
     "wiki/concepts/原子化笔记.md": {
@@ -1364,11 +2159,11 @@
       "status": "active",
       "summary": "**关联节点**：[[原子化笔记]] | [[复利知识库]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
+        "原子化笔记",
         "页面名",
-        "链接",
-        "统一学习与知识管理框架",
         "复利知识库",
-        "原子化笔记"
+        "统一学习与知识管理框架",
+        "链接"
       ],
       "inlinks": [
         "ai知识库操作指南",
@@ -1401,13 +2196,13 @@
       "status": "active",
       "summary": "**关联节点**：[[Andrej_Karpathy]] | [[原子化笔记]] | [[双向链接]] | [[RAG_vs_LLM_Wiki]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
+        "原子化笔记",
+        "sources/mit_notebooklm_48h",
         "Andrej_Karpathy",
         "双向链接",
-        "sources/mit_notebooklm_48h",
-        "统一学习与知识管理框架",
         "RAG_vs_LLM_Wiki",
-        "sources/karpathy_llm_wiki",
-        "原子化笔记"
+        "统一学习与知识管理框架",
+        "sources/karpathy_llm_wiki"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -1443,11 +2238,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[前馈与反馈控制]] | [[anthropic_harness_design_long_running]] | [[Sprint合同模式]] | [[Context Reset vs Compaction]] ---",
       "outlinks": [
-        "Context Reset vs Compaction",
         "Agent 工作流五大模式",
         "anthropic_harness_design_long_running",
-        "Sprint合同模式",
-        "前馈与反馈控制"
+        "Context Reset vs Compaction",
+        "前馈与反馈控制",
+        "Sprint合同模式"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -1455,6 +2250,80 @@
         "前馈与反馈控制",
         "anthropic_harness_design_long_running",
         "Agent_Harness_Engineering_全景架构"
+      ]
+    },
+    "wiki/concepts/搜索质量闭环.md": {
+      "title": "搜索质量闭环",
+      "slug": "搜索质量闭环",
+      "domain": [
+        "code_intelligence",
+        "quality_assurance"
+      ],
+      "type": "concept",
+      "tags": [
+        "搜索质量",
+        "A/B测试",
+        "语言验证",
+        "Benchmark",
+        "代码搜索"
+      ],
+      "trigger_keywords": [
+        "search quality loop",
+        "搜索质量",
+        "语言验证",
+        "A/B测试",
+        "agent eval",
+        "benchmark"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/docs/SEARCH_QUALITY_LOOP.md",
+        "codegraph/scripts/agent-eval/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph项目"
+      ],
+      "inlinks": [
+        "codegraph_source_design_docs"
+      ]
+    },
+    "wiki/concepts/混合模态知识提取.md": {
+      "title": "混合模态知识提取",
+      "slug": "混合模态知识提取",
+      "domain": [
+        "code_intelligence",
+        "knowledge_management"
+      ],
+      "type": "concept",
+      "tags": [
+        "混合提取",
+        "AST",
+        "LLM语义提取",
+        "多模态",
+        "置信度标记"
+      ],
+      "trigger_keywords": [
+        "混合提取",
+        "hybrid extraction",
+        "AST + LLM",
+        "多模态提取",
+        "EXTRACTED",
+        "INFERRED",
+        "AMBIGUOUS"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "graphify/graphify/extract.py"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Graphify项目"
+      ],
+      "inlinks": [
+        "graphify_source_docs"
       ]
     },
     "wiki/concepts/渐进式上下文披露.md": {
@@ -1477,17 +2346,53 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[AGENTS.md 标准]] | [[Context Reset vs Compaction]] | [[Harness Stack 分层架构]] ---",
       "outlinks": [
-        "Context Reset vs Compaction",
-        "AGENTS.md 标准",
-        "复利知识库",
+        "Agent Harness Engineering",
         "Harness Stack 分层架构",
-        "Agent Harness Engineering"
+        "复利知识库",
+        "Context Reset vs Compaction",
+        "AGENTS.md 标准"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
         "Harness_Stack_分层架构",
         "awesome_agent_harness",
         "Agent_Harness_Engineering_全景架构"
+      ]
+    },
+    "wiki/concepts/社区检测与Leiden算法.md": {
+      "title": "社区检测与Leiden算法",
+      "slug": "社区检测与Leiden算法",
+      "domain": [
+        "code_intelligence",
+        "graph_algorithm"
+      ],
+      "type": "concept",
+      "tags": [
+        "社区检测",
+        "Leiden算法",
+        "图聚类",
+        "模块发现",
+        "NetworkX"
+      ],
+      "trigger_keywords": [
+        "社区检测",
+        "community detection",
+        "Leiden",
+        "图聚类",
+        "graph clustering",
+        "modularity"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "graphify/graphify/cluster.py"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "双链"
+      ],
+      "inlinks": [
+        "graphify_source_docs"
       ]
     },
     "wiki/concepts/费曼学习法.md": {
@@ -1512,10 +2417,10 @@
       "summary": "**关联节点**：[[MIT_48小时速成法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[心智模型]] ---",
       "outlinks": [
         "心智模型",
-        "主动召回",
         "sources/mit_notebooklm_48h",
-        "统一学习与知识管理框架",
-        "MIT_48小时速成法"
+        "MIT_48小时速成法",
+        "主动召回",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -1545,9 +2450,9 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
+        "martin_fowler_harness_engineering",
         "前馈与反馈控制",
-        "Agent Harness Engineering",
-        "martin_fowler_harness_engineering"
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "前馈与反馈控制",
@@ -1576,8 +2481,8 @@
       "summary": "**关联节点**：[[主动召回]] | [[费曼学习法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
         "费曼学习法",
-        "主动召回",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "主动召回"
       ],
       "inlinks": [
         "主动召回",
@@ -1607,6 +2512,42 @@
         "agent_and_harness_engineering_2026"
       ]
     },
+    "wiki/entities/AgentScope项目.md": {
+      "title": "AgentScope项目",
+      "slug": "AgentScope项目",
+      "domain": [
+        "agent_engineering"
+      ],
+      "type": "entity",
+      "tags": [
+        "AgentScope",
+        "多Agent",
+        "Agent框架",
+        "阿里巴巴",
+        "FastAPI",
+        "工具系统",
+        "权限系统"
+      ],
+      "trigger_keywords": [
+        "AgentScope",
+        "agentscope",
+        "Agent框架",
+        "multi-agent platform",
+        "Agent Team",
+        "PermissionEngine"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "agentscope/src/agentscope/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [],
+      "inlinks": [
+        "Event驱动Agent架构",
+        "agentscope_source_docs"
+      ]
+    },
     "wiki/entities/Andrej_Karpathy.md": {
       "title": "Andrej Karpathy",
       "slug": "Andrej_Karpathy",
@@ -1627,14 +2568,58 @@
       "summary": "**关联节点**：[[复利知识库]] | [[RAG_vs_LLM_Wiki]] | [[sources/karpathy_llm_wiki]] ---",
       "outlinks": [
         "sources/karpathy_llm_wiki",
-        "RAG_vs_LLM_Wiki",
-        "复利知识库"
+        "复利知识库",
+        "RAG_vs_LLM_Wiki"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
         "复利知识库",
         "karpathy_llm_wiki",
         "统一学习与知识管理框架"
+      ]
+    },
+    "wiki/entities/CodeGraph项目.md": {
+      "title": "CodeGraph项目",
+      "slug": "CodeGraph项目",
+      "domain": [
+        "agent_engineering",
+        "code_intelligence"
+      ],
+      "type": "entity",
+      "tags": [
+        "CodeGraph",
+        "Tree-sitter",
+        "MCP",
+        "代码图谱",
+        "SQLite",
+        "FTS5",
+        "语义搜索"
+      ],
+      "trigger_keywords": [
+        "CodeGraph",
+        "codegraph",
+        "代码图谱",
+        "code graph",
+        "code intelligence",
+        "Tree-sitter图谱"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "codegraph/src/index.ts"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "graphify项目",
+        "知识库工业化升级_图索引检索系统"
+      ],
+      "inlinks": [
+        "CodeGraph提取层",
+        "Explore自适应骨架化",
+        "Tree-sitter_AST解析引擎",
+        "搜索质量闭环",
+        "Graphify项目",
+        "codegraph_source_readme"
       ]
     },
     "wiki/entities/Garry_Tan.md": {
@@ -1662,6 +2647,126 @@
         "agent_and_harness_engineering_2026"
       ]
     },
+    "wiki/entities/Graphify项目.md": {
+      "title": "Graphify项目",
+      "slug": "Graphify项目",
+      "domain": [
+        "agent_engineering",
+        "code_intelligence"
+      ],
+      "type": "entity",
+      "tags": [
+        "Graphify",
+        "知识图谱",
+        "社区检测",
+        "Tree-sitter",
+        "MCP",
+        "Claude",
+        "NetworkX"
+      ],
+      "trigger_keywords": [
+        "Graphify",
+        "graphify",
+        "代码图谱",
+        "knowledge graph",
+        "community detection"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "graphify/graphify/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "CodeGraph项目"
+      ],
+      "inlinks": [
+        "混合模态知识提取",
+        "graphify_source_docs"
+      ]
+    },
+    "wiki/entities/Yuxi项目.md": {
+      "title": "Yuxi项目",
+      "slug": "Yuxi项目",
+      "domain": [
+        "agent_engineering",
+        "knowledge_management"
+      ],
+      "type": "entity",
+      "tags": [
+        "Yuxi",
+        "语析",
+        "企业知识库",
+        "RAG",
+        "Milvus",
+        "Neo4j",
+        "LangGraph"
+      ],
+      "trigger_keywords": [
+        "Yuxi",
+        "语析",
+        "企业知识库",
+        "Milvus",
+        "Neo4j",
+        "LangGraph",
+        "PaddleOCR"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "Yuxi/backend/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "gbrain项目"
+      ],
+      "inlinks": [
+        "gbrain项目",
+        "gbrain_yuxi_source_analysis"
+      ]
+    },
+    "wiki/entities/gbrain项目.md": {
+      "title": "gbrain项目",
+      "slug": "gbrain项目",
+      "domain": [
+        "agent_engineering",
+        "knowledge_management"
+      ],
+      "type": "entity",
+      "tags": [
+        "gbrain",
+        "Brain Layer",
+        "个人知识库",
+        "MCP",
+        "Autopilot",
+        "Garry Tan"
+      ],
+      "trigger_keywords": [
+        "gbrain",
+        "Brain Layer",
+        "brain engine",
+        "Garry Tan",
+        "autopilot",
+        "dream cycle"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "gbrain/src/"
+      ],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Yuxi项目",
+        "知识库工业化升级_图索引检索系统"
+      ],
+      "inlinks": [
+        "Atoms原子事实提取",
+        "Dream_Cycle自维护循环",
+        "NamedThingBench检索评测",
+        "Yuxi项目",
+        "gbrain_yuxi_source_analysis"
+      ]
+    },
     "wiki/entities/martin_fowler.md": {
       "title": "Martin Fowler",
       "slug": "martin_fowler",
@@ -1681,8 +2786,8 @@
       "summary": "",
       "outlinks": [
         "architecture_fitness_functions",
-        "martin_fowler_harness",
-        "continuous_integration"
+        "continuous_integration",
+        "martin_fowler_harness"
       ],
       "inlinks": [
         "thoughtworks",
@@ -1708,8 +2813,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "birgitta_bockeler",
-        "martin_fowler"
+        "martin_fowler",
+        "birgitta_bockeler"
       ],
       "inlinks": [
         "martin_fowler_harness"
@@ -1745,8 +2850,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "双链",
-        "引用"
+        "引用",
+        "双链"
       ],
       "inlinks": [
         "check_staleness脚本",
@@ -1775,17 +2880,42 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Claude_Code",
-        "Oh-My-OpenAgent",
+        "Cognitive_Gearing",
         "Garry_Tan",
+        "Claude_Code",
+        "Agent_Engineering",
+        "Addy_Osmani",
+        "Oh-My-OpenAgent",
         "Gstack",
         "Agent-Skills",
-        "Addy_Osmani",
-        "OpenClaw",
         "OpenCode",
-        "Harness_Engineering",
-        "Cognitive_Gearing",
-        "Agent_Engineering"
+        "OpenClaw",
+        "Harness_Engineering"
+      ],
+      "inlinks": []
+    },
+    "wiki/sources/agentscope_source_docs.md": {
+      "title": "agentscope_source_docs",
+      "slug": "agentscope_source_docs",
+      "domain": [
+        "agent_engineering"
+      ],
+      "type": "source",
+      "tags": [
+        "AgentScope",
+        "README",
+        "骨架"
+      ],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "AgentScope工具与服务层",
+        "Agent权限系统",
+        "AgentScope项目",
+        "Event驱动Agent架构"
       ],
       "inlinks": []
     },
@@ -1809,8 +2939,8 @@
       "summary": "",
       "outlinks": [
         "steering_loop",
-        "human_in_the_loop",
-        "agent_harness"
+        "agent_harness",
+        "human_in_the_loop"
       ],
       "inlinks": []
     },
@@ -1834,9 +2964,9 @@
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[ACI（Agent-Computer Interface）]] | [[Agent Harness Engineering]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
         "Agent 工作流五大模式",
-        "Agent Harness Engineering",
         "ACI（Agent-Computer Interface）",
-        "Orchestrator-Workers模式"
+        "Orchestrator-Workers模式",
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -1865,9 +2995,9 @@
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[Context Reset vs Compaction]] | [[Sprint合同模式]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
-        "Agent Harness Engineering",
         "Context Reset vs Compaction",
-        "Sprint合同模式"
+        "Sprint合同模式",
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Context_Reset_vs_Compaction",
@@ -1898,9 +3028,9 @@
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Harness Stack 分层架构]] | [[渐进式上下文披露]] | [[AGENTS.md 标准]] ---",
       "outlinks": [
         "渐进式上下文披露",
+        "AGENTS.md 标准",
         "Harness Stack 分层架构",
-        "Agent Harness Engineering",
-        "AGENTS.md 标准"
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -1928,10 +3058,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "mob_rituals",
         "bolts_and_work_units",
         "agent_harness",
-        "ai_dlc",
-        "mob_rituals"
+        "ai_dlc"
       ],
       "inlinks": [
         "ai_dlc",
@@ -1940,6 +3070,57 @@
         "persistent_context_in_repo",
         "harness_engineering_roadmap"
       ]
+    },
+    "wiki/sources/codegraph_source_design_docs.md": {
+      "title": "codegraph_source_design_docs",
+      "slug": "codegraph_source_design_docs",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "source",
+      "tags": [
+        "CodeGraph",
+        "design",
+        "设计文档",
+        "CLAUDE.md"
+      ],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Explore自适应骨架化",
+        "动态调度桥接",
+        "搜索质量闭环"
+      ],
+      "inlinks": []
+    },
+    "wiki/sources/codegraph_source_readme.md": {
+      "title": "codegraph_source_readme",
+      "slug": "codegraph_source_readme",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "source",
+      "tags": [
+        "CodeGraph",
+        "README",
+        "项目介绍",
+        "MCP"
+      ],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Tree-sitter AST解析引擎",
+        "CodeGraph上下文层",
+        "CodeGraph项目",
+        "CodeGraph提取层"
+      ],
+      "inlinks": []
     },
     "wiki/sources/conductors_vs_orchestrators.md": {
       "title": "Conductors to Orchestrators: The Future of Agentic Coding",
@@ -1962,14 +3143,71 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "agent_harness",
         "conductor_vs_orchestrator",
+        "agent_harness",
         "steering_loop"
       ],
       "inlinks": [
         "conductor_vs_orchestrator",
         "harness_engineering_roadmap"
       ]
+    },
+    "wiki/sources/gbrain_yuxi_source_analysis.md": {
+      "title": "gbrain_yuxi_source_analysis",
+      "slug": "gbrain_yuxi_source_analysis",
+      "domain": [
+        "agent_engineering",
+        "knowledge_management"
+      ],
+      "type": "source",
+      "tags": [
+        "gbrain",
+        "Yuxi",
+        "深度分析",
+        "源码阅读"
+      ],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "RRF融合与多阶段Boost",
+        "NamedThingBench检索评测",
+        "Dream Cycle自维护循环",
+        "gbrain检索与合成层",
+        "Atoms原子事实提取",
+        "Yuxi检索与知识图谱层",
+        "gbrain项目",
+        "Yuxi项目"
+      ],
+      "inlinks": []
+    },
+    "wiki/sources/graphify_source_docs.md": {
+      "title": "graphify_source_docs",
+      "slug": "graphify_source_docs",
+      "domain": [
+        "code_intelligence"
+      ],
+      "type": "source",
+      "tags": [
+        "Graphify",
+        "README",
+        "ARCHITECTURE",
+        "how-it-works"
+      ],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "",
+      "outlinks": [
+        "Graphify项目",
+        "Graphify提取管线",
+        "混合模态知识提取",
+        "社区检测与Leiden算法"
+      ],
+      "inlinks": []
     },
     "wiki/sources/karpathy_llm_wiki.md": {
       "title": "Karpathy LLM Wiki（llm-wiki.md）",
@@ -1991,11 +3229,11 @@
       "status": "active",
       "summary": "**作者**：[[Andrej_Karpathy]] **发布时间**：2026 年 4 月 **Stars**：5000+（发布数小时内） ---",
       "outlinks": [
+        "原子化笔记",
         "Andrej_Karpathy",
         "双向链接",
-        "RAG_vs_LLM_Wiki",
         "复利知识库",
-        "原子化笔记"
+        "RAG_vs_LLM_Wiki"
       ],
       "inlinks": []
     },
@@ -2019,14 +3257,14 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "birgitta_bockeler",
-        "steering_loop",
+        "ashby_law",
         "thoughtworks",
         "computational_vs_inferential",
-        "feedforward_and_feedback",
+        "birgitta_bockeler",
+        "steering_loop",
         "martin_fowler",
-        "ashby_law",
-        "agent_harness"
+        "agent_harness",
+        "feedforward_and_feedback"
       ],
       "inlinks": [
         "martin_fowler"
@@ -2052,11 +3290,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[可维护性Harness]] | [[赛博控制论与Harness]] | [[Birgitta Böckeler]] ---",
       "outlinks": [
-        "Birgitta Böckeler",
+        "Agent Harness Engineering",
+        "赛博控制论与Harness",
         "可维护性Harness",
         "前馈与反馈控制",
-        "赛博控制论与Harness",
-        "Agent Harness Engineering"
+        "Birgitta Böckeler"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -2087,9 +3325,9 @@
       "summary": "**发布者**：@ihtesham2005（MIT 学生） **发布平台**：X（前 Twitter） **引发广泛讨论**：帖子引发大量媒体分析与学习方法讨论 ---",
       "outlinks": [
         "费曼学习法",
-        "主动召回",
         "MIT_48小时速成法",
-        "notebooklm_mcp用法"
+        "notebooklm_mcp用法",
+        "主动召回"
       ],
       "inlinks": []
     },
@@ -2113,8 +3351,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "autonomous_agents",
         "cost_control",
+        "autonomous_agents",
         "agent_orchestration"
       ],
       "inlinks": []
@@ -2165,16 +3403,16 @@
       "status": "active",
       "summary": "本文综合 awesome-agent-harness 仓库及其引用的 7 篇核心文献，建立对 Agent Harness Engineering 这一新兴领域的结构化认知。 ---",
       "outlinks": [
-        "费曼学习法",
         "渐进式上下文披露",
-        "anthropic_building_effective_agents",
-        "多Agent生成-评估循环",
+        "费曼学习法",
         "martin_fowler_harness_engineering",
-        "复利知识库",
-        "anthropic_harness_design_long_running",
-        "前馈与反馈控制",
         "Harness Stack 分层架构",
-        "awesome_agent_harness"
+        "复利知识库",
+        "awesome_agent_harness",
+        "多Agent生成-评估循环",
+        "anthropic_building_effective_agents",
+        "anthropic_harness_design_long_running",
+        "前馈与反馈控制"
       ],
       "inlinks": []
     },
@@ -2198,9 +3436,9 @@
       "status": "active",
       "summary": "本文综合分析了 2026 年智能体设计模式从经典到前沿的演变，以及支撑这些模式的工程架构。",
       "outlinks": [
-        "Harness_Engineering",
+        "Agent_Engineering",
         "Cognitive_Gearing",
-        "Agent_Engineering"
+        "Harness_Engineering"
       ],
       "inlinks": []
     },
@@ -2262,12 +3500,12 @@
       "status": "active",
       "summary": "This card synthesizes the current (2026) industry consensus on building reliable AI agent environments for software engineering.",
       "outlinks": [
-        "conductor_vs_orchestrator",
         "conductors_vs_orchestrators",
-        "awesome_harness_readme",
+        "conductor_vs_orchestrator",
         "martin_fowler",
         "aws_ai_dlc",
-        "gitagent_pattern"
+        "gitagent_pattern",
+        "awesome_harness_readme"
       ],
       "inlinks": []
     },
@@ -2304,16 +3542,21 @@
       "status": "active",
       "summary": "> 本卡片是完整的技术总纲，可独立复现整个系统。面向新加入的人类或 AI 阅读。",
       "outlinks": [
-        "gbrain_yuxi_深度技术分析",
-        "Seed-Expand-Classify 检索范式",
         "check_staleness脚本",
         "知识图谱编译与检索操作规范",
-        "双链",
+        "Seed-Expand-Classify 检索范式",
+        "compile_graph脚本",
         "query_graph脚本",
-        "compile_graph脚本"
+        "gbrain_yuxi_深度技术分析",
+        "双链"
       ],
       "inlinks": [
-        "Seed_Expand_Classify检索范式"
+        "Explore自适应骨架化",
+        "RRF融合与多阶段Boost",
+        "Seed_Expand_Classify检索范式",
+        "动态调度桥接",
+        "CodeGraph项目",
+        "gbrain项目"
       ]
     },
     "wiki/synthesis/知识库高保真摄入管线.md": {
@@ -2346,8 +3589,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "chunk_raw脚本",
-        "schema.md"
+        "schema.md",
+        "chunk_raw脚本"
       ],
       "inlinks": []
     },
@@ -2373,19 +3616,19 @@
       "status": "active",
       "summary": "本体系是\"如何有效吸收知识\"与\"如何自动化管理知识\"的终极统合。学习是消化提取的\"破壁机\"，而管理脚手架则是承载知识复利生长的\"培养皿\"。 ![AI驱动的知识引擎与自动化图书管理员全景架构图](../../raw/assets/05_unified_infographic_v3_zh.png) ---",
       "outlinks": [
-        "心智模型",
         "费曼学习法",
-        "Andrej_Karpathy",
-        "主动召回",
-        "主动拷问",
-        "双向链接",
-        "notebooklm_mcp用法",
-        "间隔重复",
-        "ai知识库操作指南",
-        "复利知识库",
-        "原子化笔记",
         " ",
-        "MIT_48小时速成法"
+        "ai知识库操作指南",
+        "心智模型",
+        "原子化笔记",
+        "主动拷问",
+        "MIT_48小时速成法",
+        "Andrej_Karpathy",
+        "间隔重复",
+        "双向链接",
+        "复利知识库",
+        "主动召回",
+        "notebooklm_mcp用法"
       ],
       "inlinks": [
         "MIT_48小时速成法",

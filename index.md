@@ -40,6 +40,23 @@
 | [RAG vs LLM Wiki](wiki/concepts/RAG_vs_LLM_Wiki.md) | 两种知识系统的根本差异：无状态检索 vs 有状态持续编译 |
 | [Seed-Expand-Classify检索范式](wiki/concepts/Seed_Expand_Classify检索范式.md) | 🆕 任务导向三阶段检索：多维加权Seed发现 → BFS双向2跳扩展 → 分级读取，token消耗降低75% |
 
+### 🔬 代码智能与知识图谱类
+
+| 文件 | 摘要 |
+|---|---|
+| [Tree-sitter AST解析引擎](wiki/concepts/Tree-sitter_AST解析引擎.md) | 🆕 增量式通用 AST 解析器；CodeGraph/Graphify 共用的确定性代码解析基座 |
+| [动态调度桥接](wiki/concepts/动态调度桥接.md) | 🆕 CodeGraph 的回调/事件合成边机制：Field Observer + EventEmitter + 内联提取 |
+| [Explore自适应骨架化](wiki/concepts/Explore自适应骨架化.md) | 🆕 多态兄弟文件只渲染签名的上下文预算管理策略 |
+| [搜索质量闭环](wiki/concepts/搜索质量闭环.md) | 🆕 CodeGraph 7 层 Test Battery + Agent A/B 验证方法论 |
+| [社区检测与Leiden算法](wiki/concepts/社区检测与Leiden算法.md) | 🆕 Graphify 的图聚类核心：基于边密度的社区发现，不需要嵌入 |
+| [混合模态知识提取](wiki/concepts/混合模态知识提取.md) | 🆕 代码用 AST、文档用 LLM、视频用 whisper，在图层面统一 |
+| [RRF融合与多阶段Boost](wiki/concepts/RRF融合与多阶段Boost.md) | 🆕 gbrain 混合检索核心：RRF + 6阶段 Post-Fusion Boost (P@5 49.1%) |
+| [Dream Cycle自维护循环](wiki/concepts/Dream_Cycle自维护循环.md) | 🆕 gbrain 知识库自维护：9阶段夜间维护 + Autopilot 智能调度 |
+| [NamedThingBench检索评测](wiki/concepts/NamedThingBench检索评测.md) | 🆕 CI 级检索质量门控：7 族测试 + Hit@1/MRR + 硬门控 |
+| [Atoms原子事实提取](wiki/concepts/Atoms原子事实提取.md) | 🆕 原子级事实提取 + compiled_truth 合并真相，解决摄入信息丢失 |
+| [Agent权限系统](wiki/concepts/Agent权限系统.md) | 🆕 AgentScope 三级权限：Bypass/Confirm/Deny，工具粒度控制 |
+| [Event驱动Agent架构](wiki/concepts/Event驱动Agent架构.md) | 🆕 AgentScope 30+ 事件类型的统一事件总线，流式 + human-in-the-loop |
+
 ### 🛠️ 工具实践类
 
 | 文件 | 摘要 |
@@ -85,6 +102,11 @@
 | [Andrej Karpathy](wiki/entities/Andrej_Karpathy.md) | AI 研究者，前 OpenAI 联创，复利知识库（LLM Wiki）模式的提出者 |
 | [Addy Osmani](wiki/entities/Addy_Osmani.md) | Google 高级工程领导，Agent-Skills 缔造者 |
 | [Garry Tan](wiki/entities/Garry_Tan.md) | Y Combinator 总裁兼 CEO，Gstack 缔造者 |
+| [CodeGraph项目](wiki/entities/CodeGraph项目.md) | 🆕 代码知识图谱 MCP Server：Tree-sitter AST → SQLite FTS5 → Graph → Explore 上下文 |
+| [Graphify项目](wiki/entities/Graphify项目.md) | 🆕 多模态知识图谱工具：代码(AST) + 文档(LLM) + 视频(whisper) → NetworkX 图 → MCP |
+| [gbrain项目](wiki/entities/gbrain项目.md) | 🆕 个人+团队 Brain Layer：混合检索 + Dream Cycle + Autopilot 守护进程 |
+| [Yuxi项目](wiki/entities/Yuxi项目.md) | 🆕 企业知识库平台：Milvus 混合检索 + PPR 图增强 + LangGraph 中间件 |
+| [AgentScope项目](wiki/entities/AgentScope项目.md) | 🆕 阿里巴巴生产级 Agent 框架：Event/Permission/Multi-tenancy/Workspace/Middleware |
 
 ---
 
@@ -101,6 +123,11 @@
 | [Anthropic：长时 Harness 设计](wiki/sources/anthropic_harness_design_long_running.md) | Anthropic 工程博客 | 三 Agent 架构（规划/生成/评估）+ Sprint Contract + Context Reset |
 | [AWS：AI-DLC](wiki/sources/aws_ai_dlc.md) | AWS 官方博客 | AI 驱动开发生命周期全景：克服"步调差异"，重塑研发流程 |
 | [Addy Osmani：Conductor to Orchestrator](wiki/sources/conductors_vs_orchestrators.md) | O'Reilly | 软件工程师角色的演变：从代码实现者转向多智能体交响乐的编排者 |
+| [CodeGraph README](wiki/sources/codegraph_source_readme.md) | 🆕 开源 | CodeGraph Benchmark：7 项目 -16% cost -47% token |
+| [CodeGraph 设计文档](wiki/sources/codegraph_source_design_docs.md) | 🆕 开源 | CLAUDE.md + 4篇 design doc 的核心提炼 |
+| [Graphify 文档](wiki/sources/graphify_source_docs.md) | 🆕 开源 | README + ARCHITECTURE + how-it-works 核心提炼 |
+| [gbrain × Yuxi 分析](wiki/sources/gbrain_yuxi_source_analysis.md) | 🆕 深度分析 | 两大知识库项目 7 维度对比（检索/摄入/评测/代码/并行/维护） |
+| [AgentScope 文档](wiki/sources/agentscope_source_docs.md) | 🆕 开源 | README + 215 文件代码骨架提炼 |
 
 
 ---
@@ -139,4 +166,19 @@
 | [check_staleness脚本](wiki/code/check_staleness脚本.md) | 🆕 过期检测器：code_hash比对 + stale卡片检测 + 孤岛/断链报告 |
 | [chunk_raw脚本](wiki/code/chunk_raw脚本.md) | 🆕 语义分块器：按 Markdown AST 标题层级切分长文，防止长文摄入细节丢失 |
 | [extract_code_skeleton脚本](wiki/code/extract_code_skeleton脚本.md) | 🆕 代码骨架提取器：掏空代码实现，仅保留架构、依赖和函数签名，为代码摄入预处理 |
+
+### 🆕 开源项目代码模块
+
+| 文件 | 摘要 |
+|---|---|
+| [CodeGraph提取层](wiki/code/CodeGraph提取层.md) | ExtractionOrchestrator + Tree-sitter 多语言解析 + Worker 线程池 |
+| [CodeGraph存储层](wiki/code/CodeGraph存储层.md) | SQLite + FTS5 全文搜索 + 5版本迁移 |
+| [CodeGraph解析层](wiki/code/CodeGraph解析层.md) | ReferenceResolver 引用解析 + 框架感知路由 |
+| [CodeGraph图遍历层](wiki/code/CodeGraph图遍历层.md) | GraphTraverser BFS/DFS + 子图提取 |
+| [CodeGraph上下文层](wiki/code/CodeGraph上下文层.md) | ContextBuilder + MCP Server + 8 个 MCP 工具 |
+| [CodeGraph同步与安装层](wiki/code/CodeGraph同步与安装层.md) | FileWatcher 增量同步 + 多 Agent 幂等安装器 |
+| [Graphify提取管线](wiki/code/Graphify提取管线.md) | detect→extract→build→cluster→analyze→report→export 7步管线 |
+| [gbrain检索与合成层](wiki/code/gbrain检索与合成层.md) | 混合检索 Pipeline + BrainEngine 47 操作接口 |
+| [Yuxi检索与知识图谱层](wiki/code/Yuxi检索与知识图谱层.md) | Milvus 混合检索 + PPR 图增强 + 5工具链 |
+| [AgentScope工具与服务层](wiki/code/AgentScope工具与服务层.md) | 工具系统 (ToolBase) + FastAPI 多租户服务 + Agent Team |
 

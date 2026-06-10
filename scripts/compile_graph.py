@@ -157,9 +157,11 @@ def extract_summary(content: str, max_len: int = 200) -> str:
 def compute_file_hash(filepath: str) -> str:
     """计算文件 SHA256 哈希（截取前 16 位）。"""
     try:
+        if os.path.isdir(filepath):
+            return ''
         with open(filepath, 'rb') as f:
             return f'sha256:{hashlib.sha256(f.read()).hexdigest()[:16]}'
-    except FileNotFoundError:
+    except (FileNotFoundError, PermissionError):
         return ''
 
 
