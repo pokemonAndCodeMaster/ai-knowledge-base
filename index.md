@@ -9,6 +9,12 @@
 | 文件 | 摘要 |
 |---|---|
 | [统一学习与知识管理框架](wiki/synthesis/统一学习与知识管理框架.md) | 框架总纲：四步学习闭环（Ingest/Validate/Interrogate/Distill）+ 三层知识库架构的完整合体 |
+| [学习路线总纲](wiki/synthesis/学习路线总纲.md) | 🆕 顶层设计：结合 MIT 48小时速成法，统领 Agent 工程与多模态大模型双主线学习 |
+| [Agent 工程学习计划](wiki/synthesis/agent工程学习计划.md) | 🆕 专项规划：P0 至 P2 三阶段模块细分，配套 7 大高强度实战任务与 NotebookLM 压测 Prompt |
+| [系统提示词设计优化与动态演进：深水区精读](wiki/synthesis/系统提示词设计优化与动态演进_深水区精读.md) | 🆕 论文精读：8篇 Prompt 拓扑结构、自动微分文本梯度与2026最新并发自进化流派全景 QA |
+| [多模态大模型学习计划](wiki/synthesis/多模态大模型学习计划.md) | 🆕 专项规划：从 ViT 感知到 MRoPE 时空位置编码、线性注意力混合解码的深度路线图 |
+| [Agent 与多模态交叉分析](wiki/synthesis/agent与多模态交叉分析.md) | 🆕 交叉探讨：感知-行动反馈调节，视频降频打包，自动驾驶 MLLM Harness 架构对齐 |
+| [技术演进时间线](wiki/synthesis/技术演进时间线.md) | 🆕 代际演进：Agent 工程三代演进特征对比 ↔ 多模态大模型四代架构突破历史图谱 |
 | [Agent设计模式演进](wiki/synthesis/Agent设计模式演进.md) | 综合分析智能体设计模式从经典到前沿的演变，以及支撑这些模式的工程架构 |
 | [Agent Harness Engineering 全景架构](wiki/synthesis/Agent_Harness_Engineering_全景架构.md) | 整合 7 篇权威文献，建立对 Agent Harness Engineering 的结构化认知：五层技术栈、8大原则、控制论框架、多 Agent 实践 |
 | [Harness Engineering Roadmap (2026)](wiki/synthesis/harness_engineering_roadmap.md) | 2026 年 Harness Engineering 行业现状总结：AI-DLC、多 Agent 编排与 Repo-as-Agent 模式 |
@@ -19,6 +25,14 @@
 | [Qwen3.5 深度剖析学习指南](wiki/synthesis/qwen3.5_深度剖析学习指南.md) | Qwen3.5 全景架构演进与全链路数据流拓扑、GatedDeltaNet 线性注意力与混合层解码推演 |
 | [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 智能体系统与测试基座 (Harness) 核心工程全景分析 |
 
+
+---
+
+## 📝 深度学习归档（Deep Study）
+
+| 文件 | 摘要 |
+|---|---|
+| [第一轮深度问答与解读卡片生成记录](wiki/deep_study/01_round1_qa_record.md) | 🆕 第一轮 P0（基础与感知）问答归档：涵盖系统安全沙箱设计与自动驾驶 MLLM Harness 架构 PyTorch 仿真闭环 |
 
 ---
 
@@ -59,6 +73,7 @@
 | [Atoms原子事实提取](wiki/concepts/Atoms原子事实提取.md) | 🆕 原子级事实提取 + compiled_truth 合并真相，解决摄入信息丢失 |
 | [Agent权限系统](wiki/concepts/Agent权限系统.md) | 🆕 AgentScope 三级权限：Bypass/Confirm/Deny，工具粒度控制 |
 | [Event驱动Agent架构](wiki/concepts/Event驱动Agent架构.md) | 🆕 AgentScope 30+ 事件类型的统一事件总线，流式 + human-in-the-loop |
+| [系统安全与沙箱隔离规范](wiki/concepts/系统安全与沙箱隔离规范.md) | 🆕 三层防御纵深：静态 AST Hook 拦截 + Docker/gVisor 运行时沙箱 + 人工确认门控 (HITL) |
 
 ### 🛠️ 工具实践类
 
@@ -105,6 +120,7 @@
 | [Qwen2.5-VL 预处理流水线](wiki/concepts/qwen2.5_vl_预处理流水线.md) | Qwen2.5-VL 预处理流水线：图像缩放、分块打包、时间步计算、三维坐标变换逻辑 |
 | [Qwen2.5-VL 预处理框架集成与显存评估](wiki/concepts/qwen2.5_vl_预处理框架集成与显存评估.md) | Qwen2.5-VL 预处理框架集成与显存评估：Transformers 框架集成、数据加载流转与显存开销精确计算 |
 | [Qwen3.5 原生多模态训练范式](wiki/concepts/qwen3.5_原生多模态训练范式.md) | Qwen3.5 原生多模态训练范式：原生多模态输入支持、Token 化策略与多模态预训练优化 |
+| [自动驾驶 MLLM Harness 架构设计](wiki/concepts/自动驾驶_mllm_harness_架构设计.md) | 🆕 交叉实战：手写 Conv3D 时空切块、MRoPE 位置坐标映射及动作约束层控制门控的 PyTorch 仿真闭环 |
 
 ### 💻 代码导航
 

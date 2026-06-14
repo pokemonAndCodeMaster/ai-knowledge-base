@@ -9,7 +9,20 @@ domains:
   - knowledge_mgmt      # 知识管理与记忆系统（LLM Wiki、Zettelkasten 等）
   - learning_methods    # 学习方法论（费曼、主动召回、间隔重复等）
   - agent_engineering   # AI 智能体工程（设计模式、工作流、评估框架等）
+  - agent_self_evolution # Agent 自进化与 Skill 进化
+  - agent_evaluation    # Agent 评测与可信度评估
+  - agent_tool_use      # Agent 工具调用能力与交互控制
+  - agent_rl            # Agent 强化学习与反馈决策
+  - agent_prompt        # Agent 提示词工程与系统指令优化
+  - agent_memory        # Agent 记忆、状态与长期上下文管理
+  - agent_multi         # 多智能体协同、对齐与通讯协议
   - harness_engineering # Harness 工程（约束基础设施、控制回路、赛博控制论等）
+  - mllm_architecture   # 多模态架构演进（Qwen-VL 等多模态大模型）
+  - mllm_vision_encoder # 视觉编码与对比学习（CLIP, SigLIP 等）
+  - mllm_positional_encoding # 多模态位置编码（2D-RoPE, MRoPE 等）
+  - mllm_dynamic_resolution # 动态分辨率与可变输入大小（NaViT 等）
+  - mllm_reasoning      # 多模态推理、思维链与反思
+  - mllm_long_video     # 长视频时空建模与检索式理解
   - tooling             # 开发工具与生态（NotebookLM、Obsidian、QMD 等）
   - ai_dlc              # AI 驱动开发生命周期（AWS AI-DLC、Mob Rituals 等）
   - entity              # 人物、组织、产品的事实性记录（放在 entities/ 下）

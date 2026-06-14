@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "compiled_at": "2026-06-14T12:56:10.259858+08:00",
+  "compiled_at": "2026-06-14T15:44:09.471142+08:00",
   "stats": {
-    "total_cards": 131,
+    "total_cards": 140,
     "total_links": 501,
-    "orphan_count": 30,
+    "orphan_count": 38,
     "orphan_cards": [
       "wiki/code/CodeGraph同步与安装层.md",
       "wiki/concepts/Agent_Harness_Engineering.md",
@@ -16,6 +16,8 @@
       "wiki/concepts/Tree-sitter_AST解析引擎.md",
       "wiki/concepts/harness_engineering_principles.md",
       "wiki/concepts/qwen3.5_文本嵌入与特殊token.md",
+      "wiki/concepts/系统安全与沙箱隔离规范.md",
+      "wiki/concepts/自动驾驶_mllm_harness_架构设计.md",
       "wiki/sources/agent_and_harness_engineering_2026.md",
       "wiki/sources/agentscope_source_docs.md",
       "wiki/sources/almirant.md",
@@ -33,9 +35,15 @@
       "wiki/synthesis/2026_AI智能体工程全景图.md",
       "wiki/synthesis/Agent_Harness_Engineering_全景架构.md",
       "wiki/synthesis/Agent设计模式演进.md",
+      "wiki/synthesis/agent与多模态交叉分析.md",
+      "wiki/synthesis/agent工程学习计划.md",
       "wiki/synthesis/harness_engineering_roadmap.md",
       "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-      "wiki/synthesis/知识库高保真摄入管线.md"
+      "wiki/synthesis/多模态大模型学习计划.md",
+      "wiki/synthesis/学习路线总纲.md",
+      "wiki/synthesis/技术演进时间线.md",
+      "wiki/synthesis/知识库高保真摄入管线.md",
+      "wiki/synthesis/系统提示词设计优化与动态演进_深水区精读.md"
     ],
     "broken_link_count": 145,
     "broken_links": [
@@ -49,6 +57,10 @@
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
+        "target": "Agent-Skills"
+      },
+      {
+        "from": "wiki/concepts/Agent_Engineering.md",
         "target": "test-driven-development"
       },
       {
@@ -56,24 +68,20 @@
         "target": "brainstorming"
       },
       {
-        "from": "wiki/concepts/Agent_Engineering.md",
-        "target": "Agent-Skills"
+        "from": "wiki/concepts/Agent_Harness_Engineering.md",
+        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/concepts/Agent_Harness_Engineering.md",
         "target": "Agent 工作流五大模式"
       },
       {
-        "from": "wiki/concepts/Agent_Harness_Engineering.md",
-        "target": "Harness Stack 分层架构"
+        "from": "wiki/concepts/Agent_工作流五大模式.md",
+        "target": "Orchestrator-Workers模式"
       },
       {
         "from": "wiki/concepts/Agent_工作流五大模式.md",
         "target": "Agent Harness Engineering"
-      },
-      {
-        "from": "wiki/concepts/Agent_工作流五大模式.md",
-        "target": "Orchestrator-Workers模式"
       },
       {
         "from": "wiki/concepts/Cognitive_Gearing.md",
@@ -105,11 +113,11 @@
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "引用"
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "链接"
+        "target": "引用"
       },
       {
         "from": "wiki/concepts/ashby_law.md",
@@ -165,11 +173,11 @@
       },
       {
         "from": "wiki/concepts/qwen3.5_文本嵌入与特殊token.md",
-        "target": "qwen3.5_前向传播全链路"
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
       },
       {
         "from": "wiki/concepts/qwen3.5_文本嵌入与特殊token.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+        "target": "qwen3.5_前向传播全链路"
       },
       {
         "from": "wiki/concepts/qwen3.5_混合decoder架构.md",
@@ -181,19 +189,19 @@
       },
       {
         "from": "wiki/concepts/前馈与反馈控制.md",
-        "target": "可维护性Harness"
-      },
-      {
-        "from": "wiki/concepts/前馈与反馈控制.md",
         "target": "Agent Harness Engineering"
       },
       {
-        "from": "wiki/concepts/动态调度桥接.md",
-        "target": "Tree-sitter AST解析引擎"
+        "from": "wiki/concepts/前馈与反馈控制.md",
+        "target": "可维护性Harness"
       },
       {
         "from": "wiki/concepts/动态调度桥接.md",
         "target": "双链"
+      },
+      {
+        "from": "wiki/concepts/动态调度桥接.md",
+        "target": "Tree-sitter AST解析引擎"
       },
       {
         "from": "wiki/concepts/原子化笔记.md",
@@ -201,11 +209,11 @@
       },
       {
         "from": "wiki/concepts/双向链接.md",
-        "target": "页面名"
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/双向链接.md",
-        "target": "链接"
+        "target": "页面名"
       },
       {
         "from": "wiki/concepts/复利知识库.md",
@@ -217,23 +225,15 @@
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
+        "target": "Sprint合同模式"
+      },
+      {
+        "from": "wiki/concepts/多Agent生成-评估循环.md",
         "target": "Context Reset vs Compaction"
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
         "target": "Agent 工作流五大模式"
-      },
-      {
-        "from": "wiki/concepts/多Agent生成-评估循环.md",
-        "target": "Sprint合同模式"
-      },
-      {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Context Reset vs Compaction"
-      },
-      {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
@@ -242,6 +242,14 @@
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
         "target": "Harness Stack 分层架构"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Agent Harness Engineering"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Context Reset vs Compaction"
       },
       {
         "from": "wiki/concepts/社区检测与Leiden算法.md",
@@ -297,7 +305,7 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Oh-My-OpenAgent"
+        "target": "Agent-Skills"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -305,7 +313,7 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Gstack"
+        "target": "Claude_Code"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -313,15 +321,23 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Agent-Skills"
+        "target": "Oh-My-OpenAgent"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Claude_Code"
+        "target": "Gstack"
       },
       {
         "from": "wiki/sources/almirant.md",
         "target": "human_in_the_loop"
+      },
+      {
+        "from": "wiki/sources/anthropic_building_effective_agents.md",
+        "target": "ACI（Agent-Computer Interface）"
+      },
+      {
+        "from": "wiki/sources/anthropic_building_effective_agents.md",
+        "target": "Orchestrator-Workers模式"
       },
       {
         "from": "wiki/sources/anthropic_building_effective_agents.md",
@@ -332,16 +348,8 @@
         "target": "Agent 工作流五大模式"
       },
       {
-        "from": "wiki/sources/anthropic_building_effective_agents.md",
-        "target": "Orchestrator-Workers模式"
-      },
-      {
-        "from": "wiki/sources/anthropic_building_effective_agents.md",
-        "target": "ACI（Agent-Computer Interface）"
-      },
-      {
         "from": "wiki/sources/anthropic_harness_design_long_running.md",
-        "target": "Agent Harness Engineering"
+        "target": "Sprint合同模式"
       },
       {
         "from": "wiki/sources/anthropic_harness_design_long_running.md",
@@ -349,15 +357,15 @@
       },
       {
         "from": "wiki/sources/anthropic_harness_design_long_running.md",
-        "target": "Sprint合同模式"
-      },
-      {
-        "from": "wiki/sources/awesome_agent_harness.md",
         "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/awesome_agent_harness.md",
         "target": "AGENTS.md 标准"
+      },
+      {
+        "from": "wiki/sources/awesome_agent_harness.md",
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/awesome_agent_harness.md",
@@ -377,7 +385,7 @@
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "可维护性Harness"
+        "target": "Birgitta Böckeler"
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
@@ -385,7 +393,7 @@
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "Birgitta Böckeler"
+        "target": "可维护性Harness"
       },
       {
         "from": "wiki/sources/paperclip.md",
@@ -393,11 +401,11 @@
       },
       {
         "from": "wiki/sources/paperclip.md",
-        "target": "agent_orchestration"
+        "target": "cost_control"
       },
       {
         "from": "wiki/sources/paperclip.md",
-        "target": "cost_control"
+        "target": "agent_orchestration"
       },
       {
         "from": "wiki/synthesis/Agent_Harness_Engineering_全景架构.md",
@@ -409,15 +417,7 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm"
+        "target": "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -425,83 +425,11 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)"
+        "target": "知识卡片"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#1-navit-的基石思想-patch-n-pack"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "patchmerger_空间降维#1-空间下采样：张量形变魔法"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "rope_旋转位置编码#1-第一性原理与复数推导"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#数值计算示例与心算验证"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#核心算法原理详解"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤三：时间步打包与 5D 张量同质化 (Time-Step Grouping)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新"
+        "target": "conv3d_时空切块器#参数生命周期与渊源追溯"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -509,7 +437,31 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "clip_对比学习视觉编码#1-clip-的全局-softmax-机制"
+        "target": "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#数值计算示例与心算验证"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -521,11 +473,67 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#参数生命周期与渊源追溯"
+        "target": "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "知识卡片"
+        "target": "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#核心算法原理详解"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#1-navit-的基石思想-patch-n-pack"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "patchmerger_空间降维#1-空间下采样：张量形变魔法"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "rope_旋转位置编码#1-第一性原理与复数推导"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "clip_对比学习视觉编码#1-clip-的全局-softmax-机制"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤三：时间步打包与 5D 张量同质化 (Time-Step Grouping)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -533,23 +541,7 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#2. 双 Mask 系统"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+        "target": "知识卡片"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -557,19 +549,7 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#1. Conv3d PatchEmbed"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#4. SwiGLU MLP"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
         "target": "qwen3.5_混合decoder架构#3. 标准 Attention (Qwen3_5Attention) — 完整源码"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#4. VisionBlock (×32)"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -577,11 +557,11 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#5. PatchMerger"
+        "target": "qwen3.5_混合decoder架构#2. 双 Mask 系统"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换"
+        "target": "qwen3.5_视觉编码器#1. Conv3d PatchEmbed"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -589,15 +569,43 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "知识卡片"
+        "target": "qwen3.5_视觉编码器#5. PatchMerger"
       },
       {
-        "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "双链"
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_视觉编码器#4. VisionBlock (×32)"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_混合decoder架构#4. SwiGLU MLP"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
         "target": "gbrain_yuxi_深度技术分析"
+      },
+      {
+        "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
+        "target": "双链"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
@@ -609,7 +617,7 @@
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": "心智模型"
+        "target": " "
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
@@ -617,7 +625,7 @@
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": " "
+        "target": "心智模型"
       }
     ]
   },
@@ -690,9 +698,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "CodeGraph存储层",
         "CodeGraph图遍历层",
-        "Explore自适应骨架化",
-        "CodeGraph存储层"
+        "Explore自适应骨架化"
       ],
       "inlinks": [
         "CodeGraph同步与安装层",
@@ -736,8 +744,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph提取层",
-        "CodeGraph上下文层"
+        "CodeGraph上下文层",
+        "CodeGraph提取层"
       ],
       "inlinks": [],
       "code_hashes": {
@@ -821,8 +829,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph图遍历层",
-        "CodeGraph提取层"
+        "CodeGraph提取层",
+        "CodeGraph图遍历层"
       ],
       "inlinks": [
         "CodeGraph上下文层",
@@ -917,9 +925,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph图遍历层",
-        "CodeGraph提取层",
         "动态调度桥接",
+        "CodeGraph提取层",
+        "CodeGraph图遍历层",
         "CodeGraph存储层"
       ],
       "inlinks": [
@@ -1127,10 +1135,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "知识图谱编译与检索操作规范",
         "双链",
         "check_staleness脚本",
-        "query_graph脚本",
-        "知识图谱编译与检索操作规范"
+        "query_graph脚本"
       ],
       "inlinks": [
         "check_staleness脚本",
@@ -1277,10 +1285,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "mrope_多模态位置编码",
-        "qwen2.5_vl_技术报告解析",
+        "conv3d_时空切块器",
         "navit_动态分辨率",
-        "conv3d_时空切块器"
+        "mrope_多模态位置编码",
+        "qwen2.5_vl_技术报告解析"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -1315,10 +1323,10 @@
       "status": "active",
       "summary": "Agent Engineering 是构建自主 AI 系统的工程学科。与早期的 Prompt Engineering 不同，它更强调整体的架构设计、工作流约束和状态管理。",
       "outlinks": [
-        "Harness_Engineering",
+        "Agent-Skills",
         "test-driven-development",
         "brainstorming",
-        "Agent-Skills"
+        "Harness_Engineering"
       ],
       "inlinks": [
         "Harness_Engineering",
@@ -1346,12 +1354,12 @@
       "status": "active",
       "summary": "**关联节点**：[[Harness Stack 分层架构]] | [[前馈与反馈控制]] | [[渐进式上下文披露]] | [[Agent 工作流五大模式]] | [[awesome_agent_harness]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
-        "Agent 工作流五大模式",
-        "前馈与反馈控制",
-        "Harness Stack 分层架构",
-        "awesome_agent_harness",
         "渐进式上下文披露",
-        "martin_fowler_harness_engineering"
+        "Harness Stack 分层架构",
+        "前馈与反馈控制",
+        "martin_fowler_harness_engineering",
+        "awesome_agent_harness",
+        "Agent 工作流五大模式"
       ],
       "inlinks": []
     },
@@ -1374,10 +1382,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[anthropic_building_effective_agents]] | [[多Agent生成-评估循环]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
-        "anthropic_building_effective_agents",
+        "多Agent生成-评估循环",
         "Orchestrator-Workers模式",
-        "多Agent生成-评估循环"
+        "anthropic_building_effective_agents",
+        "Agent Harness Engineering"
       ],
       "inlinks": []
     },
@@ -1467,8 +1475,8 @@
       "status": "active",
       "summary": "Cognitive Gearing 是由 [[Garry_Tan]] 在 [[Gstack]] 框架中提出的机制。",
       "outlinks": [
-        "Gstack",
-        "Garry_Tan"
+        "Garry_Tan",
+        "Gstack"
       ],
       "inlinks": [
         "Garry_Tan",
@@ -1495,9 +1503,9 @@
       "status": "active",
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[anthropic_harness_design_long_running]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
+        "多Agent生成-评估循环",
         "anthropic_harness_design_long_running",
-        "多Agent生成-评估循环"
+        "Agent Harness Engineering"
       ],
       "inlinks": []
     },
@@ -1652,10 +1660,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Agent 工作流五大模式]] | [[渐进式上下文披露]] | [[awesome_agent_harness]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
-        "Agent 工作流五大模式",
         "渐进式上下文披露",
-        "awesome_agent_harness"
+        "Agent Harness Engineering",
+        "awesome_agent_harness",
+        "Agent 工作流五大模式"
       ],
       "inlinks": []
     },
@@ -1681,11 +1689,11 @@
       "status": "active",
       "summary": "**关联节点**：[[费曼学习法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[notebooklm_mcp用法]] | [[sources/mit_notebooklm_48h]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
         "费曼学习法",
-        "sources/mit_notebooklm_48h",
+        "主动召回",
+        "统一学习与知识管理框架",
         "notebooklm_mcp用法",
-        "主动召回"
+        "sources/mit_notebooklm_48h"
       ],
       "inlinks": [
         "主动召回",
@@ -1754,9 +1762,9 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[Andrej_Karpathy]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
         "Andrej_Karpathy",
-        "复利知识库"
+        "复利知识库",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "复利知识库",
@@ -1864,8 +1872,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "动态调度桥接",
         "graphify项目",
+        "动态调度桥接",
         "CodeGraph项目"
       ],
       "inlinks": []
@@ -1888,10 +1896,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "feedforward_and_feedback",
         "computational_vs_inferential",
-        "steering_loop",
-        "harness_engineering"
+        "feedforward_and_feedback",
+        "harness_engineering",
+        "steering_loop"
       ],
       "inlinks": [
         "ai_dlc",
@@ -1927,9 +1935,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "aws_ai_dlc",
-        "persistent_context_in_repo",
         "mob_rituals",
+        "persistent_context_in_repo",
+        "aws_ai_dlc",
         "agent_harness"
       ],
       "inlinks": [
@@ -1960,11 +1968,11 @@
       "summary": "**关联节点**：[[notebooklm_mcp用法]] | [[统一学习与知识管理框架]] | [[复利知识库]] ---",
       "outlinks": [
         "双向链接",
+        "链接",
         "统一学习与知识管理框架",
-        "引用",
         "notebooklm_mcp用法",
         "复利知识库",
-        "链接"
+        "引用"
       ],
       "inlinks": [
         "notebooklm_mcp用法",
@@ -2124,12 +2132,12 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
         "qwen2.5_vl_预处理流水线",
-        "qwen3.5_视觉编码器",
         "navit_动态分辨率",
+        "qwen3.5_视觉编码器",
+        "2d_rope_视觉位置编码",
         "qwen3.5_前向传播全链路",
-        "2d_rope_视觉位置编码"
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -2270,8 +2278,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
-        "mrope_多模态位置编码"
+        "mrope_多模态位置编码",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "qwen3.5_原生多模态训练范式",
@@ -2297,10 +2305,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "bolts_and_work_units",
-        "aws_ai_dlc",
+        "steering_loop",
         "ai_dlc",
-        "steering_loop"
+        "aws_ai_dlc",
+        "bolts_and_work_units"
       ],
       "inlinks": [
         "ai_dlc",
@@ -2328,11 +2336,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope",
         "qwen3.5_多模态融合机制",
+        "2d_rope_视觉位置编码",
         "rope_旋转位置编码",
-        "2d_rope_视觉位置编码"
+        "qwen3.5_前向传播全链路",
+        "qwen3.5_interleaved_mrope"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -2370,8 +2378,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "2d_rope_视觉位置编码",
-        "patchmerger_空间降维"
+        "patchmerger_空间降维",
+        "2d_rope_视觉位置编码"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -2405,9 +2413,9 @@
       "status": "active",
       "summary": "**关联节点**：[[统一学习与知识管理框架]] | [[ai知识库操作指南]] | [[复利知识库]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
         "ai知识库操作指南",
-        "复利知识库"
+        "复利知识库",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -2461,13 +2469,13 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen2.5_vl_三阶段预训练",
-        "window_attention_交错注意力",
-        "动态分辨率方案对比",
-        "qwen2.5_vl_技术报告解析",
         "qwen3.5_视觉编码器",
-        "qwen3.5_前向传播全链路",
-        "rmsnorm_归一化"
+        "动态分辨率方案对比",
+        "window_attention_交错注意力",
+        "qwen2.5_vl_技术报告解析",
+        "rmsnorm_归一化",
+        "qwen2.5_vl_三阶段预训练",
+        "qwen3.5_前向传播全链路"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -2532,11 +2540,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
         "swiglu_门控激活函数",
         "window_attention_交错注意力",
+        "qwen2.5_vl_技术报告解析",
         "conv3d_时空切块器",
-        "qwen2.5_vl_技术报告解析"
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "clip_对比学习视觉编码",
@@ -2566,9 +2574,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "mrope_多模态位置编码",
         "qwen2.5_vl_预处理流水线",
-        "conv3d_时空切块器"
+        "conv3d_时空切块器",
+        "mrope_多模态位置编码"
       ],
       "inlinks": [
         "qwen3.5_processor预处理",
@@ -2596,12 +2604,12 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
-        "window_attention_交错注意力",
-        "2, 28, 46",
-        "conv3d_时空切块器",
         "navit_动态分辨率",
-        "mrope_多模态位置编码"
+        "2, 28, 46",
+        "window_attention_交错注意力",
+        "mrope_多模态位置编码",
+        "conv3d_时空切块器",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -2629,10 +2637,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "rmsnorm_归一化",
         "swiglu_门控激活函数",
-        "qwen3.5_前向传播全链路",
         "qwen3.5_混合decoder架构",
-        "rmsnorm_归一化"
+        "qwen3.5_前向传播全链路"
       ],
       "inlinks": [
         "qwen3.5_混合decoder架构",
@@ -2658,10 +2666,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "2d_rope_视觉位置编码",
+        "qwen3.5_多模态融合机制",
         "mrope_多模态位置编码",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_多模态融合机制"
+        "2d_rope_视觉位置编码"
       ],
       "inlinks": [
         "mrope_多模态位置编码",
@@ -2691,11 +2699,11 @@
       "summary": "",
       "outlinks": [
         "qwen2.5_vl_预处理流水线",
+        "qwen3.5_多模态融合机制",
+        "qwen2.5_vl_预处理框架集成与显存评估",
         "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope",
-        "qwen3.5_多模态融合机制",
-        "qwen2.5_vl_预处理框架集成与显存评估"
+        "qwen3.5_interleaved_mrope"
       ],
       "inlinks": [
         "qwen3.5_文本嵌入与特殊token"
@@ -2721,8 +2729,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
-        "llm_backbone_大语言模型基座"
+        "llm_backbone_大语言模型基座",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "qwen_代码地图"
@@ -2747,11 +2755,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
         "qwen3.5_视觉编码器",
+        "mrope_多模态位置编码",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope",
-        "mrope_多模态位置编码"
+        "patchmerger_空间降维",
+        "qwen3.5_interleaved_mrope"
       ],
       "inlinks": [
         "mrope_多模态位置编码",
@@ -2780,10 +2788,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_processor预处理",
-        "qwen3.5_前向传播全链路",
         "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "qwen3.5_多模态融合机制"
+        "qwen3.5_多模态融合机制",
+        "qwen3.5_前向传播全链路",
+        "qwen3.5_processor预处理"
       ],
       "inlinks": []
     },
@@ -2806,11 +2814,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "swiglu_门控激活函数",
         "qwen3.5_gated_delta_net",
+        "swiglu_门控激活函数",
+        "rmsnorm_归一化",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope",
-        "rmsnorm_归一化"
+        "qwen3.5_interleaved_mrope"
       ],
       "inlinks": [
         "qwen3.5_gated_delta_net",
@@ -2836,11 +2844,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
+        "2d_rope_视觉位置编码",
         "window_attention_交错注意力",
-        "conv3d_时空切块器",
         "qwen3.5_前向传播全链路",
-        "2d_rope_视觉位置编码"
+        "conv3d_时空切块器",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -2869,16 +2877,16 @@
       "status": "active",
       "summary": "> **本卡片是 Qwen 代码阅读的总入口。** 任何涉及\"看 Qwen 代码\"的需求，都应先查阅本卡片定位目标文件，再决定是否需要打开源码。",
       "outlinks": [
-        "qwen2.5_vl_三阶段预训练",
-        "patchmerger_空间降维",
         "qwen2.5_vl_预处理流水线",
         "swiglu_门控激活函数",
-        "window_attention_交错注意力",
-        "qwen3.5_原生多模态训练范式",
-        "conv3d_时空切块器",
         "vit_核心原理与结构",
+        "qwen3.5_原生多模态训练范式",
+        "window_attention_交错注意力",
         "mrope_多模态位置编码",
-        "rmsnorm_归一化"
+        "rmsnorm_归一化",
+        "qwen2.5_vl_三阶段预训练",
+        "conv3d_时空切块器",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "qwen3.5_深度剖析学习指南"
@@ -2902,8 +2910,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "swiglu_门控激活函数",
-        "window_attention_交错注意力"
+        "window_attention_交错注意力",
+        "swiglu_门控激活函数"
       ],
       "inlinks": [
         "patchmerger_空间降维",
@@ -2934,8 +2942,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "2d_rope_视觉位置编码",
-        "mrope_多模态位置编码"
+        "mrope_多模态位置编码",
+        "2d_rope_视觉位置编码"
       ],
       "inlinks": [
         "mrope_多模态位置编码",
@@ -2993,8 +3001,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "vit_核心原理与结构",
-        "rmsnorm_归一化"
+        "rmsnorm_归一化",
+        "vit_核心原理与结构"
       ],
       "inlinks": [
         "qwen2.5_vl_三阶段预训练",
@@ -3088,10 +3096,10 @@
       "status": "active",
       "summary": "**关联节点**：[[费曼学习法]] | [[间隔重复]] | [[MIT_48小时速成法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "MIT_48小时速成法",
+        "费曼学习法",
         "间隔重复",
-        "费曼学习法"
+        "MIT_48小时速成法",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -3120,11 +3128,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[赛博控制论与Harness]] | [[martin_fowler_harness_engineering]] | [[可维护性Harness]] ---",
       "outlinks": [
-        "可维护性Harness",
         "多Agent生成-评估循环",
+        "赛博控制论与Harness",
         "Agent Harness Engineering",
         "martin_fowler_harness_engineering",
-        "赛博控制论与Harness"
+        "可维护性Harness"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -3151,10 +3159,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "2d_rope_视觉位置编码",
-        "patchmerger_空间降维",
         "navit_动态分辨率",
-        "qwen2.5_vl_技术报告解析"
+        "patchmerger_空间降维",
+        "qwen2.5_vl_技术报告解析",
+        "2d_rope_视觉位置编码"
       ],
       "inlinks": [
         "patchmerger_空间降维"
@@ -3191,9 +3199,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Tree-sitter AST解析引擎",
+        "知识库工业化升级_图索引检索系统",
         "双链",
-        "知识库工业化升级_图索引检索系统"
+        "Tree-sitter AST解析引擎"
       ],
       "inlinks": [
         "CodeGraph解析层",
@@ -3221,10 +3229,10 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[双向链接]] | [[Zettelkasten]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "Zettelkasten",
         "双向链接",
-        "复利知识库"
+        "复利知识库",
+        "Zettelkasten",
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "双向链接",
@@ -3254,11 +3262,11 @@
       "status": "active",
       "summary": "**关联节点**：[[原子化笔记]] | [[复利知识库]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "页面名",
-        "复利知识库",
         "原子化笔记",
-        "链接"
+        "链接",
+        "页面名",
+        "统一学习与知识管理框架",
+        "复利知识库"
       ],
       "inlinks": [
         "ai知识库操作指南",
@@ -3291,13 +3299,13 @@
       "status": "active",
       "summary": "**关联节点**：[[Andrej_Karpathy]] | [[原子化笔记]] | [[双向链接]] | [[RAG_vs_LLM_Wiki]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
         "双向链接",
-        "sources/mit_notebooklm_48h",
-        "Andrej_Karpathy",
-        "sources/karpathy_llm_wiki",
+        "RAG_vs_LLM_Wiki",
         "原子化笔记",
-        "RAG_vs_LLM_Wiki"
+        "统一学习与知识管理框架",
+        "Andrej_Karpathy",
+        "sources/mit_notebooklm_48h",
+        "sources/karpathy_llm_wiki"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -3333,11 +3341,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[前馈与反馈控制]] | [[anthropic_harness_design_long_running]] | [[Sprint合同模式]] | [[Context Reset vs Compaction]] ---",
       "outlinks": [
-        "Context Reset vs Compaction",
-        "Agent 工作流五大模式",
-        "anthropic_harness_design_long_running",
         "前馈与反馈控制",
-        "Sprint合同模式"
+        "anthropic_harness_design_long_running",
+        "Sprint合同模式",
+        "Context Reset vs Compaction",
+        "Agent 工作流五大模式"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -3441,11 +3449,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[AGENTS.md 标准]] | [[Context Reset vs Compaction]] | [[Harness Stack 分层架构]] ---",
       "outlinks": [
-        "Context Reset vs Compaction",
+        "AGENTS.md 标准",
+        "Harness Stack 分层架构",
         "Agent Harness Engineering",
         "复利知识库",
-        "AGENTS.md 标准",
-        "Harness Stack 分层架构"
+        "Context Reset vs Compaction"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -3490,6 +3498,41 @@
         "graphify_source_docs"
       ]
     },
+    "wiki/concepts/系统安全与沙箱隔离规范.md": {
+      "title": "系统安全与沙箱隔离规范",
+      "slug": "系统安全与沙箱隔离规范",
+      "domain": [
+        "agent_tool_use",
+        "agent_engineering"
+      ],
+      "type": "concept",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本规范归属于 [Agent 工程学习计划](wiki/synthesis/agent工程学习计划.md)，作为约束智能体运行时系统调用、保护宿主机安全的顶层安全宪法。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
+    "wiki/concepts/自动驾驶_mllm_harness_架构设计.md": {
+      "title": "自动驾驶_mllm_harness_架构设计",
+      "slug": "自动驾驶_mllm_harness_架构设计",
+      "domain": [
+        "mllm_architecture",
+        "harness_engineering",
+        "mllm_positional_encoding"
+      ],
+      "type": "concept",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本架构归属于 [Agent 与多模态交叉分析](wiki/synthesis/agent与多模态交叉分析.md)，是感知（多模态大模型）与行动（智能体约束控制）结合的工业级端到端实战设计。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
     "wiki/concepts/费曼学习法.md": {
       "title": "费曼学习法（Feynman Technique）",
       "slug": "费曼学习法",
@@ -3511,10 +3554,10 @@
       "status": "active",
       "summary": "**关联节点**：[[MIT_48小时速成法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[心智模型]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
-        "sources/mit_notebooklm_48h",
         "主动召回",
         "MIT_48小时速成法",
+        "统一学习与知识管理框架",
+        "sources/mit_notebooklm_48h",
         "心智模型"
       ],
       "inlinks": [
@@ -3545,9 +3588,9 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
+        "前馈与反馈控制",
         "Agent Harness Engineering",
-        "martin_fowler_harness_engineering",
-        "前馈与反馈控制"
+        "martin_fowler_harness_engineering"
       ],
       "inlinks": [
         "前馈与反馈控制",
@@ -3575,14 +3618,30 @@
       "status": "active",
       "summary": "**关联节点**：[[主动召回]] | [[费曼学习法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "统一学习与知识管理框架",
+        "费曼学习法",
         "主动召回",
-        "费曼学习法"
+        "统一学习与知识管理框架"
       ],
       "inlinks": [
         "主动召回",
         "统一学习与知识管理框架"
       ]
+    },
+    "wiki/deep_study/01_round1_qa_record.md": {
+      "title": "01_round1_qa_record",
+      "slug": "01_round1_qa_record",
+      "domain": [
+        "meta"
+      ],
+      "type": "hub",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本归档卡片用于追踪 [学习路线总纲](wiki/synthesis/学习路线总纲.md) 中 P0 阶段核心模块的问答过程与生成产物，指导系统化知识库的高效沉淀。 ---",
+      "outlinks": [],
+      "inlinks": []
     },
     "wiki/entities/Addy_Osmani.md": {
       "title": "Addy Osmani",
@@ -3662,9 +3721,9 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[RAG_vs_LLM_Wiki]] | [[sources/karpathy_llm_wiki]] ---",
       "outlinks": [
-        "RAG_vs_LLM_Wiki",
+        "sources/karpathy_llm_wiki",
         "复利知识库",
-        "sources/karpathy_llm_wiki"
+        "RAG_vs_LLM_Wiki"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -3734,8 +3793,8 @@
       "status": "active",
       "summary": "Y Combinator 总裁兼 CEO。",
       "outlinks": [
-        "Gstack",
-        "Cognitive_Gearing"
+        "Cognitive_Gearing",
+        "Gstack"
       ],
       "inlinks": [
         "Cognitive_Gearing",
@@ -3851,8 +3910,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识库工业化升级_图索引检索系统",
-        "Yuxi项目"
+        "Yuxi项目",
+        "知识库工业化升级_图索引检索系统"
       ],
       "inlinks": [
         "Atoms原子事实提取",
@@ -3908,8 +3967,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "birgitta_bockeler",
-        "martin_fowler"
+        "martin_fowler",
+        "birgitta_bockeler"
       ],
       "inlinks": [
         "martin_fowler_harness"
@@ -3975,16 +4034,16 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Oh-My-OpenAgent",
-        "OpenCode",
-        "Cognitive_Gearing",
-        "Gstack",
-        "OpenClaw",
-        "Addy_Osmani",
         "Agent-Skills",
-        "Harness_Engineering",
-        "Garry_Tan",
+        "OpenCode",
         "Claude_Code",
+        "Cognitive_Gearing",
+        "Addy_Osmani",
+        "Harness_Engineering",
+        "OpenClaw",
+        "Garry_Tan",
+        "Oh-My-OpenAgent",
+        "Gstack",
         "Agent_Engineering"
       ],
       "inlinks": []
@@ -4007,10 +4066,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "AgentScope项目",
         "Agent权限系统",
+        "AgentScope工具与服务层",
         "Event驱动Agent架构",
-        "AgentScope工具与服务层"
+        "AgentScope项目"
       ],
       "inlinks": []
     },
@@ -4033,9 +4092,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "human_in_the_loop",
         "steering_loop",
-        "agent_harness",
-        "human_in_the_loop"
+        "agent_harness"
       ],
       "inlinks": []
     },
@@ -4058,10 +4117,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[ACI（Agent-Computer Interface）]] | [[Agent Harness Engineering]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
-        "Agent 工作流五大模式",
+        "ACI（Agent-Computer Interface）",
         "Orchestrator-Workers模式",
-        "ACI（Agent-Computer Interface）"
+        "Agent Harness Engineering",
+        "Agent 工作流五大模式"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -4089,10 +4148,10 @@
       "status": "active",
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[Context Reset vs Compaction]] | [[Sprint合同模式]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
-        "Context Reset vs Compaction",
+        "多Agent生成-评估循环",
         "Sprint合同模式",
-        "多Agent生成-评估循环"
+        "Context Reset vs Compaction",
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Context_Reset_vs_Compaction",
@@ -4122,10 +4181,10 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Harness Stack 分层架构]] | [[渐进式上下文披露]] | [[AGENTS.md 标准]] ---",
       "outlinks": [
-        "Agent Harness Engineering",
+        "渐进式上下文披露",
         "AGENTS.md 标准",
-        "Harness Stack 分层架构",
-        "渐进式上下文披露"
+        "Agent Harness Engineering",
+        "Harness Stack 分层架构"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -4153,9 +4212,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "bolts_and_work_units",
-        "ai_dlc",
         "mob_rituals",
+        "ai_dlc",
+        "bolts_and_work_units",
         "agent_harness"
       ],
       "inlinks": [
@@ -4185,9 +4244,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Explore自适应骨架化",
+        "动态调度桥接",
         "搜索质量闭环",
-        "动态调度桥接"
+        "Explore自适应骨架化"
       ],
       "inlinks": []
     },
@@ -4210,10 +4269,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Tree-sitter AST解析引擎",
+        "CodeGraph上下文层",
         "CodeGraph提取层",
         "CodeGraph项目",
-        "CodeGraph上下文层"
+        "Tree-sitter AST解析引擎"
       ],
       "inlinks": []
     },
@@ -4238,9 +4297,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
         "conductor_vs_orchestrator",
-        "agent_harness"
+        "agent_harness",
+        "steering_loop"
       ],
       "inlinks": [
         "conductor_vs_orchestrator",
@@ -4265,8 +4324,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
-        "navit_动态分辨率"
+        "navit_动态分辨率",
+        "patchmerger_空间降维"
       ],
       "inlinks": []
     },
@@ -4290,14 +4349,14 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "RRF融合与多阶段Boost",
-        "Yuxi检索与知识图谱层",
+        "Yuxi项目",
+        "gbrain检索与合成层",
+        "Dream Cycle自维护循环",
         "gbrain项目",
         "NamedThingBench检索评测",
+        "RRF融合与多阶段Boost",
         "Atoms原子事实提取",
-        "Yuxi项目",
-        "Dream Cycle自维护循环",
-        "gbrain检索与合成层"
+        "Yuxi检索与知识图谱层"
       ],
       "inlinks": []
     },
@@ -4321,8 +4380,8 @@
       "summary": "",
       "outlinks": [
         "混合模态知识提取",
-        "Graphify项目",
         "社区检测与Leiden算法",
+        "Graphify项目",
         "Graphify提取管线"
       ],
       "inlinks": []
@@ -4348,10 +4407,10 @@
       "summary": "**作者**：[[Andrej_Karpathy]] **发布时间**：2026 年 4 月 **Stars**：5000+（发布数小时内） ---",
       "outlinks": [
         "双向链接",
-        "复利知识库",
-        "Andrej_Karpathy",
+        "RAG_vs_LLM_Wiki",
         "原子化笔记",
-        "RAG_vs_LLM_Wiki"
+        "Andrej_Karpathy",
+        "复利知识库"
       ],
       "inlinks": []
     },
@@ -4375,14 +4434,14 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "feedforward_and_feedback",
-        "steering_loop",
-        "birgitta_bockeler",
-        "computational_vs_inferential",
         "martin_fowler",
+        "birgitta_bockeler",
+        "agent_harness",
+        "computational_vs_inferential",
+        "steering_loop",
         "thoughtworks",
-        "ashby_law",
-        "agent_harness"
+        "feedforward_and_feedback",
+        "ashby_law"
       ],
       "inlinks": [
         "martin_fowler"
@@ -4408,11 +4467,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[可维护性Harness]] | [[赛博控制论与Harness]] | [[Birgitta Böckeler]] ---",
       "outlinks": [
-        "可维护性Harness",
-        "Agent Harness Engineering",
-        "前馈与反馈控制",
         "赛博控制论与Harness",
-        "Birgitta Böckeler"
+        "前馈与反馈控制",
+        "Birgitta Böckeler",
+        "Agent Harness Engineering",
+        "可维护性Harness"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -4444,8 +4503,8 @@
       "outlinks": [
         "主动召回",
         "notebooklm_mcp用法",
-        "MIT_48小时速成法",
-        "费曼学习法"
+        "费曼学习法",
+        "MIT_48小时速成法"
       ],
       "inlinks": []
     },
@@ -4470,8 +4529,8 @@
       "summary": "",
       "outlinks": [
         "autonomous_agents",
-        "agent_orchestration",
-        "cost_control"
+        "cost_control",
+        "agent_orchestration"
       ],
       "inlinks": []
     },
@@ -4492,16 +4551,16 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen2.5_vl_三阶段预训练",
-        "patchmerger_空间降维",
-        "swiglu_门控激活函数",
-        "window_attention_交错注意力",
-        "conv3d_时空切块器",
         "navit_动态分辨率",
+        "swiglu_门控激活函数",
         "2d_rope_视觉位置编码",
-        "qwen2.5_vl_深度剖析学习指南",
+        "window_attention_交错注意力",
         "mrope_多模态位置编码",
-        "rmsnorm_归一化"
+        "rmsnorm_归一化",
+        "qwen2.5_vl_三阶段预训练",
+        "conv3d_时空切块器",
+        "qwen2.5_vl_深度剖析学习指南",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -4554,8 +4613,8 @@
       "summary": "",
       "outlinks": [
         "rope_旋转位置编码",
-        "2d_rope_视觉位置编码",
-        "mrope_多模态位置编码"
+        "mrope_多模态位置编码",
+        "2d_rope_视觉位置编码"
       ],
       "inlinks": []
     },
@@ -4577,9 +4636,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "vit_核心原理与结构",
         "clip_对比学习视觉编码",
-        "conv3d_时空切块器"
+        "conv3d_时空切块器",
+        "vit_核心原理与结构"
       ],
       "inlinks": []
     },
@@ -4629,16 +4688,16 @@
       "status": "active",
       "summary": "本文综合 awesome-agent-harness 仓库及其引用的 7 篇核心文献，建立对 Agent Harness Engineering 这一新兴领域的结构化认知。 ---",
       "outlinks": [
-        "费曼学习法",
         "多Agent生成-评估循环",
-        "anthropic_harness_design_long_running",
-        "复利知识库",
-        "前馈与反馈控制",
-        "anthropic_building_effective_agents",
+        "费曼学习法",
         "Harness Stack 分层架构",
         "渐进式上下文披露",
-        "awesome_agent_harness",
-        "martin_fowler_harness_engineering"
+        "前馈与反馈控制",
+        "anthropic_harness_design_long_running",
+        "anthropic_building_effective_agents",
+        "martin_fowler_harness_engineering",
+        "复利知识库",
+        "awesome_agent_harness"
       ],
       "inlinks": []
     },
@@ -4662,8 +4721,8 @@
       "status": "active",
       "summary": "本文综合分析了 2026 年智能体设计模式从经典到前沿的演变，以及支撑这些模式的工程架构。",
       "outlinks": [
-        "Harness_Engineering",
         "Cognitive_Gearing",
+        "Harness_Engineering",
         "Agent_Engineering"
       ],
       "inlinks": []
@@ -4698,12 +4757,40 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "双向链接",
-        "extract_code_skeleton脚本"
+        "extract_code_skeleton脚本",
+        "双向链接"
       ],
       "inlinks": [
         "extract_code_skeleton脚本"
       ]
+    },
+    "wiki/synthesis/agent与多模态交叉分析.md": {
+      "title": "agent与多模态交叉分析",
+      "slug": "agent与多模态交叉分析",
+      "domain": [],
+      "type": "",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本文件是 [学习路线总纲](wiki/synthesis/学习路线总纲.md) 的一部分，用于探讨 **感知（多模态大模型）** 与 **行动（Agent 工程）** 在底层控制、控制反馈回路及物理约束上的交汇。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
+    "wiki/synthesis/agent工程学习计划.md": {
+      "title": "agent工程学习计划",
+      "slug": "agent工程学习计划",
+      "domain": [],
+      "type": "",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本计划归属于 [学习路线总纲](wiki/synthesis/学习路线总纲.md)，聚焦于 AI 智能体开发框架、安全约束沙箱、自进化与强化学习（RL）反馈回路。 ---",
+      "outlinks": [],
+      "inlinks": []
     },
     "wiki/synthesis/harness_engineering_roadmap.md": {
       "title": "State of Codebase Harness Engineering (2026)",
@@ -4726,12 +4813,12 @@
       "status": "active",
       "summary": "This card synthesizes the current (2026) industry consensus on building reliable AI agent environments for software engineering.",
       "outlinks": [
-        "conductors_vs_orchestrators",
-        "conductor_vs_orchestrator",
-        "awesome_harness_readme",
         "martin_fowler",
+        "awesome_harness_readme",
+        "conductor_vs_orchestrator",
+        "gitagent_pattern",
         "aws_ai_dlc",
-        "gitagent_pattern"
+        "conductors_vs_orchestrators"
       ],
       "inlinks": []
     },
@@ -4753,47 +4840,47 @@
       "status": "active",
       "summary": "> **前言：本指南的正确使用方式** > 本文件是整个 Qwen2.5-VL 架构体系的**「教学大纲」与「作战地图」**。这里不会直接堆砌冗长的代码和晦涩的数学推导，而是专注于**构建你的系统化学习脉络**。 > > 针对每一个核心模块，我们都严格遵循四大章节进行梳理： > **1. 架构顺序解读**：模块的来龙去脉、输入输出、以及数据在其中经历了哪些处理步骤。 > **2. 概念学习序...",
       "outlinks": [
-        "qwen2.5_vl_三阶段预训练",
-        "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎",
-        "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)",
-        "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm",
-        "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)",
-        "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)",
-        "navit_动态分辨率#1-navit-的基石思想-patch-n-pack",
-        "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)",
-        "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)",
-        "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)",
-        "patchmerger_空间降维#1-空间下采样：张量形变魔法",
-        "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)",
-        "rope_旋转位置编码#1-第一性原理与复数推导",
-        "2d_rope_视觉位置编码",
-        "conv3d_时空切块器#数值计算示例与心算验证",
-        "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo",
-        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)",
-        "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias",
-        "patchmerger_空间降维",
-        "window_attention_交错注意力",
-        "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力",
-        "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决",
-        "navit_动态分辨率#核心算法原理详解",
-        "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling",
-        "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜",
-        "rope_旋转位置编码",
-        "qwen2.5_vl_预处理流水线#步骤三：时间步打包与 5D 张量同质化 (Time-Step Grouping)",
-        "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新",
         "clip_对比学习视觉编码",
+        "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling",
+        "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)",
+        "rope_旋转位置编码",
+        "知识卡片",
+        "conv3d_时空切块器#参数生命周期与渊源追溯",
+        "rmsnorm_归一化",
         "clip_对比学习视觉编码#2-进化：siglip-的二分类革新",
-        "clip_对比学习视觉编码#1-clip-的全局-softmax-机制",
-        "packing_物理隔离机制",
+        "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新",
+        "convolution_卷积家族原理",
+        "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm",
+        "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力",
+        "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜",
+        "conv3d_时空切块器#数值计算示例与心算验证",
+        "window_attention_交错注意力",
+        "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)",
+        "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)",
         "conv3d_时空切块器#1-步骤一：3d-卷积时空滤波-tubelet-embedding",
         "vit_核心原理与结构#1. 为什么需要多层堆叠？ (第一性原理)",
-        "convolution_卷积家族原理",
-        "conv3d_时空切块器#参数生命周期与渊源追溯",
-        "qwen2.5_vl_预处理框架集成与显存评估",
+        "patchmerger_空间降维",
+        "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)",
+        "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)",
+        "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo",
+        "2d_rope_视觉位置编码",
+        "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)",
         "mrope_多模态位置编码",
-        "知识卡片",
-        "rmsnorm_归一化"
+        "navit_动态分辨率#核心算法原理详解",
+        "qwen2.5_vl_三阶段预训练",
+        "navit_动态分辨率#1-navit-的基石思想-patch-n-pack",
+        "patchmerger_空间降维#1-空间下采样：张量形变魔法",
+        "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias",
+        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
+        "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决",
+        "rope_旋转位置编码#1-第一性原理与复数推导",
+        "qwen2.5_vl_预处理框架集成与显存评估",
+        "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)",
+        "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎",
+        "clip_对比学习视觉编码#1-clip-的全局-softmax-机制",
+        "packing_物理隔离机制",
+        "qwen2.5_vl_预处理流水线#步骤三：时间步打包与 5D 张量同质化 (Time-Step Grouping)",
+        "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
       ],
       "inlinks": [
         "qwen2.5_vl_技术报告解析",
@@ -4820,40 +4907,86 @@
       "status": "active",
       "summary": "> **前言：本指南的正确使用方式** > 本文件是 Qwen3.5 架构体系的**「教学大纲」与「作战地图」**，同时也是**完整的前向传播全链路流转文档**。 > 相比于 [[qwen2.5_vl_深度剖析学习指南]]，Qwen3.5 在语言基座上进行了大刀阔斧的革命，引入了线性注意力（Gated DeltaNet）、摒弃了 DeepStack，回归了 `ViT + PatchMerge...",
       "outlinks": [
-        "qwen2.5_vl_三阶段预训练",
-        "qwen_代码地图",
-        "qwen2.5_vl_预处理流水线",
+        "clip_对比学习视觉编码",
+        "qwen3.5_视觉编码器",
         "qwen3.5_文本嵌入与特殊token#1. nn.Embedding 查表原理",
-        "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)",
-        "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
-        "conv3d_时空切块器",
+        "知识卡片",
         "qwen3.5_混合decoder架构",
-        "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由",
-        "qwen3.5_interleaved_mrope",
-        "2d_rope_视觉位置编码",
-        "qwen2.5_vl_深度剖析学习指南",
-        "qwen3.5_混合decoder架构#2. 双 Mask 系统",
-        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "patchmerger_空间降维",
+        "rmsnorm_归一化",
         "qwen3.5_文本嵌入与特殊token#3. 特殊 Token 角色定义",
+        "qwen3.5_混合decoder架构#3. 标准 Attention (Qwen3_5Attention) — 完整源码",
+        "qwen2.5_vl_深度剖析学习指南",
+        "qwen3.5_interleaved_mrope",
+        "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)",
+        "qwen3.5_多模态融合机制",
+        "qwen3.5_混合decoder架构#2. 双 Mask 系统",
         "qwen3.5_视觉编码器#1. Conv3d PatchEmbed",
         "window_attention_交错注意力",
-        "qwen3.5_混合decoder架构#4. SwiGLU MLP",
-        "qwen3.5_混合decoder架构#3. 标准 Attention (Qwen3_5Attention) — 完整源码",
-        "qwen3.5_视觉编码器",
-        "clip_对比学习视觉编码",
-        "qwen3.5_视觉编码器#4. VisionBlock (×32)",
-        "qwen3.5_gated_delta_net",
-        "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)",
-        "qwen3.5_视觉编码器#5. PatchMerger",
-        "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换",
-        "qwen3.5_多模态融合机制",
-        "qwen2.5_vl_预处理框架集成与显存评估",
-        "mrope_多模态位置编码",
+        "patchmerger_空间降维",
         "qwen3.5_processor预处理#1. mm_token_type_ids — 模态类型标记",
-        "知识卡片",
-        "rmsnorm_归一化"
+        "2d_rope_视觉位置编码",
+        "qwen3.5_视觉编码器#5. PatchMerger",
+        "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
+        "mrope_多模态位置编码",
+        "qwen2.5_vl_三阶段预训练",
+        "qwen3.5_视觉编码器#4. VisionBlock (×32)",
+        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
+        "qwen2.5_vl_预处理流水线",
+        "qwen3.5_gated_delta_net",
+        "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由",
+        "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)",
+        "qwen3.5_混合decoder架构#4. SwiGLU MLP",
+        "qwen_代码地图",
+        "qwen2.5_vl_预处理框架集成与显存评估",
+        "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换",
+        "conv3d_时空切块器"
       ],
+      "inlinks": []
+    },
+    "wiki/synthesis/多模态大模型学习计划.md": {
+      "title": "多模态大模型学习计划",
+      "slug": "多模态大模型学习计划",
+      "domain": [],
+      "type": "",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本计划归属于 [学习路线总纲](wiki/synthesis/学习路线总纲.md)，聚焦于视觉编码器骨干网、多维时空旋转位置编码、动态分辨率及混合 Decoder 架构。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
+    "wiki/synthesis/学习路线总纲.md": {
+      "title": "学习路线总纲",
+      "slug": "学习路线总纲",
+      "domain": [],
+      "type": "",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本总纲是 Agent 工程与多模态大模型双主线学习的顶层设计图，结合了 [统一学习与知识管理框架](wiki/synthesis/统一学习与知识管理框架.md) 与 [MIT 48小时速成法](wiki/concepts/MIT_48小时速成法.md) 方法论，用于指导后续深度 Interrogate 与 Distill。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
+    "wiki/synthesis/技术演进时间线.md": {
+      "title": "技术演进时间线",
+      "slug": "技术演进时间线",
+      "domain": [
+        "agent_engineering",
+        "harness_engineering",
+        "mllm_architecture"
+      ],
+      "type": "synthesis",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本时间线归属于 [学习路线总纲](wiki/synthesis/学习路线总纲.md)，用于梳理 Agent 工程代际演进与多模态大模型（MLLM）架构突破的演变历程，揭示技术演进的底层逻辑。 ---",
+      "outlinks": [],
       "inlinks": []
     },
     "wiki/synthesis/知识库工业化升级_图索引检索系统.md": {
@@ -4890,10 +5023,10 @@
       "summary": "> 本卡片是完整的技术总纲，可独立复现整个系统。面向新加入的人类或 AI 阅读。",
       "outlinks": [
         "compile_graph脚本",
-        "双链",
         "check_staleness脚本",
         "知识图谱编译与检索操作规范",
         "gbrain_yuxi_深度技术分析",
+        "双链",
         "query_graph脚本",
         "Seed-Expand-Classify 检索范式"
       ],
@@ -4941,6 +5074,24 @@
       ],
       "inlinks": []
     },
+    "wiki/synthesis/系统提示词设计优化与动态演进_深水区精读.md": {
+      "title": "系统提示词设计优化与动态演进_深水区精读",
+      "slug": "系统提示词设计优化与动态演进_深水区精读",
+      "domain": [
+        "prompt_engineering",
+        "harness_engineering",
+        "self_evolving_agent"
+      ],
+      "type": "synthesis",
+      "tags": [],
+      "trigger_keywords": [],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "> **导航定位**：本报告归属于 [学习路线总纲](wiki/synthesis/学习路线总纲.md) 与 [Agent 工程学习计划](wiki/synthesis/agent工程学习计划.md) 的“系统提示词设计优化与动态演进”板块，是对 8 篇核心学术文献的深水区精读与演变脉络梳理。 ---",
+      "outlinks": [],
+      "inlinks": []
+    },
     "wiki/synthesis/统一学习与知识管理框架.md": {
       "title": "AI驱动的知识引擎：高效学习与管理自动化全景指南",
       "slug": "统一学习与知识管理框架",
@@ -4965,17 +5116,17 @@
       "outlinks": [
         "双向链接",
         "费曼学习法",
-        "ai知识库操作指南",
-        "notebooklm_mcp用法",
-        "间隔重复",
-        "Andrej_Karpathy",
-        "复利知识库",
         "原子化笔记",
+        " ",
         "主动召回",
         "MIT_48小时速成法",
-        "心智模型",
+        "Andrej_Karpathy",
+        "notebooklm_mcp用法",
+        "复利知识库",
+        "间隔重复",
+        "ai知识库操作指南",
         "主动拷问",
-        " "
+        "心智模型"
       ],
       "inlinks": [
         "MIT_48小时速成法",
