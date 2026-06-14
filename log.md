@@ -177,3 +177,30 @@
   - Source × 5：4个项目文档来源 + 1个深度分析来源
 - **更新文件**：`index.md` (全面扩充 4 个分类)
 - **编译**：`compile_graph.py` 编译知识图谱，更新 `.wiki_graph.json`
+
+## [2026-06-14] migrate | 重新迁移与完整集成 VLM/Qwen3.5 知识库 (基于正确路径)
+
+- **触发者**：纠正源项目路径后，重新原封不动地完整迁移 `/mnt/d/project/llm_base/knowledge_base` 目录下的所有 Wiki 卡片与原始资料。
+- **实施动作**：
+  - **完整迁移 Wiki 卡片（共 34 张卡片）**：
+    - **Concepts (共 27 张概念卡)**：
+      - 视觉编码器与卷积组件：`navit_动态分辨率.md`、`conv3d_时空切块器.md`、`window_attention_交错注意力.md`、`swiglu_门控激活函数.md`、`rmsnorm_归一化.md`、`patchmerger_空间降维.md`、`vit_核心原理与结构.md`、`clip_对比学习视觉编码.md`、`convolution_卷积家族原理.md`
+      - 位置编码：`2d_rope_视觉位置编码.md`、`mrope_多模态位置编码.md`、`qwen3.5_interleaved_mrope.md`、`rope_旋转位置编码.md`
+      - Qwen 与多模态架构组件：`qwen3.5_混合decoder架构.md`、`qwen3.5_gated_delta_net.md`、`qwen3.5_视觉编码器.md`、`qwen3.5_多模态融合机制.md`、`qwen3.5_processor预处理.md`、`qwen3.5_文本嵌入与特殊token.md`、`llm_backbone_大语言模型基座.md`、`packing_物理隔离机制.md`、`qwen2.5_vl_预处理流水线.md`、`qwen2.5_vl_预处理框架集成与显存评估.md`、`qwen3.5_原生多模态训练范式.md`
+      - 代码导航：`qwen_代码地图.md`
+      - 架构对比：`动态分辨率方案对比.md`
+      - 训练策略：`qwen2.5_vl_三阶段预训练.md`
+    - **Sources (共 5 张来源卡)**：
+      - `dynamic_resolution_动态分辨率.md`、`qwen2.5_vl_技术报告解析.md`、`qwen_evolution_架构演进与前沿底座.md`、`rope_系列原理解析.md`、`vision_foundation_视觉基石与卷积.md`
+    - **Synthesis (共 2 张综合分析卡)**：
+      - `qwen2.5_vl_深度剖析学习指南.md`、`qwen3.5_深度剖析学习指南.md`
+  - **本地 `images/` 子目录完美保留**：
+    - 完整保留 `wiki/concepts/images/` 和 `wiki/synthesis/images/` 下的所有图片资源，确保 Markdown 中的相对路径引用（如 `![](images/...)`）完全有效且在 Obsidian 等编辑器中显示正常。
+  - **原始资料（共 25 个原始文件/目录）**：
+    - 完整复制 `raw/` 目录下的 24 个文件/目录（包括多模态 3D-RoPE, SigLIP, SigLIP2, ViT 原始资料与模型显存分析等 Zip、Md 文件）以及根目录下的 `MCP_Guides/` 到 `raw/articles/`。
+  - **更新文件**：
+    - `index.md` — 重新组织「核心概念」、「来源摘要」、「原始材料总览」等表格分类，成功注册所有 34 张新卡片和 25 个原始资料。
+    - `log.md` — 本条记录。
+  - **编译索引**：
+    - 运行 `compile_graph.py` 重新编译知识图谱，生成最新的 `.wiki_graph.json`。图谱成功编译：131 张卡片，501 个链接，无任何新生成的编译错误。
+

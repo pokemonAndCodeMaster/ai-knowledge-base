@@ -15,6 +15,9 @@
 | [知识库工业化升级_图索引检索系统](wiki/synthesis/知识库工业化升级_图索引检索系统.md) | 🆕 完整技术总纲：图索引检索系统设计决策、三阶段范式、更新机制、复现步骤（可独立复现） |
 | [知识库高保真摄入管线](wiki/synthesis/知识库高保真摄入管线.md) | 🆕 摄入机制重构：Map-Reduce 大纲编纂流 + AST 语义分块 + Direct Quote 原文快照护栏 |
 | [Repo-as-Graph代码摄入范式](wiki/synthesis/Repo-as-Graph代码摄入范式.md) | 🆕 代码摄入重构：骨架提取 + 索引建卡 + 动态读取，解决细节丢失与快速过期问题 |
+| [Qwen2.5-VL 深度剖析学习指南](wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md) | Qwen2.5-VL 全链路硬核学习指南：从 Processor 预处理到 LLM 自回归解码的完整五模块无死角串联 |
+| [Qwen3.5 深度剖析学习指南](wiki/synthesis/qwen3.5_深度剖析学习指南.md) | Qwen3.5 全景架构演进与全链路数据流拓扑、GatedDeltaNet 线性注意力与混合层解码推演 |
+| [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 智能体系统与测试基座 (Harness) 核心工程全景分析 |
 
 
 ---
@@ -64,6 +67,63 @@
 | [NotebookLM MCP 用法](wiki/concepts/notebooklm_mcp用法.md) | nlm CLI 完整命令速查 + 批量导出 Sources 脚本 + Studio/Research 功能 |
 | [AI 知识库操作指南](wiki/concepts/ai知识库操作指南.md) | 如何用 Prompt 触发 ai-librarian 三大操作（Ingest/Query/Lint），含目录结构速查 |
 
+### 🏗️ 视觉编码器与卷积组件
+
+| 文件 | 摘要 |
+|---|---|
+| [NaViT 动态分辨率](wiki/concepts/navit_动态分辨率.md) | NaViT 原生动态分辨率方案：保持原始分辨率和宽高比，Patch n' Pack 序列打包，分解式位置编码 |
+| [Conv3D 时空切块器](wiki/concepts/conv3d_时空切块器.md) | 3D 卷积时空切块器 (VisionPatchEmbed)：将像素立方体切分为 1152 维特征向量，kernel=(2,14,14) |
+| [交错窗口注意力](wiki/concepts/window_attention_交错注意力.md) | 交错窗口注意力：32 层中 4 层全局 / 28 层窗口，7:1 黄金比例，降低 $O(N^2)$ 到 $O(N \times W)$ |
+| [SwiGLU 门控激活函数](wiki/concepts/swiglu_门控激活函数.md) | SwiGLU 门控 MLP：gate×up→down 三路结构，ViT 中开启 bias=True 对抗 DC Offset |
+| [RMSNorm 归一化](wiki/concepts/rmsnorm_归一化.md) | RMSNorm 归一化：省去均值计算，权重初始化为 1，后续演化为 Zero-Centered RMSNorm |
+| [PatchMerger 空间降维](wiki/concepts/patchmerger_空间降维.md) | PatchMerger 空间降维桥接器 (Projector)：2×2 合并 + MLP 投影，4608→4096，Token 数砍 75% |
+| [ViT 视觉骨干网核心原理与结构](wiki/concepts/vit_核心原理与结构.md) | ViT 视觉骨干网核心原理与结构：32层交错视野 Block + MHA + Inverted Bottleneck MLP |
+| [CLIP 对比学习视觉编码](wiki/concepts/clip_对比学习视觉编码.md) | CLIP 视觉编码器：对比学习范式、双塔架构、零样本迁移能力 |
+| [卷积家族原理](wiki/concepts/convolution_卷积家族原理.md) | 卷积家族原理：2D卷积、3D卷积、转置卷积、空洞卷积、分组卷积的 PyTorch 实现 |
+
+### 🧭 位置编码
+
+| 文件 | 摘要 |
+|---|---|
+| [2D-RoPE 视觉位置编码](wiki/concepts/2d_rope_视觉位置编码.md) | 2D-RoPE 视觉位置编码：ViT 内部使用，将 head_dim 均分为 X/Y 两轴独立旋转 |
+| [MRoPE 多模态位置编码](wiki/concepts/mrope_多模态位置编码.md) | MRoPE 多模态旋转位置编码：LLM 内部的三维时空编码 (T,H,W)，Qwen2.5-VL 对齐绝对物理时间 |
+| [Qwen3.5 交错式 MRoPE](wiki/concepts/qwen3.5_interleaved_mrope.md) | Qwen3.5 交错式 MRoPE：频率 [THWTHW...] 交错排列 + 4D position_ids + partial_rotary_factor |
+| [RoPE 旋转位置编码](wiki/concepts/rope_旋转位置编码.md) | RoPE 旋转位置编码：在复数平面做旋转实现相对位置感知，解决绝对编码的外推性问题 |
+
+### 🧬 Qwen 与多模态架构组件
+
+| 文件 | 摘要 |
+|---|---|
+| [Qwen3.5 混合 Decoder 架构](wiki/concepts/qwen3.5_混合decoder架构.md) | 混合 Decoder：Full Attention ↔ GatedDeltaNet 交替层、双 Mask 系统、KV Cache 管理 |
+| [GatedDeltaNet 线性注意力](wiki/concepts/qwen3.5_gated_delta_net.md) | GatedDeltaNet 线性注意力：Gated Delta Rule 算法、Conv1d 局部感知、RMSNormGated |
+| [Qwen3.5 视觉编码器](wiki/concepts/qwen3.5_视觉编码器.md) | 视觉编码器：Conv3d PatchEmbed → 插值位置嵌入 → 2D RoPE → 32×VisionBlock → PatchMerger |
+| [Qwen3.5 多模态融合机制](wiki/concepts/qwen3.5_多模态融合机制.md) | 多模态融合：占位符 masked_scatter 替换、DeepStack 移除、特殊 token ID 定义 |
+| [Qwen3.5 Processor 预处理](wiki/concepts/qwen3.5_processor预处理.md) | Processor 预处理：mm_token_type_ids 模态标记、视频帧时间戳、占位符展开逻辑 |
+| [Qwen3.5 文本嵌入与特殊 Token](wiki/concepts/qwen3.5_文本嵌入与特殊token.md) | 文本嵌入：nn.Embedding 查表、ChatML 模板结构、特殊 Token 角色、占位 Embedding 生命周期 |
+| [LLM Backbone 大模型基座](wiki/concepts/llm_backbone_大语言模型基座.md) | LLM Backbone 大模型基座：架构微调与演进，偏置项、归一化、激活函数与注意力偏置 |
+| [Packing 物理隔离机制](wiki/concepts/packing_物理隔离机制.md) | Packing 物理隔离机制：多样本/多图打包成单个 Sequence，注意力掩码与 3D 物理隔离 |
+| [Qwen2.5-VL 预处理流水线](wiki/concepts/qwen2.5_vl_预处理流水线.md) | Qwen2.5-VL 预处理流水线：图像缩放、分块打包、时间步计算、三维坐标变换逻辑 |
+| [Qwen2.5-VL 预处理框架集成与显存评估](wiki/concepts/qwen2.5_vl_预处理框架集成与显存评估.md) | Qwen2.5-VL 预处理框架集成与显存评估：Transformers 框架集成、数据加载流转与显存开销精确计算 |
+| [Qwen3.5 原生多模态训练范式](wiki/concepts/qwen3.5_原生多模态训练范式.md) | Qwen3.5 原生多模态训练范式：原生多模态输入支持、Token 化策略与多模态预训练优化 |
+
+### 💻 代码导航
+
+| 文件 | 摘要 |
+|---|---|
+| [Qwen 代码地图](wiki/concepts/qwen_代码地图.md) | **Qwen 全系列代码总入口**：跨 4 仓库（Transformers/vLLM/Swift/LLaMA-Factory）的文件索引、类继承关系、阅读路线图 |
+
+### 📐 架构对比
+
+| 文件 | 摘要 |
+|---|---|
+| [动态分辨率方案对比](wiki/concepts/动态分辨率方案对比.md) | 原生动态分辨率 vs Dynamic Tiling，视觉 Token 压缩四分类对比 |
+
+### 🎓 训练策略
+
+| 文件 | 摘要 |
+|---|---|
+| [Qwen2.5-VL 三阶段预训练](wiki/concepts/qwen2.5_vl_三阶段预训练.md) | 三阶段预训练（ViT→全参→长上下文）+ 后训练（SFT+DPO），4T tokens 数据规模 |
+
 ### 🤖 AI 与智能体类
 
 | 文件 | 摘要 |
@@ -94,6 +154,21 @@
 | [Ashby's Law (必要多样性定律)](wiki/concepts/ashby_law.md) | 自动归档摄入 |
 | [前馈与反馈控制 (Feedforward and Feedback)](wiki/concepts/feedforward_and_feedback.md) | 自动归档摄入 |
 
+### 👁️ 多模态与 VLM 架构类
+
+| 文件 | 摘要 |
+|---|---|
+| [NaViT 动态分辨率](wiki/concepts/navit_动态分辨率.md) | NaViT 原生动态分辨率方案：保持原始分辨率和宽高比，Patch n' Pack 序列打包，分解式位置编码 |
+| [Conv3D 时空切块器](wiki/concepts/conv3d_时空切块器.md) | 3D 卷积时空切块器 (VisionPatchEmbed)：将像素立方体切分为 1152 维特征向量，kernel=(2,14,14) |
+| [交错窗口注意力](wiki/concepts/window_attention_交错注意力.md) | 交错窗口注意力：32 层中 4 层全局 / 28 层窗口，7:1 黄金比例，降低 $O(N^2)$ 到 $O(N \times W)$ |
+| [SwiGLU 门控激活函数](wiki/concepts/swiglu_门控激活函数.md) | SwiGLU 门控 MLP：gate×up→down 三路结构，ViT 中开启 bias=True 对抗 DC Offset |
+| [RMSNorm 归一化](wiki/concepts/rmsnorm_归一化.md) | RMSNorm 归一化：省去均值计算，权重初始化为 1，后续演化为 Zero-Centered RMSNorm |
+| [PatchMerger 空间降维](wiki/concepts/patchmerger_空间降维.md) | PatchMerger 空间降维桥接器 (Projector)：2×2 合并 + MLP 投影，4608→4096，Token 数砍 75% |
+| [2D-RoPE 视觉位置编码](wiki/concepts/2d_rope_视觉位置编码.md) | 2D-RoPE 视觉位置编码：ViT 内部使用，将 head_dim 均分为 X/Y 两轴独立旋转 |
+| [MRoPE 多模态位置编码](wiki/concepts/mrope_多模态位置编码.md) | MRoPE 多模态旋转位置编码：LLM 内部的三维时空编码 (T,H,W)，Qwen2.5-VL 对齐绝对物理时间 |
+| [动态分辨率方案对比](wiki/concepts/动态分辨率方案对比.md) | 原生动态分辨率 vs Dynamic Tiling，视觉 Token 压缩四分类对比 |
+| [Qwen2.5-VL 三阶段预训练](wiki/concepts/qwen2.5_vl_三阶段预训练.md) | 三阶段预训练（ViT→全参→长上下文）+ 后训练（SFT+DPO），4T tokens 数据规模 |
+
 
 ## 🏷️ 实体（Entities）
 
@@ -107,6 +182,8 @@
 | [gbrain项目](wiki/entities/gbrain项目.md) | 🆕 个人+团队 Brain Layer：混合检索 + Dream Cycle + Autopilot 守护进程 |
 | [Yuxi项目](wiki/entities/Yuxi项目.md) | 🆕 企业知识库平台：Milvus 混合检索 + PPR 图增强 + LangGraph 中间件 |
 | [AgentScope项目](wiki/entities/AgentScope项目.md) | 🆕 阿里巴巴生产级 Agent 框架：Event/Permission/Multi-tenancy/Workspace/Middleware |
+| [Thoughtworks](wiki/entities/thoughtworks.md) | 著名 IT 咨询公司，系统测试及持续交付理念的行业先驱 |
+| [Martin Fowler](wiki/entities/martin_fowler.md) | Thoughtworks 首席科学家，微服务、重构及 Harness 控制论倡导者 |
 
 ---
 
@@ -128,6 +205,15 @@
 | [Graphify 文档](wiki/sources/graphify_source_docs.md) | 🆕 开源 | README + ARCHITECTURE + how-it-works 核心提炼 |
 | [gbrain × Yuxi 分析](wiki/sources/gbrain_yuxi_source_analysis.md) | 🆕 深度分析 | 两大知识库项目 7 维度对比（检索/摄入/评测/代码/并行/维护） |
 | [AgentScope 文档](wiki/sources/agentscope_source_docs.md) | 🆕 开源 | README + 215 文件代码骨架提炼 |
+| [Qwen2.5-VL 技术报告解析](wiki/sources/qwen2.5_vl_技术报告解析.md) | arXiv 技术报告 | Qwen2.5-VL 官方技术报告的架构改进、训练策略和实验结果摘要 |
+| [动态分辨率原理](wiki/sources/dynamic_resolution_动态分辨率.md) | arXiv / 博客 | 动态分辨率 (NaViT) 与 Patch n' Pack/Tiling 机制的演进历程与核心实现 |
+| [Qwen 架构演进与前沿底座](wiki/sources/qwen_evolution_架构演进与前沿底座.md) | 官方博客 / 文档 | Qwen 系列多模态模型从 1.0/2.0 到 3.0/3.5 的完整架构演化路线 |
+| [RoPE 系列原理解析](wiki/sources/rope_系列原理解析.md) | 博客 / 论文 | 旋转位置编码 (RoPE) 从 1D 到 2D、3D 以及 YaRN、交错式位置编码的演进细节 |
+| [视觉基石与卷积原理](wiki/sources/vision_foundation_视觉基石与卷积.md) | 教材 / 博客 | ViT 视觉骨干网、CLIP/SigLIP 对比学习视觉基座以及 1D/2D/3D 卷积算子的理论基础 |
+| [Almirant (项目级 Agent 协调面板)](wiki/sources/almirant.md) | 自动归档 | 自动归档摄入 |
+| [Paperclip (零人类公司编排系统)](wiki/sources/paperclip.md) | 自动归档 | 自动归档摄入 |
+| [Martin Fowler：Harness](wiki/sources/martin_fowler_harness.md) | 自动归档 | 自动归档摄入 |
+
 
 
 ---
@@ -138,12 +224,33 @@
 - 完整共 71 篇，持续补全中
 - 主要涵盖：MIT学习法、费曼技巧、Karpathy llm-wiki、Obsidian Zettelkasten、NotebookLM 使用技巧等
 - **2026-04-08 新增**：awesome-agent-harness 仓库 README + 5篇权威文献（Martin Fowler、Anthropic x2、LangChain、ignorance.ai）
-| [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 自动归档摄入 |
-| [Thoughtworks](wiki/entities/thoughtworks.md) | 自动归档摄入 |
-| [Martin Fowler](wiki/entities/martin_fowler.md) | 自动归档摄入 |
-| [Almirant (项目级 Agent 协调面板)](wiki/sources/almirant.md) | 自动归档摄入 |
-| [Paperclip (零人类公司编排系统)](wiki/sources/paperclip.md) | 自动归档摄入 |
-| [Martin Fowler：Harness](wiki/sources/martin_fowler_harness.md) | 自动归档摄入 |
+- **Qwen3.5 & VLM 原始资料（新迁移）**：
+  - [Qwen2.5-VL/](raw/articles/Qwen2.5-VL/) — 官方技术报告解析
+  - [Qwen2.5-VL (preview)/](raw/articles/Qwen2.5-VL%20%28preview%29/) — Transformers PR 阶段预览解析
+  - [NaViT/](raw/articles/NaViT/) — NaViT 论文解读
+  - [Qwen_Architecture_Guides/](raw/articles/Qwen_Architecture_Guides/) — 学习指南 Phase 1（原始版）
+  - [面试官!从Qwen-VL到Qwen3.5技术改进？(26年2月版)/](raw/articles/%E9%9D%A2%E8%AF%95%E5%AE%98%21%E4%BB%8EQwen-VL%E5%88%B0Qwen3.5%E6%8A%80%E6%9C%AF%E6%94%B9%E8%BF%9B%EF%BC%9F%2826%E5%B9%B42%E6%9C%88%E7%89%88%29/) — Qwen 系列面试题对比
+  - [面试官：VLM 的动态分辨率是怎么做的？/](raw/articles/%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9AVLM%20%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E8%BE%A8%E7%8E%87%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F/) — 动态分辨率面试题
+  - [Qwen3-Next模型结构与源码逻辑_骑虎南下_2026-01-06/](raw/articles/Qwen3-Next%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%BA%90%E7%A0%81%E9%80%BB%E8%BE%91_%E9%AA%91%E8%99%8E%E5%8D%97%E4%B8%8B_2026-01-06/)
+  - [Qwen3-Next源码解析：一文看清架构中的核心点实现_李先生_2025-10-20/](raw/articles/Qwen3-Next%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%EF%BC%9A%E4%B8%8D%E6%96%87%E7%9C%8B%E6%B8%85%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E6%A0%B8%E5%BF%83%E7%82%B9%E5%AE%9E%E7%8E%B0_%E6%9D%8E%E5%85%88%E7%94%9F_2025-10-20/)
+  - [Qwen3.5源码逻辑与模型架构_骑虎南下_2026-03-17/](raw/articles/Qwen3.5%E6%BA%90%E7%A0%81%E9%80%BB%E8%BE%91%E4%B8%8E%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84_%E9%AA%91%E8%99%8E%E5%8D%97%E4%B8%8B_2026-03-17/)
+  - [【LLM】Qwen3.5解剖_Plunck_2026-02-15/](raw/articles/%E3%80%90LLM%E3%80%9FQwen3.5%E8%A7%A3%E5%89%96_Plunck_2026-02-15/)
+  - [MCP_Guides/](raw/articles/MCP_Guides/)
+  - [2D-RoPE/](raw/articles/2D-RoPE/) — 2D 旋转位置编码推演与推导
+  - [CLIP(2021, OpenAI)/](raw/articles/CLIP%282021%2C%20OpenAI%29/) — CLIP 经典对比学习视觉对齐模型
+  - [MRoPE/](raw/articles/MRoPE/) — 多模态旋转位置编码
+  - [Qwen-3.5 Preview/](raw/articles/Qwen-3.5%20Preview/) — Qwen3.5 预览版官方设计架构图与说明
+  - [Qwen3-VL/](raw/articles/Qwen3-VL/) — Qwen3-VL 视觉编码与预处理源码
+  - [SigLIP/](raw/articles/SigLIP/) — 替代 CLIP 的高效 Sigmoid 损失函数
+  - [SigLIP2/](raw/articles/SigLIP2/) — Google 升级版细粒度局部定位与蒸馏视觉底座
+  - [ViT(2020, Google Research)/](raw/articles/ViT%282020%2C%20Google%20Research%29/) — Vision Transformer 奠基性论文
+  - [ViT的位置编码/](raw/articles/ViT%E7%9A%84%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/) — ViT 可学习绝对位置嵌入原理解析
+  - [[qwen2vl-internvl2.5] 动态分辨率输入方案解读_梦想成真_2025-03-11/](raw/articles/%5Bqwen2vl-internvl2.5%5D%20%E5%8A%A8%E6%80%81%E5%88%86%E8%BE%A8%E7%8E%87%E8%BE%93%E5%85%A5%E6%96%B9%E6%A1%88%E8%A7%A3%E8%AF%BB_%E6%A2%A6%E6%83%B3%E6%88%90%E7%9C%9F_2025-03-11/)
+  - [【Torch】nn.Conv1d、nn.Conv2d、nn.Conv3d算法详解_油泼辣子多加_2025-05-06/](raw/articles/%E3%80%90Torch%E3%80%9Fnn.Conv1d%E3%80%81nn.Conv2d%E3%80%81nn.Conv3d%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3_%E6%B2%B9%E6%B3%BC%E8%BE%A3%E5%AD%90%E5%A4%9A%E5%8A%A0_2025-05-06/)
+  - [万字长文图解Qwen2.5-VL实现细节_猛猿_2025-06-25/](raw/articles/%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E5%9B%BE%E8%A7%A3Qwen2.5-VL%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82_%E7%8C%9B%E7%8C%BF_2025-06-25/)
+  - [为什么qwen2-vl 比qwen-vl 更多保留图片信息？_心灵的灯_2025-06-17/](raw/articles/%E4%B8%BA%E4%BB%80%E4%B9%88qwen2-vl%20%E6%AF%94qwen-vl%20%E6%9B%B4%E5%A4%9A%E4%BF%9D%E7%95%99%E5%9B%BE%E7%89%87%E4%BF%A1%E6%81%AF%EF%BC%9F_%E5%BF%83%E7%81%B5%E7%9A%84%E7%81%AF_2025-06-17/)
+  - [深度学习中不同类型卷积的综合介绍：2D卷积、3D卷积、转置卷积、扩张卷积、可分离卷积、扁平卷积、分组卷积、随机分组卷积、逐点分组卷积等pytorch代码实现和解析。_初识CV_2024-05-07/](raw/articles/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E5%8D%B7%E7%A7%AF%E7%9A%84%E7%BB%BC%E5%90%88%E4%BB%8B%E7%BB%8D%EF%BC%9A2D%E5%8D%B7%E7%A7%AF%E3%80%813D%E5%8D%B7%E7%A7%AF%E3%80%81%E8%BD%AC%E7%BD%AE%E5%8D%B7%E7%A7%AF%E3%80%81%E6%89%A9%E5%BC%A0%E5%8D%B7%E7%A7%AF%E3%80%81%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF%E3%80%81%E6%89%81%E5%B9%B3%E5%8D%B7%E7%A7%AF%E3%80%81%E5%88%86%E7%BB%84%E5%8D%B7%E7%A7%AF%E3%80%81%E9%9A%8F%E6%9C%BA%E5%88%86%E7%BB%84%E5%8D%B7%E7%A7%AF%E3%80%81%E9%80%90%E7%82%B9%E5%88%86%E7%BB%84%E5%8D%B7%E7%A7%AF%E7%AD%89pytorch%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%92%8C%E8%A7%A3%E6%9E%90%E3%80%82_%E5%88%9D%E8%AF%86CV_2024-05-07/)
+
 
 
 ---
