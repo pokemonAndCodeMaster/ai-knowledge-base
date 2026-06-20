@@ -24,6 +24,9 @@
 | [Qwen2.5-VL 深度剖析学习指南](wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md) | Qwen2.5-VL 全链路硬核学习指南：从 Processor 预处理到 LLM 自回归解码的完整五模块无死角串联 |
 | [Qwen3.5 深度剖析学习指南](wiki/synthesis/qwen3.5_深度剖析学习指南.md) | Qwen3.5 全景架构演进与全链路数据流拓扑、GatedDeltaNet 线性注意力与混合层解码推演 |
 | [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 智能体系统与测试基座 (Harness) 核心工程全景分析 |
+| [数据质量门户架构设计](wiki/synthesis/数据质量门户架构设计.md) | 🆕 一站式门户架构总纲：Vue3+FastAPI 技术选型、目录结构、数据流、扩展指南、ADR 设计决策记录 |
+| [前端从零到精通学习指南](wiki/synthesis/前端从零到精通学习指南.md) | 🆕 Python 开发者视角的前端学习路线：HTML/CSS/JS/Vue3/TypeScript/ECharts 四阶段渐进指南 |
+| [全栈项目设计模式与实践](wiki/synthesis/全栈项目设计模式与实践.md) | 🆕 全栈设计模式参考：三层架构、容器-展示组件、FastAPI Router 组织、YAGNI 原则、开源项目对标 |
 
 
 ---
@@ -81,6 +84,14 @@
 |---|---|
 | [NotebookLM MCP 用法](wiki/concepts/notebooklm_mcp用法.md) | nlm CLI 完整命令速查 + 批量导出 Sources 脚本 + Studio/Research 功能 |
 | [AI 知识库操作指南](wiki/concepts/ai知识库操作指南.md) | 如何用 Prompt 触发 ai-librarian 三大操作（Ingest/Query/Lint），含目录结构速查 |
+
+### 🌐 前端与全栈开发类
+
+| 文件 | 摘要 |
+|---|---|
+| [Vue3 核心概念](wiki/concepts/Vue3核心概念.md) | 🆕 Vue 3 响应式系统（Proxy）、ref/reactive/computed/watch、Composition API、组件通信、生命周期 |
+| [TypeScript 实用指南](wiki/concepts/TypeScript实用指南.md) | 🆕 Python 对照的 TypeScript 速通：基本类型、interface、联合类型、泛型、工具类型、Vue 中使用 |
+| [前后端分离架构模式](wiki/concepts/前后端分离架构模式.md) | 🆕 SPA 原理、RESTful API 设计、CORS 跨域问题、前后端协作流程 |
 
 ### 🏗️ 视觉编码器与卷积组件
 
@@ -276,6 +287,7 @@
 | 文件 | 摘要 |
 |---|---|
 | [知识图谱编译与检索操作规范](wiki/norms/知识图谱编译与检索操作规范.md) | 🆕 何时编译、code_hash填写、trigger_keywords原则、断链阈值等强制规范 |
+| [前端开发规范](wiki/norms/前端开发规范.md) | 🆕 Vue3+TypeScript 命名/文件组织/组件编写/样式/Git 提交全套规范，含 Code Review Checklist |
 
 
 ---
