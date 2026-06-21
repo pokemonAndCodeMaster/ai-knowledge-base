@@ -1,5 +1,33 @@
 # 📅 知识大脑动作流记录 (Log)
 
+## [2026-06-21] update | 前后端一体化学习与开发指南 Hub
+
+- **触发者**：用户希望把前后端一体化架构、ECharts、Router/API/View、可视化复用和页签端到端开发指南绑定到一张入口卡，并建立双向链接。
+- **实施动作**：
+  - 新增 `wiki/synthesis/HUB-质检前后端一体化学习与开发指南.md`。
+  - 将 hub 与 `质检前后端一体化理想架构设计`、`ECharts从入门到掌握`、`Router_API_View与Python业务编排指南`、`前端可视化与组件复用工程指南`、`质检页签端到端开发流程指南` 建立双向链接。
+  - 更新 `index.md` 注册 hub。
+
+## [2026-06-21] synthesis | 前端可视化与页签端到端开发入门指南
+
+- **触发者**：用户反馈理想化架构过抽象，希望补齐 ECharts、Router/API/View、前端可视化复用、单页签端到端开发的从入门到掌握指南。
+- **新增卡片**：
+  - `wiki/synthesis/ECharts从入门到掌握.md`
+  - `wiki/synthesis/Router_API_View与Python业务编排指南.md`
+  - `wiki/synthesis/前端可视化与组件复用工程指南.md`
+  - `wiki/synthesis/质检页签端到端开发流程指南.md`
+- **实施动作**：
+  - 更新 `index.md` 注册四张指南。
+  - 更新 `质检前后端一体化理想架构设计`，把操作指南接入理想架构入口。
+
+## [2026-06-21] synthesis | 质检前后端一体化理想架构设计
+
+- **触发者**：用户要求完整画出理想前后端一体架构，包括框架、组件、模块化、流程图、时序图、类图、代码层级、接口扩展、公共能力复用、设计模式与当前差距。
+- **实施动作**：
+  - 新增 `wiki/synthesis/质检前后端一体化理想架构设计.md`。
+  - 设计内容覆盖总体架构图、后端分层、前端 feature slice、端到端时序、后端类图、API 设计、公共能力矩阵、设计原则与 P0-P3 演进路线。
+  - 更新 `index.md` 与 `质检一站式平台长期架构` 的关联入口。
+
 ## [2026-04-06] init | 基础架构初始化
 - 动作：成功建立 `llm_wiki` 基本存储架构体系 (`raw/`, `wiki/`)。
 - 详情：引入了统一方法论大纲指南 `01_unified_master_guide.md` 并初步搭建好了 `schema.md` 以及根目录下的索引节点。
@@ -124,6 +152,20 @@
 - `scripts/check_staleness.py` — 过期检测器（code_hash 比对 + 孤岛/断链）
 - `scripts/requirements.txt` — 零依赖声明
 
+## [2026-06-21] update | NotebookLM MCP 配置与质检一站式平台知识整理
+
+- **触发者**：用户要求安装配置 NotebookLM MCP，并摄入 `quality_check_pipeline` NotebookLM source，理解质检项目组当前工作与长期前后端架构。
+- **MCP 配置**：
+  - 新增 `tools/notebooklm-mcp/server.mjs`，复用本机已有 NotebookLM RPC client，暴露 `notebook_list`、`source_list`、`source_get_content`、`source_export_all`、`notebook_query`、`generate_artifact`、`studio_list` 等工具。
+  - 新增 `tools/notebooklm-mcp/README.md`，记录认证、Codex 配置和 source 原文导出能力。
+  - 已执行 `codex mcp add notebooklm -- node /home/yyh/project/ai-knowledge-base/tools/notebooklm-mcp/server.mjs` 注册 MCP。
+- **知识整理**：
+  - 重写并规范化 `wiki/quality_portal/` 下 7 张质检平台卡片，修复 NotebookLM 粘贴态内容缺少合法 Frontmatter 的问题。
+  - 新增 `wiki/synthesis/质检一站式平台长期架构.md`，综合 LLM Pipeline、FastAPI、Vue3 前端与长期可维护架构路线。
+  - 更新 `index.md`：新增长期架构综合卡，重写 Quality Check Pipeline 黄页摘要，移除已不存在的前端评估断链入口。
+- **注意**：
+  - 当前 NotebookLM MCP 协议层与本地配置已验证；NotebookLM 在线访问仍依赖 `~/.notebooklm-mcp/auth.json` 的 Google 登录会话，若会话过期需重新同步 cookie。
+
 ### 新增知识卡片（本次摄入）
 - `wiki/synthesis/知识库工业化升级_图索引检索系统.md` — 完整技术总纲，含复现步骤
 - `wiki/concepts/Seed_Expand_Classify检索范式.md` — 三阶段检索算法详解
@@ -142,6 +184,23 @@
 - 编译：55 卡片、220 链接、14 孤岛、71 断链（均自动检测）
 - 查询 "设计多Agent系统"：21 张命中，full_read=3，token 估算从 ~50K 降至 ~13K（-75%）
 - 查询 "高效学习新技术"：22 张命中，准确命中学习方法论全套卡片
+
+## [2026-06-21] update | 质检一站式平台 src 骨架与 PostgreSQL 公共模块
+
+- **触发者**：用户要求按质检项目组目录层级复刻当前项目，先还原 PostgreSQL 数据库模块，并为前后端一体架构演进打底。
+- **实施动作**：
+  - 新增 `src/config/`，以 `config/application.yaml` 为默认入口，支持环境变量占位和类型化 settings。
+  - 新增 `src/database/`，实现 PostgreSQL 懒初始化连接池、查询/执行助手、健康检查和 `DatabaseManager`。
+  - 新增 `src/api/`，实现 FastAPI `create_app()`、`deps.py`、`/api/health`、`/api/health/database` 与统一响应 schema。
+  - 新增 `src/frontend/` feature slice 目录边界，以及 `src/llm/`、`src/data_check/`、`src/obs/`、`src/clipinfo/`、`src/pkl_vis/` 业务模块边界。
+  - 新增 `requirements.txt` 与 `.env.example`，补充 `.gitignore` 运行产物规则。
+- **知识沉淀**：
+  - 新增代码卡：`配置管理公共模块`、`PostgreSQL数据库公共模块`、`FastAPI应用入口与依赖注入层`。
+  - 更新 `质检一站式平台长期架构`，记录当前仓库第一阶段落地状态。
+- **验证**：
+  - `python -m compileall src tests`
+  - `python -m unittest tests.test_config_database`
+  - `python - <<'PY' ... create_app() ... PY`
 
 ## [2026-06-07] upgrade | 知识库工业化升级：高保真摄入管线
 
@@ -203,4 +262,3 @@
     - `log.md` — 本条记录。
   - **编译索引**：
     - 运行 `compile_graph.py` 重新编译知识图谱，生成最新的 `.wiki_graph.json`。图谱成功编译：131 张卡片，501 个链接，无任何新生成的编译错误。
-

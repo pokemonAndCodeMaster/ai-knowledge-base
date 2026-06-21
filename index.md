@@ -25,6 +25,13 @@
 | [Qwen3.5 深度剖析学习指南](wiki/synthesis/qwen3.5_深度剖析学习指南.md) | Qwen3.5 全景架构演进与全链路数据流拓扑、GatedDeltaNet 线性注意力与混合层解码推演 |
 | [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 智能体系统与测试基座 (Harness) 核心工程全景分析 |
 | [数据质量门户架构设计](wiki/synthesis/数据质量门户架构设计.md) | 🆕 一站式门户架构总纲：Vue3+FastAPI 技术选型、目录结构、数据流、扩展指南、ADR 设计决策记录 |
+| [质检一站式平台长期架构](wiki/synthesis/质检一站式平台长期架构.md) | 🆕 质检项目组长期前后端体系架构：LLM Pipeline、FastAPI、Vue3、评测与数据集模块的可维护演进路线 |
+| [HUB-质检前后端一体化学习与开发指南](wiki/synthesis/HUB-质检前后端一体化学习与开发指南.md) | 🆕 质检前后端一体化学习入口：串联架构总览、Router/API/View、ECharts、组件复用与页签端到端开发流程 |
+| [质检前后端一体化理想架构设计](wiki/synthesis/质检前后端一体化理想架构设计.md) | 🆕 质检平台理想前后端一体架构：技术栈、模块化、流程图、时序图、类图、接口扩展和演进差距 |
+| [ECharts从入门到掌握](wiki/synthesis/ECharts从入门到掌握.md) | 🆕 ECharts 安装、Vue3 封装、option 构造、后端数据到图表渲染的完整入门指南 |
+| [Router API View与Python业务编排指南](wiki/synthesis/Router_API_View与Python业务编排指南.md) | 🆕 解释前端 View/API/Router 与后端 FastAPI Router/Application Service 如何衔接已有 Python 类 |
+| [前端可视化与组件复用工程指南](wiki/synthesis/前端可视化与组件复用工程指南.md) | 🆕 前端可视化输入输出、通用组件、图表复用、统一风格和长期维护规则 |
+| [质检页签端到端开发流程指南](wiki/synthesis/质检页签端到端开发流程指南.md) | 🆕 从环境配置到 PostgreSQL、FastAPI、Vue 页签、图表和验证的端到端开发流程 |
 | [前端从零到精通学习指南](wiki/synthesis/前端从零到精通学习指南.md) | 🆕 Python 开发者视角的前端学习路线：HTML/CSS/JS/Vue3/TypeScript/ECharts 四阶段渐进指南 |
 | [全栈项目设计模式与实践](wiki/synthesis/全栈项目设计模式与实践.md) | 🆕 全栈设计模式参考：三层架构、容器-展示组件、FastAPI Router 组织、YAGNI 原则、开源项目对标 |
 
@@ -301,6 +308,9 @@
 | [check_staleness脚本](wiki/code/check_staleness脚本.md) | 🆕 过期检测器：code_hash比对 + stale卡片检测 + 孤岛/断链报告 |
 | [chunk_raw脚本](wiki/code/chunk_raw脚本.md) | 🆕 语义分块器：按 Markdown AST 标题层级切分长文，防止长文摄入细节丢失 |
 | [extract_code_skeleton脚本](wiki/code/extract_code_skeleton脚本.md) | 🆕 代码骨架提取器：掏空代码实现，仅保留架构、依赖和函数签名，为代码摄入预处理 |
+| [配置管理公共模块](wiki/code/配置管理公共模块.md) | 🆕 `src/config` 配置中心：读取 `config/application.yaml`、展开环境变量、输出类型化 settings |
+| [PostgreSQL数据库公共模块](wiki/code/PostgreSQL数据库公共模块.md) | 🆕 `src/database` PostgreSQL 基础设施：懒初始化连接池、查询/执行助手、数据库健康检查 |
+| [FastAPI应用入口与依赖注入层](wiki/code/FastAPI应用入口与依赖注入层.md) | 🆕 `src/api` 后端入口：`create_app()`、CORS、健康检查、依赖注入和静态前端挂载 |
 
 ### 🆕 开源项目代码模块
 
@@ -323,11 +333,10 @@
 
 | 文件 | 摘要 |
 |---|---|
-| [LLM任务调度Pipeline全景](wiki/quality_portal/LLM任务调度Pipeline全景.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [HUB-前端与API层架构](wiki/quality_portal/HUB-前端与API层架构.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [Vue3前端层架构](wiki/quality_portal/Vue3前端层架构.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [TaskView交互流程详解](wiki/quality_portal/TaskView交互流程详解.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [VersionView版本配置页面交互详解](wiki/quality_portal/VersionView版本配置页面交互详解.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [FastAPI后端API层架构](wiki/quality_portal/FastAPI后端API层架构.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [HUB-项目环境与开发规范总览](wiki/quality_portal/HUB-项目环境与开发规范总览.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
-| [前端架构评估与建议](wiki/quality_portal/前端架构评估与建议.md) | 自动驾驶端到端训练数据的数据质量一站式网页相关文档 |
+| [HUB-项目环境与开发规范总览](wiki/quality_portal/HUB-项目环境与开发规范总览.md) | 质检一站式平台项目定位、模块地图、配置区、页面/API 状态与 AI-DLC 开发闭环 |
+| [LLM任务调度Pipeline全景](wiki/quality_portal/LLM任务调度Pipeline全景.md) | LLM 数据生产 Pipeline：三阶段调度、六通道、双层状态、去重锁、OBS 上传、Watchdog 与异常兜底 |
+| [HUB-前端与API层架构](wiki/quality_portal/HUB-前端与API层架构.md) | FastAPI + Vue3 单端口部署枢纽：API 路由、前端页面、子卡导航与设计护栏 |
+| [FastAPI后端API层架构](wiki/quality_portal/FastAPI后端API层架构.md) | FastAPI 后端 API 层：create_app、deps 依赖注入、tasks/versions/evaluations/datasets 路由与 Schema 规范 |
+| [Vue3前端层架构](wiki/quality_portal/Vue3前端层架构.md) | Vue3 + TypeScript + Vite + Element Plus 前端结构、路由布局、API 封装、visibilityState 错误守卫 |
+| [TaskView交互流程详解](wiki/quality_portal/TaskView交互流程详解.md) | 质检任务页交互：任务组概览、组内懒加载、游标分页、回收站、批量清理和创建任务 |
+| [VersionView版本配置页面交互详解](wiki/quality_portal/VersionView版本配置页面交互详解.md) | 版本配置页交互：model/video/prompt 通道筛选、JSONB 配置编辑、UPSERT、详情和删除 |

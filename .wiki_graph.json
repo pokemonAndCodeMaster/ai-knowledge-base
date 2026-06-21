@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "compiled_at": "2026-06-14T15:44:09.471142+08:00",
+  "compiled_at": "2026-06-21T20:57:43.235028+08:00",
   "stats": {
-    "total_cards": 140,
-    "total_links": 501,
+    "total_cards": 164,
+    "total_links": 625,
     "orphan_count": 38,
     "orphan_cards": [
       "wiki/code/CodeGraph同步与安装层.md",
@@ -57,7 +57,7 @@
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
-        "target": "Agent-Skills"
+        "target": "brainstorming"
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
@@ -65,7 +65,7 @@
       },
       {
         "from": "wiki/concepts/Agent_Engineering.md",
-        "target": "brainstorming"
+        "target": "Agent-Skills"
       },
       {
         "from": "wiki/concepts/Agent_Harness_Engineering.md",
@@ -113,11 +113,11 @@
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "链接"
+        "target": "引用"
       },
       {
         "from": "wiki/concepts/ai知识库操作指南.md",
-        "target": "引用"
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/ashby_law.md",
@@ -173,11 +173,11 @@
       },
       {
         "from": "wiki/concepts/qwen3.5_文本嵌入与特殊token.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+        "target": "qwen3.5_前向传播全链路"
       },
       {
         "from": "wiki/concepts/qwen3.5_文本嵌入与特殊token.md",
-        "target": "qwen3.5_前向传播全链路"
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
       },
       {
         "from": "wiki/concepts/qwen3.5_混合decoder架构.md",
@@ -197,11 +197,11 @@
       },
       {
         "from": "wiki/concepts/动态调度桥接.md",
-        "target": "双链"
+        "target": "Tree-sitter AST解析引擎"
       },
       {
         "from": "wiki/concepts/动态调度桥接.md",
-        "target": "Tree-sitter AST解析引擎"
+        "target": "双链"
       },
       {
         "from": "wiki/concepts/原子化笔记.md",
@@ -209,23 +209,19 @@
       },
       {
         "from": "wiki/concepts/双向链接.md",
-        "target": "链接"
-      },
-      {
-        "from": "wiki/concepts/双向链接.md",
         "target": "页面名"
       },
       {
-        "from": "wiki/concepts/复利知识库.md",
-        "target": "sources/mit_notebooklm_48h"
+        "from": "wiki/concepts/双向链接.md",
+        "target": "链接"
       },
       {
         "from": "wiki/concepts/复利知识库.md",
         "target": "sources/karpathy_llm_wiki"
       },
       {
-        "from": "wiki/concepts/多Agent生成-评估循环.md",
-        "target": "Sprint合同模式"
+        "from": "wiki/concepts/复利知识库.md",
+        "target": "sources/mit_notebooklm_48h"
       },
       {
         "from": "wiki/concepts/多Agent生成-评估循环.md",
@@ -236,8 +232,8 @@
         "target": "Agent 工作流五大模式"
       },
       {
-        "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "AGENTS.md 标准"
+        "from": "wiki/concepts/多Agent生成-评估循环.md",
+        "target": "Sprint合同模式"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
@@ -245,11 +241,15 @@
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Agent Harness Engineering"
+        "target": "Context Reset vs Compaction"
       },
       {
         "from": "wiki/concepts/渐进式上下文披露.md",
-        "target": "Context Reset vs Compaction"
+        "target": "AGENTS.md 标准"
+      },
+      {
+        "from": "wiki/concepts/渐进式上下文披露.md",
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/concepts/社区检测与Leiden算法.md",
@@ -257,11 +257,11 @@
       },
       {
         "from": "wiki/concepts/费曼学习法.md",
-        "target": "sources/mit_notebooklm_48h"
+        "target": "心智模型"
       },
       {
         "from": "wiki/concepts/费曼学习法.md",
-        "target": "心智模型"
+        "target": "sources/mit_notebooklm_48h"
       },
       {
         "from": "wiki/concepts/赛博控制论与Harness.md",
@@ -285,11 +285,11 @@
       },
       {
         "from": "wiki/entities/martin_fowler.md",
-        "target": "continuous_integration"
+        "target": "architecture_fitness_functions"
       },
       {
         "from": "wiki/entities/martin_fowler.md",
-        "target": "architecture_fitness_functions"
+        "target": "continuous_integration"
       },
       {
         "from": "wiki/entities/thoughtworks.md",
@@ -297,11 +297,11 @@
       },
       {
         "from": "wiki/norms/知识图谱编译与检索操作规范.md",
-        "target": "双链"
+        "target": "引用"
       },
       {
         "from": "wiki/norms/知识图谱编译与检索操作规范.md",
-        "target": "引用"
+        "target": "双链"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -309,15 +309,7 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenCode"
-      },
-      {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Claude_Code"
-      },
-      {
-        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "OpenClaw"
+        "target": "Gstack"
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
@@ -325,7 +317,15 @@
       },
       {
         "from": "wiki/sources/agent_and_harness_engineering_2026.md",
-        "target": "Gstack"
+        "target": "Claude_Code"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "OpenCode"
+      },
+      {
+        "from": "wiki/sources/agent_and_harness_engineering_2026.md",
+        "target": "OpenClaw"
       },
       {
         "from": "wiki/sources/almirant.md",
@@ -353,11 +353,15 @@
       },
       {
         "from": "wiki/sources/anthropic_harness_design_long_running.md",
-        "target": "Context Reset vs Compaction"
+        "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/anthropic_harness_design_long_running.md",
-        "target": "Agent Harness Engineering"
+        "target": "Context Reset vs Compaction"
+      },
+      {
+        "from": "wiki/sources/awesome_agent_harness.md",
+        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/sources/awesome_agent_harness.md",
@@ -366,10 +370,6 @@
       {
         "from": "wiki/sources/awesome_agent_harness.md",
         "target": "Agent Harness Engineering"
-      },
-      {
-        "from": "wiki/sources/awesome_agent_harness.md",
-        "target": "Harness Stack 分层架构"
       },
       {
         "from": "wiki/sources/codegraph_source_readme.md",
@@ -385,15 +385,19 @@
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
-        "target": "Birgitta Böckeler"
-      },
-      {
-        "from": "wiki/sources/martin_fowler_harness_engineering.md",
         "target": "Agent Harness Engineering"
       },
       {
         "from": "wiki/sources/martin_fowler_harness_engineering.md",
+        "target": "Birgitta Böckeler"
+      },
+      {
+        "from": "wiki/sources/martin_fowler_harness_engineering.md",
         "target": "可维护性Harness"
+      },
+      {
+        "from": "wiki/sources/paperclip.md",
+        "target": "agent_orchestration"
       },
       {
         "from": "wiki/sources/paperclip.md",
@@ -402,10 +406,6 @@
       {
         "from": "wiki/sources/paperclip.md",
         "target": "cost_control"
-      },
-      {
-        "from": "wiki/sources/paperclip.md",
-        "target": "agent_orchestration"
       },
       {
         "from": "wiki/synthesis/Agent_Harness_Engineering_全景架构.md",
@@ -417,23 +417,19 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling"
+        "target": "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)"
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "知识卡片"
+        "target": "conv3d_时空切块器#数值计算示例与心算验证"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#参数生命周期与渊源追溯"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "clip_对比学习视觉编码#2-进化：siglip-的二分类革新"
+        "target": "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -445,39 +441,7 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#数值计算示例与心算验证"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#1-步骤一：3d-卷积时空滤波-tubelet-embedding"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "vit_核心原理与结构#1. 为什么需要多层堆叠？ (第一性原理)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)"
+        "target": "navit_动态分辨率#核心算法原理详解"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -485,43 +449,7 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#核心算法原理详解"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#1-navit-的基石思想-patch-n-pack"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "patchmerger_空间降维#1-空间下采样：张量形变魔法"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "rope_旋转位置编码#1-第一性原理与复数推导"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)"
-      },
-      {
-        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎"
+        "target": "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)"
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
@@ -533,7 +461,87 @@
       },
       {
         "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
-        "target": "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
+        "target": "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#1-navit-的基石思想-patch-n-pack"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "rope_旋转位置编码#1-第一性原理与复数推导"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "clip_对比学习视觉编码#2-进化：siglip-的二分类革新"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "vit_核心原理与结构#1. 为什么需要多层堆叠？ (第一性原理)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "patchmerger_空间降维#1-空间下采样：张量形变魔法"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#1-步骤一：3d-卷积时空滤波-tubelet-embedding"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "知识卡片"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)"
+      },
+      {
+        "from": "wiki/synthesis/qwen2.5_vl_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#参数生命周期与渊源追溯"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -541,11 +549,11 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "知识卡片"
+        "target": "qwen3.5_混合decoder架构#4. SwiGLU MLP"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_文本嵌入与特殊token#3. 特殊 Token 角色定义"
+        "target": "qwen3.5_混合decoder架构#2. 双 Mask 系统"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -553,11 +561,31 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)"
+        "target": "qwen3.5_视觉编码器#4. VisionBlock (×32)"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#2. 双 Mask 系统"
+        "target": "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_视觉编码器#5. PatchMerger"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "知识卡片"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由"
+      },
+      {
+        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
+        "target": "qwen3.5_文本嵌入与特殊token#3. 特殊 Token 角色定义"
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
@@ -569,39 +597,11 @@
       },
       {
         "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#5. PatchMerger"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_视觉编码器#4. VisionBlock (×32)"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_混合decoder架构#4. SwiGLU MLP"
-      },
-      {
-        "from": "wiki/synthesis/qwen3.5_深度剖析学习指南.md",
-        "target": "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换"
+        "target": "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "gbrain_yuxi_深度技术分析"
+        "target": "Seed-Expand-Classify 检索范式"
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
@@ -609,15 +609,11 @@
       },
       {
         "from": "wiki/synthesis/知识库工业化升级_图索引检索系统.md",
-        "target": "Seed-Expand-Classify 检索范式"
+        "target": "gbrain_yuxi_深度技术分析"
       },
       {
         "from": "wiki/synthesis/知识库高保真摄入管线.md",
         "target": "schema.md"
-      },
-      {
-        "from": "wiki/synthesis/统一学习与知识管理框架.md",
-        "target": " "
       },
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
@@ -626,6 +622,10 @@
       {
         "from": "wiki/synthesis/统一学习与知识管理框架.md",
         "target": "心智模型"
+      },
+      {
+        "from": "wiki/synthesis/统一学习与知识管理框架.md",
+        "target": " "
       }
     ]
   },
@@ -698,8 +698,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph存储层",
         "CodeGraph图遍历层",
+        "CodeGraph存储层",
         "Explore自适应骨架化"
       ],
       "inlinks": [
@@ -785,8 +785,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph上下文层",
-        "CodeGraph存储层"
+        "CodeGraph存储层",
+        "CodeGraph上下文层"
       ],
       "inlinks": [
         "CodeGraph上下文层",
@@ -829,8 +829,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "CodeGraph提取层",
-        "CodeGraph图遍历层"
+        "CodeGraph图遍历层",
+        "CodeGraph提取层"
       ],
       "inlinks": [
         "CodeGraph上下文层",
@@ -877,8 +877,8 @@
       "summary": "",
       "outlinks": [
         "CodeGraph解析层",
-        "CodeGraph项目",
-        "CodeGraph存储层"
+        "CodeGraph存储层",
+        "CodeGraph项目"
       ],
       "inlinks": [
         "CodeGraph同步与安装层",
@@ -925,10 +925,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "动态调度桥接",
-        "CodeGraph提取层",
         "CodeGraph图遍历层",
-        "CodeGraph存储层"
+        "CodeGraph存储层",
+        "CodeGraph提取层",
+        "动态调度桥接"
       ],
       "inlinks": [
         "CodeGraph提取层"
@@ -938,6 +938,55 @@
         "codegraph/src/resolution/import-resolver.ts": "sha256:d6c606070e919efb",
         "codegraph/src/resolution/name-matcher.ts": "sha256:839d2ef379e16da6",
         "codegraph/src/resolution/callback-synthesizer.ts": "sha256:185d9db5d37b1717"
+      }
+    },
+    "wiki/code/FastAPI应用入口与依赖注入层.md": {
+      "title": "FastAPI应用入口与依赖注入层",
+      "slug": "FastAPI应用入口与依赖注入层",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "code_module",
+      "tags": [
+        "质检平台",
+        "FastAPI",
+        "API层",
+        "依赖注入",
+        "健康检查",
+        "单端口部署"
+      ],
+      "trigger_keywords": [
+        "FastAPI",
+        "create_app",
+        "deps.py",
+        "health",
+        "database_health",
+        "StaticFiles",
+        "CORS"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/api/app.py"
+      ],
+      "status": "active",
+      "summary": "本卡记录当前仓库第一版 `src/api` 后端 API 骨架。它把 [[数据质量门户架构设计]] 中的单端口 FastAPI + Vue 前端部署思想落到当前项目。",
+      "outlinks": [
+        "PostgreSQL数据库公共模块",
+        "配置管理公共模块",
+        "数据质量门户架构设计",
+        "质检一站式平台长期架构"
+      ],
+      "inlinks": [
+        "PostgreSQL数据库公共模块",
+        "配置管理公共模块",
+        "HUB-质检前后端一体化学习与开发指南",
+        "Router_API_View与Python业务编排指南",
+        "质检一站式平台长期架构",
+        "质检前后端一体化理想架构设计"
+      ],
+      "code_hashes": {
+        "src/api/app.py": "sha256:8194b187f92453dd"
       }
     },
     "wiki/code/Graphify提取管线.md": {
@@ -986,6 +1035,55 @@
         "graphify/graphify/analyze.py": "sha256:6965e68a55a14986",
         "graphify/graphify/report.py": "sha256:c5832995ea771d6f",
         "graphify/graphify/export.py": "sha256:ad78120a7deebc13"
+      }
+    },
+    "wiki/code/PostgreSQL数据库公共模块.md": {
+      "title": "PostgreSQL数据库公共模块",
+      "slug": "PostgreSQL数据库公共模块",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "code_module",
+      "tags": [
+        "质检平台",
+        "PostgreSQL",
+        "数据库模块",
+        "连接池",
+        "DatabaseManager",
+        "psycopg2"
+      ],
+      "trigger_keywords": [
+        "PostgreSQL",
+        "PostgresConnector",
+        "DatabaseManager",
+        "fetch_all",
+        "fetch_one",
+        "execute",
+        "health_check",
+        "连接池"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/database/postgresql.py"
+      ],
+      "status": "active",
+      "summary": "本卡记录当前仓库第一版 `src/database` PostgreSQL 公共模块。它是前后端串联的第一块地基：后端业务模块通过统一连接池访问 PostgreSQL，API 层只拿依赖，不直接管理连接。",
+      "outlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "全栈项目设计模式与实践",
+        "配置管理公共模块",
+        "质检一站式平台长期架构"
+      ],
+      "inlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "配置管理公共模块",
+        "HUB-质检前后端一体化学习与开发指南",
+        "质检一站式平台长期架构",
+        "质检前后端一体化理想架构设计"
+      ],
+      "code_hashes": {
+        "src/database/postgresql.py": "sha256:561c165c3b3c1ef0"
       }
     },
     "wiki/code/Yuxi检索与知识图谱层.md": {
@@ -1058,8 +1156,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "compile_graph脚本",
-        "知识图谱编译与检索操作规范"
+        "知识图谱编译与检索操作规范",
+        "compile_graph脚本"
       ],
       "inlinks": [
         "compile_graph脚本",
@@ -1135,9 +1233,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识图谱编译与检索操作规范",
-        "双链",
         "check_staleness脚本",
+        "双链",
+        "知识图谱编译与检索操作规范",
         "query_graph脚本"
       ],
       "inlinks": [
@@ -1254,8 +1352,8 @@
       "summary": "",
       "outlinks": [
         "Seed-Expand-Classify检索范式",
-        "compile_graph脚本",
-        "知识图谱编译与检索操作规范"
+        "知识图谱编译与检索操作规范",
+        "compile_graph脚本"
       ],
       "inlinks": [
         "compile_graph脚本",
@@ -1264,6 +1362,52 @@
       ],
       "code_hashes": {
         "scripts/query_graph.py": "sha256:bbbd954ba9714207"
+      }
+    },
+    "wiki/code/配置管理公共模块.md": {
+      "title": "配置管理公共模块",
+      "slug": "配置管理公共模块",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "code_module",
+      "tags": [
+        "质检平台",
+        "配置管理",
+        "ConfigManager",
+        "application.yaml",
+        "环境变量"
+      ],
+      "trigger_keywords": [
+        "ConfigManager",
+        "get_global_config",
+        "application.yaml",
+        "AI_KB_CONFIG",
+        "POSTGRES_HOST",
+        "配置中心"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/config/manager.py"
+      ],
+      "status": "active",
+      "summary": "本卡记录当前仓库第一版 `src/config` 公共配置模块。它承接 [[质检一站式平台长期架构]] 中的配置中心职责，让 API、数据库和未来业务模块共享同一套运行时配置。",
+      "outlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "PostgreSQL数据库公共模块",
+        "数据质量门户架构设计",
+        "质检一站式平台长期架构"
+      ],
+      "inlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "PostgreSQL数据库公共模块",
+        "HUB-质检前后端一体化学习与开发指南",
+        "质检一站式平台长期架构",
+        "质检前后端一体化理想架构设计"
+      ],
+      "code_hashes": {
+        "src/config/manager.py": "sha256:e9c84ecbdcb9b23e"
       }
     },
     "wiki/concepts/2d_rope_视觉位置编码.md": {
@@ -1285,10 +1429,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "conv3d_时空切块器",
-        "navit_动态分辨率",
+        "qwen2.5_vl_技术报告解析",
         "mrope_多模态位置编码",
-        "qwen2.5_vl_技术报告解析"
+        "navit_动态分辨率",
+        "conv3d_时空切块器"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -1323,9 +1467,9 @@
       "status": "active",
       "summary": "Agent Engineering 是构建自主 AI 系统的工程学科。与早期的 Prompt Engineering 不同，它更强调整体的架构设计、工作流约束和状态管理。",
       "outlinks": [
-        "Agent-Skills",
-        "test-driven-development",
         "brainstorming",
+        "test-driven-development",
+        "Agent-Skills",
         "Harness_Engineering"
       ],
       "inlinks": [
@@ -1354,12 +1498,12 @@
       "status": "active",
       "summary": "**关联节点**：[[Harness Stack 分层架构]] | [[前馈与反馈控制]] | [[渐进式上下文披露]] | [[Agent 工作流五大模式]] | [[awesome_agent_harness]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
-        "渐进式上下文披露",
         "Harness Stack 分层架构",
+        "渐进式上下文披露",
+        "Agent 工作流五大模式",
         "前馈与反馈控制",
-        "martin_fowler_harness_engineering",
         "awesome_agent_harness",
-        "Agent 工作流五大模式"
+        "martin_fowler_harness_engineering"
       ],
       "inlinks": []
     },
@@ -1383,8 +1527,8 @@
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[anthropic_building_effective_agents]] | [[多Agent生成-评估循环]] | [[Orchestrator-Workers模式]] ---",
       "outlinks": [
         "多Agent生成-评估循环",
-        "Orchestrator-Workers模式",
         "anthropic_building_effective_agents",
+        "Orchestrator-Workers模式",
         "Agent Harness Engineering"
       ],
       "inlinks": []
@@ -1503,9 +1647,9 @@
       "status": "active",
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[anthropic_harness_design_long_running]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
-        "多Agent生成-评估循环",
+        "Agent Harness Engineering",
         "anthropic_harness_design_long_running",
-        "Agent Harness Engineering"
+        "多Agent生成-评估循环"
       ],
       "inlinks": []
     },
@@ -1661,8 +1805,8 @@
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Agent 工作流五大模式]] | [[渐进式上下文披露]] | [[awesome_agent_harness]] ---",
       "outlinks": [
         "渐进式上下文披露",
-        "Agent Harness Engineering",
         "awesome_agent_harness",
+        "Agent Harness Engineering",
         "Agent 工作流五大模式"
       ],
       "inlinks": []
@@ -1690,10 +1834,10 @@
       "summary": "**关联节点**：[[费曼学习法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[notebooklm_mcp用法]] | [[sources/mit_notebooklm_48h]] ---",
       "outlinks": [
         "费曼学习法",
-        "主动召回",
-        "统一学习与知识管理框架",
         "notebooklm_mcp用法",
-        "sources/mit_notebooklm_48h"
+        "统一学习与知识管理框架",
+        "sources/mit_notebooklm_48h",
+        "主动召回"
       ],
       "inlinks": [
         "主动召回",
@@ -1762,9 +1906,9 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[Andrej_Karpathy]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "Andrej_Karpathy",
         "复利知识库",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "Andrej_Karpathy"
       ],
       "inlinks": [
         "复利知识库",
@@ -1873,10 +2017,88 @@
       "summary": "",
       "outlinks": [
         "graphify项目",
-        "动态调度桥接",
-        "CodeGraph项目"
+        "CodeGraph项目",
+        "动态调度桥接"
       ],
       "inlinks": []
+    },
+    "wiki/concepts/TypeScript实用指南.md": {
+      "title": "TypeScript 实用指南",
+      "slug": "TypeScript实用指南",
+      "domain": [
+        "meta"
+      ],
+      "type": "concept",
+      "tags": [
+        "TypeScript",
+        "前端",
+        "类型系统",
+        "JavaScript"
+      ],
+      "trigger_keywords": [
+        "TypeScript",
+        "类型",
+        "interface",
+        "type",
+        "泛型",
+        "any",
+        "unknown"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：为 Python 开发者设计的 TypeScript 速通指南。每个概念都有 Python 对照，聚焦实际项目中最常用的 20% 功能。 > **关联**：[[前端从零到精通学习指南]] | [[前端开发规范]] ---",
+      "outlinks": [
+        "前端开发规范",
+        "前端从零到精通学习指南"
+      ],
+      "inlinks": [
+        "前端从零到精通学习指南"
+      ]
+    },
+    "wiki/concepts/Vue3核心概念.md": {
+      "title": "Vue3 核心概念",
+      "slug": "Vue3核心概念",
+      "domain": [
+        "meta"
+      ],
+      "type": "concept",
+      "tags": [
+        "Vue3",
+        "前端框架",
+        "响应式",
+        "Composition API",
+        "组件"
+      ],
+      "trigger_keywords": [
+        "Vue3",
+        "响应式",
+        "ref",
+        "reactive",
+        "computed",
+        "watch",
+        "组件通信",
+        "生命周期",
+        "Composition API"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：深度理解 Vue 3 的核心机制。[[前端从零到精通学习指南]] 中的 P0-P2 阶段会引用本卡片。 > **关联**：[[前端开发规范]] | [[数据质量门户架构设计]] ---",
+      "outlinks": [
+        "前端开发规范",
+        "前端从零到精通学习指南",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "ECharts从入门到掌握",
+        "HUB-质检前后端一体化学习与开发指南",
+        "前端从零到精通学习指南"
+      ]
     },
     "wiki/concepts/agent_harness.md": {
       "title": "智能体脚手架 (Agent Harness)",
@@ -1935,10 +2157,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "mob_rituals",
-        "persistent_context_in_repo",
+        "agent_harness",
         "aws_ai_dlc",
-        "agent_harness"
+        "persistent_context_in_repo",
+        "mob_rituals"
       ],
       "inlinks": [
         "bolts_and_work_units",
@@ -1967,12 +2189,12 @@
       "status": "active",
       "summary": "**关联节点**：[[notebooklm_mcp用法]] | [[统一学习与知识管理框架]] | [[复利知识库]] ---",
       "outlinks": [
+        "引用",
         "双向链接",
-        "链接",
+        "复利知识库",
         "统一学习与知识管理框架",
         "notebooklm_mcp用法",
-        "复利知识库",
-        "引用"
+        "链接"
       ],
       "inlinks": [
         "notebooklm_mcp用法",
@@ -1997,8 +2219,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "harness_templates",
-        "agent_harness"
+        "agent_harness",
+        "harness_templates"
       ],
       "inlinks": [
         "martin_fowler_harness"
@@ -2023,8 +2245,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "ai_dlc",
-        "aws_ai_dlc"
+        "aws_ai_dlc",
+        "ai_dlc"
       ],
       "inlinks": [
         "mob_rituals",
@@ -2049,8 +2271,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "vit_核心原理与结构",
-        "qwen2.5_vl_三阶段预训练"
+        "qwen2.5_vl_三阶段预训练",
+        "vit_核心原理与结构"
       ],
       "inlinks": [
         "vision_foundation_视觉基石与卷积",
@@ -2103,9 +2325,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "agent_harness",
         "steering_loop",
-        "conductors_vs_orchestrators",
-        "agent_harness"
+        "conductors_vs_orchestrators"
       ],
       "inlinks": [
         "conductors_vs_orchestrators",
@@ -2132,11 +2354,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen2.5_vl_预处理流水线",
-        "navit_动态分辨率",
-        "qwen3.5_视觉编码器",
-        "2d_rope_视觉位置编码",
         "qwen3.5_前向传播全链路",
+        "2d_rope_视觉位置编码",
+        "qwen2.5_vl_预处理流水线",
+        "qwen3.5_视觉编码器",
+        "navit_动态分辨率",
         "patchmerger_空间降维"
       ],
       "inlinks": [
@@ -2194,8 +2416,8 @@
       "status": "active",
       "summary": "这是 Harness Engineering 的两个核心调节器，灵感来源于物理学和控制论。",
       "outlinks": [
-        "steering_loop",
-        "agent_harness"
+        "agent_harness",
+        "steering_loop"
       ],
       "inlinks": [
         "agent_harness",
@@ -2250,9 +2472,9 @@
       "status": "active",
       "summary": "Derived from the methodology developed by OpenAI and the Claude Code team (Anthropic) for large-scale agentic software development.",
       "outlinks": [
-        "steering_loop",
         "awesome_harness_readme",
-        "agent_harness"
+        "agent_harness",
+        "steering_loop"
       ],
       "inlinks": []
     },
@@ -2305,10 +2527,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "steering_loop",
-        "ai_dlc",
         "aws_ai_dlc",
-        "bolts_and_work_units"
+        "bolts_and_work_units",
+        "steering_loop",
+        "ai_dlc"
       ],
       "inlinks": [
         "ai_dlc",
@@ -2336,11 +2558,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_多模态融合机制",
+        "qwen3.5_interleaved_mrope",
+        "qwen3.5_前向传播全链路",
         "2d_rope_视觉位置编码",
         "rope_旋转位置编码",
-        "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope"
+        "qwen3.5_多模态融合机制"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -2378,8 +2600,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
-        "2d_rope_视觉位置编码"
+        "2d_rope_视觉位置编码",
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -2413,9 +2635,9 @@
       "status": "active",
       "summary": "**关联节点**：[[统一学习与知识管理框架]] | [[ai知识库操作指南]] | [[复利知识库]] ---",
       "outlinks": [
-        "ai知识库操作指南",
         "复利知识库",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "ai知识库操作指南"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -2443,8 +2665,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "navit_动态分辨率",
-        "window_attention_交错注意力"
+        "window_attention_交错注意力",
+        "navit_动态分辨率"
       ],
       "inlinks": [
         "window_attention_交错注意力",
@@ -2469,13 +2691,13 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_视觉编码器",
-        "动态分辨率方案对比",
         "window_attention_交错注意力",
+        "qwen3.5_前向传播全链路",
+        "动态分辨率方案对比",
+        "qwen3.5_视觉编码器",
         "qwen2.5_vl_技术报告解析",
         "rmsnorm_归一化",
-        "qwen2.5_vl_三阶段预训练",
-        "qwen3.5_前向传播全链路"
+        "qwen2.5_vl_三阶段预训练"
       ],
       "inlinks": [
         "conv3d_时空切块器",
@@ -2540,10 +2762,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "swiglu_门控激活函数",
         "window_attention_交错注意力",
-        "qwen2.5_vl_技术报告解析",
         "conv3d_时空切块器",
+        "swiglu_门控激活函数",
+        "qwen2.5_vl_技术报告解析",
         "patchmerger_空间降维"
       ],
       "inlinks": [
@@ -2575,8 +2797,8 @@
       "summary": "",
       "outlinks": [
         "qwen2.5_vl_预处理流水线",
-        "conv3d_时空切块器",
-        "mrope_多模态位置编码"
+        "mrope_多模态位置编码",
+        "conv3d_时空切块器"
       ],
       "inlinks": [
         "qwen3.5_processor预处理",
@@ -2604,11 +2826,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "navit_动态分辨率",
-        "2, 28, 46",
         "window_attention_交错注意力",
-        "mrope_多模态位置编码",
         "conv3d_时空切块器",
+        "2, 28, 46",
+        "navit_动态分辨率",
+        "mrope_多模态位置编码",
         "patchmerger_空间降维"
       ],
       "inlinks": [
@@ -2637,10 +2859,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "rmsnorm_归一化",
         "swiglu_门控激活函数",
-        "qwen3.5_混合decoder架构",
-        "qwen3.5_前向传播全链路"
+        "qwen3.5_前向传播全链路",
+        "rmsnorm_归一化",
+        "qwen3.5_混合decoder架构"
       ],
       "inlinks": [
         "qwen3.5_混合decoder架构",
@@ -2666,10 +2888,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_多模态融合机制",
-        "mrope_多模态位置编码",
         "qwen3.5_前向传播全链路",
-        "2d_rope_视觉位置编码"
+        "2d_rope_视觉位置编码",
+        "mrope_多模态位置编码",
+        "qwen3.5_多模态融合机制"
       ],
       "inlinks": [
         "mrope_多模态位置编码",
@@ -2698,12 +2920,12 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen2.5_vl_预处理流水线",
-        "qwen3.5_多模态融合机制",
-        "qwen2.5_vl_预处理框架集成与显存评估",
         "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
+        "qwen3.5_interleaved_mrope",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope"
+        "qwen2.5_vl_预处理流水线",
+        "qwen2.5_vl_预处理框架集成与显存评估",
+        "qwen3.5_多模态融合机制"
       ],
       "inlinks": [
         "qwen3.5_文本嵌入与特殊token"
@@ -2755,11 +2977,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "qwen3.5_interleaved_mrope",
+        "qwen3.5_前向传播全链路",
         "qwen3.5_视觉编码器",
         "mrope_多模态位置编码",
-        "qwen3.5_前向传播全链路",
-        "patchmerger_空间降维",
-        "qwen3.5_interleaved_mrope"
+        "patchmerger_空间降维"
       ],
       "inlinks": [
         "mrope_多模态位置编码",
@@ -2788,10 +3010,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "qwen3.5_多模态融合机制",
+        "qwen3.5_processor预处理",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_processor预处理"
+        "qwen3.5_多模态融合机制",
+        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本"
       ],
       "inlinks": []
     },
@@ -2814,11 +3036,11 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "qwen3.5_gated_delta_net",
+        "qwen3.5_interleaved_mrope",
         "swiglu_门控激活函数",
-        "rmsnorm_归一化",
         "qwen3.5_前向传播全链路",
-        "qwen3.5_interleaved_mrope"
+        "qwen3.5_gated_delta_net",
+        "rmsnorm_归一化"
       ],
       "inlinks": [
         "qwen3.5_gated_delta_net",
@@ -2844,10 +3066,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "2d_rope_视觉位置编码",
         "window_attention_交错注意力",
-        "qwen3.5_前向传播全链路",
         "conv3d_时空切块器",
+        "qwen3.5_前向传播全链路",
+        "2d_rope_视觉位置编码",
         "patchmerger_空间降维"
       ],
       "inlinks": [
@@ -2877,16 +3099,16 @@
       "status": "active",
       "summary": "> **本卡片是 Qwen 代码阅读的总入口。** 任何涉及\"看 Qwen 代码\"的需求，都应先查阅本卡片定位目标文件，再决定是否需要打开源码。",
       "outlinks": [
-        "qwen2.5_vl_预处理流水线",
-        "swiglu_门控激活函数",
-        "vit_核心原理与结构",
-        "qwen3.5_原生多模态训练范式",
-        "window_attention_交错注意力",
-        "mrope_多模态位置编码",
         "rmsnorm_归一化",
-        "qwen2.5_vl_三阶段预训练",
+        "window_attention_交错注意力",
         "conv3d_时空切块器",
-        "patchmerger_空间降维"
+        "swiglu_门控激活函数",
+        "qwen2.5_vl_预处理流水线",
+        "qwen3.5_原生多模态训练范式",
+        "vit_核心原理与结构",
+        "mrope_多模态位置编码",
+        "patchmerger_空间降维",
+        "qwen2.5_vl_三阶段预训练"
       ],
       "inlinks": [
         "qwen3.5_深度剖析学习指南"
@@ -2910,8 +3132,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "window_attention_交错注意力",
-        "swiglu_门控激活函数"
+        "swiglu_门控激活函数",
+        "window_attention_交错注意力"
       ],
       "inlinks": [
         "patchmerger_空间降维",
@@ -3096,10 +3318,10 @@
       "status": "active",
       "summary": "**关联节点**：[[费曼学习法]] | [[间隔重复]] | [[MIT_48小时速成法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "费曼学习法",
         "间隔重复",
+        "统一学习与知识管理框架",
         "MIT_48小时速成法",
-        "统一学习与知识管理框架"
+        "费曼学习法"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -3107,6 +3329,45 @@
         "间隔重复",
         "mit_notebooklm_48h",
         "统一学习与知识管理框架"
+      ]
+    },
+    "wiki/concepts/前后端分离架构模式.md": {
+      "title": "前后端分离架构模式",
+      "slug": "前后端分离架构模式",
+      "domain": [
+        "meta"
+      ],
+      "type": "concept",
+      "tags": [
+        "架构",
+        "SPA",
+        "RESTful",
+        "CORS",
+        "前后端分离"
+      ],
+      "trigger_keywords": [
+        "前后端分离",
+        "SPA",
+        "REST",
+        "CORS",
+        "跨域",
+        "API设计"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/frontend/",
+        "src/api/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：解释前后端分离架构的核心原理，帮助团队理解\"为什么前端和后端要分开\"以及它们如何协作。 > **关联**：[[数据质量门户架构设计]] | [[全栈项目设计模式与实践]] ---",
+      "outlinks": [
+        "全栈项目设计模式与实践",
+        "前端从零到精通学习指南",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "全栈项目设计模式与实践",
+        "质检前后端一体化理想架构设计"
       ]
     },
     "wiki/concepts/前馈与反馈控制.md": {
@@ -3128,11 +3389,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[赛博控制论与Harness]] | [[martin_fowler_harness_engineering]] | [[可维护性Harness]] ---",
       "outlinks": [
-        "多Agent生成-评估循环",
-        "赛博控制论与Harness",
-        "Agent Harness Engineering",
         "martin_fowler_harness_engineering",
-        "可维护性Harness"
+        "Agent Harness Engineering",
+        "可维护性Harness",
+        "多Agent生成-评估循环",
+        "赛博控制论与Harness"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -3159,10 +3420,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "navit_动态分辨率",
-        "patchmerger_空间降维",
         "qwen2.5_vl_技术报告解析",
-        "2d_rope_视觉位置编码"
+        "patchmerger_空间降维",
+        "2d_rope_视觉位置编码",
+        "navit_动态分辨率"
       ],
       "inlinks": [
         "patchmerger_空间降维"
@@ -3200,8 +3461,8 @@
       "summary": "",
       "outlinks": [
         "知识库工业化升级_图索引检索系统",
-        "双链",
-        "Tree-sitter AST解析引擎"
+        "Tree-sitter AST解析引擎",
+        "双链"
       ],
       "inlinks": [
         "CodeGraph解析层",
@@ -3229,10 +3490,10 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[双向链接]] | [[Zettelkasten]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "双向链接",
         "复利知识库",
         "Zettelkasten",
-        "统一学习与知识管理框架"
+        "统一学习与知识管理框架",
+        "双向链接"
       ],
       "inlinks": [
         "双向链接",
@@ -3262,11 +3523,11 @@
       "status": "active",
       "summary": "**关联节点**：[[原子化笔记]] | [[复利知识库]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "原子化笔记",
-        "链接",
         "页面名",
+        "复利知识库",
+        "原子化笔记",
         "统一学习与知识管理框架",
-        "复利知识库"
+        "链接"
       ],
       "inlinks": [
         "ai知识库操作指南",
@@ -3300,12 +3561,12 @@
       "summary": "**关联节点**：[[Andrej_Karpathy]] | [[原子化笔记]] | [[双向链接]] | [[RAG_vs_LLM_Wiki]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
         "双向链接",
-        "RAG_vs_LLM_Wiki",
         "原子化笔记",
+        "sources/karpathy_llm_wiki",
         "统一学习与知识管理框架",
         "Andrej_Karpathy",
-        "sources/mit_notebooklm_48h",
-        "sources/karpathy_llm_wiki"
+        "RAG_vs_LLM_Wiki",
+        "sources/mit_notebooklm_48h"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -3341,11 +3602,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent 工作流五大模式]] | [[前馈与反馈控制]] | [[anthropic_harness_design_long_running]] | [[Sprint合同模式]] | [[Context Reset vs Compaction]] ---",
       "outlinks": [
-        "前馈与反馈控制",
         "anthropic_harness_design_long_running",
-        "Sprint合同模式",
         "Context Reset vs Compaction",
-        "Agent 工作流五大模式"
+        "Agent 工作流五大模式",
+        "前馈与反馈控制",
+        "Sprint合同模式"
       ],
       "inlinks": [
         "Agent_工作流五大模式",
@@ -3449,11 +3710,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[AGENTS.md 标准]] | [[Context Reset vs Compaction]] | [[Harness Stack 分层架构]] ---",
       "outlinks": [
-        "AGENTS.md 标准",
         "Harness Stack 分层架构",
-        "Agent Harness Engineering",
+        "Context Reset vs Compaction",
+        "AGENTS.md 标准",
         "复利知识库",
-        "Context Reset vs Compaction"
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -3554,11 +3815,11 @@
       "status": "active",
       "summary": "**关联节点**：[[MIT_48小时速成法]] | [[主动召回]] | [[统一学习与知识管理框架]] | [[心智模型]] ---",
       "outlinks": [
-        "主动召回",
-        "MIT_48小时速成法",
+        "心智模型",
         "统一学习与知识管理框架",
+        "MIT_48小时速成法",
         "sources/mit_notebooklm_48h",
-        "心智模型"
+        "主动召回"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -3588,9 +3849,9 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[martin_fowler_harness_engineering]] ---",
       "outlinks": [
-        "前馈与反馈控制",
+        "martin_fowler_harness_engineering",
         "Agent Harness Engineering",
-        "martin_fowler_harness_engineering"
+        "前馈与反馈控制"
       ],
       "inlinks": [
         "前馈与反馈控制",
@@ -3618,9 +3879,9 @@
       "status": "active",
       "summary": "**关联节点**：[[主动召回]] | [[费曼学习法]] | [[统一学习与知识管理框架]] ---",
       "outlinks": [
-        "费曼学习法",
+        "统一学习与知识管理框架",
         "主动召回",
-        "统一学习与知识管理框架"
+        "费曼学习法"
       ],
       "inlinks": [
         "主动召回",
@@ -3721,9 +3982,9 @@
       "status": "active",
       "summary": "**关联节点**：[[复利知识库]] | [[RAG_vs_LLM_Wiki]] | [[sources/karpathy_llm_wiki]] ---",
       "outlinks": [
-        "sources/karpathy_llm_wiki",
+        "RAG_vs_LLM_Wiki",
         "复利知识库",
-        "RAG_vs_LLM_Wiki"
+        "sources/karpathy_llm_wiki"
       ],
       "inlinks": [
         "RAG_vs_LLM_Wiki",
@@ -3764,8 +4025,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "知识库工业化升级_图索引检索系统",
-        "graphify项目"
+        "graphify项目",
+        "知识库工业化升级_图索引检索系统"
       ],
       "inlinks": [
         "CodeGraph提取层",
@@ -3910,8 +4171,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Yuxi项目",
-        "知识库工业化升级_图索引检索系统"
+        "知识库工业化升级_图索引检索系统",
+        "Yuxi项目"
       ],
       "inlinks": [
         "Atoms原子事实提取",
@@ -3940,8 +4201,8 @@
       "summary": "",
       "outlinks": [
         "martin_fowler_harness",
-        "continuous_integration",
-        "architecture_fitness_functions"
+        "architecture_fitness_functions",
+        "continuous_integration"
       ],
       "inlinks": [
         "thoughtworks",
@@ -3967,11 +4228,61 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "martin_fowler",
-        "birgitta_bockeler"
+        "birgitta_bockeler",
+        "martin_fowler"
       ],
       "inlinks": [
         "martin_fowler_harness"
+      ]
+    },
+    "wiki/norms/前端开发规范.md": {
+      "title": "前端开发规范",
+      "slug": "前端开发规范",
+      "domain": [
+        "meta"
+      ],
+      "type": "norm",
+      "tags": [
+        "前端",
+        "规范",
+        "Vue3",
+        "TypeScript",
+        "编码约定",
+        "CodeReview"
+      ],
+      "trigger_keywords": [
+        "命名规范",
+        "代码规范",
+        "文件放哪里",
+        "怎么提交",
+        "Code Review"
+      ],
+      "affects_path": [
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "> **强制约束**：本规范中标注为「🔴 强制」的规则，违反时 Code Review 不予通过。标注为「🟡 推荐」的规则，违反时需要在 PR 中说明理由。 > **适用范围**：`src/frontend/` 下的所有代码。 > **关联**：[[数据质量门户架构设计]] | [[前端从零到精通学习指南]] ---",
+      "outlinks": [
+        "前端从零到精通学习指南",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "TypeScript实用指南",
+        "Vue3核心概念",
+        "HUB-前端与API层架构",
+        "Vue3前端层架构",
+        "ECharts从入门到掌握",
+        "HUB-质检前后端一体化学习与开发指南",
+        "Router_API_View与Python业务编排指南",
+        "全栈项目设计模式与实践",
+        "前端从零到精通学习指南",
+        "前端可视化与组件复用工程指南",
+        "数据质量门户架构设计",
+        "质检一站式平台长期架构",
+        "质检前后端一体化理想架构设计"
       ]
     },
     "wiki/norms/知识图谱编译与检索操作规范.md": {
@@ -4004,14 +4315,345 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "双链",
-        "引用"
+        "引用",
+        "双链"
       ],
       "inlinks": [
         "check_staleness脚本",
         "compile_graph脚本",
         "query_graph脚本",
         "知识库工业化升级_图索引检索系统"
+      ]
+    },
+    "wiki/quality_portal/FastAPI后端API层架构.md": {
+      "title": "FastAPI后端API层架构",
+      "slug": "FastAPI后端API层架构",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "module_doc",
+      "tags": [
+        "质检平台",
+        "FastAPI",
+        "API架构",
+        "依赖注入",
+        "路由注册",
+        "Schema设计"
+      ],
+      "trigger_keywords": [
+        "FastAPI",
+        "app.py",
+        "deps.py",
+        "router",
+        "schema",
+        "依赖注入",
+        "StaticFiles",
+        "lifespan",
+        "API端点"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "FastAPI 层负责把质检任务、版本配置、模型评测、数据集管理能力暴露为前端可调用 API，并托管前端静态产物。",
+      "outlinks": [
+        "LLM任务调度Pipeline全景",
+        "质检一站式平台长期架构",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "HUB-前端与API层架构",
+        "HUB-项目环境与开发规范总览",
+        "LLM任务调度Pipeline全景",
+        "TaskView交互流程详解",
+        "VersionView版本配置页面交互详解",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/HUB-前端与API层架构.md": {
+      "title": "HUB-前端与API层架构",
+      "slug": "HUB-前端与API层架构",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "hub",
+      "tags": [
+        "质检平台",
+        "前端",
+        "后端API",
+        "FastAPI",
+        "Vue3",
+        "架构总览"
+      ],
+      "trigger_keywords": [
+        "前端",
+        "API",
+        "FastAPI",
+        "Vue3",
+        "QA_Brain",
+        "Web",
+        "Swagger",
+        "单端口部署"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "本卡是质检一站式平台前端与后端 API 的联合架构枢纽。",
+      "outlinks": [
+        "前端开发规范",
+        "TaskView交互流程详解",
+        "质检一站式平台长期架构",
+        "FastAPI后端API层架构",
+        "Vue3前端层架构",
+        "VersionView版本配置页面交互详解"
+      ],
+      "inlinks": [
+        "FastAPI后端API层架构",
+        "HUB-项目环境与开发规范总览",
+        "LLM任务调度Pipeline全景",
+        "TaskView交互流程详解",
+        "VersionView版本配置页面交互详解",
+        "Vue3前端层架构",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/HUB-项目环境与开发规范总览.md": {
+      "title": "质检一站式平台项目环境与开发规范总览",
+      "slug": "HUB-项目环境与开发规范总览",
+      "domain": [
+        "ai_dlc",
+        "agent_engineering",
+        "tooling"
+      ],
+      "type": "hub",
+      "tags": [
+        "质检平台",
+        "e2e_data_pipeline_hub",
+        "自动驾驶",
+        "一站式平台",
+        "开发规范",
+        "AI_DLC"
+      ],
+      "trigger_keywords": [
+        "质检项目",
+        "e2e_data_pipeline_hub",
+        "一站式平台",
+        "环境配置",
+        "开发流程",
+        "AI-DLC"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "本卡是质检项目组一站式平台的导航枢纽。项目定位是面向自动驾驶端到端数据生产的 AI 智能体协作系统，兼具知识管理、任务调度、数据质检、LLM 数据生产、API 服务和前端运营界面。",
+      "outlinks": [
+        "TaskView交互流程详解",
+        "质检一站式平台长期架构",
+        "LLM任务调度Pipeline全景",
+        "FastAPI后端API层架构",
+        "Vue3前端层架构",
+        "VersionView版本配置页面交互详解",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "LLM任务调度Pipeline全景",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/LLM任务调度Pipeline全景.md": {
+      "title": "LLM任务调度Pipeline全景",
+      "slug": "LLM任务调度Pipeline全景",
+      "domain": [
+        "ai_dlc",
+        "agent_engineering",
+        "tooling"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "质检平台",
+        "LLM任务调度",
+        "Pipeline",
+        "状态机",
+        "去重锁",
+        "并发控制",
+        "异常兜底"
+      ],
+      "trigger_keywords": [
+        "Pipeline",
+        "任务调度",
+        "状态迁转",
+        "通道",
+        "去重锁",
+        "Dedup",
+        "Stage",
+        "TaskWorker",
+        "process_task",
+        "status聚合",
+        "OBS上传",
+        "版本配置",
+        "边界条件",
+        "异常处理",
+        "fallback",
+        "幂等",
+        "Watchdog",
+        "holder_id"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "本卡是质检项目 LLM 数据生产与任务调度的中枢文档，覆盖状态迁转、6 通道拓扑、3 阶段调度、去重锁、数据表、OBS 上传、异常兜底和调度入口。",
+      "outlinks": [
+        "HUB-项目环境与开发规范总览",
+        "TaskView交互流程详解",
+        "质检一站式平台长期架构",
+        "FastAPI后端API层架构",
+        "VersionView版本配置页面交互详解",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "FastAPI后端API层架构",
+        "HUB-项目环境与开发规范总览",
+        "VersionView版本配置页面交互详解",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/TaskView交互流程详解.md": {
+      "title": "TaskView交互流程详解",
+      "slug": "TaskView交互流程详解",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "module_doc",
+      "tags": [
+        "质检平台",
+        "TaskView",
+        "交互流程",
+        "分组概览",
+        "回收站",
+        "CRUD",
+        "游标分页"
+      ],
+      "trigger_keywords": [
+        "TaskView",
+        "任务列表",
+        "任务组",
+        "分组概览",
+        "展开折叠",
+        "通道圆点",
+        "回收站",
+        "批量清理",
+        "游标分页",
+        "版本详情弹窗"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "`TaskView.vue` 是质检任务运营主页面，负责任务组概览、组内任务下钻、任务创建、回收站和批量清理。",
+      "outlinks": [
+        "Vue3前端层架构",
+        "FastAPI后端API层架构",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "HUB-前端与API层架构",
+        "HUB-项目环境与开发规范总览",
+        "LLM任务调度Pipeline全景",
+        "Vue3前端层架构",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/VersionView版本配置页面交互详解.md": {
+      "title": "VersionView版本配置页面交互详解",
+      "slug": "VersionView版本配置页面交互详解",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "module_doc",
+      "tags": [
+        "质检平台",
+        "VersionView",
+        "版本配置",
+        "CRUD",
+        "JSONB",
+        "OFFSET分页"
+      ],
+      "trigger_keywords": [
+        "VersionView",
+        "版本配置",
+        "CRUD",
+        "创建配置",
+        "编辑配置",
+        "删除配置",
+        "JSONB",
+        "通道筛选"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "`VersionView.vue` 管理模型、视频、Prompt 等版本配置，是 LLM 任务调度 Pipeline 的配置入口之一。",
+      "outlinks": [
+        "Vue3前端层架构",
+        "LLM任务调度Pipeline全景",
+        "FastAPI后端API层架构",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "HUB-前端与API层架构",
+        "HUB-项目环境与开发规范总览",
+        "LLM任务调度Pipeline全景",
+        "Vue3前端层架构",
+        "质检一站式平台长期架构"
+      ]
+    },
+    "wiki/quality_portal/Vue3前端层架构.md": {
+      "title": "Vue3前端层架构",
+      "slug": "Vue3前端层架构",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "module_doc",
+      "tags": [
+        "质检平台",
+        "Vue3",
+        "前端架构",
+        "ElementPlus",
+        "Vite",
+        "TypeScript",
+        "路由",
+        "HTTP封装"
+      ],
+      "trigger_keywords": [
+        "Vue3",
+        "前端",
+        "ElementPlus",
+        "Vite",
+        "axios",
+        "router",
+        "侧边栏",
+        "MainLayout",
+        "RecycleBinTab",
+        "VersionDetailDialog"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "Vue3 前端层用于承载质检任务运营界面。当前技术栈是 Vue3 + TypeScript + Vite + Element Plus。",
+      "outlinks": [
+        "前端开发规范",
+        "VersionView版本配置页面交互详解",
+        "TaskView交互流程详解",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "HUB-前端与API层架构",
+        "HUB-项目环境与开发规范总览",
+        "TaskView交互流程详解",
+        "VersionView版本配置页面交互详解",
+        "质检一站式平台长期架构"
       ]
     },
     "wiki/sources/agent_and_harness_engineering_2026.md": {
@@ -4035,15 +4677,15 @@
       "summary": "",
       "outlinks": [
         "Agent-Skills",
-        "OpenCode",
+        "Gstack",
+        "Oh-My-OpenAgent",
         "Claude_Code",
-        "Cognitive_Gearing",
-        "Addy_Osmani",
+        "OpenCode",
         "Harness_Engineering",
         "OpenClaw",
+        "Cognitive_Gearing",
+        "Addy_Osmani",
         "Garry_Tan",
-        "Oh-My-OpenAgent",
-        "Gstack",
         "Agent_Engineering"
       ],
       "inlinks": []
@@ -4066,10 +4708,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Agent权限系统",
-        "AgentScope工具与服务层",
         "Event驱动Agent架构",
-        "AgentScope项目"
+        "AgentScope工具与服务层",
+        "AgentScope项目",
+        "Agent权限系统"
       ],
       "inlinks": []
     },
@@ -4093,8 +4735,8 @@
       "summary": "",
       "outlinks": [
         "human_in_the_loop",
-        "steering_loop",
-        "agent_harness"
+        "agent_harness",
+        "steering_loop"
       ],
       "inlinks": []
     },
@@ -4148,10 +4790,10 @@
       "status": "active",
       "summary": "**关联节点**：[[多Agent生成-评估循环]] | [[Context Reset vs Compaction]] | [[Sprint合同模式]] | [[Agent Harness Engineering]] ---",
       "outlinks": [
-        "多Agent生成-评估循环",
         "Sprint合同模式",
-        "Context Reset vs Compaction",
-        "Agent Harness Engineering"
+        "Agent Harness Engineering",
+        "多Agent生成-评估循环",
+        "Context Reset vs Compaction"
       ],
       "inlinks": [
         "Context_Reset_vs_Compaction",
@@ -4182,9 +4824,9 @@
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[Harness Stack 分层架构]] | [[渐进式上下文披露]] | [[AGENTS.md 标准]] ---",
       "outlinks": [
         "渐进式上下文披露",
+        "Harness Stack 分层架构",
         "AGENTS.md 标准",
-        "Agent Harness Engineering",
-        "Harness Stack 分层架构"
+        "Agent Harness Engineering"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -4212,10 +4854,10 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "mob_rituals",
-        "ai_dlc",
+        "agent_harness",
         "bolts_and_work_units",
-        "agent_harness"
+        "mob_rituals",
+        "ai_dlc"
       ],
       "inlinks": [
         "ai_dlc",
@@ -4244,9 +4886,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "动态调度桥接",
+        "Explore自适应骨架化",
         "搜索质量闭环",
-        "Explore自适应骨架化"
+        "动态调度桥接"
       ],
       "inlinks": []
     },
@@ -4270,9 +4912,9 @@
       "summary": "",
       "outlinks": [
         "CodeGraph上下文层",
+        "Tree-sitter AST解析引擎",
         "CodeGraph提取层",
-        "CodeGraph项目",
-        "Tree-sitter AST解析引擎"
+        "CodeGraph项目"
       ],
       "inlinks": []
     },
@@ -4297,9 +4939,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "conductor_vs_orchestrator",
         "agent_harness",
-        "steering_loop"
+        "steering_loop",
+        "conductor_vs_orchestrator"
       ],
       "inlinks": [
         "conductor_vs_orchestrator",
@@ -4324,8 +4966,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "navit_动态分辨率",
-        "patchmerger_空间降维"
+        "patchmerger_空间降维",
+        "navit_动态分辨率"
       ],
       "inlinks": []
     },
@@ -4349,14 +4991,14 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "Yuxi项目",
-        "gbrain检索与合成层",
         "Dream Cycle自维护循环",
+        "Yuxi检索与知识图谱层",
+        "Yuxi项目",
         "gbrain项目",
-        "NamedThingBench检索评测",
         "RRF融合与多阶段Boost",
+        "NamedThingBench检索评测",
         "Atoms原子事实提取",
-        "Yuxi检索与知识图谱层"
+        "gbrain检索与合成层"
       ],
       "inlinks": []
     },
@@ -4380,9 +5022,9 @@
       "summary": "",
       "outlinks": [
         "混合模态知识提取",
+        "Graphify提取管线",
         "社区检测与Leiden算法",
-        "Graphify项目",
-        "Graphify提取管线"
+        "Graphify项目"
       ],
       "inlinks": []
     },
@@ -4407,10 +5049,10 @@
       "summary": "**作者**：[[Andrej_Karpathy]] **发布时间**：2026 年 4 月 **Stars**：5000+（发布数小时内） ---",
       "outlinks": [
         "双向链接",
-        "RAG_vs_LLM_Wiki",
         "原子化笔记",
+        "复利知识库",
         "Andrej_Karpathy",
-        "复利知识库"
+        "RAG_vs_LLM_Wiki"
       ],
       "inlinks": []
     },
@@ -4435,12 +5077,12 @@
       "summary": "",
       "outlinks": [
         "martin_fowler",
+        "computational_vs_inferential",
         "birgitta_bockeler",
         "agent_harness",
-        "computational_vs_inferential",
-        "steering_loop",
         "thoughtworks",
         "feedforward_and_feedback",
+        "steering_loop",
         "ashby_law"
       ],
       "inlinks": [
@@ -4467,11 +5109,11 @@
       "status": "active",
       "summary": "**关联节点**：[[Agent Harness Engineering]] | [[前馈与反馈控制]] | [[可维护性Harness]] | [[赛博控制论与Harness]] | [[Birgitta Böckeler]] ---",
       "outlinks": [
-        "赛博控制论与Harness",
         "前馈与反馈控制",
-        "Birgitta Böckeler",
         "Agent Harness Engineering",
-        "可维护性Harness"
+        "Birgitta Böckeler",
+        "可维护性Harness",
+        "赛博控制论与Harness"
       ],
       "inlinks": [
         "Agent_Harness_Engineering",
@@ -4503,8 +5145,8 @@
       "outlinks": [
         "主动召回",
         "notebooklm_mcp用法",
-        "费曼学习法",
-        "MIT_48小时速成法"
+        "MIT_48小时速成法",
+        "费曼学习法"
       ],
       "inlinks": []
     },
@@ -4528,9 +5170,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
+        "agent_orchestration",
         "autonomous_agents",
-        "cost_control",
-        "agent_orchestration"
+        "cost_control"
       ],
       "inlinks": []
     },
@@ -4551,16 +5193,16 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "navit_动态分辨率",
-        "swiglu_门控激活函数",
-        "2d_rope_视觉位置编码",
         "window_attention_交错注意力",
         "mrope_多模态位置编码",
-        "rmsnorm_归一化",
-        "qwen2.5_vl_三阶段预训练",
         "conv3d_时空切块器",
+        "swiglu_门控激活函数",
+        "2d_rope_视觉位置编码",
+        "navit_动态分辨率",
         "qwen2.5_vl_深度剖析学习指南",
-        "patchmerger_空间降维"
+        "rmsnorm_归一化",
+        "patchmerger_空间降维",
+        "qwen2.5_vl_三阶段预训练"
       ],
       "inlinks": [
         "2d_rope_视觉位置编码",
@@ -4588,9 +5230,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "patchmerger_空间降维",
+        "llm_backbone_大语言模型基座",
         "mrope_多模态位置编码",
-        "llm_backbone_大语言模型基座"
+        "patchmerger_空间降维"
       ],
       "inlinks": []
     },
@@ -4612,9 +5254,9 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "rope_旋转位置编码",
         "mrope_多模态位置编码",
-        "2d_rope_视觉位置编码"
+        "2d_rope_视觉位置编码",
+        "rope_旋转位置编码"
       ],
       "inlinks": []
     },
@@ -4688,16 +5330,16 @@
       "status": "active",
       "summary": "本文综合 awesome-agent-harness 仓库及其引用的 7 篇核心文献，建立对 Agent Harness Engineering 这一新兴领域的结构化认知。 ---",
       "outlinks": [
-        "多Agent生成-评估循环",
-        "费曼学习法",
         "Harness Stack 分层架构",
-        "渐进式上下文披露",
-        "前馈与反馈控制",
         "anthropic_harness_design_long_running",
-        "anthropic_building_effective_agents",
-        "martin_fowler_harness_engineering",
+        "渐进式上下文披露",
+        "费曼学习法",
+        "前馈与反馈控制",
         "复利知识库",
-        "awesome_agent_harness"
+        "awesome_agent_harness",
+        "martin_fowler_harness_engineering",
+        "anthropic_building_effective_agents",
+        "多Agent生成-评估循环"
       ],
       "inlinks": []
     },
@@ -4726,6 +5368,116 @@
         "Agent_Engineering"
       ],
       "inlinks": []
+    },
+    "wiki/synthesis/ECharts从入门到掌握.md": {
+      "title": "ECharts从入门到掌握",
+      "slug": "ECharts从入门到掌握",
+      "domain": [
+        "tooling",
+        "ai_dlc"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "前端",
+        "ECharts",
+        "可视化",
+        "Vue3",
+        "图表",
+        "质检平台"
+      ],
+      "trigger_keywords": [
+        "ECharts",
+        "图表",
+        "可视化",
+        "折线图",
+        "柱状图",
+        "饼图",
+        "Vue3图表",
+        "chart option"
+      ],
+      "affects_path": [
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "本卡回答：ECharts 是什么、怎么安装、代码放哪里、每一步输入输出是什么、如何和后端/页面/组件联动。",
+      "outlinks": [
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南",
+        "Vue3核心概念",
+        "前端开发规范",
+        "HUB-质检前后端一体化学习与开发指南"
+      ],
+      "inlinks": [
+        "HUB-质检前后端一体化学习与开发指南",
+        "前端可视化与组件复用工程指南",
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南"
+      ]
+    },
+    "wiki/synthesis/HUB-质检前后端一体化学习与开发指南.md": {
+      "title": "HUB-质检前后端一体化学习与开发指南",
+      "slug": "HUB-质检前后端一体化学习与开发指南",
+      "domain": [
+        "ai_dlc",
+        "tooling",
+        "agent_engineering"
+      ],
+      "type": "hub",
+      "tags": [
+        "质检平台",
+        "前后端一体化",
+        "学习路径",
+        "开发指南",
+        "Vue3",
+        "FastAPI",
+        "ECharts"
+      ],
+      "trigger_keywords": [
+        "质检前后端学习路径",
+        "前后端一体化指南",
+        "ECharts",
+        "Router API View",
+        "页签开发",
+        "可视化复用"
+      ],
+      "affects_path": [
+        "src/",
+        "src/api/",
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/",
+        "src/api/",
+        "src/frontend/",
+        "src/config/",
+        "src/database/"
+      ],
+      "status": "active",
+      "summary": "本卡是质检平台前后端一体化架构的学习和开发入口。它只做路线导航，不展开细节；具体实现、代码位置、输入输出、约束和示例都进入子卡。",
+      "outlinks": [
+        "质检前后端一体化理想架构设计",
+        "Router_API_View与Python业务编排指南",
+        "质检页签端到端开发流程指南",
+        "前端可视化与组件复用工程指南",
+        "Vue3核心概念",
+        "配置管理公共模块",
+        "前端开发规范",
+        "全栈项目设计模式与实践",
+        "FastAPI应用入口与依赖注入层",
+        "PostgreSQL数据库公共模块",
+        "ECharts从入门到掌握",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "ECharts从入门到掌握",
+        "Router_API_View与Python业务编排指南",
+        "前端可视化与组件复用工程指南",
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南"
+      ]
     },
     "wiki/synthesis/Repo-as-Graph代码摄入范式.md": {
       "title": "Repo-as-Graph代码摄入范式",
@@ -4762,6 +5514,59 @@
       ],
       "inlinks": [
         "extract_code_skeleton脚本"
+      ]
+    },
+    "wiki/synthesis/Router_API_View与Python业务编排指南.md": {
+      "title": "Router API View与Python业务编排指南",
+      "slug": "Router_API_View与Python业务编排指南",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "前端",
+        "后端",
+        "Router",
+        "API",
+        "View",
+        "FastAPI",
+        "Vue3",
+        "Python业务编排"
+      ],
+      "trigger_keywords": [
+        "router",
+        "api",
+        "view",
+        "前后端",
+        "Python类",
+        "业务编排",
+        "FastAPI路由",
+        "Vue页面"
+      ],
+      "affects_path": [
+        "src/api/",
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/api/",
+        "src/frontend/",
+        "src/database/",
+        "src/config/"
+      ],
+      "status": "active",
+      "summary": "本卡回答：Router、API、View 是什么；成熟 Python 类如何被前端复用；“编排”到底写在哪里。",
+      "outlinks": [
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南",
+        "前端开发规范",
+        "FastAPI应用入口与依赖注入层",
+        "HUB-质检前后端一体化学习与开发指南"
+      ],
+      "inlinks": [
+        "HUB-质检前后端一体化学习与开发指南",
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南"
       ]
     },
     "wiki/synthesis/agent与多模态交叉分析.md": {
@@ -4814,10 +5619,10 @@
       "summary": "This card synthesizes the current (2026) industry consensus on building reliable AI agent environments for software engineering.",
       "outlinks": [
         "martin_fowler",
-        "awesome_harness_readme",
-        "conductor_vs_orchestrator",
         "gitagent_pattern",
         "aws_ai_dlc",
+        "conductor_vs_orchestrator",
+        "awesome_harness_readme",
         "conductors_vs_orchestrators"
       ],
       "inlinks": []
@@ -4840,47 +5645,47 @@
       "status": "active",
       "summary": "> **前言：本指南的正确使用方式** > 本文件是整个 Qwen2.5-VL 架构体系的**「教学大纲」与「作战地图」**。这里不会直接堆砌冗长的代码和晦涩的数学推导，而是专注于**构建你的系统化学习脉络**。 > > 针对每一个核心模块，我们都严格遵循四大章节进行梳理： > **1. 架构顺序解读**：模块的来龙去脉、输入输出、以及数据在其中经历了哪些处理步骤。 > **2. 概念学习序...",
       "outlinks": [
-        "clip_对比学习视觉编码",
-        "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling",
-        "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)",
-        "rope_旋转位置编码",
-        "知识卡片",
-        "conv3d_时空切块器#参数生命周期与渊源追溯",
-        "rmsnorm_归一化",
-        "clip_对比学习视觉编码#2-进化：siglip-的二分类革新",
-        "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新",
-        "convolution_卷积家族原理",
-        "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm",
-        "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力",
-        "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜",
-        "conv3d_时空切块器#数值计算示例与心算验证",
-        "window_attention_交错注意力",
-        "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)",
-        "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)",
-        "conv3d_时空切块器#1-步骤一：3d-卷积时空滤波-tubelet-embedding",
-        "vit_核心原理与结构#1. 为什么需要多层堆叠？ (第一性原理)",
-        "patchmerger_空间降维",
-        "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)",
-        "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)",
-        "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo",
-        "2d_rope_视觉位置编码",
-        "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)",
-        "mrope_多模态位置编码",
-        "navit_动态分辨率#核心算法原理详解",
-        "qwen2.5_vl_三阶段预训练",
-        "navit_动态分辨率#1-navit-的基石思想-patch-n-pack",
-        "patchmerger_空间降维#1-空间下采样：张量形变魔法",
-        "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias",
-        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决",
-        "rope_旋转位置编码#1-第一性原理与复数推导",
-        "qwen2.5_vl_预处理框架集成与显存评估",
         "qwen2.5_vl_预处理流水线#步骤一：图像的配置检查与限界缩放 (smart_resize)",
-        "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎",
-        "clip_对比学习视觉编码#1-clip-的全局-softmax-机制",
+        "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
+        "conv3d_时空切块器#数值计算示例与心算验证",
+        "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)",
+        "llm_backbone_大语言模型基座#核心源码解剖-gated-deltanet-的状态更新",
+        "llm_backbone_大语言模型基座#2-qwen3-5-革命性创新一：zero-centered-rmsnorm",
+        "qwen2.5_vl_预处理框架集成与显存评估",
+        "navit_动态分辨率#核心算法原理详解",
         "packing_物理隔离机制",
+        "qwen2.5_vl_三阶段预训练#3-后训练阶段-post-training-sft--dpo",
+        "packing_物理隔离机制#1. 数据打包与边界划分 (Packing & cu_seqlens)",
+        "clip_对比学习视觉编码#1-clip-的全局-softmax-机制",
         "qwen2.5_vl_预处理流水线#步骤三：时间步打包与 5D 张量同质化 (Time-Step Grouping)",
-        "qwen2.5_vl_预处理流水线#步骤四：异构展平拼接与精准挖坑 (Concat & Tokenization)"
+        "qwen2.5_vl_预处理流水线#步骤三：时间维度对齐与 5D 张量奥秘 (Time-Step Grouping)",
+        "2d_rope_视觉位置编码",
+        "navit_动态分辨率#1-navit-的基石思想-patch-n-pack",
+        "rope_旋转位置编码#1-第一性原理与复数推导",
+        "clip_对比学习视觉编码#2-进化：siglip-的二分类革新",
+        "vit_核心原理与结构#1. 为什么需要多层堆叠？ (第一性原理)",
+        "rmsnorm_归一化",
+        "patchmerger_空间降维#1-空间下采样：张量形变魔法",
+        "qwen2.5_vl_三阶段预训练",
+        "qwen2.5_vl_预处理流水线#步骤二：视频动态抽帧与真实 FPS 计算 (smart_nframes)",
+        "navit_动态分辨率#7-动态分辨率方案深度对比：原生-vs-切片-tiling",
+        "conv3d_时空切块器#1-步骤一：3d-卷积时空滤波-tubelet-embedding",
+        "llm_backbone_大语言模型基座#3-qwen3-5-革命性创新二：gated-deltanet-线性注意力",
+        "swiglu_门控激活函数#2. Qwen2.5-VL 的核心变动：开启 Bias",
+        "mrope_多模态位置编码#1-3d-id-序列的生成逻辑-token-级别的显微镜",
+        "知识卡片",
+        "clip_对比学习视觉编码",
+        "navit_动态分辨率#原生-qwen-vs-切片-internvl：token-消耗对决",
+        "window_attention_交错注意力",
+        "qwen2.5_vl_预处理流水线#步骤四：暴力拉平与文本挖坑 (Concat & Tokenization)",
+        "llm_backbone_大语言模型基座#1-qwen2-5-经典底座核心组件-qwen2-5-vl-的引擎",
+        "qwen2.5_vl_预处理流水线#步骤五：媒体身份标识与元数据生成 (grid_thw)",
+        "rope_旋转位置编码",
+        "conv3d_时空切块器#1. 步骤一：3D 卷积时空滤波 (Tubelet Embedding)",
+        "mrope_多模态位置编码",
+        "patchmerger_空间降维",
+        "conv3d_时空切块器#参数生命周期与渊源追溯",
+        "convolution_卷积家族原理"
       ],
       "inlinks": [
         "qwen2.5_vl_技术报告解析",
@@ -4907,41 +5712,174 @@
       "status": "active",
       "summary": "> **前言：本指南的正确使用方式** > 本文件是 Qwen3.5 架构体系的**「教学大纲」与「作战地图」**，同时也是**完整的前向传播全链路流转文档**。 > 相比于 [[qwen2.5_vl_深度剖析学习指南]]，Qwen3.5 在语言基座上进行了大刀阔斧的革命，引入了线性注意力（Gated DeltaNet）、摒弃了 DeepStack，回归了 `ViT + PatchMerge...",
       "outlinks": [
-        "clip_对比学习视觉编码",
-        "qwen3.5_视觉编码器",
-        "qwen3.5_文本嵌入与特殊token#1. nn.Embedding 查表原理",
-        "知识卡片",
-        "qwen3.5_混合decoder架构",
-        "rmsnorm_归一化",
-        "qwen3.5_文本嵌入与特殊token#3. 特殊 Token 角色定义",
-        "qwen3.5_混合decoder架构#3. 标准 Attention (Qwen3_5Attention) — 完整源码",
-        "qwen2.5_vl_深度剖析学习指南",
-        "qwen3.5_interleaved_mrope",
-        "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)",
-        "qwen3.5_多模态融合机制",
-        "qwen3.5_混合decoder架构#2. 双 Mask 系统",
-        "qwen3.5_视觉编码器#1. Conv3d PatchEmbed",
-        "window_attention_交错注意力",
-        "patchmerger_空间降维",
-        "qwen3.5_processor预处理#1. mm_token_type_ids — 模态类型标记",
-        "2d_rope_视觉位置编码",
-        "qwen3.5_视觉编码器#5. PatchMerger",
-        "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
-        "mrope_多模态位置编码",
-        "qwen2.5_vl_三阶段预训练",
-        "qwen3.5_视觉编码器#4. VisionBlock (×32)",
         "conv3d_时空切块器#第一性原理深度对比：视觉 vs 文本",
-        "qwen2.5_vl_预处理流水线",
-        "qwen3.5_gated_delta_net",
-        "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由",
-        "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)",
-        "qwen3.5_混合decoder架构#4. SwiGLU MLP",
-        "qwen_代码地图",
-        "qwen2.5_vl_预处理框架集成与显存评估",
+        "conv3d_时空切块器",
         "qwen3.5_多模态融合机制#2. masked_scatter — 原位替换",
-        "conv3d_时空切块器"
+        "qwen3.5_gated_delta_net",
+        "qwen3.5_文本嵌入与特殊token#1. nn.Embedding 查表原理",
+        "qwen3.5_混合decoder架构#4. SwiGLU MLP",
+        "qwen2.5_vl_深度剖析学习指南",
+        "qwen2.5_vl_预处理框架集成与显存评估",
+        "qwen3.5_混合decoder架构#2. 双 Mask 系统",
+        "qwen3.5_混合decoder架构#3. 标准 Attention (Qwen3_5Attention) — 完整源码",
+        "qwen3.5_视觉编码器#4. VisionBlock (×32)",
+        "qwen3.5_多模态融合机制#4. get_rope_index — 逐 token 位置分配",
+        "2d_rope_视觉位置编码",
+        "qwen3.5_视觉编码器",
+        "qwen_代码地图",
+        "rmsnorm_归一化",
+        "qwen3.5_processor预处理#3. 视频帧时间戳 (_calculate_timestamps)",
+        "qwen2.5_vl_三阶段预训练",
+        "qwen3.5_混合decoder架构",
+        "qwen3.5_interleaved_mrope",
+        "qwen2.5_vl_预处理流水线",
+        "qwen3.5_视觉编码器#5. PatchMerger",
+        "知识卡片",
+        "clip_对比学习视觉编码",
+        "qwen3.5_多模态融合机制",
+        "qwen3.5_混合decoder架构#1. DecoderLayer — 混合层路由",
+        "window_attention_交错注意力",
+        "qwen3.5_文本嵌入与特殊token#3. 特殊 Token 角色定义",
+        "qwen3.5_视觉编码器#1. Conv3d PatchEmbed",
+        "qwen3.5_processor预处理#1. mm_token_type_ids — 模态类型标记",
+        "qwen3.5_视觉编码器#2. 绝对位置嵌入 (fast_pos_embed_interpolate)",
+        "mrope_多模态位置编码",
+        "patchmerger_空间降维"
       ],
       "inlinks": []
+    },
+    "wiki/synthesis/全栈项目设计模式与实践.md": {
+      "title": "全栈项目设计模式与实践",
+      "slug": "全栈项目设计模式与实践",
+      "domain": [
+        "meta"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "架构",
+        "设计模式",
+        "全栈",
+        "最佳实践",
+        "开源项目"
+      ],
+      "trigger_keywords": [
+        "设计模式",
+        "架构参考",
+        "开源项目",
+        "MVC",
+        "分层",
+        "组级别团队"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：为组级别团队提供全栈项目的设计模式参考。分析业界优秀实践、开源项目架构、以及如何在简洁与优雅之间找到平衡。 > **关联**：[[数据质量门户架构设计]] | [[前后端分离架构模式]] | [[前端开发规范]] ---",
+      "outlinks": [
+        "前后端分离架构模式",
+        "前端从零到精通学习指南",
+        "数据质量门户架构设计",
+        "前端开发规范"
+      ],
+      "inlinks": [
+        "PostgreSQL数据库公共模块",
+        "前后端分离架构模式",
+        "HUB-质检前后端一体化学习与开发指南",
+        "前端从零到精通学习指南",
+        "数据质量门户架构设计",
+        "质检前后端一体化理想架构设计"
+      ]
+    },
+    "wiki/synthesis/前端从零到精通学习指南.md": {
+      "title": "前端从零到精通学习指南",
+      "slug": "前端从零到精通学习指南",
+      "domain": [
+        "meta"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "前端",
+        "学习指南",
+        "Vue3",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "trigger_keywords": [
+        "前端学习",
+        "怎么学前端",
+        "Vue入门",
+        "TypeScript入门",
+        "前端教程"
+      ],
+      "affects_path": [],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：为 Python 背景的团队成员设计的前端学习路线。每个概念都有 **Python 类比**、**底层原理**、**实际代码示例**（使用我们的业务场景）、**练习任务**。 > **学习策略**：不要试图一次学完。按阶段推进，每个阶段都能产出实际业务代码。 > **关联**：[[数据质量门户架构设计]] | [[前端开发规范]] | [[Vue3核心概念]] | [[Ty...",
+      "outlinks": [
+        "Vue3核心概念",
+        "前端开发规范",
+        "全栈项目设计模式与实践",
+        "TypeScript实用指南",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "TypeScript实用指南",
+        "Vue3核心概念",
+        "前后端分离架构模式",
+        "前端开发规范",
+        "全栈项目设计模式与实践",
+        "数据质量门户架构设计"
+      ]
+    },
+    "wiki/synthesis/前端可视化与组件复用工程指南.md": {
+      "title": "前端可视化与组件复用工程指南",
+      "slug": "前端可视化与组件复用工程指南",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "前端",
+        "可视化",
+        "组件复用",
+        "Vue3",
+        "ECharts",
+        "设计系统"
+      ],
+      "trigger_keywords": [
+        "前端可视化",
+        "组件复用",
+        "通用组件",
+        "BaseChart",
+        "设计系统",
+        "页面风格统一"
+      ],
+      "affects_path": [
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "本卡回答：前端可视化的基本原理、输入输出、上下游、代码写法，以及如何沉淀通用能力，避免每个页签风格不一致。",
+      "outlinks": [
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南",
+        "前端开发规范",
+        "HUB-质检前后端一体化学习与开发指南",
+        "ECharts从入门到掌握"
+      ],
+      "inlinks": [
+        "HUB-质检前后端一体化学习与开发指南",
+        "质检前后端一体化理想架构设计",
+        "质检页签端到端开发流程指南"
+      ]
     },
     "wiki/synthesis/多模态大模型学习计划.md": {
       "title": "多模态大模型学习计划",
@@ -4989,6 +5927,55 @@
       "outlinks": [],
       "inlinks": []
     },
+    "wiki/synthesis/数据质量门户架构设计.md": {
+      "title": "数据质量一站式门户架构设计",
+      "slug": "数据质量门户架构设计",
+      "domain": [
+        "meta"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "前端",
+        "架构",
+        "Vue3",
+        "FastAPI",
+        "全栈",
+        "数据质量"
+      ],
+      "trigger_keywords": [
+        "前端架构",
+        "门户设计",
+        "技术选型",
+        "目录结构",
+        "新增模块"
+      ],
+      "affects_path": [
+        "src/frontend/",
+        "src/api/"
+      ],
+      "related_code": [
+        "src/frontend/",
+        "src/api/"
+      ],
+      "status": "active",
+      "summary": "> **定位**：本文是团队一站式门户系统的**架构总纲**，覆盖技术选型、目录结构、数据流、扩展方式和关键设计决策。所有前端/后端开发都应以本文为准绑定（North Star）。 > **关联规范**：[[前端开发规范]] | **学习指南**：[[前端从零到精通学习指南]] ---",
+      "outlinks": [
+        "前端开发规范",
+        "全栈项目设计模式与实践",
+        "前端从零到精通学习指南"
+      ],
+      "inlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "配置管理公共模块",
+        "Vue3核心概念",
+        "前后端分离架构模式",
+        "前端开发规范",
+        "HUB-质检前后端一体化学习与开发指南",
+        "全栈项目设计模式与实践",
+        "前端从零到精通学习指南",
+        "质检前后端一体化理想架构设计"
+      ]
+    },
     "wiki/synthesis/知识库工业化升级_图索引检索系统.md": {
       "title": "知识库工业化升级：图索引检索系统设计与实现",
       "slug": "知识库工业化升级_图索引检索系统",
@@ -5022,13 +6009,13 @@
       "status": "active",
       "summary": "> 本卡片是完整的技术总纲，可独立复现整个系统。面向新加入的人类或 AI 阅读。",
       "outlinks": [
-        "compile_graph脚本",
-        "check_staleness脚本",
+        "Seed-Expand-Classify 检索范式",
         "知识图谱编译与检索操作规范",
-        "gbrain_yuxi_深度技术分析",
+        "check_staleness脚本",
         "双链",
+        "gbrain_yuxi_深度技术分析",
         "query_graph脚本",
-        "Seed-Expand-Classify 检索范式"
+        "compile_graph脚本"
       ],
       "inlinks": [
         "Explore自适应骨架化",
@@ -5069,8 +6056,8 @@
       "status": "active",
       "summary": "",
       "outlinks": [
-        "schema.md",
-        "chunk_raw脚本"
+        "chunk_raw脚本",
+        "schema.md"
       ],
       "inlinks": []
     },
@@ -5114,19 +6101,19 @@
       "status": "active",
       "summary": "本体系是\"如何有效吸收知识\"与\"如何自动化管理知识\"的终极统合。学习是消化提取的\"破壁机\"，而管理脚手架则是承载知识复利生长的\"培养皿\"。 ![AI驱动的知识引擎与自动化图书管理员全景架构图](../../raw/assets/05_unified_infographic_v3_zh.png) ---",
       "outlinks": [
-        "双向链接",
         "费曼学习法",
+        "双向链接",
+        "ai知识库操作指南",
+        "主动拷问",
+        "复利知识库",
         "原子化笔记",
-        " ",
-        "主动召回",
+        "间隔重复",
+        "心智模型",
         "MIT_48小时速成法",
         "Andrej_Karpathy",
         "notebooklm_mcp用法",
-        "复利知识库",
-        "间隔重复",
-        "ai知识库操作指南",
-        "主动拷问",
-        "心智模型"
+        " ",
+        "主动召回"
       ],
       "inlinks": [
         "MIT_48小时速成法",
@@ -5139,6 +6126,182 @@
         "复利知识库",
         "费曼学习法",
         "间隔重复"
+      ]
+    },
+    "wiki/synthesis/质检一站式平台长期架构.md": {
+      "title": "质检一站式平台长期架构",
+      "slug": "质检一站式平台长期架构",
+      "domain": [
+        "ai_dlc",
+        "agent_engineering",
+        "tooling"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "质检平台",
+        "一站式平台",
+        "长期架构",
+        "前后端架构",
+        "LLM任务调度",
+        "可维护性"
+      ],
+      "trigger_keywords": [
+        "质检平台长期架构",
+        "一站式平台",
+        "前后端体系",
+        "可维护可扩展",
+        "质检项目组",
+        "quality_check_pipeline"
+      ],
+      "affects_path": [],
+      "related_code": [],
+      "status": "active",
+      "summary": "本卡综合 `quality_check_pipeline` NotebookLM source 与当前 wiki 卡片，回答两个问题：质检项目组当前在做什么，以及如何把现有前端架构升级为长期可维护、可扩展的一站式平台架构。",
+      "outlinks": [
+        "质检前后端一体化理想架构设计",
+        "HUB-项目环境与开发规范总览",
+        "配置管理公共模块",
+        "FastAPI应用入口与依赖注入层",
+        "前端开发规范",
+        "TaskView交互流程详解",
+        "LLM任务调度Pipeline全景",
+        "FastAPI后端API层架构",
+        "Vue3前端层架构",
+        "VersionView版本配置页面交互详解",
+        "PostgreSQL数据库公共模块",
+        "HUB-前端与API层架构"
+      ],
+      "inlinks": [
+        "FastAPI应用入口与依赖注入层",
+        "PostgreSQL数据库公共模块",
+        "配置管理公共模块",
+        "FastAPI后端API层架构",
+        "HUB-前端与API层架构",
+        "HUB-项目环境与开发规范总览",
+        "LLM任务调度Pipeline全景",
+        "质检前后端一体化理想架构设计"
+      ]
+    },
+    "wiki/synthesis/质检前后端一体化理想架构设计.md": {
+      "title": "质检前后端一体化理想架构设计",
+      "slug": "质检前后端一体化理想架构设计",
+      "domain": [
+        "ai_dlc",
+        "tooling",
+        "agent_engineering"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "质检平台",
+        "前后端一体化",
+        "架构设计",
+        "FastAPI",
+        "Vue3",
+        "PostgreSQL",
+        "模块化",
+        "设计模式"
+      ],
+      "trigger_keywords": [
+        "理想前后端架构",
+        "前后端一体化",
+        "模块化设计",
+        "FastAPI",
+        "Vue3",
+        "PostgreSQL",
+        "开闭原则",
+        "高内聚低耦合"
+      ],
+      "affects_path": [
+        "src/",
+        "src/api/",
+        "src/frontend/",
+        "src/config/",
+        "src/database/"
+      ],
+      "related_code": [
+        "src/api/app.py",
+        "src/api/deps.py",
+        "src/config/manager.py",
+        "src/database/postgresql.py",
+        "src/frontend/"
+      ],
+      "status": "active",
+      "summary": "本卡是质检一站式平台的工程蓝图。目标不是把前后端混在一起，而是在一个代码仓内形成“统一交付、边界清楚、公共能力复用、模块可独立演进”的一体化架构。 一句话：FastAPI 做统一后端门面，Vue3 做统一运营工作台，PostgreSQL 做结构化事实源，业务模块按 feature slice 纵向切分，公共能力横向复用。",
+      "outlinks": [
+        "Router_API_View与Python业务编排指南",
+        "质检页签端到端开发流程指南",
+        "前端可视化与组件复用工程指南",
+        "配置管理公共模块",
+        "前端开发规范",
+        "全栈项目设计模式与实践",
+        "FastAPI应用入口与依赖注入层",
+        "前后端分离架构模式",
+        "质检一站式平台长期架构",
+        "PostgreSQL数据库公共模块",
+        "HUB-质检前后端一体化学习与开发指南",
+        "ECharts从入门到掌握",
+        "数据质量门户架构设计"
+      ],
+      "inlinks": [
+        "ECharts从入门到掌握",
+        "HUB-质检前后端一体化学习与开发指南",
+        "Router_API_View与Python业务编排指南",
+        "前端可视化与组件复用工程指南",
+        "质检一站式平台长期架构",
+        "质检页签端到端开发流程指南"
+      ]
+    },
+    "wiki/synthesis/质检页签端到端开发流程指南.md": {
+      "title": "质检页签端到端开发流程指南",
+      "slug": "质检页签端到端开发流程指南",
+      "domain": [
+        "ai_dlc",
+        "tooling"
+      ],
+      "type": "synthesis",
+      "tags": [
+        "质检平台",
+        "页签开发",
+        "端到端",
+        "Vue3",
+        "FastAPI",
+        "PostgreSQL",
+        "开发流程"
+      ],
+      "trigger_keywords": [
+        "页签开发",
+        "端到端跑通",
+        "新模块开发",
+        "前后端闭环",
+        "从环境到页面"
+      ],
+      "affects_path": [
+        "src/",
+        "src/api/",
+        "src/frontend/"
+      ],
+      "related_code": [
+        "src/",
+        "src/api/",
+        "src/frontend/",
+        "src/database/",
+        "src/config/"
+      ],
+      "status": "active",
+      "summary": "本卡给出“从环境配置到跑通一个完整页签”的开发流程。示例模块使用 `llm-qc`，其他模块按同样模式复制。",
+      "outlinks": [
+        "Router_API_View与Python业务编排指南",
+        "质检前后端一体化理想架构设计",
+        "前端可视化与组件复用工程指南",
+        "HUB-质检前后端一体化学习与开发指南",
+        "ECharts从入门到掌握"
+      ],
+      "inlinks": [
+        "ECharts从入门到掌握",
+        "HUB-质检前后端一体化学习与开发指南",
+        "Router_API_View与Python业务编排指南",
+        "前端可视化与组件复用工程指南",
+        "质检前后端一体化理想架构设计"
       ]
     }
   }

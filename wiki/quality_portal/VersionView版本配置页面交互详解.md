@@ -1,2 +1,85 @@
---------------------------------------------------------------------------------
-id: "MOD-FE-002" title: "VersionView版本配置页面交互详解" domain: ["common_infra"] type: "module_doc"related_code: ["src/frontend/src/views/VersionView.vue", "src/frontend/src/api/version.ts", "src/frontend/src/utils/jsonFormatter.ts"]affects_path: ["src/frontend/src/views/VersionView.vue"]trigger_keywords: ["VersionView", "版本配置", "CRUD", "创建配置", "编辑配置", "删除配置", "JSONB", "通道筛选"]tags: ["VersionView", "版本配置", "CRUD", "JSONB"]summary: "VersionView.vue 的完整 CRUD 交互流程：通道筛选(model/video/prompt)、创建/编辑对话框(JSON输入+校验)、详情查看(JSONB格式化)、删除确认、OFFSET分页。"VersionView 版本配置页面交互详解页面加载流程顶部操作栏控件行为el-select (通道筛选)filterChannel → change → fetchConfigs()"创建新配置"按钮→ openCreateDialog()"刷新"按钮→ fetchConfigs()通道选项：model / video / prompt配置列表 (el-table)列字段说明版本号versionwidth=200, overflow-tooltip通道channelel-tag 展示处理器processorwidth=160, overflow-tooltip创建时间created_atwidth=180更新时间updated_atwidth=180操作-查看/编辑/删除分页 (el-pagination)page-sizes=[10,20,50,100]，pageSize 默认 20OFFSET 分页：offset = (currentPage - 1) * pageSize筛选参数：version / channel创建/编辑对话框el-dialog 标题动态切换：创建/编辑版本配置表单字段字段控件必填编辑时版本号el-input✅disabled通道el-select (model/video/prompt)✅disabled配置 (JSON)el-input type="textarea" :rows="6"✅可编辑处理器el-input可选可编辑处理器参数 (JSON)el-input type="textarea" :rows="4"可选可编辑JSON 校验规则提交流程关键：编辑和创建使用同一个 API（后端 UPSERT 语义），版本号+通道作为联合键。详情对话框展示项说明版本号文本通道文本配置JSONB → formatJsonBToText() 格式化展示处理器文本或"无"处理器参数JSONB → formatJsonBToText() 格式化展示创建时间文本更新时间文本删除操作API 函数映射前端函数后端端点createVersionConfigPOST /versions/getVersionConfigsGET /versions/getVersionConfigDetailGET /versions/detaildeleteVersionConfigDELETE /versions/{version}/{channel}⚠️ 关联经验与规范：[[HUB-前端与API层架构]]、[[Vue3前端层架构]]、[[FastAPI后端API层架构]]
+---
+title: VersionView版本配置页面交互详解
+domain: ["ai_dlc", "tooling"]
+type: "module_doc"
+tags: [质检平台, VersionView, 版本配置, CRUD, JSONB, OFFSET分页]
+created: 2026-06-21
+updated: 2026-06-21
+sources: 1
+status: active
+related_code: []
+affects_path: []
+trigger_keywords: [VersionView, 版本配置, CRUD, 创建配置, 编辑配置, 删除配置, JSONB, 通道筛选]
+---
+
+# VersionView版本配置页面交互详解
+
+`VersionView.vue` 管理模型、视频、Prompt 等版本配置，是 LLM 任务调度 Pipeline 的配置入口之一。
+
+## 页面控件
+
+- 通道筛选：`filterChannel` 变化后调用 `fetchConfigs()`。
+- “创建新配置” → `openCreateDialog()`。
+- “刷新” → `fetchConfigs()`。
+
+通道选项：
+
+- `model`
+- `video`
+- `prompt`
+
+## 列表与分页
+
+表格列：
+
+- 版本号 `version`
+- 通道 `channel`
+- 处理器 `processor`
+- 创建时间 `created_at`
+- 更新时间 `updated_at`
+- 操作：查看 / 编辑 / 删除
+
+分页使用 OFFSET：
+
+- `pageSize` 默认 20。
+- `offset = (currentPage - 1) * pageSize`。
+- 支持 `version` / `channel` 筛选。
+
+## 创建与编辑
+
+创建和编辑共用同一对话框。
+
+字段：
+
+- `version`：必填，编辑时禁用。
+- `channel`：必填，编辑时禁用。
+- `config`：JSON，必填。
+- `processor`：可选。
+- `processor_params`：JSON，可选。
+
+创建/编辑使用同一个 API，后端采用 UPSERT 语义，`version + channel` 是联合键。
+
+## 详情与删除
+
+详情对话框展示：
+
+- 版本号
+- 通道
+- `config` JSONB，经 `formatJsonBToText()` 格式化
+- 处理器
+- `processor_params` JSONB，经 `formatJsonBToText()` 格式化
+- 创建时间
+- 更新时间
+
+删除走 `DELETE /versions/{version}/{channel}`，必须保留确认。
+
+## API 映射
+
+| 前端函数 | 后端端点 |
+|---|---|
+| `createVersionConfig` | `POST /versions/` |
+| `getVersionConfigs` | `GET /versions/` |
+| `getVersionConfigDetail` | `GET /versions/detail` |
+| `deleteVersionConfig` | `DELETE /versions/{version}/{channel}` |
+
+> 关联经验与规范：[[HUB-前端与API层架构]]、[[Vue3前端层架构]]、[[FastAPI后端API层架构]]、[[LLM任务调度Pipeline全景]]

@@ -1,0 +1,26 @@
+app:
+  name: "ai-knowledge-base"
+  environment: "${APP_ENV:-development}"
+  debug: "${APP_DEBUG:-true}"
+
+api:
+  title: "AI Knowledge Base API"
+  version: "0.1.0"
+  cors:
+    allow_origins: ["http://localhost:5173", "http://127.0.0.1:5173"]
+  static_frontend_path: "src/frontend/dist"
+
+database:
+  default: "primary"
+  postgresql:
+    primary:
+      host: "${POSTGRES_HOST:-localhost}"
+      port: "${POSTGRES_PORT:-5432}"
+      database: "${POSTGRES_DB:-ai_knowledge_base}"
+      user: "${POSTGRES_USER:-postgres}"
+      password: "${POSTGRES_PASSWORD:-}"
+      min_connections: "${POSTGRES_MIN_CONNECTIONS:-1}"
+      max_connections: "${POSTGRES_MAX_CONNECTIONS:-5}"
+      connect_timeout: "${POSTGRES_CONNECT_TIMEOUT:-5}"
+      sslmode: "${POSTGRES_SSLMODE:-prefer}"
+      application_name: "ai-knowledge-base"
