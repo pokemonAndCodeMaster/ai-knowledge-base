@@ -1,90 +1,182 @@
 ---
-title: FastAPI后端API层架构
+title: "FastAPI后端API层架构"
 domain: ["ai_dlc", "tooling"]
 type: "module_doc"
-tags: [质检平台, FastAPI, API架构, 依赖注入, 路由注册, Schema设计]
-created: 2026-06-21
-updated: 2026-06-21
+tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_common_infra"]
+created: 2026-06-28
+updated: 2026-06-28
 sources: 1
 status: active
 related_code: []
 affects_path: []
-trigger_keywords: [FastAPI, app.py, deps.py, router, schema, 依赖注入, StaticFiles, lifespan, API端点]
+trigger_keywords: ["FastAPI后端API层架构", "quality_check_pipeline", "common_infra"]
+notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+source_ids: ["9aa73bba-4f40-4ea5-84e5-6e2362ee0d00"]
+raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/06_Copied text 1781950554_9aa73bba.md"]
 ---
 
-# FastAPI后端API层架构
+> [!NOTE] 来源范围与完整性
+> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
 
-FastAPI 层负责把质检任务、版本配置、模型评测、数据集管理能力暴露为前端可调用 API，并托管前端静态产物。
+## NotebookLM 原始元数据快照
 
-## 应用入口
+```yaml
+id: "CM-API-001"
+title: "FastAPI后端API层架构"
+domain: ["common_infra"]
+type: "code_module"
 
-`src/api/app.py` 使用 `create_app()` 工厂函数创建应用。
+related_code: ["src/api/app.py", "src/api/deps.py", "src/api/routers/task.py", "src/api/routers/version.py", "src/api/routers/evaluation.py", "src/api/routers/dataset.py", "src/api/schemas/task.py", "src/api/schemas/version.py", "src/api/schemas/evaluation.py", "src/api/schemas/dataset.py"]
+affects_path: ["src/api/app.py", "src/api/deps.py", "src/api/routers/task.py", "src/api/routers/version.py", "src/api/routers/evaluation.py", "src/api/routers/dataset.py", "src/api/schemas/task.py", "src/api/schemas/version.py", "src/api/schemas/evaluation.py", "src/api/schemas/dataset.py"]
+trigger_keywords: ["FastAPI", "app.py", "deps.py", "router", "schema", "依赖注入", "StaticFiles", "lifespan", "API端点"]
+tags: ["FastAPI", "API架构", "依赖注入", "路由注册", "Schema设计"]
+summary: "FastAPI 后端 API 层的架构设计：工厂函数 create_app()、4 路由模块、Pydantic Schema、依赖注入层 deps.py、StaticFiles 单端口部署。含完整 API 端点清单。"
+```
+# FastAPI 后端 API 层架构
 
-路由注册顺序必须保持：
+## 目录结构
 
-1. `/api/tasks`
-2. `/api/versions`
-3. `/api/evaluations`
-4. `/api/datasets`
-5. `/api/health`
-6. `/` → `StaticFiles(frontend/dist)`，必须晚于 API 路由。
+```
+src/api/
+├── app.py              # 应用入口：create_app() + StaticFiles 挂载
+├── deps.py             # 依赖注入层：ConfigManager → 业务类实例
+├── routers/
+│   ├── task.py         # 质检任务路由 (完整实现：CRUD + 分组 + 批量操作 + 软删除)
+│   ├── version.py      # 版本配置路由 (完整实现：CRUD)
+│   ├── evaluation.py   # 模型评测路由 (三期骨架)
+│   └── dataset.py      # 数据集管理路由 (四期骨架)
+└── schemas/
+    ├── task.py         # 任务相关 Pydantic Schema
+    ├── version.py      # 版本配置 Schema
+    ├── evaluation.py   # 评测 Schema
+    └── dataset.py      # 数据集 Schema
+```
 
-`lifespan` 启动时初始化 `ConfigManager` 单例，确保后续依赖注入可用。前端静态路径来自 `application.yaml -> task_scheduler.server.frontend_path`，默认是 `frontend/dist`。目录不存在时只 warning，不阻断后端启动。
+## app.py — 应用入口
 
-## 依赖注入层
+### create_app() 工厂函数
 
-`src/api/deps.py` 是路由层唯一合法依赖入口。路由层禁止直接 `new` 业务类，也禁止直接读取 `os.getenv()`。
+```python
+application = FastAPI(
+    title="AutoDrive QA Brain",
+    description="大模型前端交互平台 API",
+    version="1.0.0",
+    lifespan=lifespan,
+)
+```
 
-| 注入函数 | 返回 | 用途 |
-|---|---|---|
-| `get_config()` | `Dict[str, Any]` | `application.yaml` 全配置 |
-| `get_task_repository()` | `TaskRepository` | 任务 DB 读写 |
-| `get_task_creator()` | `TaskCreator` | 任务创建 |
-| `get_task_query_service()` | `TaskQueryService` | 聚合查询、进度、吞吐 |
+**路由注册顺序**（决定匹配优先级）：
+1. `/api/tasks` — 质检任务
+2. `/api/versions` — 版本配置
+3. `/api/evaluations` — 模型评测
+4. `/api/datasets` — 数据集管理
+5. `/api/health` — 健康检查
+6. `/` → `StaticFiles(frontend/dist)` — **必须在所有 API 路由之后**
 
-## API 边界
+### lifespan 生命周期
 
-### `/api/tasks`
+```python
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    setup_logging()
+    cfg = get_global_config()
+    cfg.load_config("application")
+    yield
+```
 
-已实现质检任务主流程：
+启动时初始化 ConfigManager 单例，确保后续依赖注入可用。
 
-- 表单创建任务、文件上传创建任务。
-- 任务概览统计。
-- 任务组概览，按 `task_name` 聚合。
-- 任务列表，支持游标分页和筛选。
-- 任务详情、通道进度、通道吞吐。
-- 批量 kill、清理、恢复、永久删除。
+### StaticFiles 挂载
 
-关键约束：
+```python
+frontend_path = get_nested("application", "task_scheduler.server.frontend_path", "frontend/dist")
+frontend_dir = project_root / "src" / frontend_path
+if frontend_dir.exists():
+    application.mount("/", StaticFiles(directory=str(frontend_dir), html=True), name="frontend")
+```
 
-- `/list` 支持 `status`、`channel`、`task_name`、`task_name_exact`、`autosence_id`、`id`、`is_deleted`、`limit`、`cursor`。
-- 游标分页 cursor 是 `base64("{created_at}|{id}")`。
-- kill 逻辑逐通道更新非终态通道为 `killed`，再由 `_sync_task_status()` 派生任务级状态。
-- 禁止直接写任务级 `status='completed'`。
+- 路径来自 `application.yaml` → `task_scheduler.server.frontend_path`，默认 `frontend/dist`
+- `html=True` 支持 SPA 路由 fallback
+- 目录不存在时仅 warning，不阻断启动
 
-### `/api/versions`
+## deps.py — 依赖注入层
 
-已实现版本配置：
+所有路由通过 `Depends()` 从此层获取业务类实例，**禁止路由层直接 new 业务类或直接 os.getenv()**。
 
-- `POST /versions/`：创建或更新版本配置，`version + channel` 作为联合键。
-- `GET /versions/`：列表查询，支持 `version` / `channel` 筛选和 OFFSET 分页。
-- `GET /versions/detail`：按 query 参数查详情。
-- `GET /versions/{version}/{channel}`：按路径参数查详情。
+| 注入函数 | 返回类型 | 说明 |
+|----------|----------|------|
+| `get_config()` | `Dict[str, Any]` | application.yaml 全配置 |
+| `get_task_repository()` | `TaskRepository` | 任务 DB 读写 (db_key="task_scheduler") |
+| `get_task_creator()` | `TaskCreator` | 任务创建器 |
+| `get_task_query_service()` | `TaskQueryService` | 任务聚合查询 |
 
-`config` 与 `processor_params` 是 JSONB 字段，后端保持 dict 传输，前端负责格式化展示。
+## 完整 API 端点清单
 
-### 骨架模块
+### /api/tasks — 质检任务 (完整实现)
 
-- `/api/evaluations`：模型评测，当前保留创建、报告、列表接口骨架。
-- `/api/datasets`：数据集管理，当前保留列表、详情、格式化接口骨架。
+| 端点 | 方法 | 功能 | 依赖注入 |
+|------|------|------|----------|
+| `/` | POST | 表单创建任务 | `get_task_creator` |
+| `/upload` | POST | 文件上传创建 (.json/.jsonl) | `get_task_creator` |
+| `/overview` | GET | 任务概览统计 | `get_task_query_service` |
+| `/groups` | GET | 任务组概览(按 task_name 聚合) | `get_task_query_service` |
+| `/list` | GET | 任务列表(游标分页+筛选) | `get_task_repository` |
+| `/{task_id}` | GET | 任务详情 | `get_task_repository` |
+| `/channel/progress` | GET | 通道进度 | `get_task_query_service` |
+| `/channel/throughput` | GET | 通道吞吐 | `get_task_query_service` |
+| `/batch-kill` | POST | 批量杀死任务 | `get_task_repository` |
+| `/batch-clean` | POST | 批量清理任务(软删除) | `get_task_repository` |
+| `/{task_id}/kill` | POST | 杀死任务(逐通道killed) | `get_task_repository` |
+| `/{task_id}/clean` | POST | 清理任务(软删除) | `get_task_repository` |
+| `/{task_id}/restore` | POST | 恢复已删除任务 | `get_task_repository` |
+| `/{task_id}/permanent-delete` | POST | 永久删除任务(不可恢复) | `get_task_repository` |
 
-## Schema 规范
+**关键参数**：
+- `/list` 支持：`status`, `channel`, `task_name`(模糊), `task_name_exact`(精确), `autosence_id`, `id`, `is_deleted`(默认false), `limit`, `cursor`(游标分页)
+- `/groups` 支持：`limit`(1-500), `status` 筛选
+- `/list` 使用 **keyset 游标分页**：cursor 格式为 base64("{created_at}|{id}")，首页不传 cursor
 
-- 所有 Schema 继承 `BaseModel`。
-- 可空字段使用 `Optional`。
-- 请求命名：`XxxRequest` / `XxxParams`。
-- 响应命名：`XxxResponse` / `XxxItem`。
-- 列表响应统一 `items + total`；任务列表因游标分页使用 `items + next_cursor + has_more`。
-- 使用 `json_schema_extra` 提供 Swagger 示例。
+**kill 逻辑**：遍历 6 通道 (`raw_img/label/pkl/video/prompt/inference`)，将非终态通道更新为 `killed`，触发 `_sync_task_status()` 派生任务级 status。**禁止直接写任务级 status=completed**。
 
-> 关联经验与规范：[[HUB-前端与API层架构]]、[[LLM任务调度Pipeline全景]]、[[质检一站式平台长期架构]]
+### /api/versions — 版本配置 (完整实现)
+
+| 端点 | 方法 | 功能 |
+|------|------|------|
+| `/` | POST | 创建版本配置(UPSERT: version+channel 存在则更新) |
+| `/` | GET | 查询版本配置列表(version/channel 筛选, OFFSET 分页) |
+| `/detail` | GET | 按参数查询详情(version + channel Query 参数) |
+| `/{version}/{channel}` | GET | 按路径参数查询详情 |
+
+**Schema 关键**：`config` 和 `processor_params` 为 JSONB 字段，保持为 dict 传输，前端负责格式化展示。
+
+### /api/evaluations — 模型评测 (三期骨架)
+
+| 端点 | 方法 | 功能 |
+|------|------|------|
+| `/` | POST | 创建评测(TODO) |
+| `/{eval_id}/report` | GET | 查询评测报告(TODO) |
+| `/list` | GET | 查询评测列表(TODO) |
+
+### /api/datasets — 数据集管理 (四期骨架)
+
+| 端点 | 方法 | 功能 |
+|------|------|------|
+| `/list` | GET | 查询数据集列表(TODO) |
+| `/{dataset_id}` | GET | 查询数据集详情(TODO) |
+| `/format` | POST | 格式化数据集(TODO) |
+
+### /api/health — 健康检查
+
+| 端点 | 方法 | 功能 |
+|------|------|------|
+| `/api/health` | GET | 返回 `{"status": "ok"}` |
+
+## schemas/ — Pydantic Schema 设计
+
+- 所有 Schema 继承 `BaseModel`，字段使用 `Optional` 表示可空
+- 请求 Schema 命名：`XxxRequest` / `XxxParams`
+- 响应 Schema 命名：`XxxResponse` / `XxxItem`
+- 列表响应统一模式：`items: List[XxxItem]` + `total: int` (任务列表用游标模式：`items + next_cursor + has_more`)
+- `Config.json_schema_extra` 提供 example 用于 Swagger UI
+
+> ⚠️ 关联经验与规范：[[HUB-前端与API层架构]]、[[前端与API环境配置指南]]、[[前端与API启动调试指南]]、[[t_llm_task 表]]、[[软删除 is_deleted 设计规范]]

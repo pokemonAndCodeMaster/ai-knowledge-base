@@ -26,6 +26,8 @@
 | [2026 AI 智能体工程全景图](wiki/synthesis/2026_AI智能体工程全景图.md) | 智能体系统与测试基座 (Harness) 核心工程全景分析 |
 | [数据质量门户架构设计](wiki/synthesis/数据质量门户架构设计.md) | 🆕 一站式门户架构总纲：Vue3+FastAPI 技术选型、目录结构、数据流、扩展指南、ADR 设计决策记录 |
 | [质检一站式平台长期架构](wiki/synthesis/质检一站式平台长期架构.md) | 🆕 质检项目组长期前后端体系架构：LLM Pipeline、FastAPI、Vue3、评测与数据集模块的可维护演进路线 |
+| [人工质检模块整体架构](wiki/synthesis/质检一站式平台人工质检模块整体架构.md) | 当前人工质检验收与人力模块 Review 总入口：约束、组件图、三条业务链、事实源、设计原则、开放问题和分卡导航 |
+| [质检一站式平台 Phase 3 前架构评审](wiki/synthesis/质检一站式平台Phase3前架构评审.md) | 复核人工质检后端方案，识别快照/执行职责混叠、预览一致性、外部幂等、DDL 与人力模型风险，并给出 Phase 2.5 硬化顺序 |
 | [HUB-质检前后端一体化学习与开发指南](wiki/synthesis/HUB-质检前后端一体化学习与开发指南.md) | 🆕 质检前后端一体化学习入口：串联架构总览、Router/API/View、ECharts、组件复用与页签端到端开发流程 |
 | [质检前后端一体化理想架构设计](wiki/synthesis/质检前后端一体化理想架构设计.md) | 🆕 质检平台理想前后端一体架构：技术栈、模块化、流程图、时序图、类图、接口扩展和演进差距 |
 | [ECharts从入门到掌握](wiki/synthesis/ECharts从入门到掌握.md) | 🆕 ECharts 安装、Vue3 封装、option 构造、后端数据到图表渲染的完整入门指南 |
@@ -232,6 +234,7 @@
 | [Martin Fowler：Harness Engineering](wiki/sources/martin_fowler_harness_engineering.md) | martinfowler.com | 赛博控制论框架；前馈引导+反馈传感器；可维护性/架构/行为三类 Harness |
 | [Anthropic：Building Effective Agents](wiki/sources/anthropic_building_effective_agents.md) | Anthropic 研究博客 | 五种可组合 agent 工作流模式；简单性原则；ACI 工具设计 |
 | [Anthropic：长时 Harness 设计](wiki/sources/anthropic_harness_design_long_running.md) | Anthropic 工程博客 | 三 Agent 架构（规划/生成/评估）+ Sprint Contract + Context Reset |
+| [NotebookLM：quality_check_pipeline 完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | NotebookLM / 38 份 Markdown | 38/38 原始 source、SHA-256 清单、36 张完整正文卡与缺失引用追踪 |
 | [AWS：AI-DLC](wiki/sources/aws_ai_dlc.md) | AWS 官方博客 | AI 驱动开发生命周期全景：克服"步调差异"，重塑研发流程 |
 | [Addy Osmani：Conductor to Orchestrator](wiki/sources/conductors_vs_orchestrators.md) | O'Reilly | 软件工程师角色的演变：从代码实现者转向多智能体交响乐的编排者 |
 | [CodeGraph README](wiki/sources/codegraph_source_readme.md) | 🆕 开源 | CodeGraph Benchmark：7 项目 -16% cost -47% token |
@@ -254,6 +257,7 @@
 
 ## 🔗 原始材料总览（Raw）
 
+- **2026-06-28 新增**：NotebookLM `quality_check_pipeline` 全部 **38/38** 个原始 Markdown 已导出至 `raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/`，逐文件字节数与 SHA-256 见 `_MANIFEST.md`。
 - 已从 NotebookLM（笔记本：AI 高效学习与知识管理法）导出 **30+ 篇**原始资料至 `raw/`
 - 完整共 71 篇，持续补全中
 - 主要涵盖：MIT学习法、费曼技巧、Karpathy llm-wiki、Obsidian Zettelkasten、NotebookLM 使用技巧等
@@ -294,6 +298,7 @@
 | 文件 | 摘要 |
 |---|---|
 | [知识图谱编译与检索操作规范](wiki/norms/知识图谱编译与检索操作规范.md) | 🆕 何时编译、code_hash填写、trigger_keywords原则、断链阈值等强制规范 |
+| [NotebookLM来源无损导出与摄入规范](wiki/norms/NotebookLM来源无损导出与摄入规范.md) | WSL2 认证、原始 Markdown 下载、Manifest/哈希门槛、Map-Reduce 摄入与安全收尾 |
 | [前端开发规范](wiki/norms/前端开发规范.md) | 🆕 Vue3+TypeScript 命名/文件组织/组件编写/样式/Git 提交全套规范，含 Code Review Checklist |
 
 
@@ -331,12 +336,76 @@
 
 ## 🏢 Quality Check Pipeline (Business Portal)
 
+### 总纲与业务域
+
 | 文件 | 摘要 |
 |---|---|
+| [NotebookLM完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | `quality_check_pipeline` 的 38/38 原始 Markdown、哈希清单与卡片映射 |
+| [E2E数据管线枢纽核心设计文档](wiki/quality_portal/E2E数据管线枢纽核心设计文档.md) | 数据采集、LLM生产、自动质检、人工标注、GT回写的项目级完整闭环 |
 | [HUB-项目环境与开发规范总览](wiki/quality_portal/HUB-项目环境与开发规范总览.md) | 质检一站式平台项目定位、模块地图、配置区、页面/API 状态与 AI-DLC 开发闭环 |
+| [HUB-Agent协作体系总览](wiki/quality_portal/HUB-Agent协作体系总览.md) | 上游项目 Agent 角色、四路由、知识工作流与工具注册表快照 |
+| [HUB-src顶层架构](wiki/quality_portal/HUB-src顶层架构.md) | 上游 `tool_registry/` 到 `src/` 扁平架构的完整迁移映射 |
+| [HUB-通用基建模块](wiki/quality_portal/HUB-通用基建模块.md) | OBS、数据库、配置、ClipInfo 与 DataCheck 工具的公共基建导航 |
+| [HUB-大模型数据生产与质检模块](wiki/quality_portal/HUB-大模型数据生产与质检模块.md) | LLM生产、推理、调度、通道解耦与相关护栏导航 |
+| [HUB-质检引擎层架构](wiki/quality_portal/HUB-质检引擎层架构.md) | DataCheck/Ray/YAML、Checker 注册体系、scene_atomic 与规则层 |
+| [HUB-质检前后端一体化](wiki/quality_portal/HUB-质检前后端一体化.md) | NotebookLM 上游项目的前后端一体化学习与落地入口 |
+| [缺失引用索引](wiki/synthesis/quality_check_pipeline缺失引用索引.md) | 102 个未随 source 提供原文的上游引用，采用防幻觉占位与反链追踪 |
+
+### LLM Pipeline 与前后端
+
+| 文件 | 摘要 |
+|---|---|
 | [LLM任务调度Pipeline全景](wiki/quality_portal/LLM任务调度Pipeline全景.md) | LLM 数据生产 Pipeline：三阶段调度、六通道、双层状态、去重锁、OBS 上传、Watchdog 与异常兜底 |
 | [HUB-前端与API层架构](wiki/quality_portal/HUB-前端与API层架构.md) | FastAPI + Vue3 单端口部署枢纽：API 路由、前端页面、子卡导航与设计护栏 |
 | [FastAPI后端API层架构](wiki/quality_portal/FastAPI后端API层架构.md) | FastAPI 后端 API 层：create_app、deps 依赖注入、tasks/versions/evaluations/datasets 路由与 Schema 规范 |
 | [Vue3前端层架构](wiki/quality_portal/Vue3前端层架构.md) | Vue3 + TypeScript + Vite + Element Plus 前端结构、路由布局、API 封装、visibilityState 错误守卫 |
 | [TaskView交互流程详解](wiki/quality_portal/TaskView交互流程详解.md) | 质检任务页交互：任务组概览、组内懒加载、游标分页、回收站、批量清理和创建任务 |
 | [VersionView版本配置页面交互详解](wiki/quality_portal/VersionView版本配置页面交互详解.md) | 版本配置页交互：model/video/prompt 通道筛选、JSONB 配置编辑、UPSERT、详情和删除 |
+| [src_database数据库连接器模块](wiki/quality_portal/src_database_数据库连接器模块.md) | 上游 PGConnector、DatabaseConfig、只读查询边界与历史清理快照 |
+
+### 人工质检平台增量设计
+
+| 文件 | 摘要 |
+|---|---|
+| [整体架构总入口](wiki/synthesis/质检一站式平台人工质检模块整体架构.md) | 验收与人力模块的系统边界、组件图、三条业务链、事实源、原则和 Review 顺序 |
+| [Phase 3 前架构评审](wiki/synthesis/质检一站式平台Phase3前架构评审.md) | 两轮评审后的决策演进：接受现状状态回查，撤回过重抽象，冻结 DDL 和模块边界 |
+| [后端分层与组件边界](wiki/quality_portal/质检平台-后端分层与组件边界设计.md) | Router、Service、规则、共享 Repository、DeltaClient 和公共基建的职责与依赖方向 |
+| [API 契约与前端交互](wiki/quality_portal/质检平台-API契约与前端交互设计.md) | Pydantic/OpenAPI、模块权限、preview→execute、task_ids 和部分失败响应 |
+| [前端页面与状态](wiki/quality_portal/质检平台-人工质检前端页面与状态设计.md) | 分配、统计、通过打回、人力页面及 preview/executing/refreshing 状态 |
+| [Repository 与数据库访问](wiki/quality_portal/质检平台-Repository与数据库访问设计.md) | 共享 Repository 的上移理由、按数据源分类、命名连接、事务、UPSERT 和聚合口径 |
+| [Delta 调用与状态回查](wiki/quality_portal/质检平台-Delta调用与状态回查设计.md) | 现有平台接口、中间表、实际成功量、重复操作和部分失败处理 |
+| [综合快照表设计](wiki/quality_portal/质检平台-综合快照表设计.md) | 日×scene×当日组×标注员最小统计行，负责配额计算、统计与实际执行量回查 |
+| [采样与规则导航](wiki/quality_portal/质检平台-采样与规则引擎设计.md) | 采样配额和通过打回两张原子分卡的子域入口 |
+| [验收采样配额与任务选择](wiki/quality_portal/质检平台-验收采样配额与任务选择设计.md) | 快照算配额、任务级表取 task_ids、三种策略、比例取整和不足处理 |
+| [通过打回规则与执行](wiki/quality_portal/质检平台-通过打回规则与执行设计.md) | 完成度、Good/Bad 阈值、PENDING/PASS/REJECT、人工确认和状态回查 |
+| [数据结构组织设计](wiki/quality_portal/质检平台-领域模型层设计.md) | 组件内就近定义、稳定复用后上移；Pydantic/OpenAPI 独立承担前后端契约 |
+| [人力管理体系设计](wiki/quality_portal/人工质检-人力管理体系设计.md) | 单项目人员、角色/组/供应商约束、模块等级权限和人力画像 |
+| [权限与 SSO 接入](wiki/quality_portal/质检平台SSO鉴权接入方案.md) | mock→公司 SSO、模块等级权限、后端鉴权、前端显示和审计 |
+| [scene_name 概念](wiki/quality_portal/质检平台-scene_name概念.md) | scene_name 管理范围与 clip/task 操作单元的层级关系 |
+| [实施路线与当前进度](wiki/quality_portal/质检平台-实施路线与当前进度.md) | Phase 0～5、已冻结决策、剩余门槛、纵切顺序和完成定义 |
+
+### 人工质检十五步闭环
+
+| 文件 | 摘要 |
+|---|---|
+| [人工质检-Hub](wiki/quality_portal/人工质检-Hub.md) | Delta 人工质检十五步流程、表/API/基建导航与七项架构问题 |
+| [数据源与任务创建](wiki/quality_portal/人工质检-数据源与任务创建.md) | 视频同步、文本任务、预标注分流、Delta 创建和人员分配 |
+| [标注执行与格式校验](wiki/quality_portal/人工质检-标注执行与格式校验.md) | 64→70 状态流与三类格式打回规则 |
+| [验收与通过打回](wiki/quality_portal/人工质检-验收与通过打回.md) | Good/Bad 分层抽样、95%/80% 通过阈值与 DMP 打回 |
+| [GT回写与中间表](wiki/quality_portal/人工质检-GT回写与中间表.md) | Delta JSON→TextParser→GtParser→质量表与看板中间表 |
+| [预警与报表](wiki/quality_portal/人工质检-预警与报表.md) | 四类质量预警、时间窗口、阈值与周报 |
+| [①视频数据同步](wiki/quality_portal/人工质检-①视频数据同步.md) | cog_fusion 增量同步、GT 去重与关键 SQL |
+| [②文本任务创建](wiki/quality_portal/人工质检-②文本任务创建.md) | cfg 校验、metadata 组装和幂等插入 |
+| [③预标注与LLM决策](wiki/quality_portal/人工质检-③预标注与LLM决策.md) | autochecker+LLM+FDE 分流与打桩策略 |
+| [④Delta平台创建任务](wiki/quality_portal/人工质检-④Delta平台创建任务.md) | addMainTask 请求体与 E2E/VPD/Tag 参数差异 |
+| [⑤任务分配](wiki/quality_portal/人工质检-⑤任务分配.md) | screener/reviewer/acceptor 的 Dry/Wet Run 分配 |
+| [⑥标注与审核](wiki/quality_portal/人工质检-⑥标注与审核.md) | Delta 内部标注审核状态迁转 |
+| [⑦格式校验](wiki/quality_portal/人工质检-⑦格式校验.md) | lost_num、break_rules、2 秒子片段规则与自动打回 |
+| [⑧验收分配](wiki/quality_portal/人工质检-⑧验收分配.md) | Good/Bad 分层抽样与双池/单池轮询 |
+| [⑨批量通过打回](wiki/quality_portal/人工质检-⑨批量通过打回.md) | 看板判定、通过三步和打回两步 |
+| [⑩状态刷新与GT回写](wiki/quality_portal/人工质检-⑩状态刷新与GT回写.md) | 六步 GT 流水线与 Stub GT 保存 |
+| [⑪中间表更新](wiki/quality_portal/人工质检-⑪中间表更新.md) | 状态时间线与 MergedTaskStatus 映射 |
+| [⑫质检预警](wiki/quality_portal/人工质检-⑫质检预警.md) | 人力、标注、验收、短间隔四类预警 |
+| [⑬周报](wiki/quality_portal/人工质检-⑬周报.md) | 四 Sheet Excel 与折线图输出 |
+| [⑭重复数据清理](wiki/quality_portal/人工质检-⑭重复数据清理.md) | IOU 区间去重和 text_gt/整行删除策略 |
+| [⑮OBS审计日志](wiki/quality_portal/人工质检-⑮OBS审计日志.md) | JSONL+OBS 审计、四类事件与线程安全写入 |

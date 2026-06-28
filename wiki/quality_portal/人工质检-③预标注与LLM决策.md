@@ -1,0 +1,123 @@
+---
+title: "人工质检-③预标注与LLM决策"
+domain: ["ai_dlc", "agent_evaluation", "tooling"]
+type: "concept"
+tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_manual_qa"]
+created: 2026-06-28
+updated: 2026-06-28
+sources: 1
+status: active
+related_code: []
+affects_path: []
+trigger_keywords: ["人工质检-③预标注与LLM决策", "quality_check_pipeline", "manual_qa"]
+notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+source_ids: ["821a44f6-dc16-41b1-a3c0-412b42b1729e"]
+raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/25_Copied text 1782623311_821a44f6.md"]
+---
+
+> [!NOTE] 来源范围与完整性
+> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
+
+## NotebookLM 原始元数据快照
+
+```yaml
+id: "MH-CPT-022"
+title: "人工质检-③预标注与LLM决策"
+domain: ["manual_qa"]
+type: "concept"
+
+related_code: ["src/data_check/manual_label/human_inspection/create_label_task.py"]
+
+affects_path: ["src/data_check/manual_label/human_inspection/create_label_task.py"]
+trigger_keywords: ["预标注", "LLM决策", "FDE", "TaskCreator", "打桩", "who_label", "分流", "pending", "fill_auto_check_rst"]
+tags: ["预标注", "LLM分流", "FDE", "打桩", "Delta创建", "who_label", "TaskCreator"]
+summary: "从pending状态任务中拉取数据，填充自动化质检预标注，通过LLM/FDE决策分流(走人工 or 打桩)。核心类TaskCreator.run()，DAG human_inspection_text_task每30分钟运行。"
+```
+# 人工质检-③预标注与LLM决策
+
+> 从pending状态任务中拉取数据，填充自动化质检预标注，通过LLM/FDE决策分流(走人工 or 打桩)。
+
+← [[人工质检-数据源与任务创建]] | [[人工质检-Hub]]
+
+## 基本信息
+
+| 维度 | 详情 |
+|------|------|
+| 核心代码 | `manual_label/human_inspection/create_label_task.py` → `TaskCreator.run()` |
+| DAG | `human_inspection_text_task`，每30分钟 |
+| 运行参数 | num_pre_pull=10000~20000, num_per_batch=200, need_prelabel=True, need_llm按cfg_ver |
+
+## 输入
+
+| 数据源 | 完整表名 | 用途 |
+|--------|---------|------|
+| 文本任务 | `app_gy1.pnc_simulation.t_text_label_task` (pg_config_app_gy1) | task_status='pending'的数据 |
+| 自动化质检 | `cog_fusion.public.t_e2e_quality_check_result_t_with_partition` (pg_config) | 预标注数据源 |
+| E2E版本 | `cog_fusion.public.t_e2e_version` (pg_config) | check_version/video_version映射 |
+| LLM结果 | `pnc_simulation.t_pnc_llm_label_task_new` (pg_config) | LLM推理结果 |
+| LLM白名单 | `pnc_simulation.t_pnc_schedule_para` (pg_config) | template_name='datacheck_llm_label_version' |
+| FDE结果 | `app_gy1.pnc_simulation.data_fde_results_temp` (pg_config_app_gy1) | FDE推理结果 |
+| FDE白名单 | `pnc_simulation.t_pnc_schedule_para` (pg_config) | template_name='datacheck_fde_label_version' |
+
+## 输出
+
+| 目标 | 完整表名 | 更新 |
+|------|---------|------|
+| 文本任务主表 | `app_gy1.pnc_simulation.t_text_label_task` | pending→running/failed，写入task_name/who_label/clip_start_time |
+| Delta平台 | — | POST创建标注任务(非打桩任务) |
+
+## 核心分流决策
+
+```
+pending任务
+  → fill_auto_check_rst()：预标注填充
+  → _query_llm_infer_rst() + _get_fde_rst()：LLM+FDE决策
+  ├── autochecker+LLM+FDE都good → 打桩(who_label=5, finished)
+  │   └── 不发送Delta平台，直接标记finished
+  ├── autochecker+LLM都good但无FDE → 打桩(who_label=1)
+  └── 其他 → 走人工(who_label=0)
+      └── 发送Delta平台创建任务 → running
+```
+
+## 预标注填充逻辑
+
+1. 通过e2e_ver查t_e2e_version获取check_version和video_version
+2. 查t_e2e_quality_check_result_t_with_partition获取质检结果
+3. 从质检结果提取clip_start_time(有效条件:>1.0)
+4. 无clip_start_time的通过OBS jsonl并发获取(20线程)
+5. 填充：pre_placeholders + template_text → text_str
+6. 附加one_sentence_summary：命中质检项聚类到时间段
+
+## 关键SQL
+
+```sql
+-- 拉取pending任务
+SELECT cfg_ver, autoscenes_id, scene_name, metadata
+FROM pnc_simulation.t_text_label_task
+WHERE project_name = '{project}' AND cfg_ver = '{cfg_ver}'
+AND task_status = 'pending' ORDER BY priority DESC, RANDOM() LIMIT {num_pre_pull};
+
+-- 查询自动化质检结果
+SELECT clip_id, check_result_summary
+FROM public.t_e2e_quality_check_result_t_with_partition
+WHERE e2e_version = '{video_ver}' AND check_version = '{video_ver}@{check_ver}'
+AND clip_id IN ({clip_ids});
+
+-- 查询LLM结果
+SELECT clip_id, infer_result, status FROM (
+    SELECT autoscenes_name AS clip_id, llm_infer_result AS infer_result, llm_status AS status,
+        ROW_NUMBER() OVER (PARTITION BY autoscenes_name ORDER BY update_time DESC) AS rn
+    FROM t_pnc_llm_label_task_new
+    WHERE autoscenes_name IN ({clip_ids}) AND label_name = '{llm_name}' AND label_version = '{llm_ver}'
+) AS sub WHERE rn = 1;
+```
+
+## 上下游
+
+| 方向 | 关联 |
+|------|------|
+| 上游 | ← [[人工质检-②文本任务创建]] (pending状态) |
+| 下游 | 打桩 → [[人工质检-⑩状态刷新与GT回写]] (stub GT保存) |
+| 下游 | 走人工 → [[人工质检-④Delta平台创建任务]] |
+
+→ [[人工质检-数据源与任务创建]] | [[人工质检-Hub]]

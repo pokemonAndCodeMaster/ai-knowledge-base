@@ -4,17 +4,21 @@ domain: [knowledge_mgmt, learning_methods, tooling]
 type: concept
 tags: [工具, NotebookLM, MCP, CLI, nlm]
 created: 2026-04-06
-updated: 2026-04-06
-sources: 1
+updated: 2026-06-28
+sources: 3
 status: active
 related_code: []
 affects_path: []
-trigger_keywords: []
+trigger_keywords: [NotebookLM, MCP, source导出, Markdown无损导出, WSL2认证, 内容完整性]
 ---
 
 # NotebookLM MCP Server 实践用法手册
 
 **关联节点**：[[统一学习与知识管理框架]] | [[ai知识库操作指南]] | [[复利知识库]]
+
+> ⚠️ 2026-06-28 实测修正：`source content` / `source_get_content` 适合语义读取，但可能压扁 Markdown Frontmatter、表格、列表与换行。要求“一点不少、保留 Markdown”时，必须执行 [[NotebookLM来源无损导出与摄入规范]]，优先下载 NotebookLM 提供的原始 `.md` 文件。
+
+可复用 Skill：`skills/notebooklm-source-ingest/SKILL.md`。
 
 ---
 
@@ -120,6 +124,12 @@ nlm notebook get <notebook_id> --json \
 | 问题 | 说明 |
 |---|---|
 | **频率限制** | 并发太多会被 NotebookLM 限速，批量下载推荐线性执行 |
-| **内容完整性** | `source content` 获取的是索引后文本，图表可能丢失 |
+| **内容完整性** | `source content` 是索引后语义文本，Markdown 结构也可能丢失；不得冒充原始文件 |
 | **认证失效** | 执行 `nlm login` 重新认证；`nlm login switch <profile>` 切换账号 |
 | **raw/ 铁律** | 下载到 `raw/` 的文件只读，永远不要修改 |
+
+## 五、完整来源摄入入口
+
+- 强制规范：[[NotebookLM来源无损导出与摄入规范]]
+- 实战来源集：[[notebooklm_quality_check_pipeline]]
+- 通用高保真流程：[[知识库高保真摄入管线]]

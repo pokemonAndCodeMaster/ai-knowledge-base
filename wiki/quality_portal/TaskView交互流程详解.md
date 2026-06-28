@@ -1,100 +1,189 @@
 ---
-title: TaskView交互流程详解
+title: "TaskView交互流程详解"
 domain: ["ai_dlc", "tooling"]
 type: "module_doc"
-tags: [质检平台, TaskView, 交互流程, 分组概览, 回收站, CRUD, 游标分页]
-created: 2026-06-21
-updated: 2026-06-21
+tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_common_infra"]
+created: 2026-06-28
+updated: 2026-06-28
 sources: 1
 status: active
 related_code: []
 affects_path: []
-trigger_keywords: [TaskView, 任务列表, 任务组, 分组概览, 展开折叠, 通道圆点, 回收站, 批量清理, 游标分页, 版本详情弹窗]
+trigger_keywords: ["TaskView交互流程详解", "quality_check_pipeline", "common_infra"]
+notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+source_ids: ["f74ffb03-b116-42a0-876e-62ea7cd6b099"]
+raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/04_Copied text 1781950523_f74ffb03.md"]
 ---
 
-# TaskView交互流程详解
+> [!NOTE] 来源范围与完整性
+> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
 
-`TaskView.vue` 是质检任务运营主页面，负责任务组概览、组内任务下钻、任务创建、回收站和批量清理。
+## NotebookLM 原始元数据快照
 
-## 页面加载模型
+```yaml
+id: "MOD-FE-001"
+title: "TaskView交互流程详解"
+domain: ["common_infra"]
+type: "module_doc"
 
-- 不再使用 `overview + list` 双请求模式。
-- 默认使用任务组概览单请求。
-- 展开某个任务组时，再懒加载组内子任务。
+related_code: ["src/frontend/src/views/TaskView.vue", "src/frontend/src/api/task.ts", "src/frontend/src/components/RecycleBinTab.vue", "src/frontend/src/components/VersionDetailDialog.vue"]
+affects_path: ["src/frontend/src/views/TaskView.vue", "src/frontend/src/components/RecycleBinTab.vue"]
+trigger_keywords: ["TaskView", "任务列表", "任务组", "分组概览", "展开折叠", "通道圆点", "回收站", "批量清理", "游标分页", "版本详情弹窗"]
+tags: ["TaskView", "交互流程", "分组概览", "回收站", "CRUD"]
+summary: "TaskView.vue 的完整交互流程：两级加载(概览API→展开时组内列表API)、任务组表结构(6通道概览+6版本列)、通道圆点颜色映射、版本详情弹窗、回收站Tab、批量清理、游标分页。"
+```
+# TaskView 交互流程详解
 
-Tab：
+## 页面加载流程
 
-- `activeTab === "tasks"`：任务组概览 + 展开子任务。
-- `activeTab === "recycle"`：回收站组件 `RecycleBinTab`。
+```
+onMounted()
+  └── fetchGroups()       → GET /api/tasks/groups?limit=200
+      └── 更新 groupsData (groups + total_groups)
+```
 
-## 任务组概览
+页面不再使用 overview + list 双请求模式，改为**任务组概览单请求**模式。
 
-顶部 6 张统计卡片来自 `groupStatusSummary`：
+## Tab 切换：任务列表 / 回收站
 
-- 总任务组数
-- 待处理
-- 运行中
-- 已完成
-- 失败
-- 已取消
+```html
+<el-tabs v-model="activeTab">
+  <el-tab-pane label="任务列表" name="tasks" />
+  <el-tab-pane label="回收站" name="recycle" />
+</el-tabs>
+```
 
-工具栏：
+- `activeTab === 'tasks'`：显示任务组概览 + 展开子任务
+- `activeTab === 'recycle''`：显示 `RecycleBinTab` 组件
 
-- “创建任务” → `showCreateDialog = true`
-- “刷新” → `fetchGroups()`
-- “批量清理” → `selectedIds.size > 0` 时可用，触发 `handleBatchClean()`
+## 任务列表 Tab
 
-## 两级加载
+### 1. 顶部统计卡片 (el-row :gutter="16")
 
-`displayedRows` 将 `groupsData.groups` 转为 `GroupDisplayRow`，展开时插入子任务行。
+6 张 `el-card` 并排 (`span=4`)，数据来自 `groupStatusSummary`（从 groupsData 汇总计算）：
 
-组行字段包括：
+| 卡片 | 值 | 颜色 |
+|------|----|------|
+| 总任务组数 | `groupsData.total_groups` | 默认 |
+| 待处理 | `summary.pending` | #909399 灰 |
+| 运行中 | `summary.running` | #e6a23c 橙 |
+| 已完成 | `summary.completed` | #67c23a 绿 |
+| 失败 | `summary.failed` | #f56c6c 红 |
+| 已取消 | `summary.cancelled` | #909399 灰 |
 
-- `taskName`
-- `total/pending/running/completed/failed/cancelled`
-- `raw_img_progress` 至 `inference_progress`
-- `data/label/pkl/video_config/prompt/model_version`
-- `latest_created_at`
+### 2. 工具栏
 
-点击组名：
+| 控件 | 行为 |
+|------|------|
+| "创建任务"按钮 | → `showCreateDialog = true` |
+| "刷新"按钮 | → `fetchGroups()` |
+| "批量清理"按钮 | `selectedIds.size > 0` 时可用，→ `handleBatchClean()` |
 
-1. `toggleGroupExpand(groupKey)`
-2. 提取 `task_name`
-3. 同一时间最多展开一个组
-4. `loadExpandedTasks(taskName)`
-5. 调用 `GET /api/tasks/list?task_name_exact=XXX&limit=50`
+### 3. 任务组列表（两级加载模式）
 
-子任务行展示单任务详情，包括 6 通道状态圆点和 6 个版本链接。
+**数据结构**：`displayedRows = computed`，将 `groupsData.groups` 的每个组转为 `GroupDisplayRow`，展开时插入子任务行。
 
-## 组内分页
+**组行 (GroupDisplayRow) 字段**：
 
-展开某组后使用“加载更多”：
+| 字段 | 说明 |
+|------|------|
+| `taskName` | 任务名（点击展开/折叠） |
+| `total/pending/running/completed/failed/cancelled` | 状态计数 |
+| `raw_img_progress ~ inference_progress` | 6 通道进度 "completed/total" |
+| `data/label/pkl/video_config/prompt/model_version` | 版本信息 |
+| `latest_created_at` | 最新创建时间 |
 
-- 首页：`getTaskList({ task_name_exact, limit })`
-- 下一页：`getTaskList({ task_name_exact, limit, cursor: next_cursor })`
-- 返回结构：`items + next_cursor + has_more`
-- 无 `prev_cursor`，只支持向前加载。
+**展开/折叠逻辑**：
+- 点击组名 `toggleGroupExpand(groupKey)` → 提取 task_name
+- 同一时间最多展开 1 组：展开新组自动折叠旧组
+- 展开时调用 `loadExpandedTasks(taskName)` → `GET /api/tasks/list?task_name_exact=XXX&limit=50`
 
-## 回收站
+**子任务行**：展示单任务详情，含 6 通道圆点 + 6 版本链接。
 
-`RecycleBinTab` 查询 `getTaskList({ is_deleted: "true", limit, cursor })`。
+### 4. 通道圆点颜色映射
 
-操作：
+```typescript
+function getChannelDotColor(status: string): string {
+  completed/skipped → '#67c23a' (绿)
+  failed           → '#f56c6c' (红)
+  running          → '#e6a23c' (橙)
+  killed           → '#303133' (深灰)
+  其他(pending)     → '#c0c4cc' (浅灰)
+}
+```
 
-- “恢复” → `restoreTask(id)` → `POST /api/tasks/{id}/restore` → `emit("data-changed")`
-- “永久删除” → 二次确认 → `permanentDeleteTask(id)` → `POST /api/tasks/{id}/permanent-delete`
+6 通道顺序：raw_img → label → pkl → video → prompt → inference
 
-## 创建任务
+### 5. 版本列（6 列）
 
-弹窗使用 `el-tabs`：
+| 列 | 字段 | 组行显示 | 子任务行显示 |
+|----|------|----------|-------------|
+| 数据版本 | `data_version` | 灰色文本 | 蓝色链接→弹窗 |
+| 标签版本 | `label_version` | 同上 | 同上 |
+| PKL版本 | `pkl_version` | 同上 | 同上 |
+| 视频配置版本 | `video_config_version` | 同上 | 同上 |
+| 提示词版本 | `prompt_version` | 同上 | 同上 |
+| 模型版本 | `model_version` | 同上 | 同上 |
 
-- 表单创建：必填 `task_name`、`autosence_id`；版本字段直接输入。
-- 文件上传：`.json/.jsonl`，`auto-upload=false`，提交时用 multipart 上传。
+点击版本链接 → `openVersionDetail(version, channel)` → 打开 `VersionDetailDialog` 组件
 
-错误处理：
+### 6. 状态列筛选
 
-- API 层 axios 拦截器统一弹出 `ElMessage.error()`。
-- 页面隐藏时错误进入队列，恢复可见后再弹出。
-- 视图层 `catch` 不重复处理通用错误。
+`el-table-column` 的 `:filters="statusFilters"` 支持列头筛选：pending/running/completed/failed/killed
 
-> 关联经验与规范：[[HUB-前端与API层架构]]、[[Vue3前端层架构]]、[[FastAPI后端API层架构]]
+### 7. 组内分页（游标分页）
+
+展开某组后显示分页控件：
+- `groupPageSize` 选择：10/20/50/100
+- "加载更多"按钮：调用 `loadMoreExpanded()` → 使用 `next_cursor` 追加加载
+- 显示：`组内任务 X 条（还有更多）`
+
+**游标分页机制**：
+- 首页：`getTaskList({ task_name_exact, limit })` → 返回 `{ items, next_cursor, has_more }`
+- 加载更多：`getTaskList({ task_name_exact, limit, cursor: next_cursor })` → 追加 items
+- 无 `prev_cursor`，仅支持"加载更多"前进模式
+
+### 8. 勾选与批量操作
+
+- `el-table-column type="selection"` 仅子任务行可勾选
+- 勾选 → `onSelectionChange` → 收集 `selectedIds`
+- "批量清理" → `batchCleanTasks(ids)` → POST `/api/tasks/batch-clean`
+
+## 回收站 Tab
+
+`RecycleBinTab` 组件：
+- 查询：`getTaskList({ is_deleted: 'true', limit, cursor })` → 游标分页
+- 操作：
+  - "恢复" → `restoreTask(id)` → POST `/api/tasks/{id}/restore` → `emit('data-changed')` 刷新主列表
+  - "永久删除" → 二次确认 → `permanentDeleteTask(id)` → POST `/api/tasks/{id}/permanent-delete`
+- 分页：el-pagination (10/20/50/100)
+
+## 创建任务弹窗
+
+`el-dialog` 内嵌 `el-tabs`：
+
+### Tab 1: 表单创建
+
+必填：`task_name`, `autosence_id`（前端校验，缺失弹出 `ElMessage.warning`）
+
+表单字段与 `TaskCreateRequest` 一一对应：
+- `slice_start/slice_end`：`el-input-number`，精度 0.1
+- 各 version 字段：`el-input` 文本输入
+
+提交 → `createTaskByForm(createForm)` → 成功后 `fetchGroups()`
+
+### Tab 2: 文件上传创建
+
+- `el-upload`：drag 拖拽，accept `.json,.jsonl`，limit 1
+- `auto-upload=false`，手动触发
+- 文件暂存到 `uploadFile = ref<File | null>(null)`
+- 提交 → `createTaskByFile(uploadFile.value)` → FormData multipart 上传
+
+## 错误处理
+
+- API 层 axios 拦截器统一弹出 `ElMessage.error()`
+- hidden 态时入 `pendingErrorMessages` 队列，可见后逐条弹出（visibilityState 守卫）
+- View 层 `catch(e)` 不再重复处理
+- `ElMessageBox.confirm` 取消时静默忽略
+
+> ⚠️ 关联经验与规范：[[HUB-前端与API层架构]]、[[Vue3前端层架构]]、[[FastAPI后端API层架构]]、[[前端常见问题与排错指南]]

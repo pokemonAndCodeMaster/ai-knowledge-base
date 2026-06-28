@@ -4,8 +4,8 @@ domain: ["ai_dlc", "tooling", "agent_engineering"]
 type: "hub"
 tags: [质检平台, 前后端一体化, 学习路径, 开发指南, Vue3, FastAPI, ECharts]
 created: 2026-06-21
-updated: 2026-06-21
-sources: 6
+updated: 2026-06-28
+sources: 7
 status: active
 related_code: ["src/", "src/api/", "src/frontend/", "src/config/", "src/database/"]
 affects_path: ["src/", "src/api/", "src/frontend/"]
@@ -15,6 +15,8 @@ trigger_keywords: [质检前后端学习路径, 前后端一体化指南, EChart
 # HUB-质检前后端一体化学习与开发指南
 
 本卡是质检平台前后端一体化架构的学习和开发入口。它只做路线导航，不展开细节；具体实现、代码位置、输入输出、约束和示例都进入子卡。
+
+NotebookLM 上游项目原始导航全文见 [[HUB-质检前后端一体化]]；本卡继续承载当前仓库的学习路线。完整来源追踪见 [[notebooklm_quality_check_pipeline]]。
 
 ## 推荐阅读顺序
 
@@ -83,6 +85,8 @@ trigger_keywords: [质检前后端学习路径, 前后端一体化指南, EChart
 
 ## 关联基础卡
 
+- [[HUB-质检前后端一体化]]
+- [[notebooklm_quality_check_pipeline]]
 - [[数据质量门户架构设计]]
 - [[全栈项目设计模式与实践]]
 - [[前端开发规范]]

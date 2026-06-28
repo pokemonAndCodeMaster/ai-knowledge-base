@@ -1,0 +1,189 @@
+---
+title: "Agent 协作体系总览"
+domain: ["knowledge_mgmt"]
+type: "hub"
+tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_knowledge_mgmt"]
+created: 2026-06-28
+updated: 2026-06-28
+sources: 1
+status: active
+related_code: []
+affects_path: []
+trigger_keywords: ["Agent 协作体系总览", "quality_check_pipeline", "knowledge_mgmt"]
+notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+source_ids: ["518295ec-8b8d-4145-bb0c-14f075789a45"]
+raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/10_Copied text 1782623040_518295ec.md"]
+---
+
+> [!NOTE] 来源范围与完整性
+> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
+
+## NotebookLM 原始元数据快照
+
+```yaml
+id: "HUB-AGENT-001"
+title: "Agent 协作体系总览"
+domain: ["knowledge_mgmt"]
+type: "architecture"
+
+related_code: []
+affects_path: []
+trigger_keywords: ["Agent", "协作体系", "orchestrator", "PM", "Coder", "QA", "KM", "AI-DLC", "工具注册表"]
+tags: ["Agent协作", "体系总览"]
+summary: "项目 AI Agent 协作体系的总入口，涵盖 Agent 角色总览、知识管理工作流、Wiki 统计与工具注册表。由 KM [compile] 工作流自动刷新。"
+```
+# Agent 协作体系总览
+
+本卡是项目 AI Agent 协作体系的总入口，由 KM `[compile]` 工作流自动刷新。涵盖 Agent 角色总览、知识管理工作流、Wiki 统计与工具注册表四个维度。
+
+## Agent 角色总览
+
+| Agent | 角色 | 定位 | 核心功能 |
+|-------|------|------|----------|
+| orchestrator | 全局编排总控 | 最高调度官，不写代码只做包工头 | 意图识别、路由分发、基于 QA 结果的智能分诊与返工调度 |
+| pm-architect | 首席架构师 + 产品经理 | 控制系统熵增，输出极简契约 | 需求梳理、调度 KM 摸底调查、多轮头脑风暴、输出四级契约图纸 01_PLAN.md |
+| knowledge-manager | 知识史官与双链编织者 | 只读型档案管理员 | 知识寻址查询 [query]、新规范与经验摄入 [ingest]、知识体检扫描 [health]、[compile] 编译索引、**[kb-sync] 代码变更后知识库同步刷新** |
+| coder-executor | 外科手术级研发工程师 | 严格按契约编码 | 依据 01_PLAN.md 执行代码修改、输出 02_EXECUTION_LOG.md 交接日志 |
+| qa-verifier | 远端测试与验证专家 | 客观验证执行器 | 远端命令执行、单元/集成/回归测试、输出 03_TEST_REPORT.md |
+
+系统日常运作由 orchestrator 统一调度，根据需求类型走 4 条路由路线：
+- **Route A（纯知识查询）**：派发给 KM 执行 `[query]`
+- **Route B（敏捷运维）**：派发给 QA 执行远端命令
+- **Route C（知识摄入）**：派发给 KM 执行 `[ingest]`
+- **Route D（标准开发 — AI-DLC 核心流）**：串行调度 PM → Coder → QA，**QA-PASS 后追加调度 KM 执行 `[kb-sync]` 知识库同步刷新**，刷新回执放行后方可 commit。三步递进式执行扩展为"三步 + 一刷新"。
+
+> ⚠️ Route D 护栏：知识库刷新未完成（KM 未返回《刷新交付回执》或回执缺项）时，Orchestrator 不得放行 commit、不得关闭任务、不得派发下一 Route D 任务。详见 [[知识库同步刷新规范]] §7。
+
+## 知识管理工作流
+
+### 工作流流程
+
+```
+用户提问/需求
+     │
+     ▼
+┌─────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  [query]     │     │  [ingest]         │     │  [health]         │
+│  顺藤摸瓜查询 │     │  知识摄入与双链焊死 │     │  知识体检侦察      │
+│              │     │                   │     │                   │
+│ 黄页定位 →   │     │ 读TAXONOMY →      │     │ 扫描死链 →        │
+│ 深度遍历 →   │     │ 写卡片 →          │     │ 扫描孤岛 →        │
+│ 闭环交付     │     │ 双链焊死 →         │     │ 扫描冗余 →        │
+│              │     │ 黄页注册           │     │ 输出报告          │
+└─────────────┘     └──────────────────┘     └──────────────────┘
+```
+
+### Domain/Type 分类体系
+
+**Domain（业务域）**：
+
+| Domain | 含义 |
+|--------|------|
+| auto_qa | 自动化质检 |
+| llm_qa | 大模型数据生产与质检 |
+| manual_qa | 人工质检 |
+| planning_pkl | 规控 PKL |
+| planning_label | 规控标签 |
+| common_infra | 通用基建（存储、数据库） |
+| knowledge_mgmt | 知识管理元知识域 |
+
+**Type（知识类型）**：
+
+| Type | 含义 | 典型内容 |
+|------|------|----------|
+| hub | 枢纽总览 | 模块入口卡片，提供导航与概览 |
+| schema | 数据结构定义 | 表结构、YAML Schema、配置模型 |
+| norm | 开发规范/流程 | 使用规范、开发决策、流程约束 |
+| pitfall | 避坑/教训 | 踩坑记录、故障排查、性能陷阱 |
+| module_doc | 代码工具影子卡 | 模块功能说明、关键类/方法文档 |
+| concept | 业务概念/流程概述 | 业务流程、概念解释、架构概述 |
+| code_module | 代码模块索引卡 | 含 code_hash 绑定 |
+| source | 外部来源摘要卡 | 外部文档摘要 |
+| synthesis | 跨域综合分析卡 | 跨域综合分析 |
+
+## Wiki 统计
+
+| Type | 数量 | 说明 |
+|------|------|------|
+| hub | 13 | 枢纽总览卡片 |
+| concept | 36 | 业务概念/流程概述 |
+| module_doc | 62 | 代码工具影子卡 |
+| schema | 57 | 数据结构定义 |
+| norm | 3 | 开发规范/流程 |
+| pitfall | 3 | 避坑/教训 |
+| code_module | — | 代码模块索引卡 |
+| source | — | 外部来源摘要卡 |
+| synthesis | — | 跨域综合分析卡 |
+| **总计** | **174+** | — |
+
+> 📊 统计数据由 KM `[compile]` 工作流自动刷新，以上为基线快照。
+
+## 工具注册表
+
+工具库已从 `tool_registry/` 三层架构迁移至 `src/` 二级扁平架构。以下按三层粒度组织，路径已更新为新架构。
+
+### 原子能力层
+
+不依赖业务逻辑的基础能力，是整个工具体系的地基。
+
+| 子模块 | 关键文件 | 功能说明 |
+|--------|----------|----------|
+| `src/obs/` | obs_manager.py | 华为云 OBS 文件管理，支持上传、下载、列举、删除 |
+| `src/obs/` | obs_client.py | OBS 底层客户端封装 |
+| `src/database/` | pg_connector.py | PostgreSQL 连接管理，提供 PGConnector（含内联生命周期方法）、DatabaseConfig 桥梁 |
+
+### 通用能力层
+
+业务无关的通用封装，组合原子能力提供更高层的抽象。
+
+| 子模块 | 关键文件 | 功能说明 |
+|--------|----------|----------|
+| `src/config/` | config_loader.py | 统一配置管理（ConfigManager），get_global_config 唯一入口，支持 .env/YAML，多进程 pickle 序列化 |
+| `src/clipinfo/` | models.py | ClipInfo/ClipInfoCollection 数据模型 |
+| `src/clipinfo/` | service.py | ClipService 门面类，整合 Repository 和 Mapper |
+| `src/clipinfo/label/` | query.py | 批量标签查询，支持版本去重和兜底逻辑 |
+| `src/clipinfo/label/` | parquet.py | Parquet 格式转换与 JSON 序列化，支持双层数据净化 |
+| `src/clipinfo/label/` | autosenseid.py | AutosenseIDExtractor 数据提取 |
+| `src/clipinfo/pkl/` | frenet.py | Frenet 坐标转换 |
+| `src/clipinfo/` | batch_download.py | BatchDataDownloader + TimingStat |
+
+### 领域应用层
+
+完整业务工作流，组合原子和通用能力解决特定领域问题。
+
+| 子模块 | 关键文件 | 功能说明 |
+|--------|----------|----------|
+| `src/llm/` | video.py | 视频生产主流程编排（autosceneid → 下载 → 生成 → 格式化 → 上传） |
+| `src/llm/` | inference.py | LLM 推理主流程编排（视频 → base64 → API 调用 → 结果解析） |
+| `src/llm/` | video_generator.py | 视频生成核心逻辑，支持单摄/多摄拼接，ProcessPoolExecutor 并行 |
+| `src/llm/` | download.py | autoscenes 数据下载，devkit 优先 → ObsManager fallback |
+| `src/llm/` | formatter.py | 数据集 JSON 格式化（ShareGPT、QwenMultimodal 等）+ XLSX 转换 |
+| `src/llm/` | config.py | 视频配置数据模型（VideoConfig、VideoTask、VideoLayout） |
+| `src/llm/` | timing.py | 时延统计基础设施（count/min/max/avg/median/p95） |
+| `src/llm/` | scheduler.py | TaskWorker + TaskSchedulerApp 调度入口 |
+| `src/llm/` | task_repository.py | TaskRepository DB 读写封装 |
+| `src/llm/` | task_creator.py | TaskCreator 任务创建器 |
+| `src/llm/` | task_query.py | TaskQueryService 聚合查询 |
+| `src/llm/` | dedup_lock.py | DedupLock 去重锁 |
+| `src/llm/` | watchdog.py | Watchdog 守护进程 |
+| `src/llm/` | exceptions.py | LLM 域异常定义 |
+| `src/pkl_vis/` | run.py | generate_video() 统一入口 |
+| `src/pkl_vis/` | canvas_wrapper.py | vispy Canvas 封装 |
+| `src/pkl_vis/` | vis_factory.py | 可视化器工厂 |
+| `src/pkl_vis/` | visualizer/ | ~30 个可视化器 |
+| `src/data_check/` | data_check.py, tasks.py | 质检主入口与 Celery-Ray 分布式执行 |
+
+> ⚠️ 架构护栏拦截：所有新增代码必须使用 `src/` 路径下的 import。`tool_registry/` 路径已废弃，禁止新增引用。
+
+## 关联卡片
+
+- [[HUB-src顶层架构]] — src/ 新架构总览与旧路径映射表
+- [[HUB-通用基建模块]] — 通用基建域总入口（obs/database/config/clipinfo）
+- [[HUB-大模型数据生产与质检模块]] — llm_qa 域总入口
+- [[HUB-pkl_vis可视化模块]] — pkl_vis 域总入口
+- [[HUB-clipinfo片段信息域]] — clipinfo 域总入口
+- [[HUB-质检引擎层架构]] — data_check 域总入口
+- [[AI-DLC标准流程]] — PM → Coder → QA 三步递进式 SOP
+- [[知识库同步刷新规范]] — Route D 闭环条件第 4 条执行细则，QA-PASS 后、commit 前强制刷新
+- [[知识库双链层级规范]] — synthesis/concept 必须回链归属 Hub，确保双向图遍历对称性
+- 顶层设计参考 HUB 系列卡片（本卡及 [[HUB-src顶层架构]] 共同构成项目架构总纲，统领全项目业务域关系）

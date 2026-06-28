@@ -1,0 +1,112 @@
+---
+title: "质检引擎层架构"
+domain: ["ai_dlc", "agent_evaluation", "tooling"]
+type: "hub"
+tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_auto_qa"]
+created: 2026-06-28
+updated: 2026-06-28
+sources: 1
+status: active
+related_code: []
+affects_path: []
+trigger_keywords: ["质检引擎层架构", "quality_check_pipeline", "auto_qa"]
+notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+source_ids: ["df8d8c99-99aa-43b3-9ac0-6c7d4ac077d9"]
+raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/14_Copied text 1782623120_df8d8c99.md"]
+---
+
+> [!NOTE] 来源范围与完整性
+> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
+
+## NotebookLM 原始元数据快照
+
+```yaml
+id: "HUB-QE"
+title: "质检引擎层架构"
+domain: ["auto_qa"]
+type: "hub"
+
+related_code:
+  - "src/data_check/data_check.py"
+  - "src/data_check/data_check_ray_enter.py"
+  - "src/data_check/data_check_yaml_loader.py"
+  - "src/data_check/extract_checkers.py"
+  - "src/data_check/extract_scene_tree.py"
+  - "src/data_check/clip_checker/"
+  - "src/data_check/scene_atomic/"
+
+affects_path:
+  - "src/data_check/*"
+
+trigger_keywords: ["质检引擎", "data_check", "clip_checker", "scene_atomic", "checker", "atomic", "豁免", "exempt"]
+tags: []
+summary: "`src/data_check/` 目录下的核心质检引擎，负责对 E2E/VPD 片段执行多维度质量检查。"
+```
+# 质检引擎层架构
+
+`src/data_check/` 目录下的核心质检引擎，负责对 E2E/VPD 片段执行多维度质量检查。
+
+## 1. 入口与调度
+
+- [[质检主入口 DataCheck]] — 单 Clip 质检流程：数据加载 → 原子预计算 → 帧清洗 → Clip质检 → 后处理 → 入库
+- [[Ray分布式质检入口]] — 基于 Ray Data 的批量分布式调度，map_batches 并发执行
+- [[YAML配置加载器]] — 加载 `check_config_*.yaml`（质检项开关）与 `data_check_items_threshold.yaml`（阈值配置）
+
+## 2. 检查器继承体系 (clip_checker/)
+
+| 基类 | 注册表 | 核心职责 |
+|------|--------|---------|
+| [[CheckerBase 检查器根基类]] | `CheckerBase.checkers` | 所有检查器的根基类，`__init_subclass__` 自动注册 |
+| [[CheckerBase 检查器根基类]] | `VPDCheckerBase.vpd_checkers` | VPD 专属检查器，独立注册表 |
+| [[CheckerBase 检查器根基类]] | `scene_checker_list` | 多场景子检查器，支持3种模式（阈值/共享/自定义） |
+| [[CheckerBase 检查器根基类]] | 无（责任链模式） | 豁免条件处理，链式调用判断帧是否应被豁免 |
+
+## 3. 检查器子模块分类
+
+- Label检查器族 — 70+ 检查器，基于标签数据判别违规帧，含 precheck_* 预检项
+- PKL检查器族 — 30+ 检查器，基于 PKL 规控数据判别异常
+- `event_data_check/` — 事件连续性检查
+- `good_scene/` — 好案例判定
+- `human_drive_analysis/` — 人驾分析（基础巡航/换道/路口/跟车）
+- `post_process_quality_inspection_items/` — 后处理质检（轨迹<5s、原始数据检查）
+
+## 4. 场景原子能力 (scene_atomic/)
+
+- 场景原子能力 AtomicBase — 预计算的场景特征值，单例模式，供检查器按时间戳查询
+- AtomicContext 调度器 — 管理原子的注册、实例化与并发预计算（帧级并行+clip级并行）
+- `schema/` — 原子输出的 YAML Schema 定义（clip级4个 + frame级4个）
+- `atomics/` — 具体原子实现（ego_speed, lane_change, cover_solid_line, uturn, notch 等）
+
+## 5. 辅助工具
+
+- `extract_checkers.py` — 静态提取检查器信息，生成质检项清单 JSON/Excel
+- `extract_scene_tree.py` — 解析场景树 HTML，输出 JSON 结构
+- `clip_checker/common_utils/` — `CommonLabelUtils`（标签查询）、`CommonPklUtils`（PKL读取）、`CommonUtils`（通用工具）
+
+## 6. Utils公共工具层
+
+- [[DataCheck核心枚举定义]] — 质检引擎所有 fail_reason 编号(FILTER_REASON/PRECHECK_ITEM)与标签ID映射(LabelSchemaIdStr)
+- [[DataCheck核心数据类与辅助枚举]] — 障碍物分类(Classification)/特征索引(ObjectFeatIndex)/场景属性/环境枚举
+- [[OBS公共读取工具]] — Obs类：质检引擎读取OBS数据的底层封装
+- [[DataCheck连接工具_ConnectUtils]] — Clip信息获取/标签路径查询
+- [[FileReader多格式IO工具]] — 检查器中PKL/JSON/图像等文件的统一读取入口
+- [[PKL并发读写工具]] — scene_tf批量并发读写
+- [[PNC坐标解析器]] — sl↔xy坐标转换，供轨迹类原子使用
+- [[ParquetConverter (parquet.py)]] — Frame标签Parquet转JSON（已迁移至 src/clipinfo/label/parquet.py）
+
+## 7. Utils业务工具子集
+
+- [[HUB-DataCheck业务工具子集]] — 帧清洗/事件分析/FEM质检/导航偏移/结果汇总/小鲁班通知等业务工具全景
+
+## 8. 场景与质检规则层
+
+- [[场景树分类体系]] — CoC Spec 4层场景分类（4 L1 / 28 L2 / 117 L3 + 纵横决策闭集）
+- [[场景质检项映射规则]] — 20个场景维度与99个check项的映射体系
+- [[质检项元数据Schema]] — filter_reasons枚举与checker注册表的数据结构
+- [[质检标签YAML Schema规范]] — schema/label/下45个YAML的命名/结构/ID编号规律
+- [[DataCheck项目全貌]] — 项目架构/技术栈/三种运行模式/质检流程总览
+
+> ⚠️ 架构护栏拦截：所有新增检查器必须继承 CheckerBase 或 VPDCheckerBase 并通过 `fail_reason` 关键字参数注册，否则不会被引擎调度执行。
+
+> ⚠️ 关联经验与规范：[[HUB-DataCheck配置与常量层]] — 质检引擎依赖的配置层全景（版本化配置、阈值、环境变量、车型参数、PKL Schema）
+> ⚠️ 关联经验与规范：[[HUB-DAG任务流层架构]] — 调度质检引擎的DAG编排层

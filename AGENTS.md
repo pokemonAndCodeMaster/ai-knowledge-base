@@ -30,6 +30,7 @@
 - `wiki/synthesis/`：跨来源综合分析和高层指南。
 - `wiki/code/`：代码模块卡，必须通过 `related_code` 指向真实源码路径。
 - `skills/ai-librarian/SKILL.md`：知识查询、摄入、代码摄入、健康检查的权威流程。
+- `skills/notebooklm-source-ingest/SKILL.md`：NotebookLM 全 source 无损 Markdown 导出、WSL2/Windows 认证降级与完整摄入流程。
 - `skills/verification-before-completion/SKILL.md`：完成前验证纪律。
 - `skills/frontend-dev/SKILL.md`：前端开发规则。
 - `demo_agents/`：旧版多 Agent 流程参考材料，用于迁移思想，不是当前 Codex 原生配置。
@@ -152,3 +153,9 @@ Codex 中只在确实有收益时使用 subagent。
 - 搜索优先使用 `rg` / `rg --files`。
 - 手工编辑文件使用 `apply_patch`。
 - 保持本文件简洁；规则变长时，迁移到 skill 或 wiki 卡片，并在此处保留入口。
+
+## 强制知识沉淀规则 (Critical Rule)
+
+- **全局要求**：所有架构设计、修改、讨论结论及归纳总结，都必须沉淀为详尽的知识卡片摄入知识库。
+- **存量补全**：如果已有相关知识卡片，必须核查其内容是否完善。如有缺失必须补全（确保细节完整、来龙去脉清晰、开箱即用）。
+- **联动更新**：只要设计有修改或变更，必须连带更新所有关联的知识卡片。坚决杜绝代码与知识卡片脱节。

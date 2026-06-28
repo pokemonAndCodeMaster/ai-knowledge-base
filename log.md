@@ -202,6 +202,23 @@
   - `python -m unittest tests.test_config_database`
   - `python - <<'PY' ... create_app() ... PY`
 
+## [2026-06-28] update | NotebookLM 全来源无损摄入 Skill 与经验固化
+
+- 新增 `skills/notebooklm-source-ingest/`：完整导出与摄入流程、WSL2/Windows Chrome 认证和故障降级参考、Manifest/SHA-256 验证脚本。
+- 新增 `wiki/norms/NotebookLM来源无损导出与摄入规范.md`，固化数量等式、浏览器下载字节门槛、认证安全、Map-Reduce 和结果报告口径。
+- 更新 `wiki/concepts/notebooklm_mcp用法.md`：明确内容 RPC 会破坏 Markdown 结构，不得冒充原始文件。
+- 更新 `wiki/synthesis/知识库高保真摄入管线.md`、`index.md`、`AGENTS.md` 并重编译图谱。
+
+## [2026-06-28] ingest | NotebookLM quality_check_pipeline 完整摄入
+
+- **触发者**：用户要求把 NotebookLM `quality_check_pipeline` 全部 source 完整导出为 Markdown，并完成知识卡、索引、双链和关联。
+- **原始资料**：定位笔记本 `fc03a900-e886-44a5-85b0-73983c0efa41`，冻结 38 个 source 基线；通过已登录 Windows Chrome 原始下载链导出 38/38，失败 0，逐文件记录字节数、行数和 SHA-256。
+- **重复项**：source 2=15、source 9=17 为字节级重复；原始文件全部保留，正文知识合并为 36 张卡。
+- **知识编纂**：写入/更新 36 张完整正文卡，原始 Frontmatter 作为快照保留；新增 `notebooklm_quality_check_pipeline` 来源总卡。
+- **防幻觉关系层**：原文共引用 146 个不同卡名；对未随笔记本提供原文的 102 个引用创建 `stale` 占位卡，明确 `[待人类补充]` 并焊接反向来源，新增 `quality_check_pipeline缺失引用索引`。
+- **范围护栏**：来源描述上游 `e2e_data_pipeline_hub`；不存在于当前仓库的上游路径不写入有效 `related_code`，避免把来源快照冒充当前代码事实。
+- **索引更新**：扩展 `index.md` 的来源、Raw、Quality Check Pipeline 总纲、LLM/前后端和人工质检十五步入口。
+
 ## [2026-06-07] upgrade | 知识库工业化升级：高保真摄入管线
 
 - **触发者**：用户反馈单纯的 LLM 摄入经常丢失代码细节和参数边界
@@ -262,3 +279,31 @@
     - `log.md` — 本条记录。
   - **编译索引**：
     - 运行 `compile_graph.py` 重新编译知识图谱，生成最新的 `.wiki_graph.json`。图谱成功编译：131 张卡片，501 个链接，无任何新生成的编译错误。
+## [2026-06-28] update | 质检一站式平台 Phase 3 前架构接管评审
+
+- **触发者**：用户提供 `task.md` 与 `implementation_plan.md`，要求接管任务、评估后端架构并规划下一步。
+- **评审范围**：任务看板、实施蓝图、2 份 DDL、5 张阶段设计卡，以及当前 `src/api/`、`src/database/` 基建代码。
+- **结论**：保留 feature slice、API/Service/Domain/Repository 分层、纯 Python 领域规则与代码注册表；Phase 3 前新增 Phase 2.5，先分离统计快照、任务级候选和操作台账，冻结预览/执行一致性、外部 Delta 幂等与失败恢复契约。
+- **风险证据**：当前快照聚合行没有 task/clip 明细；结论与执行状态写入可重算读模型；表达式被写入表级 `UNIQUE` 约束；人员多项目与单一当前组语义冲突；共享 `repository.py` 会降低上下文内聚。
+- **知识联动**：新增 `质检一站式平台Phase3前架构评审`，在 5 张相关设计卡补充反向评审链接，更新 `task.md` 和 `index.md`。
+- **元数据校正**：三张尚未落地源码的方案卡由 `code_module` 校正为 `synthesis`，移除不存在的未来源码引用并补齐 `sources`，避免把设计稿伪装为当前代码事实。
+
+## [2026-06-28] update | 质检平台第二轮架构收敛与 DDL 实跑
+
+- **触发者**：用户逐项纠正第一轮评审，明确快照最小统计粒度、现有 Delta 状态回查机制、单项目人力约束和简洁架构偏好。
+- **架构收敛**：撤回通用操作台账、`operation_id` 持久化、`ports.py`、`adapters/` 和集中式 `domain/` 目录建议；改为数据结构就近定义、复用后上移，共享 Repository 按表/数据源分小类，外部接口使用直白的 `delta_client.py`。
+- **快照链路**：快照计算各最小单元采样配额；任务级中间表/Delta 表查询具体 task_ids；调用接口后通过任务状态回查刷新 `acceptance_allocated` 实际成功量。
+- **人力与权限**：`projects TEXT[]` 改为单值 `project_name`；权限从每按钮布尔列收敛为每模块等级列。
+- **DDL 验证**：在一次性 PostgreSQL 16.14 空实例顺序执行两份 migration，退出码均为 0；合法插入和联合键 UPSERT 成功，非法计数被 CHECK 约束正确拒绝；SQL 语法兼容基线声明为 PostgreSQL 10+。
+- **联动更新**：修订 `task.md`、`implementation_plan.md`、三张核心设计卡、`src/manual_qc/acceptance/__init__.py`、评审卡、索引和图谱。
+
+## [2026-06-28] ingest | 人工质检模块整体架构与组件知识树重编
+
+- **触发者**：用户要求结合两轮讨论，形成可从总卡逐层 Review 的完整架构设计、组件分卡、双向链接和同步计划。
+- **总入口**：新增 `wiki/synthesis/质检一站式平台人工质检模块整体架构.md`，覆盖范围、客观约束、组件图、验收分配/统计/通过打回三条链路、事实源、原则、开放问题和 Review 顺序。
+- **新增分卡**：后端分层、API 契约、前端页面、Repository、Delta 状态回查、验收采样、通过打回、权限 SSO、实施路线与进度，共 9 张。
+- **重构分卡**：`质检平台-采样与规则引擎设计` 改为 Hub，将采样和通过打回拆成两张原子叶子卡；完善快照、人力、数据结构、scene_name 和 Phase 3 前评审的总卡反链。
+- **来源焊接**：人工质检 Hub、⑧验收分配、⑨批量通过打回、⑩状态刷新、⑪中间表更新和理想前后端架构均反向链接当前整体架构或对应组件卡。
+- **计划同步**：`implementation_plan.md` 重写为 v4 当前实施契约；`task.md` 升级为 v4 动态看板，登记全部卡片、冻结决策、剩余外部信息和 Phase 3A～3E 顺序。
+- **黄页**：`index.md` 新增整体架构入口，并完整注册当前人工质检增量设计知识树。
+- **对账验证**：图谱编译为 314 张卡、1507 条链接；10 张本轮新增卡 Frontmatter/分类/物理证据/黄页/总卡双链检查 0 错误、0 新孤岛、0 新断链；并修正 `scene_name` 卡遗留的 NULL 汇总行 SQL。

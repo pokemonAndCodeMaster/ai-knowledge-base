@@ -1,0 +1,4 @@
+interface:
+  display_name: "NotebookLM 完整来源摄入"
+  short_description: "在 WSL2 中无损导出 NotebookLM Markdown 并摄入知识库"
+  default_prompt: "Use $notebooklm-source-ingest to export every source from a NotebookLM notebook as lossless Markdown and ingest it into this knowledge base."
