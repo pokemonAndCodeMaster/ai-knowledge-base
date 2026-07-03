@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人工质检一站式平台 · 交互原型</title>
+  <style>
+    :root {
+      --ink: #17212b; --muted: #66737f; --line: #dce3e7; --soft: #f4f7f8;
+      --surface: #fff; --nav: #102b32; --nav-2: #173c44; --teal: #0c766e;
+      --teal-soft: #e3f3f0; --blue: #315f91; --amber: #a96308; --amber-soft: #fff3dc;
+      --red: #a73b3b; --red-soft: #fdeaea; --green: #23704c; --green-soft: #e5f3eb;
+      --shadow: 0 8px 24px rgba(28, 50, 57, .08); --radius: 12px;
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #edf2f3; font-size: 14px; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible,
+    [tabindex]:focus-visible { outline: 3px solid rgba(12,118,110,.3); outline-offset: 2px; }
+    .skip { position: fixed; top: -50px; left: 12px; z-index: 99; padding: 9px 14px; background: white; color: var(--teal); }
+    .skip:focus { top: 10px; }
+    .app { min-height: 100vh; display: grid; grid-template-columns: 224px minmax(0,1fr); }
+    aside { background: var(--nav); color: #d7e7e8; padding: 22px 14px; position: sticky; top: 0; height: 100vh; }
+    .brand { display: flex; gap: 10px; align-items: center; padding: 0 10px 24px; }
+    .brand-mark { width: 34px; height: 34px; border: 1px solid #58a69f; display: grid; place-items: center; border-radius: 9px; font-weight: 800; }
+    .brand strong { display: block; color: white; font-size: 15px; }
+    .brand small { color: #91afb3; }
+    nav button { width: 100%; border: 0; color: #b8ced0; background: transparent; display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 8px; text-align: left; margin-bottom: 4px; }
+    nav button:hover, nav button.active { color: white; background: var(--nav-2); }
+    nav svg { width: 18px; height: 18px; flex: none; }
+    .nav-label { color: #6f9296; font-size: 11px; padding: 18px 12px 8px; letter-spacing: .12em; }
+    .aside-foot { position: absolute; bottom: 18px; left: 16px; right: 16px; border-top: 1px solid #2e5157; padding-top: 15px; color: #8faeb1; font-size: 12px; }
+    main { min-width: 0; padding: 24px 28px 48px; }
+    .page-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 18px; }
+    h1 { font-size: 24px; margin: 0 0 5px; letter-spacing: -.02em; }
+    h2 { font-size: 17px; margin: 0; }
+    h3 { font-size: 14px; margin: 0; }
+    .sub, .muted { color: var(--muted); }
+    .head-actions, .inline, .tabs, .segmented { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .btn { border: 1px solid var(--line); background: white; color: var(--ink); padding: 8px 13px; border-radius: 8px; font-weight: 600; }
+    .btn:hover { border-color: #91b4b2; }
+    .btn.primary { color: white; background: var(--teal); border-color: var(--teal); }
+    .btn.danger { color: white; background: var(--red); border-color: var(--red); }
+    .btn.small { padding: 6px 9px; font-size: 12px; }
+    .btn.ghost { background: transparent; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 1px 0 rgba(20,40,45,.02); }
+    .section { padding: 18px; margin-bottom: 14px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .views { display: flex; gap: 4px; overflow-x: auto; padding: 5px; margin-bottom: 12px; }
+    .views button, .tabs button, .segmented button { white-space: nowrap; border: 0; background: transparent; color: var(--muted); padding: 8px 12px; border-radius: 7px; }
+    .views button.active, .segmented button.active { color: var(--teal); background: var(--teal-soft); font-weight: 700; }
+    .tabs { border-bottom: 1px solid var(--line); gap: 2px; margin: 0 -18px 18px; padding: 0 18px; overflow-x: auto; flex-wrap: nowrap; }
+    .tabs button { border-radius: 0; padding: 10px 12px; border-bottom: 2px solid transparent; }
+    .tabs button.active { color: var(--teal); border-color: var(--teal); font-weight: 700; }
+    .attention { display: grid; grid-template-columns: repeat(5, minmax(140px,1fr)); gap: 10px; margin-bottom: 14px; }
+    .attention button { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; text-align: left; color: var(--ink); }
+    .attention button:hover, .attention button.active { border-color: #82aaa6; box-shadow: var(--shadow); }
+    .attention strong { font-size: 20px; margin-right: 4px; }
+    .attention small { display: block; color: var(--muted); margin-top: 4px; }
+    .toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .search { border: 1px solid var(--line); border-radius: 8px; background: white; padding: 9px 11px; min-width: 260px; }
+    .filter-chip { background: var(--teal-soft); color: var(--teal); border: 0; padding: 7px 9px; border-radius: 999px; }
+    .table-wrap { overflow: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 970px; }
+    th { text-align: left; color: var(--muted); font-size: 12px; background: #f7f9fa; padding: 11px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    td { padding: 13px 12px; border-bottom: 1px solid #edf0f1; vertical-align: middle; }
+    tbody tr { cursor: pointer; }
+    tbody tr:hover { background: #f8fbfb; }
+    .task-name { font-weight: 700; margin-bottom: 4px; }
+    .task-meta { color: var(--muted); font-size: 12px; }
+    .tag { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 4px 8px; font-size: 12px; font-weight: 650; white-space: nowrap; }
+    .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .tag.green { color: var(--green); background: var(--green-soft); }
+    .tag.amber { color: var(--amber); background: var(--amber-soft); }
+    .tag.red { color: var(--red); background: var(--red-soft); }
+    .tag.blue { color: var(--blue); background: #e9f0f8; }
+    .progress { height: 7px; width: 110px; background: #e7edef; overflow: hidden; border-radius: 9px; margin: 5px 0 3px; }
+    .progress > i { display: block; height: 100%; background: var(--teal); border-radius: inherit; }
+    .metric-grid { display: grid; grid-template-columns: repeat(6, minmax(110px,1fr)); gap: 10px; margin-bottom: 14px; }
+    .metric { padding: 14px; background: white; border: 1px solid var(--line); border-radius: 10px; }
+    .metric strong { display: block; font-size: 22px; margin: 7px 0 3px; }
+    .metric small { color: var(--muted); }
+    .breadcrumb { border: 0; background: none; color: var(--teal); padding: 0; margin-bottom: 13px; }
+    .summary-strip { display: flex; gap: 22px; flex-wrap: wrap; padding: 13px 16px; margin-bottom: 14px; }
+    .summary-strip span { color: var(--muted); font-size: 12px; }
+    .summary-strip strong { display: block; color: var(--ink); font-size: 14px; margin-top: 4px; }
+    .tracks { overflow-x: auto; padding: 20px 18px; }
+    .track { display: grid; grid-template-columns: 84px repeat(7, minmax(100px,1fr)); align-items: center; min-width: 900px; margin-bottom: 16px; }
+    .track:last-child { margin-bottom: 0; }
+    .track-label { font-weight: 750; color: var(--muted); }
+    .node { position: relative; text-align: center; padding-top: 27px; font-size: 12px; color: var(--muted); }
+    .node::before { content: ""; position: absolute; top: 7px; left: calc(50% - 7px); width: 12px; height: 12px; border: 2px solid #a9b7bc; border-radius: 50%; background: white; z-index: 2; }
+    .node::after { content: ""; height: 2px; background: #ccd5d8; position: absolute; top: 14px; left: -50%; right: 50%; }
+    .node:first-of-type::after { display: none; }
+    .node.done::before { background: var(--teal); border-color: var(--teal); }
+    .node.done::after, .node.current::after { background: var(--teal); }
+    .node.current { color: var(--ink); font-weight: 750; }
+    .node.current::before { border: 4px solid var(--teal); width: 10px; height: 10px; box-shadow: 0 0 0 4px var(--teal-soft); }
+    .node.risk::before { border-color: var(--amber); background: var(--amber-soft); border-radius: 2px; transform: rotate(45deg); }
+    .node small { display: block; margin-top: 3px; color: #89959b; font-weight: 400; }
+    .two-col { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(280px,.8fr); gap: 14px; }
+    .list { display: grid; gap: 9px; }
+    .action { display: grid; grid-template-columns: 1fr auto; gap: 12px; border: 1px solid var(--line); border-radius: 9px; padding: 12px; }
+    .action.done { opacity: .62; }
+    .action-title { font-weight: 700; margin-bottom: 5px; }
+    .timeline { min-width: 950px; }
+    .timeline-row { display: grid; grid-template-columns: 220px 1fr 110px; gap: 14px; align-items: center; padding: 15px 12px; border-bottom: 1px solid var(--line); }
+    .rail { height: 8px; background: #e7edef; border-radius: 8px; position: relative; }
+    .rail .fill { height: 100%; background: var(--teal); border-radius: inherit; }
+    .rail .mark { position: absolute; top: -8px; width: 2px; height: 24px; background: var(--red); }
+    .rail .dot { position: absolute; top: -4px; width: 15px; height: 15px; border: 3px solid white; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 1px var(--amber); }
+    .panel-grid { display: grid; grid-template-columns: minmax(280px,.9fr) minmax(0,1.3fr); gap: 14px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    label { display: grid; gap: 6px; color: var(--muted); font-size: 12px; }
+    input, select, textarea { border: 1px solid var(--line); border-radius: 7px; padding: 9px; background: white; color: var(--ink); }
+    textarea { min-height: 76px; resize: vertical; }
+    .notice { padding: 11px 13px; border-radius: 8px; background: var(--amber-soft); color: #7a4b0b; border: 1px solid #efcf94; margin: 12px 0; }
+    .notice.good { background: var(--green-soft); color: var(--green); border-color: #b7dcc7; }
+    .bar-row { display: grid; grid-template-columns: 120px 1fr 50px; gap: 10px; align-items: center; margin: 13px 0; }
+    .hbar { height: 12px; background: #e8edef; border-radius: 8px; overflow: hidden; }
+    .hbar i { display: block; height: 100%; background: var(--blue); }
+    .splitbar { display: flex; height: 24px; border-radius: 7px; overflow: hidden; margin: 12px 0; color: white; font-size: 11px; font-weight: 700; }
+    .splitbar span { display: grid; place-items: center; min-width: 32px; }
+    .pass { background: var(--green); } .reject { background: var(--red); } .pending { background: #aab4b8; }
+    dialog { border: 0; border-radius: 14px; padding: 0; width: min(520px, calc(100% - 30px)); box-shadow: 0 28px 80px rgba(10,30,35,.26); }
+    dialog::backdrop { background: rgba(13,31,35,.52); }
+    .modal { padding: 20px; }
+    .modal .form-grid { margin: 18px 0; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: #172f34; color: white; padding: 11px 15px; border-radius: 9px; box-shadow: var(--shadow); z-index: 80; opacity: 0; transform: translateY(8px); pointer-events: none; transition: .18s; }
+    .toast.show { opacity: 1; transform: none; }
+    .empty { padding: 48px; text-align: center; color: var(--muted); }
+    .mobile-nav { display: none; }
+    @media (max-width: 1000px) {
+      .app { grid-template-columns: 76px minmax(0,1fr); }
+      aside { padding-inline: 8px; } .brand div:last-child, nav span, .nav-label, .aside-foot { display:none; }
+      .brand { justify-content: center; padding-inline: 0; } nav button { justify-content: center; }
+      .attention { grid-template-columns: repeat(3,1fr); } .metric-grid { grid-template-columns: repeat(3,1fr); }
+      .two-col, .panel-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .app { display: block; } aside { display: none; } main { padding: 16px 12px 82px; }
+      .page-head { display: block; } .head-actions { margin-top: 12px; }
+      .attention { grid-template-columns: 1fr 1fr; } .metric-grid { grid-template-columns: 1fr 1fr; }
+      .search { min-width: 100%; } .form-grid { grid-template-columns: 1fr; }
+      .mobile-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: grid; grid-template-columns: 1fr 1fr; background: white; border-top: 1px solid var(--line); padding: 7px; }
+      .mobile-nav button { border: 0; background: white; padding: 8px; color: var(--muted); }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">跳到主要内容</a>
+  <div class="app">
+    <aside>
+      <div class="brand"><div class="brand-mark">QC</div><div><strong>质检一站式平台</strong><small>Quality Operations</small></div></div>
+      <nav aria-label="主导航">
+        <div class="nav-label">人工质检</div>
+        <button class="active" data-nav="delivery" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 3v4m8-4v4M7 11h4m-4 4h7"/></svg><span>交付中心</span></button>
+        <button data-nav="acceptance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v18H6zM9 8h6m-6 4h6m-6 4h3"/></svg><span>验收中心</span></button>
+        <div class="nav-label">其他模块</div>
+        <button disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 12h16M12 4v16"/></svg><span>自动化质检</span></button>
+        <button disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="8"/><path d="M9 12h6"/></svg><span>大模型质检</span></button>
+      </nav>
+      <div class="aside-foot">静态交互原型 · 示例数据<br>最近刷新 10:32</div>
+    </aside>
+    <main id="content" tabindex="-1" data-testid="page-root"></main>
+  </div>
+  <div class="mobile-nav"><button data-nav="delivery">交付中心</button><button data-nav="acceptance">验收中心</button></div>
+  <dialog id="actionDialog" aria-labelledby="dialogTitle">
+    <form class="modal" method="dialog" id="actionForm">
+      <div class="section-head"><div><h2 id="dialogTitle">新增行动项</h2><div class="sub">挂载到当前交付任务并进入跟踪队列</div></div><button class="btn small" value="cancel" aria-label="关闭">关闭</button></div>
+      <div class="form-grid">
+        <label style="grid-column:1/-1">行动项标题<input name="title" required value="补齐夜间场景规则示例"></label>
+        <label>责任人<input name="owner" required value="王敏"></label>
+        <label>截止时间<input name="due" type="date" required value="2026-07-05"></label>
+        <label>所属阶段<select name="stage"><option>规则对齐</option><option>数据准备</option><option>生产</option><option>标注</option><option>验收</option></select></label>
+        <label>风险等级<select name="risk"><option>普通</option><option selected>较高</option><option>紧急</option></select></label>
+      </div>
+      <div class="head-actions" style="justify-content:flex-end"><button class="btn" value="cancel">取消</button><button class="btn primary" value="default" id="saveAction">创建行动项</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+    const state = { page: 'delivery', deliveryView: 'table', deliveryFilter: '', acceptanceView: 'progress', detailTab: 'overview', acceptanceTab: 'overview', preview: false };
+    const tasks = [
+      {id:'D-0721', name:'车内多模态指令集 · 第三批', meta:'智舱专题 / 62,400 条', stage:'标注进行中', due:'07-12', predicted:'07-13', progress:68, acceptance:0, health:'risk', healthText:'有延期风险', actions:3, next:'跟进夜班增员', owner:'陈卓'},
+      {id:'D-0718', name:'道路异常事件识别 · 七月批次', meta:'行车专题 / 38,120 条', stage:'生产阻塞', due:'07-08', predicted:'07-10', progress:32, acceptance:0, health:'blocked', healthText:'视频生产阻塞', actions:2, next:'确认预筛口径', owner:'李乔'},
+      {id:'D-0712', name:'导航问答事实性评测集', meta:'座舱问答 / 18,600 条', stage:'待验收分配', due:'07-06', predicted:'07-06', progress:100, acceptance:12, health:'watch', healthText:'待分配', actions:1, next:'分配验收任务', owner:'王敏'},
+      {id:'D-0706', name:'儿童安全场景描述集', meta:'安全专题 / 9,800 条', stage:'返修第 1 轮', due:'07-05', predicted:'07-07', progress:100, acceptance:100, health:'risk', healthText:'返修影响交付', actions:4, next:'跟踪返修完成', owner:'周宁'},
+      {id:'D-0701', name:'泊车障碍物描述 · 二期', meta:'泊车专题 / 24,000 条', stage:'验收进行中', due:'07-09', predicted:'07-09', progress:100, acceptance:74, health:'healthy', healthText:'按计划', actions:0, next:'查看验收进度', owner:'赵新'}
+    ];
+    const icons = { healthy:'green', risk:'amber', watch:'blue', blocked:'red' };
+    const app = $('#content');
+    function toast(msg){ const el=$('#toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('show'),2200); }
+    function setPage(page, opts={}) { state.page=page; Object.assign(state,opts); location.hash=page; render(); window.scrollTo({top:0}); }
+    function tag(task){ return `<span class="tag ${icons[task.health]}">${task.healthText}</span>`; }
+    function pageHead(title, sub, actions=''){ return `<header class="page-head"><div><h1>${title}</h1><div class="sub">${sub}</div></div><div class="head-actions">${actions}</div></header>`; }
+    function navSync(){ $$('[data-nav]').forEach(b=>{ const active=(state.page.startsWith(b.dataset.nav)||(state.page==='detail'&&b.dataset.nav==='delivery')||(state.page==='acceptance-workspace'&&b.dataset.nav==='acceptance')); b.classList.toggle('active',active); if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current'); }); }
+    function deliveryPage(){
+      const shown=tasks.filter(t=>!state.deliveryFilter || `${t.name}${t.healthText}${t.stage}`.includes(state.deliveryFilter));
+      const viewButtons=`<div class="segmented" role="tablist" aria-label="展示模式"><button data-view="table" class="${state.deliveryView==='table'?'active':''}" aria-selected="${state.deliveryView==='table'}">表格</button><button data-view="timeline" class="${state.deliveryView==='timeline'?'active':''}" aria-selected="${state.deliveryView==='timeline'}">时间轴</button></div><button class="btn primary" id="newDelivery">＋ 新建交付任务</button>`;
+      return pageHead('人工质检交付中心','把数据集从需求登记一直盯到验收通过',viewButtons)+`
+      <section class="card views" aria-label="保存视图"><button class="active">全部 24</button><button>我的 8</button><button>我关注的 11</button><button>七月重点 9</button><button>未来两周 P0 6</button><button>周二需求会 7</button></section>
+      <section class="attention" data-testid="attention-queue">
+        ${[['待对齐',6,'规则与排期'],['数据未就绪',3,'影响 2 个 P0'],['行动项临期',7,'其中逾期 2 项'],['生产阻塞',1,'已持续 6 小时'],['交付风险',4,'未来 7 天']].map(([n,c,s])=>`<button data-filter="${n}" class="${state.deliveryFilter===n?'active':''}"><strong>${c}</strong>${n}<small>${s}</small></button>`).join('')}
+      </section>
+      <section class="card section">
+        <div class="toolbar"><input class="search" id="deliverySearch" aria-label="搜索交付任务" placeholder="搜索后按 Enter 筛选" value="${state.deliveryFilter}"><button class="btn" id="applySearch">搜索</button><button class="btn">负责人：全部</button><button class="btn">目标交付：未来 30 天</button>${state.deliveryFilter?`<button class="filter-chip" id="clearFilter">${state.deliveryFilter} ×</button>`:''}<span class="muted" style="margin-left:auto">展示 ${shown.length} / ${tasks.length} 条 · 10:32 更新</span></div>
+        ${state.deliveryView==='table'?deliveryTable(shown):deliveryTimeline(shown)}
+      </section>`;
+    }
+    function deliveryTable(rows){ return `<div class="table-wrap" data-testid="delivery-table"><table><thead><tr><th>交付任务</th><th>当前节点</th><th>目标 / 预计交付</th><th>标注进度</th><th>验收进度</th><th>健康状态</th><th>行动项</th><th>下一动作</th></tr></thead><tbody>${rows.map(t=>`<tr data-task="${t.id}" tabindex="0"><td><div class="task-name">${t.name}</div><div class="task-meta">${t.id} · ${t.meta} · ${t.owner}</div></td><td>${t.stage}</td><td><strong>${t.due}</strong> / <span class="${t.due!==t.predicted?'tag amber':''}">${t.predicted}</span></td><td><div class="progress"><i style="width:${t.progress}%"></i></div><small>${t.progress}%</small></td><td><div class="progress"><i style="width:${t.acceptance}%"></i></div><small>${t.acceptance}%</small></td><td>${tag(t)}</td><td>${t.actions?`<strong>${t.actions}</strong> 项待办`:'已清空'}</td><td><button class="btn small" data-open="${t.id}">${t.next} →</button></td></tr>`).join('')||`<tr><td colspan="8" class="empty">没有匹配的交付任务</td></tr>`}</tbody></table></div>`; }
+    function deliveryTimeline(rows){ return `<div class="table-wrap timeline" data-testid="delivery-timeline">${rows.map((t,i)=>`<div class="timeline-row" data-task="${t.id}" tabindex="0"><div><div class="task-name">${t.name}</div><div class="task-meta">${t.stage} · ${t.owner}</div></div><div class="rail"><div class="fill" style="width:${Math.max(t.progress*.76,18)}%"></div><i class="dot" style="left:${Math.max(t.progress*.76-1,18)}%"></i><i class="mark" style="left:${82-i*2}%"></i></div><div><strong>${t.due}</strong><br><small class="muted">目标交付</small></div></div>`).join('')}</div>`; }
+    function detailPage(){
+      const t=tasks[0]; const tabs=['overview|概览','rules|需求与规则','prepare|任务准备','production|生产与分配','labeling|标注监控','acceptance|验收','actions|行动项与记录'];
+      return `<button class="breadcrumb" id="backDelivery">← 返回交付中心</button>${pageHead(t.name,`${t.id} · ${t.meta}`,`<button class="btn">编辑任务</button><button class="btn primary" id="nextAction">${t.next}</button>`)}
+      <section class="card summary-strip"><div><span>优先级</span><strong>P0 · 七月重点</strong></div><div><span>目标 / 预计交付</span><strong>07-12 / 07-13</strong></div><div><span>负责人</span><strong>${t.owner}</strong></div><div><span>健康状态</span><strong>${tag(t)}</strong></div><div><span>下一责任人</span><strong>供应商 A · 刘想</strong></div></section>
+      <section class="card section" data-testid="delivery-detail"><div class="tabs" role="tablist">${tabs.map(x=>{const [k,n]=x.split('|');return `<button data-detail-tab="${k}" class="${state.detailTab===k?'active':''}" aria-selected="${state.detailTab===k}">${n}</button>`}).join('')}</div>${detailTabContent()}</section>`;
+    }
+    function detailTabContent(){
+      if(state.detailTab==='acceptance') return `<div class="section-head"><div><h2>验收阶段</h2><div class="sub">标注预计 07-10 完成，预留 2 天验收</div></div><button class="btn primary" id="openAcceptanceWorkspace">进入验收工作区 →</button></div><div class="metric-grid">${metric('应抽样本','3,120','计划口径 v2.3')}${metric('已分配','0','标注完成后分配')}${metric('验收预留','2 天','07-10 — 07-12')}${metric('当前结论','PENDING','完成度不足')}</div><div class="notice">当前验收尚未开始。可提前确认采样策略和验收员容量，避免标注完成后等待。</div>`;
+      if(state.detailTab==='actions') return actionPanel(true);
+      if(state.detailTab!=='overview') return `<div class="empty"><h2>${$$('[data-detail-tab]').find(b=>b.dataset.detailTab===state.detailTab)?.textContent||'阶段详情'}</h2><p>此原型将阶段信息收敛为可编辑字段、进度与异常队列。</p><button class="btn" id="mockEdit">模拟编辑字段</button></div>`;
+      return `<div class="section-head"><div><h2>三轨交付图</h2><div class="sub">准备、执行与验收并非一条死板直线；分支和返修只在发生时展开</div></div><span class="tag amber">预计晚 1 天</span></div>
+        <div class="tracks" data-testid="three-track-map">${track('准备轨',[['需求对齐','done','06-26'],['数据就绪','done','07-01'],['规则对齐','done','06-29'],['培训','done','06-30'],['试标 2 轮','done','07-01'],['','',''],['','','']])}${track('执行轨',[['','',''],['审批','done','07-01'],['视频生产','done','07-02'],['文本生产','done','07-02'],['任务分配','done','07-03'],['标注中','current','68%'],['预计完成','risk','07-10']])}${track('验收轨',[['','',''],['','',''],['','',''],['','',''],['验收分配','','待开始'],['验收','','预留 2 天'],['结论','','07-12']])}</div>
+        <div class="two-col" style="margin-top:14px"><div>${overviewMetrics()}<section class="card section" style="box-shadow:none"><div class="section-head"><h2>当前风险与下一步</h2><span class="muted">影响预计交付 +1 天</span></div><div class="notice"><strong>夜间场景标效低于摸排值 18%</strong><br>供应商需在今日 18:00 前确认夜班增员；同时补齐新规则示例，避免返工。</div></section></div>${actionPanel(false)}</div>`;
+    }
+    function track(label,nodes){ return `<div class="track"><div class="track-label">${label}</div>${nodes.map(([n,s,x])=>`<div class="node ${s}">${n||'·'}<small>${x||''}</small></div>`).join('')}</div>`; }
+    function overviewMetrics(){ return `<div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">${metric('实际到数','62,400','较预估 +4.0%')}${metric('标注完成','42,432','68% · 今日 +7,280')}${metric('预计验收完成','07-13 12:00','晚于目标 12 小时')}</div>`; }
+    function actionPanel(full){ return `<section class="card section" style="box-shadow:none"><div class="section-head"><div><h2>行动项</h2><div class="sub">${full?'任务全部行动项':'未来 48 小时'}</div></div><button class="btn small primary" id="addAction">＋ 新增</button></div><div class="list" id="actionList"><div class="action"><div><div class="action-title">确认夜班增员名单</div><div class="task-meta">标注阶段 · 刘想 · 今日 18:00 <span class="tag red">临期</span></div></div><button class="btn small complete-action">完成</button></div><div class="action"><div><div class="action-title">补齐夜间场景规则示例</div><div class="task-meta">规则对齐 · 王敏 · 07-05</div></div><button class="btn small complete-action">完成</button></div><div class="action done"><div><div class="action-title">完成第二轮试标复盘</div><div class="task-meta">试标 · 陈卓 · 已闭环 07-01</div></div><span class="tag green">已闭环</span></div></div></section>`; }
+    function metric(name,value,sub){ return `<div class="metric"><small>${name}</small><strong>${value}</strong><small>${sub}</small></div>`; }
+    function acceptancePage(){
+      const rows=[tasks[2],tasks[4],tasks[3],tasks[0]];
+      const switches=`<div class="segmented" role="tablist">${[['progress','进度'],['quality','质量'],['efficiency','效率']].map(([k,n])=>`<button data-accept-view="${k}" class="${state.acceptanceView===k?'active':''}" aria-selected="${state.acceptanceView===k}">${n}</button>`).join('')}</div>`;
+      return pageHead('人工质检验收中心','先看全局注意力，再进入单个数据集处理验收',switches)+`
+      <section class="metric-grid" data-testid="acceptance-queue">${metric('待分配','5','2 个今日需启动')}${metric('验收中','8','完成率 61%')}${metric('进度风险','3','最早交付 07-05')}${metric('待结论','2','已满足计算条件')}${metric('返修中','4','共 1,286 条')}${metric('异常','1','分配部分失败')}</section>
+      <section class="card section"><div class="toolbar"><input class="search" aria-label="搜索验收任务" placeholder="搜索数据集任务"><button class="btn">当前轮次：全部</button><button class="btn">健康状态：全部</button><span class="muted" style="margin-left:auto">按注意力优先级排序</span></div>${acceptanceTable(rows)}</section>`;
+    }
+    function acceptanceTable(rows){
+      const heads={progress:['目标交付','应抽 / 已验收','完成率','预计完成','当前轮次','状态','下一动作'],quality:['Good / Bad','整体通过率','通过 / 打回','主要原因','当前结论','更新时间','下一动作'],efficiency:['验收员','今日完成','人均标效','积压量','预计清空','状态','下一动作']}[state.acceptanceView];
+      return `<div class="table-wrap" data-testid="acceptance-table"><table><thead><tr><th>数据集交付任务</th>${heads.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((t,i)=>`<tr data-accept-task="${t.id}" tabindex="0"><td><div class="task-name">${t.name}</div><div class="task-meta">${t.id} · ${i===2?'返修第 1 轮':'首轮验收'}</div></td>${acceptanceCells(t,i)}</tr>`).join('')}</tbody></table></div>`;
+    }
+    function acceptanceCells(t,i){
+      if(state.acceptanceView==='quality') return `<td>${1200+i*310} / ${180+i*40}</td><td><strong>${[94.2,96.8,88.1,0][i]}%</strong></td><td>${[1180,1710,840,0][i]} / ${[92,48,370,0][i]}</td><td>${['事实错误','漏标属性','边界不一致','—'][i]}</td><td><span class="tag ${i===2?'red':i===3?'blue':'green'}">${i===2?'REJECT':i===3?'PENDING':'PASS'}</span></td><td>10:${32-i*5}</td><td><button class="btn small">查看分析 →</button></td>`;
+      if(state.acceptanceView==='efficiency') return `<td>${[0,6,4,8][i]} 人</td><td>${[0,820,460,1120][i]}</td><td>${[0,57,39,63][i]} 条/时</td><td>${[3120,640,280,860][i]}</td><td>${['待分配','今日 17:30','今日 20:00','明日 11:00'][i]}</td><td>${tag(t)}</td><td><button class="btn small">查看监控 →</button></td>`;
+      const pct=[12,74,100,0][i]; return `<td><strong>${t.due}</strong></td><td>${[3120,2400,980,4650][i]} / ${[374,1776,980,0][i]}</td><td><div class="progress"><i style="width:${pct}%"></i></div>${pct}%</td><td>${['07-06 18:00','07-08 15:00','已完成','待分配'][i]}</td><td>${i===2?'返修第 1 轮':'首轮'}</td><td>${tag(t)}</td><td><button class="btn small" data-workspace="${t.id}">${i===0?'分配验收':'进入工作区'} →</button></td>`;
+    }
+    function acceptanceWorkspace(){
+      const tabs=['overview|总览','allocation|验收任务分配','monitor|验收监控','analysis|结果分析','decision|结论与返修'];
+      return `<button class="breadcrumb" id="backAcceptance">← 返回验收中心</button>${pageHead('导航问答事实性评测集','D-0712 · 首轮验收 · 目标交付 07-06',`<span class="tag blue">待分配</span><button class="btn">查看交付详情</button>`)}
+      <section class="card summary-strip"><div><span>优先级</span><strong>P0</strong></div><div><span>验收预留</span><strong>2 天</strong></div><div><span>应抽样本</span><strong>3,120</strong></div><div><span>当前轮次</span><strong>首轮</strong></div><div><span>健康状态</span><strong>待今日启动</strong></div></section>
+      <section class="card section" data-testid="acceptance-workspace"><div class="tabs" role="tablist">${tabs.map(x=>{const[k,n]=x.split('|');return `<button data-accept-tab="${k}" class="${state.acceptanceTab===k?'active':''}" aria-selected="${state.acceptanceTab===k}">${n}</button>`}).join('')}</div>${acceptanceTabContent()}</section>`;
+    }
+    function acceptanceTabContent(){
+      if(state.acceptanceTab==='allocation') return allocationTab();
+      if(state.acceptanceTab==='monitor') return monitorTab();
+      if(state.acceptanceTab==='analysis') return analysisTab();
+      if(state.acceptanceTab==='decision') return decisionTab();
+      return `<div class="metric-grid">${metric('应抽','3,120','Good 2,640 / Bad 480')}${metric('已分配','0','等待确认分配')}${metric('已完成','0','尚未开始')}${metric('整体通过率','—','完成后计算')}${metric('当前结论','PENDING','样本不足')}${metric('预计完成','07-06 18:00','需今日启动')}</div><div class="two-col"><section class="card section" style="box-shadow:none"><div class="section-head"><h2>验收准备度</h2><button class="btn small" data-go-tab="allocation">去分配 →</button></div><div class="bar-row"><span>采样口径</span><div class="hbar"><i style="width:100%"></i></div><strong>已确认</strong></div><div class="bar-row"><span>验收员容量</span><div class="hbar"><i style="width:75%"></i></div><strong>6 / 8</strong></div><div class="bar-row"><span>任务生成</span><div class="hbar"><i style="width:0%"></i></div><strong>待执行</strong></div></section><section class="card section" style="box-shadow:none"><h2>下一动作</h2><div class="notice"><strong>生成分配预览并确认</strong><br>建议分配 6 名验收员；预计今日 14:00 开始，明日 18:00 完成。</div><button class="btn primary" data-go-tab="allocation">开始验收分配</button></section></div>`;
+    }
+    function allocationTab(){ return `<div class="panel-grid"><section><div class="section-head"><div><h2>范围与采样策略</h2><div class="sub">修改条件后需重新生成预览</div></div></div><div class="form-grid"><label>采样策略<select><option>分层采样 v2.3</option></select></label><label>样本范围<select><option>本批次全部 18,600 条</option></select></label><label>Good 配额<input value="2640"></label><label>Bad 配额<input value="480"></label><label>验收员组<select><option>事实性验收一组</option></select></label><label>单人上限<input value="600"></label></div><div class="notice">规则检查：Bad 数据在“复杂导航”场景仅有 436 条，低于目标配额 44 条。</div><button class="btn primary" id="generatePreview">${state.preview?'重新生成预览':'生成分配预览'}</button></section><section class="card section" style="box-shadow:none"><div class="section-head"><div><h2>分配预览</h2><div class="sub">${state.preview?'基于当前条件 · 刚刚生成':'尚未生成'}</div></div>${state.preview?'<span class="tag green">预览就绪</span>':''}</div>${state.preview?`<div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">${metric('计划发送','3,120','Good 2,640')}${metric('验收员','6','人均 520')}${metric('预计完成','07-06 18:00','满足交付')}</div><div class="bar-row"><span>复杂导航</span><div class="hbar"><i style="width:82%"></i></div><strong>1,126</strong></div><div class="bar-row"><span>知识问答</span><div class="hbar"><i style="width:68%"></i></div><strong>934</strong></div><div class="bar-row"><span>路径规划</span><div class="hbar"><i style="width:77%"></i></div><strong>1,060</strong></div><div class="notice">1 条提醒：Bad 配额不足部分将按实际可用量分配，不影响 Good 配额。</div><button class="btn primary" id="confirmAllocation">确认分配 3,076 条</button>`:`<div class="empty">先在左侧确认范围和策略，再生成可复核的分配预览。</div>`}</section></div>`; }
+    function monitorTab(){ return `<div class="metric-grid">${metric('实际分配','3,076','较计划 -44')}${metric('已完成','2,276','74.0%')}${metric('处理中','742','6 名验收员')}${metric('失败','0','运行正常')}${metric('人均标效','57 条/时','目标 ≥ 52')}${metric('预计清空','今日 17:30','提前 30 分钟')}</div><section class="card section" style="box-shadow:none"><div class="section-head"><h2>验收员进度与标效</h2><span class="muted">样本量与效率同时展示</span></div>${[['刘萍',92,61],['吴颖',84,58],['梁晨',73,55],['孙琪',61,49]].map(([n,p,e])=>`<div class="bar-row"><span>${n} · ${e} 条/时</span><div class="hbar"><i style="width:${p}%"></i></div><strong>${p}%</strong></div>`).join('')}</section>`; }
+    function analysisTab(){ return `<div class="metric-grid">${metric('Good 通过率','96.8%','阈值 ≥ 95%')}${metric('Bad 通过率','91.2%','阈值 ≥ 90%')}${metric('整体通过率','95.9%','满足规则')}${metric('通过','2,184','95.9%')}${metric('打回','92','4.1%')}${metric('当前结论','PASS','待人工确认')}</div><section class="card section" style="box-shadow:none"><h2>通过与打回构成</h2><div class="splitbar"><span class="pass" style="width:95.9%">通过 95.9%</span><span class="reject" style="width:4.1%">4.1%</span></div><div class="section-head" style="margin-top:22px"><h2>主要打回原因</h2><button class="btn small">按 scene 查看</button></div>${[['事实错误',72,38],['漏标关键属性',46,24],['答案不完整',31,16],['格式不规范',19,10]].map(([n,p,c])=>`<div class="bar-row"><span>${n}</span><div class="hbar"><i style="width:${p}%"></i></div><strong>${c}</strong></div>`).join('')}</section>`; }
+    function decisionTab(){ return `<div class="panel-grid"><section class="card section" style="box-shadow:none"><div class="section-head"><div><h2>系统建议结论</h2><div class="sub">规则：双分层通过规则 v2.1 · 10:31 更新</div></div><span class="tag green">PASS</span></div><div class="notice good"><strong>建议通过本轮验收</strong><br>完成度 100%；Good、Bad 与整体通过率均达到阈值，且无阻断级异常。</div><div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">${metric('完成度','100%','2,276 / 2,276')}${metric('整体通过率','95.9%','阈值 94%')}${metric('影响范围','全批次','18,600 条')}</div><label>确认说明<textarea>已复核抽样覆盖与主要打回原因，同意通过本轮验收。</textarea></label><div class="head-actions" style="margin-top:14px"><button class="btn primary" id="confirmPass">确认通过</button><button class="btn danger" id="manualReject">改为打回</button></div></section><section class="card section" style="box-shadow:none"><h2>执行后状态</h2><div class="list" style="margin-top:14px"><div class="action"><div><div class="action-title">结论执行</div><div class="task-meta">将更新全批次 18,600 条数据</div></div><span class="tag blue">待确认</span></div><div class="action"><div><div class="action-title">状态回查</div><div class="task-meta">执行后保留在本页持续回查</div></div><span class="tag blue">未开始</span></div><div class="action"><div><div class="action-title">返修跟踪</div><div class="task-meta">仅 REJECT 后启动下一轮</div></div><span class="tag blue">不适用</span></div></div></section></div>`; }
+    function render(){ if(state.page==='delivery')app.innerHTML=deliveryPage(); else if(state.page==='detail')app.innerHTML=detailPage(); else if(state.page==='acceptance')app.innerHTML=acceptancePage(); else app.innerHTML=acceptanceWorkspace(); navSync(); bind(); }
+    function bind(){
+      $$('[data-nav]').forEach(b=>b.onclick=()=>!b.disabled&&setPage(b.dataset.nav));
+      $$('[data-view]').forEach(b=>b.onclick=()=>{state.deliveryView=b.dataset.view;render()});
+      $$('[data-accept-view]').forEach(b=>b.onclick=()=>{state.acceptanceView=b.dataset.acceptView;render()});
+      $$('[data-filter]').forEach(b=>b.onclick=()=>{state.deliveryFilter=b.dataset.filter;render()});
+      $('#clearFilter')?.addEventListener('click',()=>{state.deliveryFilter='';render()});
+      const applySearch=()=>{state.deliveryFilter=$('#deliverySearch').value.trim();render()};
+      $('#applySearch')?.addEventListener('click',applySearch); $('#deliverySearch')?.addEventListener('keydown',e=>{if(e.key==='Enter')applySearch()});
+      $$('[data-task], [data-open]').forEach(el=>{const open=()=>setPage('detail');el.onclick=e=>{e.stopPropagation();open()};el.onkeydown=e=>{if(e.key==='Enter')open()}});
+      $$('[data-accept-task], [data-workspace]').forEach(el=>{const open=()=>setPage('acceptance-workspace');el.onclick=e=>{e.stopPropagation();open()};el.onkeydown=e=>{if(e.key==='Enter')open()}});
+      $('#backDelivery')?.addEventListener('click',()=>setPage('delivery')); $('#backAcceptance')?.addEventListener('click',()=>setPage('acceptance'));
+      $$('[data-detail-tab]').forEach(b=>b.onclick=()=>{state.detailTab=b.dataset.detailTab;render()});
+      $$('[data-accept-tab]').forEach(b=>b.onclick=()=>{state.acceptanceTab=b.dataset.acceptTab;render()});
+      $$('[data-go-tab]').forEach(b=>b.onclick=()=>{state.acceptanceTab=b.dataset.goTab;render()});
+      $('#openAcceptanceWorkspace')?.addEventListener('click',()=>setPage('acceptance-workspace',{acceptanceTab:'overview'}));
+      $('#addAction')?.addEventListener('click',()=>$('#actionDialog').showModal());
+      $$('.complete-action').forEach(b=>b.onclick=()=>{b.closest('.action').classList.add('done');b.outerHTML='<span class="tag green">已闭环</span>';toast('行动项已闭环，交付注意力队列已更新')});
+      $('#generatePreview')?.addEventListener('click',()=>{state.preview=true;render();toast('分配预览已生成')});
+      $('#confirmAllocation')?.addEventListener('click',()=>{state.acceptanceTab='monitor';render();toast('模拟分配完成：成功 3,076，跳过 44')});
+      $('#confirmPass')?.addEventListener('click',e=>{e.target.disabled=true;e.target.textContent='执行回查中…';toast('通过结论已提交，正在回查状态')});
+      $('#manualReject')?.addEventListener('click',()=>toast('原型提示：实际页面将要求填写打回范围与原因'));
+      $('#mockEdit')?.addEventListener('click',()=>toast('字段已进入编辑态（原型演示）')); $('#newDelivery')?.addEventListener('click',()=>toast('新建任务将采用分阶段表单'));
+    }
+    $('#actionForm').addEventListener('submit',e=>{ if(e.submitter?.id!=='saveAction')return; e.preventDefault(); const data=new FormData(e.currentTarget); $('#actionDialog').close(); toast(`已创建行动项：${data.get('title')}`); });
+    window.addEventListener('hashchange',()=>{ if(['delivery','acceptance'].includes(location.hash.slice(1))) setPage(location.hash.slice(1)); });
+    render();
+  </script>
+</body>
+</html>

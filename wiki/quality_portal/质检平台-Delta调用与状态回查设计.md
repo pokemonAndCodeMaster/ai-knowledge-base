@@ -4,7 +4,7 @@ domain: ["ai_dlc", "tooling", "agent_evaluation"]
 type: "synthesis"
 tags: ["人工质检", "Delta", "状态回查", "中间表", "外部接口", "最终一致"]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-03
 sources: 8
 status: active
 related_code: ["task.md", "src/manual_qc/"]
@@ -14,7 +14,7 @@ trigger_keywords: ["DeltaClient", "状态回查", "human_inspection_0920", "batc
 
 # 质检平台 Delta 调用与状态回查设计
 
-← 总入口：[[质检一站式平台人工质检模块整体架构]]。现状证据：[[人工质检-⑧验收分配]]、[[人工质检-⑨批量通过打回]]、[[人工质检-⑩状态刷新与GT回写]]、[[人工质检-⑪中间表更新]]。
+← 总入口：[[质检一站式平台人工质检模块整体架构]]。前端呈现：[[质检平台-人工质检验收中心前端设计]]。现状证据：[[人工质检-⑧验收分配]]、[[人工质检-⑨批量通过打回]]、[[人工质检-⑩状态刷新与GT回写]]、[[人工质检-⑪中间表更新]]。
 
 ## 1. 初衷与现状
 
@@ -100,4 +100,3 @@ task_rollback(task_ids)
 - 使用 fake client 覆盖全部成功、部分失败、超时、重复 task。
 - 集成环境验证状态值和两次 rollback 顺序。
 - 证明实际量来自回查，而不是简单写入请求 task 数。
-

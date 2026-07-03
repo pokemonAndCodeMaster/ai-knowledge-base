@@ -93,6 +93,7 @@
 |---|---|
 | [NotebookLM MCP 用法](wiki/concepts/notebooklm_mcp用法.md) | nlm CLI 完整命令速查 + 批量导出 Sources 脚本 + Studio/Research 功能 |
 | [AI 知识库操作指南](wiki/concepts/ai知识库操作指南.md) | 如何用 Prompt 触发 ai-librarian 三大操作（Ingest/Query/Lint），含目录结构速查 |
+| [Happy Coder 在 WSL2 中消息无响应排障](wiki/concepts/happy_coder_wsl2消息无响应排障.md) | 手机显示已连接但 WSL2 收不到消息时，按日志、Socket.IO、代理、会话状态分层定位 |
 
 ### 🌐 前端与全栈开发类
 
@@ -371,7 +372,10 @@
 | [Phase 3 前架构评审](wiki/synthesis/质检一站式平台Phase3前架构评审.md) | 两轮评审后的决策演进：接受现状状态回查，撤回过重抽象，冻结 DDL 和模块边界 |
 | [后端分层与组件边界](wiki/quality_portal/质检平台-后端分层与组件边界设计.md) | Router、Service、规则、共享 Repository、DeltaClient 和公共基建的职责与依赖方向 |
 | [API 契约与前端交互](wiki/quality_portal/质检平台-API契约与前端交互设计.md) | Pydantic/OpenAPI、模块权限、preview→execute、task_ids 和部分失败响应 |
-| [前端页面与状态](wiki/quality_portal/质检平台-人工质检前端页面与状态设计.md) | 分配、统计、通过打回、人力页面及 preview/executing/refreshing 状态 |
+| [交付任务与行动项机制](wiki/quality_portal/人工质检-交付任务与行动项机制.md) | 一数据集一批次的交付主对象、并行准备、试标/返修循环、动态行动项和重点任务集合 |
+| [交付中心前端设计](wiki/quality_portal/质检平台-人工质检交付中心前端设计.md) | 可编辑交付列表、保存视图、时间轴、三轨交付图、行动项面板及单文件交互原型 |
+| [验收中心前端设计](wiki/quality_portal/质检平台-人工质检验收中心前端设计.md) | 验收总览、分配、监控、结果分析、结论返修闭环及单文件交互原型 |
+| [前端页面与状态](wiki/quality_portal/质检平台-人工质检前端页面与状态设计.md) | 交付中心、验收中心、人力页面的总导航及 preview/executing/refreshing 状态 |
 | [Repository 与数据库访问](wiki/quality_portal/质检平台-Repository与数据库访问设计.md) | 共享 Repository 的上移理由、按数据源分类、命名连接、事务、UPSERT 和聚合口径 |
 | [Delta 调用与状态回查](wiki/quality_portal/质检平台-Delta调用与状态回查设计.md) | 现有平台接口、中间表、实际成功量、重复操作和部分失败处理 |
 | [综合快照表设计](wiki/quality_portal/质检平台-综合快照表设计.md) | 日×scene×当日组×标注员最小统计行，负责配额计算、统计与实际执行量回查 |

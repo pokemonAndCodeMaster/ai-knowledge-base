@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_PATH="$(readlink -f -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(cd -- "$(dirname -- "$SCRIPT_PATH")" && pwd)"
+PRELOAD="$SCRIPT_DIR/happy_proxy_preload.cjs"
+HAPPY_BIN="$(readlink -f "$(command -v happy)")"
+export HAPPY_CODER_ROOT="$(dirname -- "$(dirname -- "$HAPPY_BIN")")"
+
+if [[ -n "${NODE_OPTIONS:-}" ]]; then
+  export NODE_OPTIONS="--require=$PRELOAD $NODE_OPTIONS"
+else
+  export NODE_OPTIONS="--require=$PRELOAD"
+fi
+
+exec happy "$@"

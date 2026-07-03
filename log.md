@@ -307,3 +307,50 @@
 - **计划同步**：`implementation_plan.md` 重写为 v4 当前实施契约；`task.md` 升级为 v4 动态看板，登记全部卡片、冻结决策、剩余外部信息和 Phase 3A～3E 顺序。
 - **黄页**：`index.md` 新增整体架构入口，并完整注册当前人工质检增量设计知识树。
 - **对账验证**：图谱编译为 314 张卡、1507 条链接；10 张本轮新增卡 Frontmatter/分类/物理证据/黄页/总卡双链检查 0 错误、0 新孤岛、0 新断链；并修正 `scene_name` 卡遗留的 NULL 汇总行 SQL。
+
+## [2026-07-03] ingest | 人工质检交付中心与验收中心前端产品设计
+
+- **触发者**：用户补充人工质检日常交付机制，明确一数据集一批次、需求对齐会、计划/实际到数、重点任务集合、定制行动项和表格/时间轴双视图。
+- **业务机制**：新增 `人工质检-交付任务与行动项机制`，记录准备并行、规则培训/试标循环、生产与标注、验收打回返修，以及交付阶段/健康/行动项/验收结论四类状态分离。
+- **交付中心**：新增 `质检平台-人工质检交付中心前端设计`，覆盖保存视图、需求对齐行内编辑、表格列预设、时间轴、单任务详情、三轨交付图和行动项面板。
+- **验收中心**：新增 `质检平台-人工质检验收中心前端设计`，覆盖任务级总览、进度/质量/效率列视图、验收分配、验收监控、结果分析、结论执行和返修再验收。
+- **联动更新**：重构 `质检平台-人工质检前端页面与状态设计` 为页面总览；更新人工质检整体架构总入口、`index.md` 和双向链接。
+- **范围说明**：本轮只沉淀前端产品与业务机制，不假设后端接口、数据库字段或实现状态。
+- **交互原型**：新增 `prototypes/manual-qc-demo/index.html`，用单文件 HTML/CSS/JavaScript 串起交付中心表格与时间轴、单任务三轨详情、行动项、验收总览及验收工作区；无需 Vue、构建工具或服务端即可直接打开。
+- **原型边界**：所有任务、分配、结论与回查均为前端示例状态，不持久化，也不作为后端规则或数据库实现证据。
+
+## [2026-07-03] ingest | Happy Coder 在 WSL2 中消息无响应排障
+
+- **触发者**：用户反馈手机端显示已连接，但发送语音后 WSL2 与 Codex 均无响应。
+- **本机证据**：`happy-coder 1.1.9` 成功初始化 `codex app-server` 并进入消息等待，随后 CLI 与 daemon 均出现中继 Socket 连接超时。
+- **排障顺序**：先以新日志复现，再分别验证 HTTPS 与 Socket.IO，核对 WSL2 代理，网络正常后才清理会话、重绑或升级。
+- **边界说明**：Codex 诊断沙箱中的 `/home` 为只读挂载，额外 `EROFS` 不能冒充用户普通 WSL2 终端的原始故障。
+- **知识联动**：新增避坑卡并注册到工具实践类黄页；未修改 `raw/` 或 Happy/Codex 配置。
+
+## [2026-07-03] update | Happy Coder 真实 WebSocket 路径与代理边界
+
+- **新增证据**：用户的 HTTPS 请求通过 `https_proxy=http://127.0.0.1:7890` 成功访问中继首页；通用 `/socket.io/` 路径返回 404。
+- **代码复核**：Happy Coder 1.1.9 固定使用 `path: "/v1/updates"`、`transports: ["websocket"]`，已安装代码未发现 WebSocket 代理 Agent 注入。
+- **结论修正**：通用 Socket.IO polling 探针不适用于该版本；新增强制直连对照与真实 WebSocket Upgrade 探针。
+- **修复方向**：若代理 HTTP 成功而直连超时，使用 Clash/Mihomo TUN 等透明代理；不要通过 `NO_PROXY` 强制中继直连。
+
+## [2026-07-03] update | Happy Coder TUN 链路通过后的 Socket.IO 二分诊断
+
+- **用户环境纠正**：Clash 已启用 TUN，WSL2 使用 Windows mirrored networking。
+- **新鲜证据**：强制绕过显式代理后解析到 `198.18.1.166` 并成功完成 HTTPS；真实 `/v1/updates` WebSocket 请求返回 `101 Switching Protocols` 和 Engine.IO open 包。
+- **边界收敛**：TUN、WSL2 出站、TLS、Cloudflare 与 WebSocket Upgrade 均正常，不再把“未开启透明代理”作为当前根因。
+- **下一诊断**：使用 Happy 自带的 `socket.io-client` 和无效测试凭证连接；用明确认证错误与客户端 timeout 区分凭证/会话问题和 Node Socket.IO 传输问题。
+
+## [2026-07-03] update | Happy Coder Node TLS 代理修复与双通道验证
+
+- **最终根因**：同一 Clash Fake-IP 下 `curl` HTTPS 成功，但 Node 22.22.2 原生 `tls.connect` 与 Happy Socket.IO 均超时；显式注入 `HttpsProxyAgent` 后立即获得服务端认证响应。
+- **实现**：新增 `scripts/happy_proxy_preload.cjs` 与 `scripts/happy-proxy`，只代理 Happy 中继域名，不修改全局 npm 包或 Happy 凭证；注册 `~/.local/bin/happy-proxy` 符号链接。
+- **真实验证**：重启旧 daemon 后，Session Socket 记录 `Socket connected successfully`，Machine Socket 记录 `Connected to server`、keep-alive 启动及状态更新成功。
+- **使用入口**：执行 `happy-proxy codex`；保留原始 `happy` 命令用于上游修复后的回归对照。
+
+## [2026-07-03] update | happy-proxy 符号链接路径修复
+
+- **原始症状**：通过 `~/.local/bin/happy-proxy` 启动时，包装器按符号链接目录查找预加载器，报 `Cannot find module '/home/yyh/.local/bin/happy_proxy_preload.cjs'`。
+- **修复**：先用 `readlink -f` 解析包装器真实路径，再计算脚本目录与预加载器路径。
+- **验证要求**：必须从 PATH 中的 `happy-proxy` 入口验证，不能只用仓库内绝对路径。
+- **对账验证**：图谱编译为 317 张卡、1540 条链接；3 张新卡 Frontmatter 合法、均已登记黄页、0 新孤岛、0 新断链；聚焦查询可直接召回交付机制、交付中心、验收中心、前端总览和整体架构总入口。

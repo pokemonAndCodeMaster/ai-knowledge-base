@@ -4,7 +4,7 @@ domain: ["ai_dlc", "agent_evaluation", "tooling"]
 type: "hub"
 tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_manual_qa", "原业务域_common_infra"]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-03
 sources: 2
 status: active
 related_code: []
@@ -15,7 +15,7 @@ source_ids: ["3b56b822-fb32-4f9a-892a-b5dddc380440", "f6c77380-21b5-49a5-940f-d7
 raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/09_Copied text 1782622984_3b56b822.md", "raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/17_Copied text 1782623215_f6c77380.md"]
 ---
 
-> 🔄 当前仓库人工质检平台设计入口：[[质检一站式平台人工质检模块整体架构]]。该卡在保留上游十五步流程的基础上，导航当前验收与人力模块的实现方案。
+> 🔄 当前仓库人工质检平台设计入口：[[质检一站式平台人工质检模块整体架构]]。产品前端导航：[[人工质检-交付任务与行动项机制]]、[[质检平台-人工质检交付中心前端设计]]、[[质检平台-人工质检验收中心前端设计]]。本卡继续保留上游十五步流程事实。
 > [!NOTE] 来源范围与完整性
 > 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
 
