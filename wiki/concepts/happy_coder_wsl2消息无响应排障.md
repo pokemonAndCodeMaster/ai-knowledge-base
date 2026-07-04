@@ -4,10 +4,12 @@ domain: ["tooling", "agent_tool_use"]
 type: "pitfall"
 tags: [Happy Coder, Codex CLI, WSL2, Socket.IO, 代理, 排障]
 created: 2026-07-03
-updated: 2026-07-03
-sources: 3
+updated: 2026-07-04
+sources: 5
 status: active
-related_code: []
+related_code:
+  - "scripts/happy-proxy"
+  - "scripts/happy_proxy_preload.cjs"
 affects_path:
   - "/home/yyh/.happy/logs/"
   - "/home/yyh/.happy/settings.json"
@@ -176,6 +178,21 @@ happy-proxy codex
 
 上游 Happy 或 Node/Clash 修复后，应先用原始 `happy codex` 复测；原始命令不再 timeout 时可删除该 workaround。
 
+## 2026-07-04 Session 被手机终止与 sandbox 依赖缺失
+
+一次“手机发消息无响应”复现并非网络回归：新 session 日志先出现 `Socket connected successfully`，一分钟后收到手机 RPC `killSession` 并正常退出；daemon 随后报告 0 个活动 session。此时继续向旧会话发消息不会有响应。应先执行 `happy daemon list`，确认目标 session 仍活动，并在手机端进入新生成的 session，避免点击停止/关闭。
+
+同次复现还发现 Happy 外层 sandbox 配置为 network allowed，但系统缺少 `bubblewrap` 和 `socat`。Happy 1.1.9 会记录 `Failed to initialize sandbox; continuing without`，随后以无 Happy 外层 sandbox 方式继续；这不阻断 Socket，却使预期的 per-project 文件边界没有实际生效。修复命令需由用户在普通 WSL 终端输入 sudo 密码执行：
+
+```bash
+sudo apt update
+sudo apt install -y ripgrep bubblewrap socat
+```
+
+安装后重新启动 session，并以日志中不再出现 sandbox 初始化失败作为验证门槛。
+
+外层 sandbox 初始化失败还会影响内层 Codex 网络策略：Happy 仅在 `client.sandboxEnabled=true` 时下发 `approvalPolicy=never + sandbox=danger-full-access`，把安全边界交给 Happy 外层；初始化失败时则按手机 permission mode 回退，默认模式对应 `untrusted + workspace-write`。该显式 thread policy 可继续禁用 Git/DNS 网络，不能用 VS Code Codex 已联网推断 Happy Codex 也已联网。
+
 ### 4. 网络通了再处理状态
 
 网络探针通过但仍无消息时：
@@ -198,5 +215,7 @@ happy-proxy codex
 ## 关系
 
 - Happy 的双向消息依赖“手机应用 ↔ 中继服务 ↔ WSL2 中的 Happy CLI”，任一侧显示在线都不能代替端到端验证。
+- ✅ 支持：[[codex沙箱与wsl2宿主网络边界]] 区分普通 WSL2、Happy 进程与 Codex 命令沙箱，避免把沙箱 DNS/权限失败误判为宿主网络故障。
+- ✅ 支持：[[WSL2镜像网络与远程Codex分层验收规范]] 给出从 TUN、sudo、sandbox 到 SSH push 的完成门槛。
 - 官方架构说明：<https://happy.engineering/docs/how-it-works/>
 - 官方网络排障入口：<https://happy.engineering/docs/faq/>

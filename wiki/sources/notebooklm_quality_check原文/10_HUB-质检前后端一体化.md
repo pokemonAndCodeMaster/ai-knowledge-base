@@ -1,26 +1,33 @@
 ---
-title: "HUB-质检前后端一体化"
-domain: ["ai_dlc", "agent_engineering", "tooling", "agent_evaluation"]
-type: "hub"
-tags: ["quality_check_pipeline", "NotebookLM", "完整摄入", "原业务域_manual_qa", "原业务域_auto_qa", "原业务域_llm_qa"]
-created: 2026-06-28
-updated: 2026-06-28
+title: "NotebookLM原文10-HUB-质检前后端一体化"
+domain: ["knowledge_mgmt"]
+type: "source"
+tags: ["NotebookLM", "quality_check", "无损原文"]
+created: 2026-07-04
+updated: 2026-07-04
 sources: 1
 status: active
 related_code: []
 affects_path: []
-trigger_keywords: ["HUB-质检前后端一体化", "quality_check_pipeline", "manual_qa", "auto_qa", "llm_qa"]
-notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
-source_ids: ["d41ec192-7218-41a6-bb82-1d1cb439d011"]
-raw_sources: ["raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/16_Copied text 1782623150_d41ec192.md"]
+trigger_keywords: ["quality_check", "NotebookLM原文", "HUB-质检前后端一体化"]
+source_url: "notebooklm://6b4b949e-d423-4033-b16f-bd037ac03fa8/17cbdc73-23a6-4741-98f5-3bcbce5e682f"
+source_type: "article"
 ---
 
-> [!NOTE] 来源范围与完整性
-> 本卡正文完整保留自 NotebookLM `quality_check_pipeline`。原文描述的是上游 `e2e_data_pipeline_hub` 快照；其中路径/API 不自动等同于当前仓库实现。原始字节与 SHA-256 见 [[notebooklm_quality_check_pipeline]]。
+# NotebookLM原文10-HUB-质检前后端一体化
 
-## NotebookLM 原始元数据快照
+## 来源追踪
 
-```yaml
+- 来源总卡：[[notebooklm_quality_check_pipeline]]
+- 原始文件：[原始 Markdown](../../../raw/notebooklm_exports/6b4b949e-d423-4033-b16f-bd037ac03fa8/10_17cbdc73-23a6-4741-98f5-3bcbce5e682f.md)
+- source_id：`17cbdc73-23a6-4741-98f5-3bcbce5e682f`
+- SHA-256：`793b4797fb73d8143edc66d07f066259bc0c552dfcc7b464ebe2968ed10625e3`
+- 原始字节数：4765
+
+## 原文（逐字符保留）
+
+<!-- ORIGINAL_START -->
+---
 id: "HUB-QC-FE-BE-001"
 title: "HUB-质检前后端一体化"
 domain: ["manual_qa", "auto_qa", "llm_qa"]
@@ -31,10 +38,11 @@ affects_path: ["src/", "src/api/", "src/frontend/"]
 trigger_keywords: ["质检前后端学习路径", "前后端一体化指南", "ECharts", "Router API View", "页签开发", "可视化复用"]
 tags: ["质检平台", "前后端一体化", "学习路径", "开发指南", "Vue3", "FastAPI", "ECharts"]
 summary: "质检平台前后端一体化架构的学习和开发入口Hub。导航至理想架构、Router/API/View编排、ECharts可视化、组件复用、端到端开发流程等子卡片。"
-```
+---
+
 # HUB-质检前后端一体化
 
-上位平台枢纽：[[质检一站式平台顶层架构]]。当前前端原型计划：[[质检一站式平台前端Demo设计计划]]。
+> 上位架构：[[质检一站式平台顶层架构]]（本卡作为前后端一体化主题的导航 Hub，回链顶层架构基座）。
 
 本卡是质检平台前后端一体化架构的学习和开发入口。它只做路线导航，不展开细节；具体实现、代码位置、输入输出、约束和示例都进入子卡。
 
@@ -105,7 +113,7 @@ summary: "质检平台前后端一体化架构的学习和开发入口Hub。导�
 
 ## 关联基础卡
 
-- [[数据质量一站式门户架构设计]]
+- [[数据质量门户架构设计]]
 - [[全栈项目设计模式与实践]]
 - [[前端开发规范]]
 - [[Vue3核心概念]]
@@ -114,4 +122,4 @@ summary: "质检平台前后端一体化架构的学习和开发入口Hub。导�
 - [[PostgreSQL数据库公共模块]]
 
 ### 归属
-- [[HUB-Agent协作体系总览]] — 本卡片所属项目级总入口
+- [[HUB-Agent协作体系总览]] — 本卡片所属项目级总入口<!-- ORIGINAL_END -->

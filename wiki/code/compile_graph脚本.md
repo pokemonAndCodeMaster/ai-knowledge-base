@@ -4,12 +4,12 @@ domain: ["knowledge_mgmt", "meta"]
 type: "code_module"
 tags: [图索引, 编译器, frontmatter解析, 邻接表]
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-07-04
 sources: 0
 status: active
 related_code:
   - "scripts/compile_graph.py"
-code_hash: "sha256:d1b6b1ccd3c797b2"
+code_hash: "sha256:18df9adae9592505"
 affects_path: [".wiki_graph.json"]
 trigger_keywords:
   - compile_graph
@@ -44,12 +44,16 @@ main()
        ├─ build_slug_to_path()     # 建 slug→path 映射（支持重名去重）
        ├─ for each .md file:
        │    ├─ parse_frontmatter() # 纯正则解析 YAML（零依赖）
-       │    ├─ extract_wikilinks() # 正则提取 [[双链]]
+       │    ├─ extract_wikilinks() # 正则提取 [[双链]]；忽略 ORIGINAL_START/END 原文快照区
        │    └─ extract_summary()   # 提取首段摘要（最多 200 字）
        ├─ 回填 inlinks             # 遍历所有 outlinks，反向写入 inlinks
        └─ 统计孤岛 / 断链
   └─ 输出 .wiki_graph.json
 ```
+
+## 无损原文快照边界
+
+NotebookLM 等来源卡可在 `<!-- ORIGINAL_START -->` 与 `<!-- ORIGINAL_END -->` 之间逐字符保存原始 Markdown。编译器不把该区域内属于上游文档的 `[[双链]]` 误认为本知识库的有效出链；来源卡自身的追踪链接应写在快照区外。
 
 ## 输出格式（.wiki_graph.json 节点结构）
 

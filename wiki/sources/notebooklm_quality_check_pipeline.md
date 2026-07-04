@@ -1,78 +1,77 @@
 ---
-title: "NotebookLM：quality_check_pipeline 完整来源集"
-domain: ["ai_dlc", "agent_evaluation", "tooling", "knowledge_mgmt"]
+title: "NotebookLM：quality_check 完整来源集"
+domain: ["knowledge_mgmt", "tooling"]
 type: "source"
-tags: ["NotebookLM", "quality_check_pipeline", "质检平台", "完整导出"]
+tags: ["NotebookLM", "quality_check", "质检平台", "无损导出"]
 created: 2026-06-28
-updated: 2026-06-28
-sources: 38
+updated: 2026-07-04
+sources: 39
 status: active
 related_code: []
 affects_path: []
-trigger_keywords: ["quality_check_pipeline", "人工质检", "LLM Pipeline", "数据管线", "完整来源"]
-notebook_id: "fc03a900-e886-44a5-85b0-73983c0efa41"
+trigger_keywords: ["quality_check", "人工质检", "大模型质检", "完整来源"]
+notebook_id: "6b4b949e-d423-4033-b16f-bd037ac03fa8"
 source_url: "https://notebooklm.google.com/"
 source_type: "article"
 source_platform: "notebooklm"
 source_format: "markdown_collection"
 ---
 
-# NotebookLM：quality_check_pipeline 完整来源集
+# NotebookLM：quality_check 完整来源集
 
-本卡追踪 `quality_check_pipeline` 笔记本在 2026-06-28 的完整快照。NotebookLM 基线 38 个 source，原始 Markdown 成功导出 38 个、失败 0。
+本卡追踪 `quality_check` 笔记本在 2026-07-04 冻结的权威快照：NotebookLM 基线 39 个 source，原始 Markdown 成功导出 39 个、失败 0，总计 581,357 字节。
 
-完整字节数、行数和 SHA-256 见 [原始完整性清单](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/_MANIFEST.md)。
+- [原始完整性清单](../../raw/notebooklm_exports/6b4b949e-d423-4033-b16f-bd037ac03fa8/_MANIFEST.md)
+- [[quality_check原文映射|39 个 source_id 与原文知识卡映射]]
+- 39 份原文分别进入 `wiki/sources/notebooklm_quality_check原文/`；每卡正文在 `ORIGINAL_START/END` 标记之间逐字符保留。
+- source 23=24、source 28=29 为字节级重复；来源追踪不合并，正文事实可复用。
+- 旧快照 `fc03a900-e886-44a5-85b0-73983c0efa41`（38 source）仅与本快照精确重合 1 份；本次以新快照为准，旧快照继续作为历史证据保留在 raw。
 
-其中 source 2=15、source 9=17 为字节级重复；38 份原文全部保留，知识卡合并为 36 张正文卡。
+## 原文入口
 
-| # | Source ID | 原始 Markdown | 编纂卡 |
-|---:|---|---|---|
-| 1 | `8f1beced-b6b4-4ad5-9f20-9183e29a1147` | [01_Copied text 1781950404_8f1beced.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/01_Copied%20text%201781950404_8f1beced.md) | [[LLM任务调度Pipeline全景]] |
-| 2 | `bcb6fe6e-53bd-4f8c-9ed1-bd1569ac5f91` | [02_Copied text 1781950450_bcb6fe6e.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/02_Copied%20text%201781950450_bcb6fe6e.md) | [[HUB-前端与API层架构]] |
-| 3 | `d2905b3b-4fb4-4ad9-9db2-ac90d337ba4b` | [03_Copied text 1781950505_d2905b3b.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/03_Copied%20text%201781950505_d2905b3b.md) | [[Vue3前端层架构]] |
-| 4 | `f74ffb03-b116-42a0-876e-62ea7cd6b099` | [04_Copied text 1781950523_f74ffb03.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/04_Copied%20text%201781950523_f74ffb03.md) | [[TaskView交互流程详解]] |
-| 5 | `30ebcb30-c85a-47c1-9839-e75a322942ec` | [05_Copied text 1781950532_30ebcb30.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/05_Copied%20text%201781950532_30ebcb30.md) | [[VersionView版本配置页面交互详解]] |
-| 6 | `9aa73bba-4f40-4ea5-84e5-6e2362ee0d00` | [06_Copied text 1781950554_9aa73bba.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/06_Copied%20text%201781950554_9aa73bba.md) | [[FastAPI后端API层架构]] |
-| 7 | `560ccc19-d420-4de5-853e-c990841b155d` | [07_Copied text 1781950770_560ccc19.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/07_Copied%20text%201781950770_560ccc19.md) | [[HUB-项目环境与开发规范总览]] |
-| 8 | `dd6045cd-7552-4ca9-ad1f-e96e0144ce13` | [08_Copied text 1782622959_dd6045cd.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/08_Copied%20text%201782622959_dd6045cd.md) | [[E2E数据管线枢纽核心设计文档]] |
-| 9 | `3b56b822-fb32-4f9a-892a-b5dddc380440` | [09_Copied text 1782622984_3b56b822.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/09_Copied%20text%201782622984_3b56b822.md) | [[人工质检-Hub]] |
-| 10 | `518295ec-8b8d-4145-bb0c-14f075789a45` | [10_Copied text 1782623040_518295ec.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/10_Copied%20text%201782623040_518295ec.md) | [[HUB-Agent协作体系总览]] |
-| 11 | `7cca185a-749b-4917-b477-f0c043374183` | [11_Copied text 1782623071_7cca185a.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/11_Copied%20text%201782623071_7cca185a.md) | [[HUB-src顶层架构]] |
-| 12 | `e0d4aa20-b8ef-491b-984b-34130dd2cb68` | [12_Copied text 1782623090_e0d4aa20.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/12_Copied%20text%201782623090_e0d4aa20.md) | [[HUB-通用基建模块]] |
-| 13 | `2ac984b1-6120-4867-8da9-9a45f9e7be23` | [13_Copied text 1782623103_2ac984b1.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/13_Copied%20text%201782623103_2ac984b1.md) | [[HUB-大模型数据生产与质检模块]] |
-| 14 | `df8d8c99-99aa-43b3-9ac0-6c7d4ac077d9` | [14_Copied text 1782623120_df8d8c99.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/14_Copied%20text%201782623120_df8d8c99.md) | [[HUB-质检引擎层架构]] |
-| 15 | `7f449783-b4e1-4544-8d8f-4e8f194b89db` | [15_Copied text 1782623137_7f449783.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/15_Copied%20text%201782623137_7f449783.md) | [[HUB-前端与API层架构]] |
-| 16 | `d41ec192-7218-41a6-bb82-1d1cb439d011` | [16_Copied text 1782623150_d41ec192.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/16_Copied%20text%201782623150_d41ec192.md) | [[HUB-质检前后端一体化]] |
-| 17 | `f6c77380-21b5-49a5-940f-d75e02723cfc` | [17_Copied text 1782623215_f6c77380.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/17_Copied%20text%201782623215_f6c77380.md) | [[人工质检-Hub]] |
-| 18 | `6ae59a42-a286-4401-b19a-f4d3452beb18` | [18_Copied text 1782623230_6ae59a42.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/18_Copied%20text%201782623230_6ae59a42.md) | [[人工质检-数据源与任务创建]] |
-| 19 | `3eeea949-7cea-46f9-9e3b-49095ae308fa` | [19_Copied text 1782623240_3eeea949.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/19_Copied%20text%201782623240_3eeea949.md) | [[人工质检-标注执行与格式校验]] |
-| 20 | `fc26ebe2-ce14-441b-8825-13e049c85d40` | [20_Copied text 1782623249_fc26ebe2.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/20_Copied%20text%201782623249_fc26ebe2.md) | [[人工质检-验收与通过打回]] |
-| 21 | `46d71273-d9bd-45c6-8e55-c6f8f2a3e1d3` | [21_Copied text 1782623261_46d71273.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/21_Copied%20text%201782623261_46d71273.md) | [[人工质检-GT回写与中间表]] |
-| 22 | `6a6e1671-aa8e-400d-be7e-7e8204598164` | [22_Copied text 1782623269_6a6e1671.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/22_Copied%20text%201782623269_6a6e1671.md) | [[人工质检-预警与报表]] |
-| 23 | `9c7cbc6f-c6cd-42ff-a20f-26a7d21104d5` | [23_Copied text 1782623287_9c7cbc6f.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/23_Copied%20text%201782623287_9c7cbc6f.md) | [[人工质检-①视频数据同步]] |
-| 24 | `d3ab1b01-2e87-4be3-b2fe-f3d803fe84d4` | [24_Copied text 1782623300_d3ab1b01.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/24_Copied%20text%201782623300_d3ab1b01.md) | [[人工质检-②文本任务创建]] |
-| 25 | `821a44f6-dc16-41b1-a3c0-412b42b1729e` | [25_Copied text 1782623311_821a44f6.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/25_Copied%20text%201782623311_821a44f6.md) | [[人工质检-③预标注与LLM决策]] |
-| 26 | `4d17657f-0c07-44d2-8aef-c81d4b108fc8` | [26_Copied text 1782623323_4d17657f.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/26_Copied%20text%201782623323_4d17657f.md) | [[人工质检-④Delta平台创建任务]] |
-| 27 | `8a75a90a-a8c2-47b0-8362-6dbd8402d27d` | [27_Copied text 1782623333_8a75a90a.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/27_Copied%20text%201782623333_8a75a90a.md) | [[人工质检-⑤任务分配]] |
-| 28 | `96e59755-c1c6-4d3f-9c84-df5436f04e5e` | [28_Copied text 1782623364_96e59755.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/28_Copied%20text%201782623364_96e59755.md) | [[人工质检-⑥标注与审核]] |
-| 29 | `1468def4-f470-47a6-933b-b1801ca406f9` | [29_Copied text 1782623373_1468def4.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/29_Copied%20text%201782623373_1468def4.md) | [[人工质检-⑦格式校验]] |
-| 30 | `c78314c7-d55b-4b1a-8ee3-a3b37b1b90a9` | [30_Copied text 1782623393_c78314c7.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/30_Copied%20text%201782623393_c78314c7.md) | [[人工质检-⑧验收分配]] |
-| 31 | `d6307b87-57bc-48b0-84d7-13173456d5b8` | [31_Copied text 1782623406_d6307b87.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/31_Copied%20text%201782623406_d6307b87.md) | [[人工质检-⑨批量通过打回]] |
-| 32 | `cb2918a2-a07c-474e-ae07-a5734f8eb9cd` | [32_Copied text 1782623416_cb2918a2.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/32_Copied%20text%201782623416_cb2918a2.md) | [[人工质检-⑩状态刷新与GT回写]] |
-| 33 | `33157108-7065-4d8b-8105-b55909088384` | [33_Copied text 1782623426_33157108.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/33_Copied%20text%201782623426_33157108.md) | [[人工质检-⑪中间表更新]] |
-| 34 | `44963496-02dd-4941-aacf-205a78945bb0` | [34_Copied text 1782623436_44963496.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/34_Copied%20text%201782623436_44963496.md) | [[人工质检-⑫质检预警]] |
-| 35 | `cf416108-4901-49fb-b12d-82c9c0aef064` | [35_Copied text 1782623446_cf416108.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/35_Copied%20text%201782623446_cf416108.md) | [[人工质检-⑬周报]] |
-| 36 | `9b513bf1-2094-4c26-a472-a7e26081a794` | [36_Copied text 1782623459_9b513bf1.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/36_Copied%20text%201782623459_9b513bf1.md) | [[人工质检-⑭重复数据清理]] |
-| 37 | `c318f271-055d-4fe7-a17c-01544159bca0` | [37_Copied text 1782623471_c318f271.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/37_Copied%20text%201782623471_c318f271.md) | [[人工质检-⑮OBS审计日志]] |
-| 38 | `ab39fcae-f7f4-4a41-85f1-50c5921cc743` | [38_Copied text 1782625236_ab39fcae.md](../../raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/38_Copied%20text%201782625236_ab39fcae.md) | [[src_database_数据库连接器模块]] |
+- [[01_coder-executor]] — coder-executor（`fddd1e86-17a0-45a4-ae78-54231420ef63`）
+- [[02_卡片标题]] — 卡片标题（`73160938-8247-4468-9af1-4580228b7634`）
+- [[03_orchestrator]] — orchestrator（`8e4f6e7a-ad54-433b-a994-89c96a67a39e`）
+- [[04_pm-architect]] — pm-architect（`20ec2217-6104-469d-bc36-1a3b23ad86ca`）
+- [[05_qa-verifier]] — qa-verifier（`854d1278-bb74-4387-bcb2-b0242fdd5315`）
+- [[06_质检一站式平台顶层架构]] — 质检一站式平台顶层架构（`59f0cb0d-67af-4cc5-bab1-320531b0aac4`）
+- [[07_大模型数据生产与质检模块]] — 大模型数据生产与质检模块（`48d17568-cf8e-420e-b21f-4aa1cda16bc5`）
+- [[08_质检一站式平台人工质检模块整体架构]] — 质检一站式平台人工质检模块整体架构（`b6bb3399-1d95-4c2d-9437-bc7c86b3487e`）
+- [[09_质检一站式平台大模型质检模块整体架构]] — 质检一站式平台大模型质检模块整体架构（`8bba933f-7072-4e1e-b02a-9f872fb8da2c`）
+- [[10_HUB-质检前后端一体化]] — HUB-质检前后端一体化（`17cbdc73-23a6-4741-98f5-3bcbce5e682f`）
+- [[11_质检前后端一体化理想架构设计]] — 质检前后端一体化理想架构设计（`351ea5ce-387d-46e9-8b63-f2829e8ee781`）
+- [[12_Router_API_View与Python业务编排指南]] — Router API View与Python业务编排指南（`81a78ff9-6cfc-49af-b5c8-98f321a1d9c2`）
+- [[13_ECharts从入门到掌握]] — ECharts从入门到掌握（`80d140c0-ef8c-49e3-b406-42dd0b5e1a03`）
+- [[14_质检页签端到端开发流程指南]] — 质检页签端到端开发流程指南（`4b3c2153-aa72-4631-ae35-83fcfa449903`）
+- [[15_质检平台-综合质检日常快照表设计(t_qc_daily_snapshot)]] — 质检平台-综合质检日常快照表设计(t_qc_daily_snapshot)（`a58bfdd3-be5d-41bb-ba42-1bb50ab185dd`）
+- [[16_人工质检人力管理体系设计]] — 人工质检人力管理体系设计（`b117729e-716a-42e2-818b-bb36097bfeef`）
+- [[17_质检平台-人工质检模块实施计划]] — 质检平台-人工质检模块实施计划（`a9fa6121-84c0-4f56-9e95-43a1a5438318`）
+- [[18_未命名契约片段_18]] — 未命名契约片段 18（`b38992cb-62d8-4a56-81aa-aad3c6d2c238`）
+- [[19_质检平台-Repository与数据库访问设计]] — 质检平台-Repository与数据库访问设计（`2f6737d4-9252-4dc4-a314-72637215a780`）
+- [[20_质检平台-Delta调用与状态回查设计]] — 质检平台-Delta调用与状态回查设计（`a23556ab-77db-4bc8-96d9-378abfa1ab71`）
+- [[21_质检平台-通过打回规则与执行设计]] — 质检平台-通过打回规则与执行设计（`c34bb6e9-0917-44ae-95ec-bd4dd9fc1a5b`）
+- [[22_质检平台-验收采样配额与任务选择设计]] — 质检平台-验收采样配额与任务选择设计（`78873977-dbbf-4c92-892d-22b9d7b16301`）
+- [[23_人工质检-标注验收执行三阶段流程]] — 人工质检-标注验收执行三阶段流程（`fe7b1414-8c13-42aa-8abd-e6511d13fdc6`）
+- [[24_人工质检-标注验收执行三阶段流程]] — 人工质检-标注验收执行三阶段流程（`1de53f77-90ab-45b2-8ea5-cba748c1bb9a`）
+- [[25_验收前置条件-快照刷新四级实现契约]] — 验收前置条件-快照刷新四级实现契约（`3a561280-78da-4200-a42b-6dd4632a36e0`）
+- [[26_大模型质检-后端分层与组件边界设计]] — 大模型质检-后端分层与组件边界设计（`c08c7d84-4aa0-486d-9896-8b1e12691f60`）
+- [[27_大模型质检-API契约与前端交互设计]] — 大模型质检-API契约与前端交互设计（`644ddf50-288d-4124-8c72-59bc8b28849f`）
+- [[28_大模型质检-领域模型层设计]] — 大模型质检-领域模型层设计（`6365121a-ce2b-4ed0-86ff-4d5b49b85720`）
+- [[29_大模型质检-领域模型层设计]] — 大模型质检-领域模型层设计（`caef72a6-b75b-47eb-91ca-d839ba61f03f`）
+- [[30_大模型质检-Repository与数据库访问设计]] — 大模型质检-Repository与数据库访问设计（`390595a8-fdf9-4bf3-a1fb-0c4bbc8754af`）
+- [[31_大模型质检-生产任务设计]] — 大模型质检-生产任务设计（`7337e8e8-5d1b-41dd-b6c0-ea4bea3d64df`）
+- [[32_大模型质检-版本配置设计]] — 大模型质检-版本配置设计（`a6a15c00-1c22-44d7-af43-a8d33aed786e`）
+- [[33_大模型质检-t_llm_task表设计]] — 大模型质检-t_llm_task表设计（`376a5c8e-561c-434c-b9da-c628563974e5`）
+- [[34_大模型质检-t_llm_version_config表设计]] — 大模型质检-t_llm_version_config表设计（`171c50af-79de-437e-994a-fe82831229c5`）
+- [[35_大模型质检-前端页面与状态设计]] — 大模型质检-前端页面与状态设计（`74bd3731-8add-4fd9-afa4-b44d7a9825d1`）
+- [[36_大模型质检-生产任务与版本配置业务流程梳理]] — 大模型质检-生产任务与版本配置业务流程梳理（`5cc0a0f9-325c-40e6-b555-3f6e673c00c0`）
+- [[37_PF-旧版大模型前后端平台架构问题与改进策略]] — PF-旧版大模型前后端平台架构问题与改进策略（`a3c5af52-7af3-419e-89b1-21ecd6e6f85d`）
+- [[38_大模型质检模块实施计划]] — 大模型质检模块实施计划（`cf1af13b-4461-44e9-9136-44c98613f5af`）
+- [[39_LLM任务调度Pipeline全景]] — LLM任务调度Pipeline全景（`0da7cce6-c9a6-4e48-9296-9fb041b428ee`）
 
-## 主题入口
+## 关联知识
 
-- [[NotebookLM来源无损导出与摄入规范]]
-- [[E2E数据管线枢纽核心设计文档]]
-- [[LLM任务调度Pipeline全景]]
-- [[HUB-质检引擎层架构]]
-- [[人工质检-Hub]]
-- [[HUB-前端与API层架构]]
-- [[HUB-Agent协作体系总览]]
-- [[quality_check_pipeline缺失引用索引]]
+- ✅ 支持：[[HUB-大模型数据生产与质检模块]]
+- ✅ 支持：[[HUB-质检前后端一体化]]
+- ✅ 支持：[[质检一站式平台人工质检模块整体架构]]
+- ✅ 支持：[[LLM任务调度Pipeline全景]]
