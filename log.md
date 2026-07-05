@@ -354,3 +354,169 @@
 - **修复**：先用 `readlink -f` 解析包装器真实路径，再计算脚本目录与预加载器路径。
 - **验证要求**：必须从 PATH 中的 `happy-proxy` 入口验证，不能只用仓库内绝对路径。
 - **对账验证**：图谱编译为 317 张卡、1540 条链接；3 张新卡 Frontmatter 合法、均已登记黄页、0 新孤岛、0 新断链；聚焦查询可直接召回交付机制、交付中心、验收中心、前端总览和整体架构总入口。
+
+## [2026-07-04] ingest | Codex 沙箱与 WSL2 宿主网络边界
+
+- **触发者**：Codex 内执行 `git push` 无法解析 GitHub；用户要求复盘 WSL2 mirrored、Windows Clash TUN、Happy Code 网络动作，并在不中断当前对话的前提下定位修复。
+- **本机拓扑**：Windows `.wslconfig` 使用 mirrored、`dnsTunneling=true`、`autoProxy=false`、firewall；WSL 关闭自动生成 `resolv.conf` 并使用三个静态公共 DNS；登录 Shell 通过 `wsl-proxy.sh` 探测 `127.0.0.1:7890` 或 NAT 网关。
+- **关键对照**：当前 Happy Session Socket 已连接且 daemon keep-alive 持续；Codex 命令环境同时禁止 DNS、netlink、Windows interop、宿主 loopback 与 `/home` 写入，GitHub 和 OpenAI 文档域名均出现 `EAI_AGAIN`。
+- **根因定位**：本次 Git 推送失败位于 Codex 受管命令沙箱，不是 Git remote/SSH 单点，也没有证据指向 Clash TUN、mirrored networking 或 Happy 链路故障。
+- **安全决策**：不重启 WSL、Clash 或 Happy，不在线修改 DNS；当前提交改由普通 WSL2 终端推送，或在未来新 Codex 会话启动时采用明确允许网络的最小授权策略。
+- **知识联动**：新增 `codex沙箱与wsl2宿主网络边界`，并在 `happy_coder_wsl2消息无响应排障` 增加反向链接。
+
+## [2026-07-04] update | Happy Codex 启动权限矩阵与 VS Code 差异
+
+- **本机代码证据**：Happy Coder 1.1.9 将 `default/read-only/acceptEdits/safe-yolo/yolo/plan` 映射为不同的 Codex approval policy 与 sandbox；`--no-sandbox` 只关闭 Happy 外层 sandbox。
+- **当前配置**：`~/.happy/settings.json` 未配置 `sandboxConfig`，当前网络限制来自 `default -> untrusted + workspace-write`，不是 Happy 外层 sandbox。
+- **推荐方案**：长期远程开发先用 `happy sandbox configure` 选择 per-project + network allowed，再用 `happy-proxy codex`；一次性完整权限可用 `--permission-mode yolo`，但不作为默认方案。
+- **VS Code 差异**：Remote WSL 中的 Codex 插件由 VS Code 自己的进程、信任和审批策略驱动，不经过 Happy 的权限映射，因此可能继承完整 WSL 网络并允许即时批准。
+- **知识联动**：补全 `codex沙箱与wsl2宿主网络边界` 的启动命令、权限表、双层 sandbox 语义和选择建议。
+
+## [2026-07-04] update | WSL、Codex Shell 沙箱与 MCP 网络三层对照
+
+- **宿主验证**：Windows WSL 2.6.3 使用 mirrored networking；Mihomo 在 Windows `127.0.0.1:7890` 监听。普通 WSL 登录 Shell 经该代理访问 GitHub 与 NotebookLM 成功。
+- **Shell 沙箱根因**：当前 VS Code Codex 工具环境包含 `CODEX_SANDBOX_NETWORK_DISABLED=1`，路由表为空且无法访问宿主 loopback；Git 与 curl 失败属于 Codex 网络隔离，不是 WSL/Clash 整体故障。
+- **MCP 独立根因**：NotebookLM MCP 与 app-server 位于宿主 WSL 网络命名空间，但没有继承代理变量；同一客户端在带代理的宿主 Shell 中 2.3 秒列出 19 个笔记本，并确认 `quality_check`。
+- **配置修复**：仅为 `mcp_servers.notebooklm` 注入大小写 `HTTP_PROXY`/`HTTPS_PROXY`，指向 `127.0.0.1:7890`；需要新 MCP 进程才能生效。
+- **边界决策**：不修改 Clash/TUN、WSL 网络模式或 DNS，不中断当前 Happy daemon；Happy 远程 Codex 的 Shell 联网仍应通过新会话权限策略单独解决。
+
+## [2026-07-04] update | VS Code 与 Happy Codex 联网启用操作
+
+- **VS Code 推荐方案**：保留 `workspace-write + on-request`，通过 `[sandbox_workspace_write] network_access = true` 单独开放命令网络；新建 thread 或重载窗口后生效。
+- **VS Code 应急方案**：界面切换 `Agent (Full Access)`，仅用于可信仓库的短时任务。
+- **Happy 推荐方案**：`happy sandbox configure` 选择 `per-project + network allowed`，确认状态后用 `happy-proxy codex` 启动新 session。
+- **Happy 风险边界**：`--permission-mode yolo` 是裸宿主全权限，只作短时应急；`safe-yolo` 与单独 `--no-sandbox` 均不能解决内层 Codex 的默认网络隔离。
+- **Session 收尾**：后台 session 使用 `happy daemon list` 获取 ID，再执行 `happy daemon stop-session <ID>`；`happy daemon stop` 不会结束已有 session。Happy 1.1.9 的 `happy codex --help` 会误启动真实 session，应避免使用。
+
+## [2026-07-04] update | Happy 新 session 被手机终止与 sandbox 降级
+
+- **非网络回归**：新 session 已记录 `Socket connected successfully`，随后收到手机端 `killSession` 并正常退出；无活动 session 时继续发消息必然无响应。
+- **新 session**：重新启动后 session `cmr699xkue5o1yc0uxpnzeifp` 已注册、等待消息且 Socket 连接成功。
+- **sandbox 隐患**：系统缺少 `bubblewrap`、`socat`，Happy 1.1.9 因此降级为无外层 sandbox 继续运行；不影响消息链路，但 per-project 边界未生效。
+- **人工步骤**：需用户在普通 WSL 终端执行 `sudo apt install -y ripgrep bubblewrap socat`，然后重启 session 并复核日志。
+- **Git 根因补充**：Happy 外层 sandbox 初始化失败后，默认手机权限回退为内层 Codex `workspace-write`；显式 thread policy 继续禁网并导致 `github.com` DNS 失败，覆盖了 VS Code 场景中已生效的网络配置。
+
+## [2026-07-04] update | WSL 显式代理可用但 TUN Fake-IP 直连失效
+
+- **APT 症状**：`sudo apt update` 停在清华镜像 Fake-IP `198.18.0.17`。
+- **对照证据**：经 `127.0.0.1:7890` 请求镜像 HTTPS 成功；强制绕过代理请求同一文件 15 秒超时。
+- **根因边界**：Clash DNS Fake-IP 注入正常，但 WSL 到 Fake-IP 的透明 TUN 转发未生效；`sudo` 又未保留用户代理，APT 因而走坏掉的直连路径。
+- **临时修复**：为 APT 命令显式设置 `Acquire::http::Proxy` 与 `Acquire::https::Proxy`；SSH、Node TLS 等需单独处理，不再把显式代理成功视为 TUN 健康证据。
+- **主修复方案**：Clash TUN 从 `gvisor` 改为官方推荐的 `mixed` 并放行 Mihomo core；WSL 开启 `autoProxy`，恢复自动生成 `resolv.conf` 以真正使用 DNS tunneling；`wsl --shutdown` 后用直连 HTTPS、sudo APT、GitHub SSH 和 Happy Socket 做端到端验收。
+- **实测收敛**：用户仅将 TUN stack 从 `gvisor` 切换为 `mixed` 后网络恢复，支持 TCP/TLS 故障位于 gVisor 数据面而非 Fake-IP DNS 本身。
+- **Happy 配置纠正**：1.1.9 交互首项默认是 workspace，需手动选择第二项 per-project；成功落盘字段为 `sessionIsolation=strict`。默认 denyRead 仍包含 `~/.ssh`，所以联网成功与 SSH push 凭据可用必须分开验收。
+- **SSH 授权选择**：快捷方案只从 `denyReadPaths` 移除 `~/.ssh`、仍禁止写 SSH 目录；更安全方案使用单仓库写权限 deploy key 与仓库级 `core.sshCommand`，避免暴露个人主密钥。
+
+## [2026-07-04] ingest | WSL2 镜像网络与远程 Codex 分层验收规范
+
+- **摄入范围**：汇总 Windows Clash TUN、WSL mirrored/Fake-IP、sudo/APT、VS Code Codex、NotebookLM MCP、Happy sandbox/session 与 Git SSH 的完整排障链。
+- **最终根因**：`gvisor` TUN 下 Fake-IP DNS 正常但 WSL TCP/TLS 半通；切换 `mixed` 后强制直连 HTTPS 返回 200。
+- **Happy 最终态**：依赖 `rg/bwrap/socat` 已安装；`sessionIsolation=strict`、network allowed；日志出现 `Sandbox enabled` 与 `Socket connected successfully`。
+- **Git 最终证据**：SSH 认证成功、`git ls-remote` 成功、`git push --dry-run` 成功，并有一次真实 push 成功记录。
+- **安全取舍**：从 denyRead 移除 `~/.ssh` 后远程 Agent 可读取个人私钥；推荐长期改用单仓库 deploy key。SSH 目录仍不加入可写路径。
+- **新增护栏**：发现 Happy sandbox 可能在仓库根生成只读空点文件；要求每次检查 `git status`，未经授权不得提交或清理。
+- **知识联动**：新增验收规范，并从两张既有避坑卡反链；更新黄页并重编译图谱。
+- **验证结果**：图谱编译为 320 张卡、1546 条链接；全库孤岛仍为 37、断链仍为 145，本轮未新增；聚焦查询将新规范以 14.5 分召回为首个 seed。
+- **存量提示**：`check_staleness.py --code-only` 仍报告 38 个全库存量代码过期项，与本轮网络知识摄入无关，未擅自修改。
+
+## [2026-07-04] ingest | NotebookLM quality_check 39 份原文权威快照
+
+- **冻结基线**：笔记本 `quality_check`（`6b4b949e-d423-4033-b16f-bd037ac03fa8`）共 39 个 source。
+- **无损导出**：39/39 个原始 Markdown，共 581,357 字节；Manifest 对字节、字符、行数与 SHA-256 逐项校验通过。
+- **重复事实**：source 23=24、source 28=29 为字节级重复，39 个 source_id 均保留独立追踪。
+- **知识摄入**：建立 39 张逐 source 原文卡与一张映射 Hub；每张卡在 `ORIGINAL_START/END` 之间逐字符保存原始正文，并回链来源总卡。
+- **版本决策**：本快照与 2026-06-28 的 38-source 旧快照仅精确重合 1 份；新快照作为当前权威来源，旧 raw 快照保留为历史证据。
+
+## [2026-07-04] update | 质检一站式平台 Hub 重组与前端 Demo 设计计划
+
+- **知识主干**：新增平台顶层 Hub，并串联人工质检、大模型质检、自动化质检、专题数据质量四个模块 Hub。
+- **上移规则**：统一工作台、共享组件、异步状态、权限、API 契约和危险操作范式归平台层；采样/通过打回/人力与六通道/kill-clean/版本冻结分别留在模块层。
+- **Demo 计划**：冻结平台总览、人工质检三页、大模型质检两页、关键用户路径、Mock 状态和分阶段交付。
+- **设计技能**：安装并应用 `web-design-guidelines`、`emil-design-eng`、`taste-skill`；后者明确不主导 Dashboard，仅用于反模板化审查。
+- **设计拨盘**：Variance 5、Motion 3、Density 8；动效聚焦反馈和状态迁移，可访问性作为硬验收。
+
+## [2026-07-04] update | 质检一站式平台双角色前端 Demo
+
+- **角色决策**：同一工作台服务管理者和日常运营人员；角色切换改变默认指标、主动作、数据范围和权限，不改变业务事实。
+- **Demo 产物**：新增 `demo/quality-check-platform.html`，单文件、离线零依赖、内置示例数据。
+- **人工质检**：覆盖交付中心、验收中心、人力与分组，演示 preview、execute、部分失败和状态回查。
+- **大模型质检**：覆盖生产任务、六通道详情、kill/clean、回收站、版本配置与任务版本冻结说明。
+- **设计审查**：应用 web-design-guidelines、emil-design-eng 与 taste-skill 的适用规则；使用语义 HTML、键盘焦点、reduced motion 和克制动效。
+
+## [2026-07-05] update | 质检业务模型与人工质检总览重构
+
+- **纠正使用模型**：删除显式管理者/运营人员切换，统一为 OneTrack；权限按路由、面板、按钮和数据范围自动裁剪。
+- **首页重命名**：平台运营总览改为质检业务总览，面向团队呈现近期数据交付、四块业务现状、阶段目标、里程碑和风险。
+- **业务边界**：补全人工质检、自动化质检、大模型质检、专题数据质量的总览关注点；大模型当前按 POC 演进衡量，不按版本交付衡量。
+- **专题与交付**：新增数据交付归专题数据质量完整承载，首页提供跨业务浓缩窗口。
+- **人工质检**：完整补入需求、送检、规则、适配、建任务、生产、标注、验收、通过打回和可交付字段域。
+- **人工总览**：按需求接纳、近期倒排交付、标注健康、验收健康、可交付与完成五类矛盾组织。
+- **视觉决策**：旧 Demo 不再作为视觉基线；新版本改为浅色业务台账、单一钴蓝强调色、低圆角和分隔线结构。
+
+## [2026-07-05] update | 质检总览多维分析与人工交付队列升级
+
+- **首页优先级**：关键里程碑置顶，作为团队成果与阶段目标的第一层表达。
+- **质量护航台账**：直接交付与感知抽检分开表达；人工质检/抽检与自动化产线结果分列展示，支持专题展开到子专题。
+- **业务边界**：城区、高速、园区、仿真由人工质检直接影响交付；感知只做抽检防护；自动化质检是产线内同步拦截与清理。
+- **四业务分析**：人工、自动化、大模型和专题质量摘要提升为 ECharts 微型分析工作台，补入趋势、专题绝对量、质量结构和阶段差距。
+- **人工总览**：新增多维经营摘要、八阶段业务轴和共用日期尺倒排；需求接纳改为可配置表格，标注/验收改为全任务队列。
+- **交付中心**：明确作为可编辑总表和事实源，总览层只读浓缩并带筛选下钻。
+- **本地图表依赖**：引入 ECharts 6.1.0 到 `demo/vendor/`，开启 ARIA，实现响应式 resize 和路由切换 dispose。
+
+## [2026-07-05] update | 人工总览专题分解与上下文下钻
+
+- **通量与质量联合图**：顶部两卡改为 1:1；通量图同时表达柱形绝对量、数量趋势线和 Good 比例右轴曲线。
+- **专题快捷聚焦**：增加全部/城区/高速/园区/仿真单选，一次点击即切换整张图的通量与 Good 口径。
+- **指标专题分解**：需求、P0/临期、Good、标注通过、标效和近期交付全部展示四专题数值与微型比例。
+- **通用上下文下钻**：平台级增加 ContextualDrilldown 能力；八阶段轴携带 `stage/topic/priority/window/risk` 等 URL 筛选跳转交付中心，目标页用 Chip 呈现并真实过滤任务集。
+
+## [2026-07-05] update | 质检多工作台纵向设计
+
+- **业务总览下钻**：任务/子专题、人工结果、自动化结果和风险单元格分别进入对应详情与工作台。
+- **人工健康队列**：标注补入任务总数、按日标效、Good/Bad 数量比例和 Bad Top5；验收补入分配总数、Good/Bad 分配与各自通过打回、日验收标效。
+- **总览操作边界**：总览保持只读浓缩；改变业务事实的接纳/驳回、阶段推进、验收分配、通过打回和盖章进入专用工作台。
+- **交付总表**：四列组默认显示概览，点击展开组内全部列；规则适配并入需求对齐，标注/验收并入质检作业管理；每列可筛选、可编辑、可拖动列宽。
+- **新工作台**：新建标注中心、大模型质检总览和大模型生产任务工作台设计卡。
+- **大模型评测**：通用能力使用最强体系外显任务雷达图，专项任务独立趋势，数据资产分为通用集、精标集和评测集。
+## [2026-07-05] update | 统一数据工作台与可配置卡片布局
+
+- 新增统一数据工作台和可配置卡片布局两张全局组件卡。
+- 深化人工质检验收中心的任务/按天层级、分配求解、通过打回预览执行和个人质量分析布局。
+- 纠正大模型生产任务为顺序通道、任务组/case、可回滚改版，并补充数据集/JSONL OBS/上传文件三种创建模式。
+- 补全自动化质检、专题数据质量和大模型质检下级工作台。
+
+## [2026-07-05] review | 人工质检验收中心正式开发就绪度
+
+- 明确 Demo 未实现全部公共表格/卡片能力属于实现范围判断失准，不是 HTML 技术限制。
+- 补充父子选择联动、分析面板按需出现、视口底部横向滚动、预览按选择触发四项硬规则。
+- 核对真实代码：后端仅有公共基建与健康接口，验收包为空壳；前端尚未初始化 Vue 工程。
+- 新增正式开发就绪度评审卡，提出 QuerySpec、SelectionSpec、preview_id 和 UI 配置持久化缺口。
+- 将 `task.md` 与 `implementation_plan.md` 更新为 v5 Review 草案，人工质检验收中心成为首个纵切。
+
+## [2026-07-05] implement | 人工质检验收第一纵切骨架
+
+- 采用 MIT 开源栈：TanStack Table/Virtual、GridStack、ECharts、ExcelJS。
+- 新建第一纵切枢纽及端到端架构、测试数据、查询 API、开源工作台和验证子卡。
+- 初始化 Vue3 + TypeScript + Vite 工程，实现 AppShell、验收路由、DataWorkbench、DashboardLayout 和验收队列首版。
+- 实现父子选择联动、分析面板按需出现、预览按选择出现和视口级横向滚动代理。
+- 新增 PostgreSQL 交付任务、preview、视图配置表及可重复 fixture。
+- 实现 FastAPI 查询 Router、Pydantic Schema、Service、参数化 Repository 和按日展开。
+
+## [2026-07-05] verify | 人工质检验收第一纵切首版验证与技术决策校准
+
+- **授权决策**：明确拒绝商业授权，冻结 TanStack Table/Virtual + GridStack + ECharts；纠正上一条记录中的 ExcelJS，因其当前间接依赖存在无修复漏洞而未纳入依赖，XLSX 适配器延后选型。
+- **存储决策**：preview、公共/个人视图和卡片布局以 PostgreSQL 为首选持久化，不引入 Redis 前置依赖。
+- **API 契约**：查询与日期明细统一包裹 `ApiResponse`，增加响应契约测试。
+- **交互回归**：新增验收页面测试，证明预览 panel 在未选择和仅选择时均隐藏，主动点击生成预览后才出现。
+- **验证结果**：隔离 PostgreSQL 固定聚合、7 个 Python 测试、4 个 Vitest、Vue 类型检查、生产构建和 npm audit 全部通过。
+- **图谱状态**：382 张卡、1745 条链接；孤岛 37、断链 145 与本轮前基线一致，无新增孤岛或断链。
+
+## [2026-07-06] implement | 人工质检验收分配预览闭环
+
+- **选择契约**：实现 explicit/filtered `SelectionSpec`、任务/日期 ID 解析、排除项与未实现维度拒绝。
+- **配额计算**：实现 Ratio 规则、Good/Bad 可用量守恒、类别不足互补、总量 shortage 和稳定最大余数分摊。
+- **预览存储**：服务端生成 source_version 与 30 分钟 preview_id，写入 PostgreSQL，并按创建人、READY 状态和有效期读回。
+- **API**：新增 `POST /assignment/preview` 与 `GET /assignment/previews/{preview_id}`，HTTP round-trip 使用真实临时 PostgreSQL 验证。
+- **前端**：新增 `useAssignmentPreview` 与 `AssignmentPreviewPanel`；服务端结果展示冻结单元、Good/Bad 计划、缺口、明细和有效期，选择变化自动收起旧预览。
+- **安全边界**：真实 Delta 未接入，“确认分配”保持禁用；不把预览成功冒充执行成功。
+- **知识联动**：新增预览设计卡和代码导航卡，更新第一纵切 Hub、API、测试数据、采样、前端、就绪度、进度和实施计划。

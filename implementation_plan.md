@@ -1,6 +1,6 @@
-# 质检一站式平台——人工质检验收与人力模块实施方案（v4）
+# 质检一站式平台——人工质检验收优先实施方案（v5）
 
-> 更新日期：2026-06-28  
+> 更新日期：2026-07-05
 > 架构总入口：[[质检一站式平台人工质检模块整体架构]]  
 > 动态进度权威：`task.md`  
 > 设计演进记录：[[质检一站式平台Phase3前架构评审]]
@@ -16,6 +16,22 @@
 - 数据库查询、外部调用和业务编排边界清楚；
 - 实际结果由任务状态确认，不把接口请求量当作成功量；
 - 在当前规模下保持简单，不预建无实际收益的抽象层。
+
+## 0. v5 变更摘要与 Review 边界
+
+本版将人工质检验收中心设为第一个正式纵切，并把 [[质检平台统一数据工作台组件设计]]、[[质检平台可配置卡片布局组件设计]] 提升为前端基础设施，不再允许每个页面自行实现表格和 panel。
+
+Gate 0 已拍板：
+
+1. 不接受商业授权，采用 TanStack Table + TanStack Virtual + 自研 DataWorkbench；
+2. API 增加 `QuerySpec`、`SelectionSpec` 和短期 `preview_id`，支持跨页筛选全选、局部排除和稳定执行；
+3. preview、公共/个人表格布局、卡片布局和分析卡片统一持久化到 PostgreSQL；
+4. 第一纵切先完成“只读验收任务队列 + 按天展开 + 公共表格基础能力”，不等待真实 Delta；
+5. 写操作先接 fake Delta，真实联调仍以接口 URL、认证、字段和状态映射补齐为门槛。
+
+完整就绪度和分阶段顺序见 [[人工质检验收中心正式开发就绪度评审]]。
+
+当前已按 [[人工质检验收第一纵切架构枢纽]] 推进：只读任务队列、按日展开、DataWorkbench、DashboardLayout 已有首版；`SelectionSpec + Ratio 配额 + PostgreSQL preview_id + 前端预览 panel` 已形成可重复验证的端到端闭环。后续进入 Group/Personal 策略、验收员约束、fake Delta execute 与回查。
 
 ## 2. 非目标
 
@@ -35,7 +51,7 @@
 | 数据结构 | 就近定义，稳定复用后上移 | [[质检平台-领域模型层设计]] |
 | Repository | manual_qc 共享文件，内部按数据源分小类 | [[质检平台-Repository与数据库访问设计]] |
 | Delta | `delta_client.py` 集中调用，状态回查校准 | [[质检平台-Delta调用与状态回查设计]] |
-| API | Pydantic/OpenAPI 为契约源；execute 使用 preview task_ids | [[质检平台-API契约与前端交互设计]] |
+| API | Pydantic/OpenAPI 为契约源；小范围显式选择可提交 ID，大范围执行使用 `SelectionSpec + preview_id` | [[质检平台-API契约与前端交互设计]] |
 | 人员 | 一人一项目，组只属于标注员 | [[人工质检-人力管理体系设计]] |
 | 权限 | 每业务模块一个等级列 | [[质检平台SSO鉴权接入方案]] |
 | 前端 | 明确 preview/executing/executed/refreshing 状态 | [[质检平台-人工质检前端页面与状态设计]] |
@@ -139,7 +155,7 @@ AcceptanceTaskRepository
 
 ### 7.1 preview/execute 原则
 
-preview 返回具体 task_ids；execute 原样提交 task_ids，执行前重查状态，不重新采样。返回成功、跳过、失败数量和 task 级错误摘要。
+preview 在服务端把选择解析为稳定明细，并持久化短期 `preview_id`。execute 提交 `preview_id + excluded_preview_item_ids + override`，执行前校验归属、权限、过期、数据版本和任务状态，不重新采样；返回成功、跳过、失败数量和 task 级错误摘要。
 
 ### 7.2 权限
 
@@ -234,4 +250,3 @@ preview 返回具体 task_ids；execute 原样提交 task_ids，执行前重查�
 ## 12. 当前阻塞
 
 唯一实质外部阻塞是 Delta 真实接口和状态字段资料。其余纯规则、DDL、Repository 结构和 mock API 可以继续推进，但正式写操作联调必须等待真实信息。
-

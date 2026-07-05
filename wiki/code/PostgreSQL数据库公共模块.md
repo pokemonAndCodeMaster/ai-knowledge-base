@@ -4,11 +4,11 @@ domain: ["ai_dlc", "tooling"]
 type: "code_module"
 tags: [质检平台, PostgreSQL, 数据库模块, 连接池, DatabaseManager, psycopg2]
 created: 2026-06-21
-updated: 2026-06-21
+updated: 2026-07-05
 sources: 1
 status: active
 related_code: ["src/database/postgresql.py"]
-code_hash: "sha256:561c165c3b3c1ef0"
+code_hash: "sha256:dbffaf742d4459a1"
 affects_path: []
 trigger_keywords: [PostgreSQL, PostgresConnector, DatabaseManager, fetch_all, fetch_one, execute, health_check, 连接池]
 ---
@@ -21,7 +21,7 @@ trigger_keywords: [PostgreSQL, PostgresConnector, DatabaseManager, fetch_all, fe
 
 - 将 PostgreSQL 连接策略集中到基础设施层，避免每个业务模块各自创建连接。
 - 使用懒初始化连接池：构造 `PostgresConnector` 不会立刻连库，首次查询才创建池。
-- 提供小而稳定的查询接口：`fetch_all()`、`fetch_one()`、`execute()`、`health_check()`。
+- 提供小而稳定的查询接口：`fetch_all()`、`fetch_one()`、`execute()`、`execute_many()`、`transaction()`、`health_check()`。
 - 用 `RealDictCursor` 返回字典行，方便 FastAPI 直接序列化和业务层转换。
 
 ## Who

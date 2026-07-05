@@ -16,3 +16,4 @@ venv/
 !.env.example
 src/frontend/node_modules/
 src/frontend/dist/
+src/frontend/*.tsbuildinfo

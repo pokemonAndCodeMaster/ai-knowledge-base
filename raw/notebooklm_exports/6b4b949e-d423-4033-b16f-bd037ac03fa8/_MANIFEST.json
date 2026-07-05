@@ -1,0 +1,399 @@
+{
+  "notebook": {
+    "id": "6b4b949e-d423-4033-b16f-bd037ac03fa8",
+    "title": "quality_check"
+  },
+  "total_bytes": 581357,
+  "sources": [
+    {
+      "index": 1,
+      "id": "fddd1e86-17a0-45a4-ae78-54231420ef63",
+      "title": "Copied text 1783147246",
+      "filename": "01_fddd1e86-17a0-45a4-ae78-54231420ef63.md",
+      "bytes": 5963,
+      "chars": 3401,
+      "lines": 97,
+      "sha256": "978a7249cfb72a11df43bff93205cc1fb4203a32f0cf386e7060049e6cce496b"
+    },
+    {
+      "index": 2,
+      "id": "73160938-8247-4468-9af1-4580228b7634",
+      "title": "Copied text 1783147254",
+      "filename": "02_73160938-8247-4468-9af1-4580228b7634.md",
+      "bytes": 16901,
+      "chars": 9595,
+      "lines": 234,
+      "sha256": "b1e4239909ccef47795b33675e7700b0f980b58494ec70b919562f9fe09c4484"
+    },
+    {
+      "index": 3,
+      "id": "8e4f6e7a-ad54-433b-a994-89c96a67a39e",
+      "title": "Copied text 1783147261",
+      "filename": "03_8e4f6e7a-ad54-433b-a994-89c96a67a39e.md",
+      "bytes": 9028,
+      "chars": 4764,
+      "lines": 108,
+      "sha256": "801052069d0f76676590fcf770d1f8318572e94d7ff7bca50fcbff39268333be"
+    },
+    {
+      "index": 4,
+      "id": "20ec2217-6104-469d-bc36-1a3b23ad86ca",
+      "title": "Copied text 1783147266",
+      "filename": "04_20ec2217-6104-469d-bc36-1a3b23ad86ca.md",
+      "bytes": 12909,
+      "chars": 6367,
+      "lines": 143,
+      "sha256": "650c47b084b144f8e4306338988df84ae3dbf646cd9caddc2fa9100749a1569e"
+    },
+    {
+      "index": 5,
+      "id": "854d1278-bb74-4387-bcb2-b0242fdd5315",
+      "title": "Copied text 1783147272",
+      "filename": "05_854d1278-bb74-4387-bcb2-b0242fdd5315.md",
+      "bytes": 11711,
+      "chars": 6395,
+      "lines": 169,
+      "sha256": "27275040f9e442a0b8633387d25e86649d3d89648b595c1699886109b0159051"
+    },
+    {
+      "index": 6,
+      "id": "59f0cb0d-67af-4cc5-bab1-320531b0aac4",
+      "title": "Copied text 1783156929",
+      "filename": "06_59f0cb0d-67af-4cc5-bab1-320531b0aac4.md",
+      "bytes": 15347,
+      "chars": 8749,
+      "lines": 283,
+      "sha256": "35d0de5876105c882174a5ad3aaeb91e7df4f7cd055d428c7b980f0dc5079314"
+    },
+    {
+      "index": 7,
+      "id": "48d17568-cf8e-420e-b21f-4aa1cda16bc5",
+      "title": "Copied text 1783156970",
+      "filename": "07_48d17568-cf8e-420e-b21f-4aa1cda16bc5.md",
+      "bytes": 5384,
+      "chars": 3284,
+      "lines": 102,
+      "sha256": "78914f4561fdc1ca1dbf0b337f81d1c01f5d2460ab996dcc50af02b6aa8d7e10"
+    },
+    {
+      "index": 8,
+      "id": "b6bb3399-1d95-4c2d-9437-bc7c86b3487e",
+      "title": "Copied text 1783157031",
+      "filename": "08_b6bb3399-1d95-4c2d-9437-bc7c86b3487e.md",
+      "bytes": 18054,
+      "chars": 10414,
+      "lines": 275,
+      "sha256": "423c75d74a7722f6af72005aba6ac1be6a299d764b0bac780f9fbc7cd9581a27"
+    },
+    {
+      "index": 9,
+      "id": "8bba933f-7072-4e1e-b02a-9f872fb8da2c",
+      "title": "Copied text 1783157041",
+      "filename": "09_8bba933f-7072-4e1e-b02a-9f872fb8da2c.md",
+      "bytes": 14740,
+      "chars": 8894,
+      "lines": 262,
+      "sha256": "03fbe99ad9cabac6192301aeb1afc5235ce37d569b50e4db6b3e6ffb9c7290ac"
+    },
+    {
+      "index": 10,
+      "id": "17cbdc73-23a6-4741-98f5-3bcbce5e682f",
+      "title": "Copied text 1783157078",
+      "filename": "10_17cbdc73-23a6-4741-98f5-3bcbce5e682f.md",
+      "bytes": 4765,
+      "chars": 2843,
+      "lines": 96,
+      "sha256": "793b4797fb73d8143edc66d07f066259bc0c552dfcc7b464ebe2968ed10625e3"
+    },
+    {
+      "index": 11,
+      "id": "351ea5ce-387d-46e9-8b63-f2829e8ee781",
+      "title": "Copied text 1783157094",
+      "filename": "11_351ea5ce-387d-46e9-8b63-f2829e8ee781.md",
+      "bytes": 20684,
+      "chars": 14390,
+      "lines": 530,
+      "sha256": "8bfeeadaf6fbec7a5825bd072841356ccd8b27ed0eae8599bdf7693370143b2d"
+    },
+    {
+      "index": 12,
+      "id": "81a78ff9-6cfc-49af-b5c8-98f321a1d9c2",
+      "title": "Copied text 1783157103",
+      "filename": "12_81a78ff9-6cfc-49af-b5c8-98f321a1d9c2.md",
+      "bytes": 8944,
+      "chars": 6924,
+      "lines": 298,
+      "sha256": "94a1dbcd58cd3534d2504b2099d93d6885cb37d218fdc951d7d602fc7f9d50d3"
+    },
+    {
+      "index": 13,
+      "id": "80d140c0-ef8c-49e3-b406-42dd0b5e1a03",
+      "title": "Copied text 1783157109",
+      "filename": "13_80d140c0-ef8c-49e3-b406-42dd0b5e1a03.md",
+      "bytes": 7829,
+      "chars": 5865,
+      "lines": 292,
+      "sha256": "14eb71ddc4de35643d6952201dec9b3eaa8216083c0c78ee79dae4aa8da88af6"
+    },
+    {
+      "index": 14,
+      "id": "4b3c2153-aa72-4631-ae35-83fcfa449903",
+      "title": "Copied text 1783157115",
+      "filename": "14_4b3c2153-aa72-4631-ae35-83fcfa449903.md",
+      "bytes": 10034,
+      "chars": 7441,
+      "lines": 457,
+      "sha256": "b93bf9f9feef19b26e7c4ed6187cb71fdea4688da65f65e21916a0dd22f9bcd2"
+    },
+    {
+      "index": 15,
+      "id": "a58bfdd3-be5d-41bb-ba42-1bb50ab185dd",
+      "title": "Copied text 1783157207",
+      "filename": "15_a58bfdd3-be5d-41bb-ba42-1bb50ab185dd.md",
+      "bytes": 41591,
+      "chars": 31558,
+      "lines": 535,
+      "sha256": "cafa4b2823f24719fde40ec212f108c44caebdb53e9095a743ae4461b1bb4475"
+    },
+    {
+      "index": 16,
+      "id": "b117729e-716a-42e2-818b-bb36097bfeef",
+      "title": "Copied text 1783157214",
+      "filename": "16_b117729e-716a-42e2-818b-bb36097bfeef.md",
+      "bytes": 31973,
+      "chars": 23193,
+      "lines": 477,
+      "sha256": "5d93da03b56bae844cfecf85e9a6f7cc152c41305cd8a55d4f7e71036662f747"
+    },
+    {
+      "index": 17,
+      "id": "a9fa6121-84c0-4f56-9e95-43a1a5438318",
+      "title": "Copied text 1783157272",
+      "filename": "17_a9fa6121-84c0-4f56-9e95-43a1a5438318.md",
+      "bytes": 21459,
+      "chars": 14571,
+      "lines": 302,
+      "sha256": "611a2d6142a8ca6c1066677aff6c4d239fc0cad524d5f656ed0fcc1d46082d52"
+    },
+    {
+      "index": 18,
+      "id": "b38992cb-62d8-4a56-81aa-aad3c6d2c238",
+      "title": "Copied text 1783157281",
+      "filename": "18_b38992cb-62d8-4a56-81aa-aad3c6d2c238.md",
+      "bytes": 25242,
+      "chars": 16340,
+      "lines": 306,
+      "sha256": "86d609f97b8a8f7a3043691cd629562fe3020a2e27a0d2b7294a72ce72686424"
+    },
+    {
+      "index": 19,
+      "id": "2f6737d4-9252-4dc4-a314-72637215a780",
+      "title": "Copied text 1783157295",
+      "filename": "19_2f6737d4-9252-4dc4-a314-72637215a780.md",
+      "bytes": 20675,
+      "chars": 15201,
+      "lines": 354,
+      "sha256": "d1ff36749a1431a5b1df36d5c57a7bad67415bfbc6ad8492c0064f2176c04e82"
+    },
+    {
+      "index": 20,
+      "id": "a23556ab-77db-4bc8-96d9-378abfa1ab71",
+      "title": "Copied text 1783157305",
+      "filename": "20_a23556ab-77db-4bc8-96d9-378abfa1ab71.md",
+      "bytes": 20138,
+      "chars": 13682,
+      "lines": 371,
+      "sha256": "16394c4849186d1f97e91b3535ebcebca23ebce4d3153058062189364f294d72"
+    },
+    {
+      "index": 21,
+      "id": "c34bb6e9-0917-44ae-95ec-bd4dd9fc1a5b",
+      "title": "Copied text 1783157312",
+      "filename": "21_c34bb6e9-0917-44ae-95ec-bd4dd9fc1a5b.md",
+      "bytes": 15130,
+      "chars": 9427,
+      "lines": 275,
+      "sha256": "b0aed512e789713e7325d50cdc33d6fada12464ba1ebfe5a0e82dda19c3f3a75"
+    },
+    {
+      "index": 22,
+      "id": "78873977-dbbf-4c92-892d-22b9d7b16301",
+      "title": "Copied text 1783157318",
+      "filename": "22_78873977-dbbf-4c92-892d-22b9d7b16301.md",
+      "bytes": 13557,
+      "chars": 8767,
+      "lines": 253,
+      "sha256": "a2242772ead686b50525e51351a8c76a2f25b4c2c041bba4202cb5ede768e16d"
+    },
+    {
+      "index": 23,
+      "id": "fe7b1414-8c13-42aa-8abd-e6511d13fdc6",
+      "title": "Copied text 1783157323",
+      "filename": "23_fe7b1414-8c13-42aa-8abd-e6511d13fdc6.md",
+      "bytes": 8791,
+      "chars": 5133,
+      "lines": 138,
+      "sha256": "2385ad9f96641a5b00996d3c2613a808f575acc14fdf79772ec4d18c841cbab4"
+    },
+    {
+      "index": 24,
+      "id": "1de53f77-90ab-45b2-8ea5-cba748c1bb9a",
+      "title": "Copied text 1783157336",
+      "filename": "24_1de53f77-90ab-45b2-8ea5-cba748c1bb9a.md",
+      "bytes": 8791,
+      "chars": 5133,
+      "lines": 138,
+      "sha256": "2385ad9f96641a5b00996d3c2613a808f575acc14fdf79772ec4d18c841cbab4"
+    },
+    {
+      "index": 25,
+      "id": "3a561280-78da-4200-a42b-6dd4632a36e0",
+      "title": "Copied text 1783157342",
+      "filename": "25_3a561280-78da-4200-a42b-6dd4632a36e0.md",
+      "bytes": 37439,
+      "chars": 28793,
+      "lines": 461,
+      "sha256": "f5c84e8f2fe1db7db61b6b5209132d710380d50f5907b499012ef20dc5edea22"
+    },
+    {
+      "index": 26,
+      "id": "c08c7d84-4aa0-486d-9896-8b1e12691f60",
+      "title": "Copied text 1783157373",
+      "filename": "26_c08c7d84-4aa0-486d-9896-8b1e12691f60.md",
+      "bytes": 11343,
+      "chars": 7911,
+      "lines": 239,
+      "sha256": "f8843b0664bd7fbbfaca088d1ee7df5737f6bc7d6fe7977c660f8e316f12074c"
+    },
+    {
+      "index": 27,
+      "id": "644ddf50-288d-4124-8c72-59bc8b28849f",
+      "title": "Copied text 1783157379",
+      "filename": "27_644ddf50-288d-4124-8c72-59bc8b28849f.md",
+      "bytes": 11507,
+      "chars": 8391,
+      "lines": 235,
+      "sha256": "e93573a6991505328ac4c64099c010578a1f471872478939e6c2d960b974a9d1"
+    },
+    {
+      "index": 28,
+      "id": "6365121a-ce2b-4ed0-86ff-4d5b49b85720",
+      "title": "Copied text 1783157384",
+      "filename": "28_6365121a-ce2b-4ed0-86ff-4d5b49b85720.md",
+      "bytes": 11953,
+      "chars": 9083,
+      "lines": 254,
+      "sha256": "487fe48846d0bbc51028805da32a4c0fb0ebc11c759a4303c74220182fa3d4f7"
+    },
+    {
+      "index": 29,
+      "id": "caef72a6-b75b-47eb-91ca-d839ba61f03f",
+      "title": "Copied text 1783157393",
+      "filename": "29_caef72a6-b75b-47eb-91ca-d839ba61f03f.md",
+      "bytes": 11953,
+      "chars": 9083,
+      "lines": 254,
+      "sha256": "487fe48846d0bbc51028805da32a4c0fb0ebc11c759a4303c74220182fa3d4f7"
+    },
+    {
+      "index": 30,
+      "id": "390595a8-fdf9-4bf3-a1fb-0c4bbc8754af",
+      "title": "Copied text 1783157402",
+      "filename": "30_390595a8-fdf9-4bf3-a1fb-0c4bbc8754af.md",
+      "bytes": 15107,
+      "chars": 11252,
+      "lines": 274,
+      "sha256": "67baa8a5abe8ed66ee3274b86e6f2b362c78b3802226088f7a0b4d303fc13ec3"
+    },
+    {
+      "index": 31,
+      "id": "7337e8e8-5d1b-41dd-b6c0-ea4bea3d64df",
+      "title": "Copied text 1783157409",
+      "filename": "31_7337e8e8-5d1b-41dd-b6c0-ea4bea3d64df.md",
+      "bytes": 13140,
+      "chars": 9060,
+      "lines": 236,
+      "sha256": "2fe9148f65c7ff62fa99a959cbfc9ecfd5dd6ef78dc462804eb8ffa7665932d8"
+    },
+    {
+      "index": 32,
+      "id": "a6a15c00-1c22-44d7-af43-a8d33aed786e",
+      "title": "Copied text 1783157414",
+      "filename": "32_a6a15c00-1c22-44d7-af43-a8d33aed786e.md",
+      "bytes": 11066,
+      "chars": 8165,
+      "lines": 220,
+      "sha256": "dc6dacfca1c58b2d8401f0e876e7186ae868d3df9fc72f2780c338355e4abb65"
+    },
+    {
+      "index": 33,
+      "id": "376a5c8e-561c-434c-b9da-c628563974e5",
+      "title": "Copied text 1783157420",
+      "filename": "33_376a5c8e-561c-434c-b9da-c628563974e5.md",
+      "bytes": 13227,
+      "chars": 9612,
+      "lines": 261,
+      "sha256": "f21c3b988f111c0f5ee690393e4ec3a780a54d1dde607e74c056bb3056e04c4e"
+    },
+    {
+      "index": 34,
+      "id": "171c50af-79de-437e-994a-fe82831229c5",
+      "title": "Copied text 1783157425",
+      "filename": "34_171c50af-79de-437e-994a-fe82831229c5.md",
+      "bytes": 12188,
+      "chars": 9377,
+      "lines": 250,
+      "sha256": "87ff013b0937173ff95c6c55d629b356c4028399529ff047cd2e3d58c5623cc6"
+    },
+    {
+      "index": 35,
+      "id": "74bd3731-8add-4fd9-afa4-b44d7a9825d1",
+      "title": "Copied text 1783157433",
+      "filename": "35_74bd3731-8add-4fd9-afa4-b44d7a9825d1.md",
+      "bytes": 14813,
+      "chars": 10544,
+      "lines": 271,
+      "sha256": "9fc230dec78d574c2fe87526afc42a43bdb27f8521419f4b2e57a4e767a77417"
+    },
+    {
+      "index": 36,
+      "id": "5cc0a0f9-325c-40e6-b555-3f6e673c00c0",
+      "title": "Copied text 1783157440",
+      "filename": "36_5cc0a0f9-325c-40e6-b555-3f6e673c00c0.md",
+      "bytes": 7635,
+      "chars": 4649,
+      "lines": 143,
+      "sha256": "f6d23ad9b298c07a3ab1c2fe4e2f738528b323c322577311a2caa6cfb891e71b"
+    },
+    {
+      "index": 37,
+      "id": "a3c5af52-7af3-419e-89b1-21ecd6e6f85d",
+      "title": "Copied text 1783157450",
+      "filename": "37_a3c5af52-7af3-419e-89b1-21ecd6e6f85d.md",
+      "bytes": 6205,
+      "chars": 3780,
+      "lines": 74,
+      "sha256": "470753de58d5bed243651e262d079c21b8a1634b7d3a0a85c0098d6e0b0569c9"
+    },
+    {
+      "index": 38,
+      "id": "cf1af13b-4461-44e9-9136-44c98613f5af",
+      "title": "Copied text 1783157456",
+      "filename": "38_cf1af13b-4461-44e9-9136-44c98613f5af.md",
+      "bytes": 14358,
+      "chars": 9059,
+      "lines": 239,
+      "sha256": "f6740755d09bad8934c8ff1d7dcc8513cd33615106a20f3777b50ab12ff7e0de"
+    },
+    {
+      "index": 39,
+      "id": "0da7cce6-c9a6-4e48-9296-9fb041b428ee",
+      "title": "Copied text 1783157514",
+      "filename": "39_0da7cce6-c9a6-4e48-9296-9fb041b428ee.md",
+      "bytes": 19783,
+      "chars": 14236,
+      "lines": 467,
+      "sha256": "d877b8d340b593b5f841ff9f2374189e8108bb1acf1a72def51b99019b649eff"
+    }
+  ]
+}

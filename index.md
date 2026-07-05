@@ -5,9 +5,18 @@
 ---
 
 ## 📌 综合分析（Synthesis）
-
 | 文件 | 摘要 |
 |---|---|
+| [质检平台统一数据工作台组件设计](wiki/synthesis/质检平台统一数据工作台组件设计.md) | 全平台共享的筛选、编辑、列组、层级行、批处理、导出与一键分析协议。 |
+| [质检平台可配置卡片布局组件设计](wiki/synthesis/质检平台可配置卡片布局组件设计.md) | 公共/个人看板、图表原子、卡片拖拽缩放与数据工作台生成卡片的设计。 |
+| [人工质检验收中心正式开发就绪度评审](wiki/synthesis/人工质检验收中心正式开发就绪度评审.md) | 验收中心进入正式开发前的真实代码盘点、契约缺口、技术选型和纵切计划。 |
+| [人工质检验收第一纵切架构枢纽](wiki/synthesis/人工质检验收第一纵切架构枢纽.md) | 第一纵切唯一 Review 入口，按顺序串联端到端架构、测试数据、API、开源工作台和验证。 |
+| [人工质检验收第一纵切端到端架构](wiki/synthesis/人工质检验收第一纵切端到端架构.md) | Vue、FastAPI、Repository 与 PostgreSQL 的组件链和文件落点。 |
+| [人工质检验收第一纵切测试数据设计](wiki/synthesis/人工质检验收第一纵切测试数据设计.md) | 可重复 PostgreSQL 表、fixture 场景和固定聚合预期。 |
+| [人工质检验收第一纵切查询与API设计](wiki/synthesis/人工质检验收第一纵切查询与API设计.md) | QuerySpec、任务聚合、按日展开和错误契约。 |
+| [人工质检验收分配预览闭环设计](wiki/synthesis/人工质检验收分配预览闭环设计.md) | SelectionSpec、Ratio 配额、PostgreSQL preview、数据版本与前端失效闭环。 |
+| [质检平台开源数据工作台实现设计](wiki/synthesis/质检平台开源数据工作台实现设计.md) | TanStack Table、Virtual、GridStack 与 ECharts 的开源实现边界；XLSX 导出库延后选择。 |
+| [人工质检验收第一纵切验证计划](wiki/synthesis/人工质检验收第一纵切验证计划.md) | PostgreSQL、Python、FastAPI、Vitest 和浏览器行为的分层验证计划。 |
 | [统一学习与知识管理框架](wiki/synthesis/统一学习与知识管理框架.md) | 框架总纲：四步学习闭环（Ingest/Validate/Interrogate/Distill）+ 三层知识库架构的完整合体 |
 | [学习路线总纲](wiki/synthesis/学习路线总纲.md) | 🆕 顶层设计：结合 MIT 48小时速成法，统领 Agent 工程与多模态大模型双主线学习 |
 | [Agent 工程学习计划](wiki/synthesis/agent工程学习计划.md) | 🆕 专项规划：P0 至 P2 三阶段模块细分，配套 7 大高强度实战任务与 NotebookLM 压测 Prompt |
@@ -94,6 +103,8 @@
 | [NotebookLM MCP 用法](wiki/concepts/notebooklm_mcp用法.md) | nlm CLI 完整命令速查 + 批量导出 Sources 脚本 + Studio/Research 功能 |
 | [AI 知识库操作指南](wiki/concepts/ai知识库操作指南.md) | 如何用 Prompt 触发 ai-librarian 三大操作（Ingest/Query/Lint），含目录结构速查 |
 | [Happy Coder 在 WSL2 中消息无响应排障](wiki/concepts/happy_coder_wsl2消息无响应排障.md) | 手机显示已连接但 WSL2 收不到消息时，按日志、Socket.IO、代理、会话状态分层定位 |
+| [Codex 命令沙箱与 WSL2 宿主网络边界](wiki/concepts/codex沙箱与wsl2宿主网络边界.md) | 区分普通 WSL、Codex Shell 沙箱与 MCP 子进程网络；记录 Clash 代理继承、Happy 权限及 NotebookLM MCP 修复 |
+| [WSL2 镜像网络与远程 Codex 分层验收规范](wiki/norms/WSL2镜像网络与远程Codex分层验收规范.md) | 从 Clash mixed TUN、sudo/APT、VS Code/MCP 到 Happy per-project 与 SSH push 的逐层完成门槛 |
 
 ### 🌐 前端与全栈开发类
 
@@ -235,7 +246,8 @@
 | [Martin Fowler：Harness Engineering](wiki/sources/martin_fowler_harness_engineering.md) | martinfowler.com | 赛博控制论框架；前馈引导+反馈传感器；可维护性/架构/行为三类 Harness |
 | [Anthropic：Building Effective Agents](wiki/sources/anthropic_building_effective_agents.md) | Anthropic 研究博客 | 五种可组合 agent 工作流模式；简单性原则；ACI 工具设计 |
 | [Anthropic：长时 Harness 设计](wiki/sources/anthropic_harness_design_long_running.md) | Anthropic 工程博客 | 三 Agent 架构（规划/生成/评估）+ Sprint Contract + Context Reset |
-| [NotebookLM：quality_check_pipeline 完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | NotebookLM / 38 份 Markdown | 38/38 原始 source、SHA-256 清单、36 张完整正文卡与缺失引用追踪 |
+| [NotebookLM：quality_check 完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | NotebookLM / 39 份 Markdown | 39/39 原始 source、581,357 字节、SHA-256 清单与逐 source 无损正文卡 |
+| [quality_check 原文映射](wiki/sources/notebooklm_quality_check原文/quality_check原文映射.md) | NotebookLM source 映射 | 39 个 source_id、原始文件、知识卡和 SHA-256 一一对应；重复来源不丢追踪 |
 | [AWS：AI-DLC](wiki/sources/aws_ai_dlc.md) | AWS 官方博客 | AI 驱动开发生命周期全景：克服"步调差异"，重塑研发流程 |
 | [Addy Osmani：Conductor to Orchestrator](wiki/sources/conductors_vs_orchestrators.md) | O'Reilly | 软件工程师角色的演变：从代码实现者转向多智能体交响乐的编排者 |
 | [CodeGraph README](wiki/sources/codegraph_source_readme.md) | 🆕 开源 | CodeGraph Benchmark：7 项目 -16% cost -47% token |
@@ -258,7 +270,7 @@
 
 ## 🔗 原始材料总览（Raw）
 
-- **2026-06-28 新增**：NotebookLM `quality_check_pipeline` 全部 **38/38** 个原始 Markdown 已导出至 `raw/notebooklm_exports/fc03a900-e886-44a5-85b0-73983c0efa41/`，逐文件字节数与 SHA-256 见 `_MANIFEST.md`。
+- **2026-07-04 权威快照**：NotebookLM `quality_check` 全部 **39/39** 个原始 Markdown 已导出至 `raw/notebooklm_exports/6b4b949e-d423-4033-b16f-bd037ac03fa8/`；旧 38-source 快照保留为历史证据。
 - 已从 NotebookLM（笔记本：AI 高效学习与知识管理法）导出 **30+ 篇**原始资料至 `raw/`
 - 完整共 71 篇，持续补全中
 - 主要涵盖：MIT学习法、费曼技巧、Karpathy llm-wiki、Obsidian Zettelkasten、NotebookLM 使用技巧等
@@ -341,7 +353,20 @@
 
 | 文件 | 摘要 |
 |---|---|
-| [NotebookLM完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | `quality_check_pipeline` 的 38/38 原始 Markdown、哈希清单与卡片映射 |
+| [质检一站式平台顶层架构](wiki/synthesis/质检一站式平台顶层架构.md) | 平台唯一总 Hub：统一壳层、共享能力、四模块边界与知识上移/下沉规则 |
+| [质检业务总览信息架构](wiki/synthesis/质检业务总览信息架构.md) | 里程碑置顶、近两周质量护航台账、四块业务多维摘要与团队风险的首页定义 |
+| [人工质检模块架构 Hub](wiki/synthesis/质检一站式平台人工质检模块整体架构.md) | 交付、验收、返修、人力运营闭环及全部人工模块专项设计入口 |
+| [人工质检总览信息架构](wiki/synthesis/人工质检总览信息架构.md) | 专题通量/Good 联合趋势、四专题指标矩阵、八阶段上下文下钻、日期倒排与健康队列 |
+| [质检平台-人工质检标注中心前端设计](wiki/quality_portal/质检平台-人工质检标注中心前端设计.md) | 标注分配、进度、日标效、Good/Bad、Bad Top5 与单任务工作区 |
+| [大模型质检总览信息架构](wiki/synthesis/大模型质检总览信息架构.md) | 通用能力雷达图、专项任务趋势、通用/精标/评测数据资产 |
+| [大模型质检生产任务工作台前端设计](wiki/synthesis/大模型质检生产任务工作台前端设计.md) | 六通道任务创建、任务管理、生产结果、kill/clean 与回收站 |
+| [大模型质检模块架构 Hub](wiki/synthesis/质检一站式平台大模型质检模块整体架构.md) | 生产任务、版本配置、六通道状态、回收站及专项设计入口 |
+| [自动化质检模块架构 Hub](wiki/synthesis/质检一站式平台自动化质检模块架构.md) | 只冻结规则引擎与执行边界，详细业务待设计 |
+| [专题数据质量模块架构 Hub](wiki/synthesis/质检一站式平台专题数据质量模块架构.md) | 只冻结专题监控与报表边界，详细业务待设计 |
+| [前端 Demo 设计计划](wiki/synthesis/质检一站式平台前端Demo设计计划.md) | 页面地图、人工/大模型关键交互、共享组件、分阶段交付与待拍板问题 |
+| [前端 Demo 设计规范](wiki/norms/质检一站式平台前端Demo设计规范.md) | 密集运营台的视觉拨盘、WCAG、动效、状态与响应式硬门槛 |
+| [NotebookLM完整来源集](wiki/sources/notebooklm_quality_check_pipeline.md) | `quality_check` 的 39/39 原始 Markdown、哈希清单与逐 source 无损卡片映射 |
+| [quality_check原文映射](wiki/sources/notebooklm_quality_check原文/quality_check原文映射.md) | 新权威快照的 source_id、原始文件、正文卡、哈希对照表 |
 | [E2E数据管线枢纽核心设计文档](wiki/quality_portal/E2E数据管线枢纽核心设计文档.md) | 数据采集、LLM生产、自动质检、人工标注、GT回写的项目级完整闭环 |
 | [HUB-项目环境与开发规范总览](wiki/quality_portal/HUB-项目环境与开发规范总览.md) | 质检一站式平台项目定位、模块地图、配置区、页面/API 状态与 AI-DLC 开发闭环 |
 | [HUB-Agent协作体系总览](wiki/quality_portal/HUB-Agent协作体系总览.md) | 上游项目 Agent 角色、四路由、知识工作流与工具注册表快照 |
@@ -368,6 +393,9 @@
 
 | 文件 | 摘要 |
 |---|---|
+| [人工质检验收只读查询链](wiki/code/人工质检验收只读查询链.md) | 第一纵切 Router、Service、Repository、QuerySpec 与 PostgreSQL 聚合查询代码导航。 |
+| [人工质检验收分配预览链](wiki/code/人工质检验收分配预览链.md) | SelectionSpec 解析、Ratio 配额、preview 持久化与前端消费代码导航。 |
+| [质检平台前端统一数据工作台模块](wiki/code/质检平台前端统一数据工作台模块.md) | TanStack Table 状态、父子选择、按日展开、分析入口和视口滚动代码导航。 |
 | [整体架构总入口](wiki/synthesis/质检一站式平台人工质检模块整体架构.md) | 验收与人力模块的系统边界、组件图、三条业务链、事实源、原则和 Review 顺序 |
 | [Phase 3 前架构评审](wiki/synthesis/质检一站式平台Phase3前架构评审.md) | 两轮评审后的决策演进：接受现状状态回查，撤回过重抽象，冻结 DDL 和模块边界 |
 | [后端分层与组件边界](wiki/quality_portal/质检平台-后端分层与组件边界设计.md) | Router、Service、规则、共享 Repository、DeltaClient 和公共基建的职责与依赖方向 |

@@ -129,8 +129,14 @@ def parse_frontmatter(content: str) -> Dict[str, Any]:
 # ─── Markdown 解析工具 ────────────────────────────────────────────
 
 def extract_wikilinks(content: str) -> List[str]:
-    """提取正文（去 frontmatter 后）中的所有 [[wikilink]] 目标。"""
+    """提取正文中的 [[wikilink]]，忽略无损原文快照区。"""
     body = FRONTMATTER_RE.sub('', content)
+    body = re.sub(
+        r'<!-- ORIGINAL_START -->.*?<!-- ORIGINAL_END -->',
+        '',
+        body,
+        flags=re.DOTALL,
+    )
     return list(set(WIKILINK_RE.findall(body)))
 
 

@@ -4,11 +4,11 @@ domain: ["ai_dlc", "tooling"]
 type: "code_module"
 tags: [质检平台, FastAPI, API层, 依赖注入, 健康检查, 单端口部署]
 created: 2026-06-21
-updated: 2026-06-21
+updated: 2026-07-05
 sources: 1
 status: active
 related_code: ["src/api/app.py"]
-code_hash: "sha256:8194b187f92453dd"
+code_hash: "sha256:a4ba1984fbe48cdf"
 affects_path: []
 trigger_keywords: [FastAPI, create_app, deps.py, health, database_health, StaticFiles, CORS]
 ---
@@ -23,6 +23,7 @@ trigger_keywords: [FastAPI, create_app, deps.py, health, database_health, Static
 - API 路由统一挂在 `/api/*`，前端静态目录存在时再挂载 `/`。
 - CORS 从 [[配置管理公共模块]] 读取，开发态支持 Vite 地址。
 - `deps.py` 提供 `get_config()`、`get_database_manager()`、`get_postgres()`，路由层不直接构造基础设施。
+- 应用使用 lifespan 关闭共享数据库资源，并注册人工质检验收 Router。
 
 ## Who
 
@@ -36,6 +37,7 @@ trigger_keywords: [FastAPI, create_app, deps.py, health, database_health, Static
 - `src/api/deps.py`：API 层依赖注入入口。
 - `src/api/routers/health.py`：`/api/health` 与 `/api/health/database`。
 - `src/api/schemas/common.py`：统一响应与分页 Schema。
+- `src/api/schemas/acceptance.py`：第一纵切 QuerySpec 与任务/日期响应契约。
 
 ## 设计约束
 

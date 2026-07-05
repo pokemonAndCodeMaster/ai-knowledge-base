@@ -54,6 +54,18 @@ class PostgresConnector:
         finally:
             pool.putconn(conn)
 
+    @contextmanager
+    def transaction(self) -> Iterator[Any]:
+        """Yield one cursor and commit or roll back the whole unit of work."""
+        with self.connection() as conn:
+            try:
+                with conn.cursor() as cursor:
+                    yield cursor
+                conn.commit()
+            except Exception:
+                conn.rollback()
+                raise
+
     def fetch_all(self, sql: str, params: Sequence[Any] | dict[str, Any] | None = None) -> list[dict[str, Any]]:
         with self.connection() as conn:
             with conn.cursor() as cursor:
@@ -68,16 +80,15 @@ class PostgresConnector:
                 return dict(row) if row is not None else None
 
     def execute(self, sql: str, params: Sequence[Any] | dict[str, Any] | None = None) -> int:
-        with self.connection() as conn:
-            try:
-                with conn.cursor() as cursor:
-                    cursor.execute(sql, params)
-                    affected = cursor.rowcount
-                conn.commit()
-                return affected
-            except Exception:
-                conn.rollback()
-                raise
+        with self.transaction() as cursor:
+            cursor.execute(sql, params)
+            return cursor.rowcount
+
+    def execute_many(self, sql: str, params: Sequence[Sequence[Any] | dict[str, Any]]) -> int:
+        """Execute a parameterized statement for multiple rows in one transaction."""
+        with self.transaction() as cursor:
+            cursor.executemany(sql, params)
+            return cursor.rowcount
 
     def health_check(self) -> PostgresHealth:
         try:

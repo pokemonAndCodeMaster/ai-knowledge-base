@@ -1,0 +1,24 @@
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #fff;
+  --color-text: #17202b;
+  --color-muted: #667789;
+  --color-line: #d7dee6;
+  --color-line-soft: #e7ebf0;
+  --color-blue: #2458d3;
+  --color-blue-soft: #e8eefc;
+  --color-danger: #a82936;
+  --color-warning: #8a5b00;
+  --color-warning-soft: #fff4d6;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select { min-height: 36px; border: 1px solid #b9c5d3; border-radius: 5px; padding: 6px 10px; color: inherit; background: white; font: inherit; }
+button { cursor: pointer; transition: transform 120ms ease-out; }
+button:active { transform: scale(.97); }
+:focus-visible { outline: 3px solid rgb(36 88 211 / 35%); outline-offset: 2px; }
+.task-cell strong, .task-cell small { display: block; }
+.task-cell small { color: var(--color-muted); font-size: 11px; }

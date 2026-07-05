@@ -1,6 +1,6 @@
-# 质检一站式平台——人工质检验收与人力模块任务看板（v4）
+# 质检一站式平台——人工质检验收优先任务看板（v5）
 
-> **最后更新**：2026-06-28（整体架构与组件卡重编）  
+> **最后更新**：2026-07-06（SelectionSpec 与 PostgreSQL 分配预览闭环）
 > **接续方式**：下次会话直接打开此文件，从第一个 `⬜` Phase 继续
 > **架构总入口**：[[质检一站式平台人工质检模块整体架构]]  
 > **详细实施契约**：`implementation_plan.md`
@@ -14,10 +14,11 @@
 | 0 | 知识调研 | 通读所有卡片，来源项目结构梳理 | ✅ |
 | 1 | 架构设计 | 整体架构、组件边界、业务链路、API、前端、知识卡 | ✅ v4 已重编 |
 | 2 | 数据库 DDL | 建表 SQL + 索引 + 约束 + 注释 | ✅ PostgreSQL 16 实跑通过，语法基线 10+ |
-| 2.5 | Phase 3 前架构硬化 | 数据粒度、现状状态回查、共享结构边界与 DDL 验证 | ⏳ |
-| 3 | 后端 Python 骨架 | 目录结构 + 所有文件骨架（可 import）| ⏸️ 等待 2.5 |
-| 4 | 前端 Vue3 骨架 | 目录 + 4 页签骨架 + shared 组件 | ⬜ |
-| 5 | 联调验证 | FastAPI 启动，前端代理通，端到端冒烟 | ⬜ |
+| 2.5 | Phase 3 前架构硬化 | 不依赖 Delta 的基础契约已完成；真实写操作契约待补 | 🚧 |
+| 2.6 | 正式开发 Gate 0 | 开源表格、Query/Selection、PostgreSQL preview、UI 配置 | ✅ 当前版 |
+| 3 | 后端 Python 骨架 | 查询、SelectionSpec、Ratio 配额、PostgreSQL preview | 🚧 分配预览已落 |
+| 4 | 前端 Vue3 与共享工作台 | AppShell + DataWorkbench + DashboardLayout + 验收预览 | 🚧 分配预览已落 |
+| 5 | 联调验证 | PostgreSQL、FastAPI HTTP、Vue 行为与构建 | 🚧 预览链路已通 |
 
 ---
 
@@ -98,7 +99,11 @@
 
 ---
 
-## Phase 3 — 后端 Python 骨架 ⬜
+## Phase 3 — 后端 Python 骨架 🚧
+
+> 进入本阶段前先完成 [[人工质检验收中心正式开发就绪度评审]] 的 Gate 0。旧计划中“execute 直接携带全部 preview task_ids”只适合小范围显式选择；跨页全选与复杂筛选改用 `SelectionSpec + preview_id`。
+
+当前第一纵切已完成查询 Schema、参数化 Repository、任务聚合、日期展开、SelectionSpec、Ratio 配额、PostgreSQL preview 写入/读回和前端预览。Group/Personal 策略、execute、权限和真实 Delta 仍未开始。
 
 ### 目录结构（最终版）
 
@@ -172,7 +177,7 @@ Step 3.6  tests/                              ← 单元测试（sampler + pass_
 
 ---
 
-## Phase 4 — 前端 Vue3 骨架 ⬜
+## Phase 4 — 前端 Vue3 骨架 🚧
 
 ### 目录结构（4 页签）
 
@@ -256,4 +261,4 @@ POST /api/v1/manual-qc/personnel/{id}/group          → 修改组别
 
 ## 推荐下一步
 
-> **立即进行**：补齐 Delta 接口与状态字段，冻结 preview/execute 字段级 Schema 和三个端到端样例；随后按 `implementation_plan.md` 的 Phase 3A→3E 纵切实现。
+> **立即进行**：以 [[人工质检验收第一纵切架构枢纽]] 为 Review 入口，补齐 Group/Personal 策略、验收员与供应商约束、preview 局部排除/覆盖；随后实现 fake Delta execute 与回查。并行完善 DataWorkbench 筛选编辑和布局持久化。
